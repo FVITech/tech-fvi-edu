@@ -11,7 +11,7 @@
             } else {
                 this.classList.add('clicked-button');
                 this.style.marginBottom = '10px';
-                this.parentNode.childNodes[3].style.padding = '20px 20px 20px 20px';
+                this.parentNode.childNodes[3].style.padding = '50px 20px 20px 20px';
                 $(this.parentNode.childNodes[7]).slideDown(300);
             }
         });
