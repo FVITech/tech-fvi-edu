@@ -11,17 +11,20 @@
     cursor: pointer;
     transition: all .3s;
     margin-bottom: 10px;
+    z-index: 100;
+    position: relative;
 }
 
 .clicked-button {
     background-color: #ccc;
-    transform: rotate(45deg);
+    transform: rotate(225deg);
 }
 
 section {
     width: 100%;
     min-height: 300px;
     text-align: center;
+    position: relative;
 }
 
 section h1 {
@@ -41,6 +44,7 @@ section .content {
     margin: 0 auto;
     max-width: 800px;
     text-align: left;
+    padding-top: 40px;
 }
 
 section .content p {
