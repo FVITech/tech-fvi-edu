@@ -20,7 +20,7 @@
 
 section {
     width: 100%;
-    min-height: 140px;
+    min-height: 300px;
     text-align: center;
 }
 
@@ -28,7 +28,8 @@ section h1 {
     color: #fff;
     font-size: 2.5rem;
     font-family: 'Raleway';
-    padding: 20px;
+    padding: 100px 20px 20px 20px;
+    transition: all .3s;
 }
 
 section .content-container {
@@ -43,7 +44,7 @@ section .content {
 }
 
 section .content p {
-    font-size: 4rem;
+    font-size: 5rem;
 }
 
 #courses {
@@ -53,5 +54,25 @@ section .content p {
 
 #bootcamps {
     background-image: url('../img/DeathtoStock_Creative_Community4-min.jpg');
+    background-size: cover;
+}
+
+#partners {
+    background-image: url('../img/DeathtoStock_Creative_Community8-min.jpg');
+    background-size: cover;
+}
+
+#financial-aid {
+    background-image: url('../img/DeathtoStock_Creative_Community9-min.jpg');
+    background-size: cover;
+}
+
+#student-resources {
+    background-image: url('../img/DeathtoStock_Creative_Community10-min.jpg');
+    background-size: cover;
+}
+
+#student-projects {
+    background-image: url('../img/DeathtoStock_Creative_Community1-min.jpg');
     background-size: cover;
 }
