@@ -7,12 +7,12 @@
                 this.classList.remove('clicked-button');
                 this.style.marginBottom = '110px';
                 this.parentNode.childNodes[3].style.padding = '100px 20px 20px 20px';
-                $(this.parentNode.childNodes[7]).slideUp(300);
+                $(this.parentNode.nextSibling.nextSibling).slideUp(600);
             } else {
                 this.classList.add('clicked-button');
                 this.style.marginBottom = '10px';
                 this.parentNode.childNodes[3].style.padding = '50px 20px 20px 20px';
-                $(this.parentNode.childNodes[7]).slideDown(300);
+                $(this.parentNode.nextSibling.nextSibling).slideDown(600);
             }
         });
     }
