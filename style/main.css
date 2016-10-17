@@ -78,6 +78,12 @@ section h1 {
     background-position: top;
 }
 
+#certifications {
+    background-image: url('../img/certifications.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
 #partners {
     background-image: url('../img/partners.jpg');
     background-size: cover;
