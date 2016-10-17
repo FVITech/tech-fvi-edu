@@ -33,9 +33,11 @@
     });
 
     // mobile-menu show/hide
-    $('#menu-button, #overlay, #menu-items li a').click(function() {
-        $('#overlay').fadeToggle();
-        $('#menu-items').slideToggle(300);
-    });
+    if (window.innerWidth < '830') {
+        $('#menu-button, #overlay, #menu-items li a').click(function() {
+            $('#overlay').fadeToggle();
+            $('#menu-items').slideToggle(300);
+        });
+    }
 
 }();
