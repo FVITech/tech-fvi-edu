@@ -1,12 +1,13 @@
 ! function() {
 
-    var showContentButtons = document.getElementsByClassName('show-content-button');
+    var plusButtons = document.getElementsByClassName('show-content-button');
 
     // on button click, change button style and show content
-    for (var i = 0, x = showContentButtons.length; i < x; i++) {
-        showContentButtons[i].addEventListener('click', function() {
+    for (var i = 0, x = plusButtons.length; i < x; i++) {
+        plusButtons[i].addEventListener('click', function() {
             if (this.classList.contains('clicked-button')) {
                 this.classList.remove('clicked-button');
+                this.classList.remove('fixed-button');
                 this.parentNode.style.padding = '100px 0 140px';
                 $(this.parentNode.nextSibling.nextSibling).slideUp(600);
             } else {
@@ -19,16 +20,22 @@
 
     // on window scroll, fixed clicked button to screen
     window.addEventListener('scroll', function() {
-        for (var i = 0, x = showContentButtons.length; i < x; i++) {
-            if (showContentButtons[i].classList.contains('clicked-button')) {
-                var contentPosition = showContentButtons[i].parentNode.nextSibling.nextSibling.getBoundingClientRect();
-                if (contentPosition.top <= '0' && contentPosition.bottom >= '50') {
-                    showContentButtons[i].classList.add('fixed-button');
+        for (var i = 0, x = plusButtons.length; i < x; i++) {
+            if (plusButtons[i].classList.contains('clicked-button')) {
+                var contentPosition = plusButtons[i].parentNode.nextSibling.nextSibling.getBoundingClientRect();
+                if (contentPosition.top <= '40' && contentPosition.bottom >= '90') {
+                    plusButtons[i].classList.add('fixed-button');
                 } else {
-                    showContentButtons[i].classList.remove('fixed-button');
+                    plusButtons[i].classList.remove('fixed-button');
                 }
             }
         }
+    });
+
+    // mobile-menu show/hide
+    $('#menu-button, #overlay, #menu-items li a').click(function() {
+        $('#overlay').fadeToggle();
+        $('#menu-items').slideToggle(300);
     });
 
 }();
