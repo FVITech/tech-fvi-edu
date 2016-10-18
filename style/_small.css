@@ -11,5 +11,12 @@ nav ul li, nav ul li a {
     font-size: 2rem;
 }
 #web-landing h1 {
-    transform: translateY(17vh);
+    padding-top: 10vh;
+    font-size: 1.7rem;
+}
+.call-to-action {
+    margin-top: 20px;
+}
+section h1 {
+    font-size: 2rem;
 }

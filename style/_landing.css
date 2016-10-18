@@ -4,6 +4,7 @@
     height: calc(100vh);
     position: relative;
     top: 40px;
+    text-align: center;
 }
 
 #cyber-landing {
@@ -16,15 +17,36 @@
 }
 
 .page-landing h1 {
-    padding: 10px 15px;
     font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 3rem;
     color: #fff;
-    transform: translateY(30vh);
+    padding-top: 30vh;
     text-align: center;
     line-height: 1.3;
 }
 
+.call-to-action {
+    display: inline-block;
+    color: #fff;
+    background-color: rgb(2, 141, 234);
+    font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin-top: 40px;
+    cursor: pointer;
+    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 1);
+    border: 3px solid rgb(2, 141, 234);
+    transition: all .3s;
+}
+
+.call-to-action:hover {
+    box-shadow: 0 15px 8px -5px rgba(0, 0, 0, 1);
+    background-color: #fff;
+    color: rgb(2, 141, 234);
+}
+
 #web-landing h1 {
-    transform: translateY(25vh);
+    padding-top: 15vh;
 }
