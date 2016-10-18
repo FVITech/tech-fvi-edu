@@ -10,7 +10,7 @@ $(document).ready(function() {
                 if (target.length) {
                     $('html,body').animate({
                         scrollTop: target.offset().top
-                    }, 400); // The number here represents the speed of the scroll in milliseconds
+                    }, 900, 'easeInOutQuart'); // The number here represents the speed of the scroll in milliseconds
                     return false;
                 }
             }
@@ -18,20 +18,20 @@ $(document).ready(function() {
     });
 
     //Check to see if the window is top; if not then display button
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 100) {
-            $('.back-to-top a').fadeIn();
-        } else {
-            $('.back-to-top a').fadeOut();
-        }
-    });
+    // $(window).scroll(function() {
+    //     if ($(this).scrollTop() > 100) {
+    //         $('.back-to-top a').fadeIn();
+    //     } else {
+    //         $('.back-to-top a').fadeOut();
+    //     }
+    // });
 
     //Click event to scroll to top
-    $('.back-to-top').click(function() {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 400);
-        return false;
-    });
+    // $('.back-to-top').click(function() {
+    //     $('html, body').animate({
+    //         scrollTop: 0
+    //     }, 400, 'ease-in-out');
+    //     return false;
+    // });
 
 });

@@ -9,11 +9,11 @@
                 this.classList.remove('clicked-button');
                 this.classList.remove('fixed-button');
                 this.parentNode.style.padding = '100px 0 140px';
-                $(this.parentNode.nextSibling.nextSibling).slideUp(600);
+                $(this.parentNode.nextSibling.nextSibling).slideUp(600, 'easeInQuart');
             } else {
                 this.classList.add('clicked-button');
                 this.parentNode.style.padding = '20px 0';
-                $(this.parentNode.nextSibling.nextSibling).slideDown(600);
+                $(this.parentNode.nextSibling.nextSibling).slideDown(600, 'easeOutQuad');
             }
         });
     }
