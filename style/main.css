@@ -4,3 +4,4 @@
 @import "_plus-button.css";
 @import "_sections.css";
 @import "_mobile-menu.css" (max-width: 830px);
+@import "_diagnostics.css";
