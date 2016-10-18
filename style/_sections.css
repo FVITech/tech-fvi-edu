@@ -9,7 +9,7 @@ section {
 section h1 {
     color: #fff;
     font-size: 2.5rem;
-    font-family: 'Raleway';
+    font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 1);
     padding: 20px;
     transition: all .6s;

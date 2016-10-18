@@ -17,7 +17,7 @@
 
 .page-landing h1 {
     padding: 10px 15px;
-    font-family: 'Raleway';
+    font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 3rem;
     color: #fff;
     transform: translateY(30vh);
