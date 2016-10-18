@@ -1,0 +1,15 @@
+nav h4 {
+    display: block;
+}
+nav ul {
+    display: none;
+}
+nav ul li, nav ul li a {
+    display: block;
+}
+.page-landing h1 {
+    font-size: 2rem;
+}
+#web-landing h1 {
+    transform: translateY(17vh);
+}

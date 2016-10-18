@@ -1,0 +1,59 @@
+#overlay {
+    background: #000;
+    bottom: 0;
+    display: none;
+    left: 0;
+    opacity: .7;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 101;
+}
+
+nav {
+    width: 100vw;
+    background-color: #222;
+    position: fixed;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* Menu Button */
+nav h4 {
+    font-family: 'Raleway';
+    font-size: 14px;
+    font-weight: bold;
+    color: #ccc;
+    padding: 13px 0;
+    display: none;
+}
+
+nav h4:hover {
+    color: rgb(2, 141, 234);
+    background-color: #333;
+    cursor: pointer;
+}
+
+/* Menu Items */
+nav ul {
+    text-align: center;
+    transition: all .5 ease-out;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ccc;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    padding: 13px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #333;
+    color: rgb(2, 141, 234);
+}

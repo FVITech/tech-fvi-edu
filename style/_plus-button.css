@@ -1,0 +1,32 @@
+.plus-button {
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(2, 141, 234);
+    color: #fff;
+    text-align: center;
+    font-family: 'Open Sans';
+    padding: 0;
+    font-size: 1.4rem;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all .6s ease-out;
+    z-index: 100;
+    position: absolute;
+    left: calc(50% - 7px);
+}
+
+.plus-button:focus {
+    outline: none;
+}
+
+.clicked-button {
+    background-color: rgba(150, 150, 150, .5);
+    transform-origin: center;
+    transform: translateY(30px) rotate(225deg);
+}
+
+.fixed-button {
+    position: fixed;
+    top: 20px;
+}

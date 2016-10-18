@@ -35,6 +35,12 @@
     // mobile-menu show/hide
     if (window.innerWidth < '830') {
         $('#menu-button, #overlay, #menu-items li a').click(function() {
+            if($('#menu-button').html() == 'MENU') {
+                $('#menu-button').html('CLOSE');
+            }
+            else {
+                $('#menu-button').html('MENU');
+            }
             $('#overlay').fadeToggle();
             $('#menu-items').toggle(500);
         });
