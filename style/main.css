@@ -28,13 +28,14 @@ nav h4 {
 }
 
 nav h4:hover {
-    color: #75bae6;
+    color: rgb(2, 141, 234);
     background-color: #333;
     cursor: pointer;
 }
 
 nav ul {
     text-align: center;
+    transition: all .5 ease-out;
 }
 
 nav ul li {
@@ -52,19 +53,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #333;
-    color: #75bae6;
-}
-
-@media screen and (max-width: 830px) {
-    nav h4 {
-        display: block;
-    }
-    nav ul {
-        display: none;
-    }
-    nav ul li, nav ul li a {
-        display: block;
-    }
+    color: rgb(2, 141, 234);
 }
 
 .page-title {
@@ -81,6 +70,11 @@ nav ul li a:hover {
 
 #web-title {
     background-image: url('../img/web-landing.jpg');
+    background-position: top;
+}
+
+#web-title h1 {
+    transform: translateY(25vh);
 }
 
 .page-title h1 {
@@ -88,20 +82,16 @@ nav ul li a:hover {
     font-family: 'Raleway';
     font-size: 3rem;
     color: #fff;
-    transform: translateY( 40vh);
+    transform: translateY(30vh);
     text-align: center;
     line-height: 1.3;
 }
 
-#web-title h1 {
-    transform: translateY(20vh);
-}
-
-.show-content-button {
+.plus-button {
     border: none;
     width: 30px;
     height: 30px;
-    background-color: #75bae6;
+    background-color: rgb(2, 141, 234);
     color: #fff;
     text-align: center;
     font-family: 'Open Sans';
@@ -109,18 +99,18 @@ nav ul li a:hover {
     font-size: 1.4rem;
     border-radius: 100%;
     cursor: pointer;
-    transition: all .6s;
+    transition: all .6s ease-out;
     z-index: 100;
     position: absolute;
     left: calc(50% - 15px);
 }
 
-.show-content-button:focus {
+.plus-button:focus {
     outline: none;
 }
 
 .clicked-button {
-    background-color: rgba(180, 180, 180, .5);
+    background-color: rgba(150, 150, 150, .5);
     transform-origin: center;
     transform: translateY(30px) rotate(225deg);
 }
@@ -135,7 +125,7 @@ section {
     padding: 100px 0 140px;
     text-align: center;
     position: relative;
-    transition: all .6s;
+    transition: all .6s ease-in-out;
 }
 
 section h1 {
@@ -203,4 +193,19 @@ section h1 {
     background-image: url('../img/projects.jpg');
     background-size: cover;
     background-position: bottom;
+}
+
+@media screen and (max-width: 830px) {
+    nav h4 {
+        display: block;
+    }
+    nav ul {
+        display: none;
+    }
+    nav ul li, nav ul li a {
+        display: block;
+    }
+    .page-title h1 {
+        font-size: 2rem;
+    }
 }

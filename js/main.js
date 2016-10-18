@@ -1,6 +1,6 @@
 ! function() {
 
-    var plusButtons = document.getElementsByClassName('show-content-button');
+    var plusButtons = document.getElementsByClassName('plus-button');
 
     // on button click, change button style and show content
     for (var i = 0, x = plusButtons.length; i < x; i++) {
@@ -36,7 +36,7 @@
     if (window.innerWidth < '830') {
         $('#menu-button, #overlay, #menu-items li a').click(function() {
             $('#overlay').fadeToggle();
-            $('#menu-items').slideToggle(300);
+            $('#menu-items').toggle(500);
         });
     }
 
