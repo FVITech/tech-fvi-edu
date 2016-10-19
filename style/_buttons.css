@@ -14,8 +14,8 @@
     transition: all .6s ease-out;
     z-index: 100;
     display: inline-block;
-    /*position: absolute;
-    left: calc(50% - 7px);*/
+    position: absolute;
+    left: calc(50% - 7px);
 }
 
 .plus-button:focus {

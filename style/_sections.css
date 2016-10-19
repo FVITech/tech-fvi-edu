@@ -24,8 +24,12 @@ section h1 {
 .content {
     margin: 0 auto;
     max-width: 800px;
-    text-align: center;
+    text-align: left;
     padding: 40px 10px 40px 10px;
+}
+
+.content h2 {
+    margin-top: 60px;
 }
 
 .centered-blocks {
@@ -38,22 +42,6 @@ section h1 {
     width: 90px;
     max-height: 75px;
     margin: 0.5rem 1rem;
-}
-
-#call-to-action-section .content {
-    padding: 10px;
-}
-
-.content p {
-    text-align: left;
-    font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    margin-bottom: 20px;
-}
-
-#call-to-action-section .content p {
-    font-size: 1.2rem;
-    color: #aaa;
-    text-align: center;
 }
 
 #courses {
@@ -95,4 +83,14 @@ section h1 {
     height: 50vh;
     min-height: 300px;
     background-color: #222;
+}
+
+#call-to-action-section .content {
+    padding: 10px;
+}
+
+#call-to-action-section .content p {
+    font-size: 1.2rem;
+    color: #aaa;
+    text-align: center;
 }

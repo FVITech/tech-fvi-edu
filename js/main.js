@@ -35,31 +35,37 @@
         }
 
         // on window scroll, add style to nav item if section is in view
-        for (var j = 0, y = sections.length; j < y; j++) {
-            if(landing[0].getBoundingClientRect().bottom < '86') {
-                navItems[0].classList.remove('section-in-view');
-                if(sections[j].getBoundingClientRect().top <= '43' && (sections[j].nextSibling.nextSibling.getBoundingClientRect().bottom > '43' || sections[j].getBoundingClientRect().bottom > '43')) {
-                    navItems[j + 1].classList.add('section-in-view');
+        if (window.innerWidth >= '980') {
+            for (var j = 0, y = sections.length; j < y; j++) {
+                if (landing[0].getBoundingClientRect().bottom < '86') {
                     navItems[0].classList.remove('section-in-view');
-                }
-                else {
+                    if (sections[j].getBoundingClientRect().top <= '43' && (sections[j].nextSibling.nextSibling.getBoundingClientRect().bottom > '43' || sections[j].getBoundingClientRect().bottom > '43')) {
+                        navItems[j + 1].classList.add('section-in-view');
+                        navItems[0].classList.remove('section-in-view');
+                    } else {
+                        navItems[j + 1].classList.remove('section-in-view');
+                    }
+                } else {
+                    navItems[0].classList.add('section-in-view');
                     navItems[j + 1].classList.remove('section-in-view');
                 }
             }
-            else {
-                navItems[0].classList.add('section-in-view');
-                navItems[j + 1].classList.remove('section-in-view');
-            }
+        } else {
+            navItems[0].classList.remove('section-in-view');
         }
+
     });
+
+    if (window.innerWidth < '980') {
+        navItems[0].classList.remove('section-in-view');
+    }
 
     // mobile-menu show/hide
     if (window.innerWidth < '980') {
         $('#menu-button, #overlay, #menu-items li a').click(function() {
-            if($('#menu-button').html() == 'MENU') {
+            if ($('#menu-button').html() == 'MENU') {
                 $('#menu-button').html('CLOSE');
-            }
-            else {
+            } else {
                 $('#menu-button').html('MENU');
             }
             $('#overlay').fadeToggle();
