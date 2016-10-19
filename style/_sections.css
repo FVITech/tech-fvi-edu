@@ -28,15 +28,15 @@ section h1 {
     padding: 40px 10px 40px 10px;
 }
 
-.centered-blocks{
-  text-align:center;
+.centered-blocks {
+    text-align: center;
 }
 
-.centered-blocks img{
-  display:inline-block;
-  width: 90px;
-  max-height:75px;
-  margin: 0.5rem 1rem;
+.centered-blocks img {
+    display: inline-block;
+    width: 90px;
+    max-height: 75px;
+    margin: 0.5rem 1rem;
 }
 
 #call-to-action-section .content {
