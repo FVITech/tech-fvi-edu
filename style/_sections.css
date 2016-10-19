@@ -4,6 +4,7 @@ section {
     text-align: center;
     position: relative;
     transition: all .6s ease-in-out;
+    background-size: cover;
 }
 
 section h1 {
@@ -14,7 +15,16 @@ section h1 {
     padding: 20px;
     transition: all .6s;
 }
-
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin: 1rem 0 1.5rem 0;
+}
+h2{ font-size: 2.5rem;}
+h3{ font-size: 2rem;}
+h4{ font-size: 1.75rem;}
+h5{ font-size: 1.5rem;}
+h6{ font-size: 1rem;}
+p{margin-top:1rem;}
 .content-container {
     background-color: #fff;
     display: none;
@@ -26,13 +36,21 @@ section h1 {
     text-align: center;
     padding: 40px 10px 40px 10px;
 }
+.centered-blocks{
+  text-align:center;
+}
+.centered-blocks img{
+  display:inline-block;
+  width: 90px;
+  max-height:75px;
+  margin: 0.5rem 1rem;
+}
 
 #call-to-action-section .content {
     padding: 10px;
 }
 
 .content p {
-    font-size: 5rem;
     text-align: left;
     font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     margin-bottom: 20px;
@@ -46,43 +64,36 @@ section h1 {
 
 #courses {
     background-image: url('../img/courses.jpg');
-    background-size: cover;
     background-position: bottom;
 }
 
 #bootcamps {
     background-image: url('../img/code.jpg');
-    background-size: cover;
     background-position: top;
 }
 
 #certifications {
     background-image: url('../img/certifications.jpg');
-    background-size: cover;
     background-position: center;
 }
 
 #partners {
     background-image: url('../img/partners.jpg');
-    background-size: cover;
     background-position: center;
 }
 
 #financial-aid {
     background-image: url('../img/finance.jpg');
-    background-size: cover;
     background-position: top;
 }
 
 #student-resources {
     background-image: url('../img/resources.jpg');
-    background-size: cover;
     background-position: bottom;
 }
 
 #student-projects {
     background-image: url('../img/projects.jpg');
-    background-size: cover;
     background-position: bottom;
 }
 
