@@ -1,7 +1,7 @@
 @import "_reset.css";
 @import "_menu.css";
 @import "_landing.css";
-@import "_plus-button.css";
+@import "_buttons.css";
 @import "_sections.css";
 @import "_small-screens.css" (max-width: 830px);
 @import "_diagnostics.css";

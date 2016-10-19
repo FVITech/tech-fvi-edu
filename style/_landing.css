@@ -1,7 +1,7 @@
 .page-landing {
     background-size: cover;
     background-position: center;
-    height: calc(100vh);
+    height: 100vh;
     position: relative;
     top: 40px;
     text-align: center;
@@ -23,35 +23,6 @@
     padding-top: 30vh;
     text-align: center;
     line-height: 1.3;
-}
-
-.call-to-action {
-    display: inline-block;
-    color: #fff;
-    background-color: rgb(2, 141, 234);
-    font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 1.4rem;
-    text-align: center;
-    padding: 10px 30px;
-    border-radius: 5px;
-    margin-top: 40px;
-    cursor: pointer;
-    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 1);
-    border: 3px solid rgb(2, 141, 234);
-    transition: all .3s;
-}
-
-.call-to-action:hover {
-    box-shadow: 0 15px 8px -5px rgba(0, 0, 0, 1);
-    background-color: rgb(96, 179, 235);
-    border-color: rgb(96, 179, 235);
-}
-
-.call-to-action:active {
-    background-color: #fff;
-    color: rgb(2, 141, 234);
-    border-color: rgb(2, 141, 234);
-    transition: 0s;
 }
 
 #web-landing h1 {

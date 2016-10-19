@@ -23,12 +23,24 @@ section h1 {
 .content {
     margin: 0 auto;
     max-width: 800px;
-    text-align: left;
-    padding-top: 40px;
+    text-align: center;
+    padding: 40px 10px 40px 10px;
+}
+
+#call-to-action-section .content {
+    padding: 10px;
 }
 
 .content p {
     font-size: 5rem;
+    text-align: left;
+    font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#call-to-action-section .content p {
+    font-size: 1.2rem;
+    color: #aaa;
+    text-align: center;
 }
 
 #courses {
@@ -71,4 +83,10 @@ section h1 {
     background-image: url('../img/projects.jpg');
     background-size: cover;
     background-position: bottom;
+}
+
+#call-to-action-section {
+    height: 50vh;
+    min-height: 300px;
+    background-color: #222;
 }
