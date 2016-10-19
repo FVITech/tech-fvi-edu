@@ -60,8 +60,8 @@ table {
 }
 
 body {
-	position: absolute;
-	width: 100vw;
+	width: 100%;
+	position: relative;
 }
 
 h1,h2,h3,h4,h5,h6{

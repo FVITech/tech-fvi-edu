@@ -14,8 +14,6 @@
     transition: all .6s ease-out;
     z-index: 100;
     display: inline-block;
-    position: absolute;
-    left: calc(50% - 7px);
 }
 
 .plus-button:focus {
@@ -28,10 +26,10 @@
     transform: translateY(60px) rotate(225deg);
 }
 
-.fixed-button {
+/*.fixed-button {
     position: fixed;
     top: 20px;
-}
+}*/
 
 .call-to-action {
     display: inline-block;
