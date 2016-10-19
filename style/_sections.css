@@ -27,9 +27,11 @@ section h1 {
     text-align: center;
     padding: 40px 10px 40px 10px;
 }
+
 .centered-blocks{
   text-align:center;
 }
+
 .centered-blocks img{
   display:inline-block;
   width: 90px;
