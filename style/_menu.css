@@ -55,6 +55,7 @@ nav ul li a {
     font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 14px;
     padding: 13px 15px;
+    border-bottom: 3px solid #222;
 }
 
 nav ul li:last-child a {
@@ -70,4 +71,8 @@ nav ul li:last-child a:hover {
 nav ul li a:hover {
     background-color: #333;
     color: rgb(2, 141, 234);
+}
+
+.section-in-view {
+    border-color: rgb(2, 141, 234);
 }

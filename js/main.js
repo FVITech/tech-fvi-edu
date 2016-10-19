@@ -1,6 +1,9 @@
 ! function() {
 
     var plusButtons = document.getElementsByClassName('plus-button');
+    var sections = document.getElementsByTagName('section');
+    var navItems = document.getElementsByClassName('smoothScroll');
+    var landing = document.getElementsByClassName('page-landing');
 
     // on button click, change button style and show content
     for (var i = 0, x = plusButtons.length; i < x; i++) {
@@ -18,8 +21,8 @@
         });
     }
 
-    // on window scroll, fixed clicked button to screen
     window.addEventListener('scroll', function() {
+        // on window scroll, fixed clicked button to screen
         for (var i = 0, x = plusButtons.length; i < x; i++) {
             if (plusButtons[i].classList.contains('clicked-button')) {
                 var contentPosition = plusButtons[i].parentNode.nextSibling.nextSibling.getBoundingClientRect();
@@ -28,6 +31,24 @@
                 } else {
                     plusButtons[i].classList.remove('fixed-button');
                 }
+            }
+        }
+
+        // on window scroll, add style to nav item if section is in view
+        for (var j = 0, y = sections.length; j < y; j++) {
+            if(landing[0].getBoundingClientRect().bottom < '86') {
+                navItems[0].classList.remove('section-in-view');
+                if(sections[j].getBoundingClientRect().top <= '43' && (sections[j].nextSibling.nextSibling.getBoundingClientRect().bottom > '43' || sections[j].getBoundingClientRect().bottom > '43')) {
+                    navItems[j + 1].classList.add('section-in-view');
+                    navItems[0].classList.remove('section-in-view');
+                }
+                else {
+                    navItems[j + 1].classList.remove('section-in-view');
+                }
+            }
+            else {
+                navItems[0].classList.add('section-in-view');
+                navItems[j + 1].classList.remove('section-in-view');
             }
         }
     });
