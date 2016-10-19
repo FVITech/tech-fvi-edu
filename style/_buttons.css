@@ -13,8 +13,7 @@
     cursor: pointer;
     transition: all .6s ease-out;
     z-index: 100;
-    position: absolute;
-    left: calc(50% - 7px);
+    display: inline-block;
 }
 
 .plus-button:focus {
@@ -24,7 +23,7 @@
 .clicked-button {
     background-color: rgba(150, 150, 150, .5);
     transform-origin: center;
-    transform: translateY(30px) rotate(225deg);
+    transform: translateY(60px) rotate(225deg);
 }
 
 .fixed-button {
