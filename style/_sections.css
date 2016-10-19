@@ -15,16 +15,7 @@ section h1 {
     padding: 20px;
     transition: all .6s;
 }
-h1,h2,h3,h4,h5,h6{
-  font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  margin: 1rem 0 1.5rem 0;
-}
-h2{ font-size: 2.5rem;}
-h3{ font-size: 2rem;}
-h4{ font-size: 1.75rem;}
-h5{ font-size: 1.5rem;}
-h6{ font-size: 1rem;}
-p{margin-top:1rem;}
+
 .content-container {
     background-color: #fff;
     display: none;

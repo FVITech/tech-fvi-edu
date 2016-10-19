@@ -29,6 +29,7 @@ nav h4 {
     color: #ccc;
     padding: 13px 0;
     display: none;
+    margin: 0;
 }
 
 nav h4:hover {
