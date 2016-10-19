@@ -33,7 +33,7 @@
     });
 
     // mobile-menu show/hide
-    if (window.innerWidth < '830') {
+    if (window.innerWidth < '980') {
         $('#menu-button, #overlay, #menu-items li a').click(function() {
             if($('#menu-button').html() == 'MENU') {
                 $('#menu-button').html('CLOSE');

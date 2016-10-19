@@ -56,6 +56,16 @@ nav ul li a {
     padding: 13px 15px;
 }
 
+nav ul li:last-child a {
+    background-color: rgb(2, 141, 234);
+    color: #fff;
+}
+
+nav ul li:last-child a:hover {
+    background-color: #fff;
+    color: rgb(2, 141, 234);
+}
+
 nav ul li a:hover {
     background-color: #333;
     color: rgb(2, 141, 234);
