@@ -43,8 +43,15 @@
 
 .call-to-action:hover {
     box-shadow: 0 15px 8px -5px rgba(0, 0, 0, 1);
+    background-color: rgb(96, 179, 235);
+    border-color: rgb(96, 179, 235);
+}
+
+.call-to-action:active {
     background-color: #fff;
     color: rgb(2, 141, 234);
+    border-color: rgb(2, 141, 234);
+    transition: 0s;
 }
 
 #web-landing h1 {
