@@ -16,9 +16,10 @@ nav ul li a {
 }
 .page-landing h1 {
     font-size: 2rem;
+    padding-top: 10vh;
 }
 #web-landing h1 {
-    padding-top: 10vh;
+    padding-top: 8vh;
     font-size: 1.7rem;
 }
 .call-to-action {

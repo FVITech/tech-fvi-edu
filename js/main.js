@@ -15,10 +15,12 @@
                     'transition': '.6s'
                 });
                 this.parentNode.style.padding = '100px 0 140px';
+                this.parentNode.childNodes[1].style.paddingBottom = '20px';
                 $(this.parentNode.nextSibling.nextSibling).slideUp(600, 'easeInOutCubic');
             } else {
                 this.classList.add('clicked-button');
                 this.parentNode.style.padding = '20px 0';
+                this.parentNode.childNodes[1].style.paddingBottom = '0';
                 $(this.parentNode.nextSibling.nextSibling).slideDown(600, 'easeOutQuad');
             }
         });
