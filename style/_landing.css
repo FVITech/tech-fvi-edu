@@ -34,7 +34,7 @@
     font-size: 5rem;
     display: block;
     color: #fff;
-    text-shadow: 0 0 10px #555;
+    text-shadow: 0 0 10px #000;
     position: absolute;
     bottom: 33px;
     left: calc(50% - 1.5rem);
@@ -44,11 +44,6 @@
     animation-timing-function: ease-out;
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
-    transition: .5s;
-}
-
-.clicked-arrow {
-    opacity: 0;
 }
 
 @-webkit-keyframes arrow-move {

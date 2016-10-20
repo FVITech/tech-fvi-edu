@@ -66,10 +66,10 @@
 
         // fade-out down-arrow in landing page when scroll
         if(window.scrollY > '20') {
-            $('.arrow-down').addClass('clicked-arrow');
+            $('.arrow-down').fadeOut(400);
         }
         else {
-            $('.arrow-down').removeClass('clicked-arrow');
+            $('.arrow-down').slideDown(400);
         }
 
     });
