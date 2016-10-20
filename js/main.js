@@ -64,6 +64,14 @@
             navItems[0].classList.remove('section-in-view');
         }
 
+        // fade-out down-arrow in landing page when scroll
+        if(window.scrollY > '20') {
+            $('.arrow-down').addClass('clicked-arrow');
+        }
+        else {
+            $('.arrow-down').removeClass('clicked-arrow');
+        }
+
     });
 
     if (window.innerWidth < '980') {

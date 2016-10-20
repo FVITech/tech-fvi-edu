@@ -29,3 +29,34 @@
 #web-landing h1 {
     padding-top: 15vh;
 }
+
+.arrow-down {
+    font-size: 5rem;
+    display: block;
+    color: #fff;
+    text-shadow: 0 0 10px #555;
+    position: absolute;
+    bottom: 33px;
+    left: calc(50% - 1.5rem);
+    -webkit-animation: arrow-move 1s infinite;
+    animation: arrow-move 1s infinite;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    transition: .5s;
+}
+
+.clicked-arrow {
+    opacity: 0;
+}
+
+@-webkit-keyframes arrow-move {
+    from {bottom: 33px;}
+    to {bottom: 43px;}
+}
+
+@keyframes arrow-move {
+    from {bottom: 33px;}
+    to {bottom: 43px;}
+}
