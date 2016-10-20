@@ -58,6 +58,11 @@ nav ul li a {
     border-bottom: 3px solid #222;
 }
 
+nav ul li a:visited {
+    color: #ccc;
+    border-color: #222;
+}
+
 nav ul li:last-child a {
     background-color: rgb(2, 141, 234);
     border-color: rgb(2, 141, 234);
@@ -77,5 +82,9 @@ nav ul li:last-child a:hover {
 }
 
 .section-in-view {
+    border-color: rgb(2, 141, 234);
+}
+
+.section-in-view:visited {
     border-color: rgb(2, 141, 234);
 }
