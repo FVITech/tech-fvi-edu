@@ -87,10 +87,10 @@ section h1 {
 
 #call-to-action-section .content {
     padding: 10px;
+    text-align: center;
 }
 
 #call-to-action-section .content p {
     font-size: 1.2rem;
     color: #aaa;
-    text-align: center;
 }
