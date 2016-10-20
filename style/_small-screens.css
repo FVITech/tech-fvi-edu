@@ -27,3 +27,11 @@ nav ul li a {
 section h1 {
     font-size: 2rem;
 }
+section .image-block {
+    display: block;
+    top: 20px;
+}
+
+.image-block img {
+    width: 60px;
+}

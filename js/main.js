@@ -15,7 +15,7 @@
                     'transition': '.6s'
                 });
                 this.parentNode.style.padding = '100px 0 140px';
-                $(this.parentNode.nextSibling.nextSibling).slideUp(600, 'easeInQuart');
+                $(this.parentNode.nextSibling.nextSibling).slideUp(600, 'easeInOutCubic');
             } else {
                 this.classList.add('clicked-button');
                 this.parentNode.style.padding = '20px 0';

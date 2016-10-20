@@ -13,7 +13,23 @@ section h1 {
     font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 1);
     padding: 20px;
+    margin: 0;
+    display: inline-block;
     transition: all .6s;
+}
+
+section .image-block {
+    display: inline-block;
+    padding-bottom: 30px;
+    position: relative;
+    top: 30px;
+}
+
+.image-block img {
+    display: inline-block;
+    width: 90px;
+    max-height: 75px;
+    margin: 0.5rem 1rem;
 }
 
 .content-container {
@@ -30,18 +46,6 @@ section h1 {
 
 .content h2 {
     margin-top: 60px;
-}
-
-.centered-blocks {
-    text-align: center;
-    margin-top: -30px;
-}
-
-.centered-blocks img {
-    display: inline-block;
-    width: 90px;
-    max-height: 75px;
-    margin: 0.5rem 1rem;
 }
 
 #courses {
