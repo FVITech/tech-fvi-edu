@@ -3,5 +3,5 @@
 @import "_landing.css";
 @import "_buttons.css";
 @import "_sections.css";
-@import "_small-screens.css" (max-width: 920px);
+@import "_small-screens.css" (max-width: 980px);
 /*@import "_diagnostics.css";*/
