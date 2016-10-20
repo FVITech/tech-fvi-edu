@@ -13,12 +13,12 @@
 }
 
 nav {
-    width: 100vw;
+    width: 100%;
     background-color: #222;
     position: fixed;
     z-index: 1000;
     text-align: center;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, .7);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .7);
 }
 
 /* Menu Button */
@@ -71,9 +71,9 @@ nav ul li a:hover {
 }
 
 nav ul li:last-child a:hover {
-    background-color: #fff;
-    border-color: rgb(2, 141, 234);
-    color: rgb(2, 141, 234);
+    background-color: rgb(96, 179, 235);
+    border-color: rgb(96, 179, 235);
+    color: #000;
 }
 
 .section-in-view {

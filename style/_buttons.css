@@ -18,6 +18,11 @@
     position: relative;
 }
 
+.plus-button:hover {
+    background-color: #fff;
+    color: rgb(2, 141, 234);
+}
+
 .plus-button:focus {
     outline: none;
 }
@@ -26,6 +31,11 @@
     background-color: rgba(150, 150, 150, .5);
     transform-origin: center;
     transform: translateY(60px) rotate(225deg);
+}
+
+.clicked-button:hover {
+    background-color: rgba(100, 100, 100, .8);
+    color: #fff;
 }
 
 .call-to-action {

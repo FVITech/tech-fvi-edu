@@ -31,7 +31,7 @@
                 var contentPosition = plusButtons[i].parentNode.nextSibling.nextSibling.getBoundingClientRect();
                 if (contentPosition.top <= '40' && contentPosition.bottom >= '82') {
                     $(plusButtons[i]).css({
-                        'top': (-(contentPosition.top) + 41) + 'px',
+                        'top': (-(contentPosition.top) + 42) + 'px',
                         'transition': '0s'
                     });
                 }
