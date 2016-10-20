@@ -10,7 +10,10 @@
         plusButtons[i].addEventListener('click', function() {
             if (this.classList.contains('clicked-button')) {
                 this.classList.remove('clicked-button');
-                this.classList.remove('fixed-button');
+                $(this).css({
+                    'top': '0px',
+                    'transition': '.6s'
+                });
                 this.parentNode.style.padding = '100px 0 140px';
                 $(this.parentNode.nextSibling.nextSibling).slideUp(600, 'easeInQuart');
             } else {
@@ -26,10 +29,17 @@
         for (var i = 0, x = plusButtons.length; i < x; i++) {
             if (plusButtons[i].classList.contains('clicked-button')) {
                 var contentPosition = plusButtons[i].parentNode.nextSibling.nextSibling.getBoundingClientRect();
-                if (contentPosition.top <= '40' && contentPosition.bottom >= '90') {
-                    plusButtons[i].classList.add('fixed-button');
-                } else {
-                    plusButtons[i].classList.remove('fixed-button');
+                if (contentPosition.top <= '40' && contentPosition.bottom >= '82') {
+                    $(plusButtons[i]).css({
+                        'top': (-(contentPosition.top) + 41) + 'px',
+                        'transition': '0s'
+                    });
+                }
+                else {
+                    $(plusButtons[i]).css({
+                        'top': '0px',
+                        'transition': '0s'
+                    });
                 }
             }
         }
