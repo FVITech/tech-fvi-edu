@@ -1,13 +1,25 @@
 section {
+    margin-top: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+section:last-of-type {
+    margin-bottom: 80px;
+}
+
+.banner {
     width: 100%;
     padding: 100px 0 140px;
     text-align: center;
     position: relative;
+    box-shadow: 0 0 20px 0 #111;
+    z-index: 3;
     transition: all .6s ease-in-out;
     background-size: cover;
 }
 
-section h1 {
+.banner h1 {
     color: #fff;
     font-size: 2.5rem;
     font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -19,7 +31,7 @@ section h1 {
     transition: all .6s;
 }
 
-section .image-block {
+.banner .image-block {
     display: inline-block;
     padding-bottom: 30px;
     position: relative;
@@ -35,6 +47,7 @@ section .image-block {
 
 .content-container {
     background-color: #eee;
+    box-shadow: 0 0 20px 0 #111;
     display: none;
 }
 
@@ -74,16 +87,12 @@ section .image-block {
 }
 
 .content a:hover {
-    color: white;
-    background-color: rgb(2, 141, 234);
-    border-color: rgb(2, 141, 234);
-    border-radius: 3px;
-    box-shadow: 0 5px 8px -5px #000;
+    border-bottom-width: 2px;
     text-decoration: none;
 }
 
 #general {
-    background-image: url('../img/brushed-metal-texture-background.jpg');
+    background-image: url('../img/keyboard.jpg');
     background-position: center;
 }
 

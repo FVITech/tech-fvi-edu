@@ -6,10 +6,11 @@
     text-shadow: 0 0 10px #000;
     position: absolute;
     left: calc(50% - 1.6rem);
+    z-index: 100;
 }
 
 .arrow-down {
-    bottom: 33px;
+    bottom: 13px;
     -webkit-animation: arrow-down 1s infinite;
     animation: arrow-down 1s infinite;
     -webkit-animation-timing-function: ease-out;
@@ -19,17 +20,17 @@
 }
 
 @-webkit-keyframes arrow-down {
-    from {bottom: 43px;}
-    to {bottom: 33px;}
+    from {bottom: 23px;}
+    to {bottom: 13px;}
 }
 
 @keyframes arrow-down {
-    from {bottom: 43px;}
-    to {bottom: 33px;}
+    from {bottom: 23px;}
+    to {bottom: 13px;}
 }
 
 .arrow-up {
-    top: -55px;
+    top: -70px;
     -webkit-animation: arrow-up 1s infinite;
     animation: arrow-up 1s infinite;
     -webkit-animation-timing-function: ease-out;
@@ -39,13 +40,13 @@
 }
 
 @-webkit-keyframes arrow-up {
-    from {top: -45px;}
-    to {top: -55px;}
+    from {top: -60px;}
+    to {top: -70px;}
 }
 
 @keyframes arrow-up {
-    from {top:-45px;}
-    to {top: -55px;}
+    from {top:-60px;}
+    to {top: -70px;}
 }
 
 .plus-button {

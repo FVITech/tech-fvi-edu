@@ -8,6 +8,7 @@ $(document).ready(function() {
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
+                    var topPadding = (this) ? 45 : 0; //change this to be the desired section
                     $('html,body').animate({
                         scrollTop: target.offset().top
                     }, 900, 'easeInOutQuart'); // The number here represents the speed of the scroll in milliseconds
@@ -17,7 +18,7 @@ $(document).ready(function() {
         });
     });
 
-    //Check to see if the window is top; if not then display button
+    //Check to see if the window is top; if not then display back-to-top button
     // $(window).scroll(function() {
     //     if ($(this).scrollTop() > 100) {
     //         $('.back-to-top a').fadeIn();

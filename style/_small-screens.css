@@ -30,10 +30,10 @@ nav ul li a {
 .call-to-action {
     margin-top: 20px;
 }
-section h1 {
+.banner h1 {
     font-size: 2rem;
 }
-section .image-block {
+.banner .image-block {
     display: block;
     top: 20px;
 }

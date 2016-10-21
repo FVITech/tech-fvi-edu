@@ -1,13 +1,13 @@
 ! function() {
 
     var plusButtons = document.getElementsByClassName('plus-button');
-    var sections = document.getElementsByTagName('section');
+    var banners = document.getElementsByClassName('banner');
     var navItems = document.getElementsByClassName('smoothScroll');
     var landing = document.getElementsByClassName('page-landing');
 
     // on button click, change button style and show content
     for (var i = 0, x = plusButtons.length; i < x; i++) {
-        plusButtons[i].addEventListener('click', function() {
+        $(plusButtons[i]).on('click', function() {
             if (this.classList.contains('clicked-button')) {
                 this.classList.remove('clicked-button');
                 $(this).css({
@@ -15,11 +15,13 @@
                     'transition': '.6s'
                 });
                 this.parentNode.style.padding = '100px 0 140px';
+                this.parentNode.style.boxShadow = '0 0 20px 0 #111';
                 this.parentNode.childNodes[1].style.paddingBottom = '20px';
                 $(this.parentNode.nextSibling.nextSibling).slideUp(600, 'easeInOutCubic');
             } else {
                 this.classList.add('clicked-button');
                 this.parentNode.style.padding = '20px 0';
+                this.parentNode.style.boxShadow = '0 -5px 20px -2px #111';
                 this.parentNode.childNodes[1].style.paddingBottom = '0';
                 $(this.parentNode.nextSibling.nextSibling).slideDown(600, 'easeOutQuad');
             }
@@ -33,9 +35,11 @@
         for (var i = 0, x = plusButtons.length; i < x; i++) {
             if (plusButtons[i].classList.contains('clicked-button')) {
                 var contentPosition = plusButtons[i].parentNode.nextSibling.nextSibling.getBoundingClientRect();
-                if (contentPosition.top <= '40' && contentPosition.bottom >= '82') {
+                var bottomPadding = (window.innerWidth >= '980') ? '88' : '78';
+                if (contentPosition.top <= '40' && contentPosition.bottom >= bottomPadding) {
+                    var topPadding = (window.innerWidth >= '980') ? 48 : 38;
                     $(plusButtons[i]).css({
-                        'top': (-(contentPosition.top) + 42) + 'px',
+                        'top': (-(contentPosition.top) + topPadding) + 'px',
                         'transition': '0s'
                     });
                 }
@@ -50,10 +54,10 @@
 
         // on window scroll, add style to nav item if section is in view
         if (window.innerWidth >= '980') {
-            for (var j = 0, y = sections.length; j < y; j++) {
+            for (var j = 0, y = banners.length; j < y; j++) {
                 if (landing[0].getBoundingClientRect().bottom < '86') {
                     navItems[0].classList.remove('section-in-view');
-                    if (sections[j].getBoundingClientRect().top <= '43' && (sections[j].nextSibling.nextSibling.getBoundingClientRect().bottom > '43' || sections[j].getBoundingClientRect().bottom > '43')) {
+                    if (banners[j].getBoundingClientRect().top <= '43' && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > '43' || banners[j].getBoundingClientRect().bottom > '43')) {
                         navItems[j + 1].classList.add('section-in-view');
                         navItems[0].classList.remove('section-in-view');
                     } else {
