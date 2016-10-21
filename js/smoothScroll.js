@@ -8,9 +8,10 @@ $(document).ready(function() {
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
-                    var topPadding = (this) ? 45 : 0; //change this to be the desired section
+                    var topPadding = ($(target[0]).hasClass('banner')) ? -50 : 0;
+                    console.log(topPadding);
                     $('html,body').animate({
-                        scrollTop: target.offset().top
+                        scrollTop: target.offset().top + topPadding
                     }, 900, 'easeInOutQuart'); // The number here represents the speed of the scroll in milliseconds
                     return false;
                 }

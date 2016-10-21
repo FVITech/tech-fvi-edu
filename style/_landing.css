@@ -1,9 +1,10 @@
 .page-landing {
     background-size: cover;
     background-position: center;
+    box-shadow: 0 0 20px 0 #111;
     height: 100vh;
     position: relative;
-    top: 45px; /* nav height plus navItems border */
+    top: 51px; /* nav height */
     text-align: center;
 }
 

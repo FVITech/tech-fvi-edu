@@ -17,7 +17,7 @@ nav ul li a {
     padding: 10px 0 8px 0;
 }
 .page-landing {
-    top: 38px;
+    top: 38px; /* nav height */
 }
 .page-landing h1 {
     font-size: 2rem;

@@ -109,11 +109,6 @@
     margin-top: 40px;
 }
 
-#call-to-action-section .call-to-action {
-    margin-bottom: 30px;
-    margin-top: 20px;
-}
-
 .call-to-action:hover {
     box-shadow: 0 4px 0 0 #555;
     background-color: rgb(96, 179, 235);

@@ -4,6 +4,10 @@ section {
     z-index: 2;
 }
 
+section:first-of-type {
+    margin-top: 131px;
+}
+
 section:last-of-type {
     margin-bottom: 80px;
 }
@@ -78,7 +82,6 @@ section:last-of-type {
     color: rgb(2, 141, 234);
     border-bottom: 1px solid rgb(2, 141, 234);
     text-decoration: none;
-    transition: all .2s;
 }
 
 .content a:visited {
@@ -136,6 +139,12 @@ section:last-of-type {
     min-height: 300px;
     background-color: #222;
     position: relative;
+    box-shadow: 0 2px 20px 0 #111;
+}
+
+#call-to-action-section .call-to-action {
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 #call-to-action-section .content {

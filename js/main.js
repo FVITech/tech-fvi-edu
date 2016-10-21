@@ -57,7 +57,7 @@
             for (var j = 0, y = banners.length; j < y; j++) {
                 if (landing[0].getBoundingClientRect().bottom < '86') {
                     navItems[0].classList.remove('section-in-view');
-                    if (banners[j].getBoundingClientRect().top <= '43' && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > '43' || banners[j].getBoundingClientRect().bottom > '43')) {
+                    if (banners[j].getBoundingClientRect().top <= '51' && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > '43' || banners[j].getBoundingClientRect().bottom > '43')) {
                         navItems[j + 1].classList.add('section-in-view');
                         navItems[0].classList.remove('section-in-view');
                     } else {
