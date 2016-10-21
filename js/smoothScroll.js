@@ -9,10 +9,18 @@ $(document).ready(function() {
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     var topPadding = ($(target[0]).hasClass('banner')) ? -50 : 0;
-                    console.log(topPadding);
-                    $('html,body').animate({
+                    $('body').animate({
                         scrollTop: target.offset().top + topPadding
-                    }, 900, 'easeInOutQuart'); // The number here represents the speed of the scroll in milliseconds
+                    }, 900, 'easeInOutQuart', function() {
+                        if($(target[0]).has('span.plus-button')) {
+                            var nodes = target[0].childNodes;
+                            for(var i = 0, x = nodes.length; i < x; i++) {
+                                if(nodes[i].classList == 'plus-button') {
+                                    $(nodes[i]).click();
+                                }
+                            }
+                        }
+                    }); // The number here represents the speed of the scroll in milliseconds
                     return false;
                 }
             }
