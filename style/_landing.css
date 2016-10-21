@@ -3,7 +3,7 @@
     background-position: center;
     height: 100vh;
     position: relative;
-    top: 43px; /* nav height plus navItems border */
+    top: 45px; /* nav height plus navItems border */
     text-align: center;
 }
 
@@ -17,8 +17,9 @@
 }
 
 .page-landing h1 {
-    font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 2rem;
+    font-weight: 300;
     color: #fff;
     padding-top: 25vh;
     text-align: center;
@@ -36,30 +37,4 @@
     max-width: 400px;
     margin: 40px auto 0;
     padding: 0 10px;
-}
-
-.arrow-down {
-    font-size: 5rem;
-    display: block;
-    color: #fff;
-    text-shadow: 0 0 10px #000;
-    position: absolute;
-    bottom: 33px;
-    left: calc(50% - 1.5rem);
-    -webkit-animation: arrow-move 1s infinite;
-    animation: arrow-move 1s infinite;
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
-}
-
-@-webkit-keyframes arrow-move {
-    from {bottom: 33px;}
-    to {bottom: 43px;}
-}
-
-@keyframes arrow-move {
-    from {bottom: 33px;}
-    to {bottom: 43px;}
 }

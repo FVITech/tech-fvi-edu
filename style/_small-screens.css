@@ -13,6 +13,11 @@ nav ul li, nav ul li a {
 }
 nav ul li a {
     border-top: 1px solid #333;
+    font-size: 14px;
+    padding: 10px 0 8px 0;
+}
+.page-landing {
+    top: 38px;
 }
 .page-landing h1 {
     font-size: 2rem;
@@ -34,5 +39,5 @@ section .image-block {
 }
 
 .image-block img {
-    width: 60px;
+    width: 50px;
 }

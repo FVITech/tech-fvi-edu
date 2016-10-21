@@ -26,6 +26,8 @@
         });
     }
 
+    $(plusButtons[0]).click();
+
     window.addEventListener('scroll', function() {
         // on window scroll, fixed clicked button to screen
         for (var i = 0, x = plusButtons.length; i < x; i++) {

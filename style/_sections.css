@@ -10,7 +10,8 @@ section {
 section h1 {
     color: #fff;
     font-size: 2.5rem;
-    font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 1);
     padding: 20px;
     margin: 0;
@@ -33,19 +34,57 @@ section .image-block {
 }
 
 .content-container {
-    background-color: #fff;
+    background-color: #eee;
     display: none;
 }
 
 .content {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 600px;
     text-align: left;
     padding: 10px;
 }
 
-.content h2 {
-    margin-top: 60px;
+.content h4 {
+    color: rgb(0, 51, 82);
+}
+
+.content h4:first-child {
+    margin-top: 45px;
+}
+
+.content .bold {
+    font-weight: bolder;
+}
+
+.content p {
+    color: #333;
+}
+
+.content a {
+    color: rgb(2, 141, 234);
+    border-bottom: 1px solid rgb(2, 141, 234);
+    text-decoration: none;
+    transition: all .2s;
+}
+
+.content a:visited {
+    color: rgb(0, 51, 82);
+    border-color: rgb(0, 51, 82);
+}
+
+.content a:hover {
+    color: white;
+    background-color: rgb(2, 141, 234);
+    border-color: rgb(2, 141, 234);
+    border-radius: 3px;
+    box-shadow: 0 5px 8px -5px #000;
+    text-decoration: none;
+}
+
+#general {
+    background-image: url('../img/brushed-metal-texture-background.jpg');
+    background-position: center;
 }
 
 #courses {
@@ -87,6 +126,7 @@ section .image-block {
     height: 50vh;
     min-height: 300px;
     background-color: #222;
+    position: relative;
 }
 
 #call-to-action-section .content {
