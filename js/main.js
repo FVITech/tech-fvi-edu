@@ -8,17 +8,28 @@
     // on button click, change button style and show content
     for (var i = 0, x = plusButtons.length; i < x; i++) {
         $(plusButtons[i]).on('click', function() {
+            var button = this;
             // if button is gray and content is displayed, then slideUp content
             if (this.classList.contains('clicked-button')) {
-                this.classList.remove('clicked-button');
-                $(this).css({
-                    'top': '0px',
-                    'transition': '.6s'
-                });
-                this.parentNode.style.padding = '100px 0 140px';
-                this.parentNode.style.boxShadow = '0 0 20px 0 #111';
-                this.parentNode.childNodes[1].style.paddingBottom = '20px';
-                $(this.parentNode.nextSibling.nextSibling).slideUp(600, 'easeInOutCubic');
+                // first, scroll to top of banner, then slideUp the content
+                if(this.parentNode.classList.contains('banner')) {
+                    // topPadding is the nav height, so it scrolls past the nav
+                    var topPadding = (window.innerWidth >= '980') ? -51 : 0;
+                    var $banner = $(this.parentNode);
+                    $('body').animate({
+                        scrollTop: $banner.offset().top + topPadding
+                    }, 900, 'easeInOutQuart', function() {
+                        this.classList.remove('clicked-button');
+                        $(button).css({
+                            'top': '0px',
+                            'transition': '.6s'
+                        });
+                        button.parentNode.style.padding = '100px 0 140px';
+                        button.parentNode.style.boxShadow = '0 0 20px 0 #111';
+                        button.parentNode.childNodes[1].style.paddingBottom = '20px';
+                        $(button.parentNode.nextSibling.nextSibling).slideUp(600, 'easeInOutCubic');
+                    });
+                }
             }
             // else content must be hidden and button is blue, so slideDown the content
             else {
