@@ -15,10 +15,11 @@
                 // topPadding is the nav height, so it scrolls past the nav
                 var topPadding = (window.innerWidth >= '980') ? -51 : 0;
                 var $banner = $(banner);
+                var timing = (window.scrollY == $banner.offset().top + topPadding) ? 0 : 500;
                 // first, scroll to top of banner, then change buton style and slideUp the content
                 $('body').animate({
                     scrollTop: $banner.offset().top + topPadding
-                }, 500, 'easeInQuart', function() {
+                }, timing, 'easeOutBack', function() {
                     button.classList.remove('clicked-button');
                     $(button).css({
                         'top': '0px',
@@ -47,8 +48,10 @@
         for (var i = 0, x = plusButtons.length; i < x; i++) {
             if (plusButtons[i].classList.contains('clicked-button')) {
                 var contentPosition = plusButtons[i].parentNode.nextSibling.nextSibling.getBoundingClientRect();
-                var bottomPadding = (window.innerWidth >= '980') ? '96' : '83';
-                var topPadding = (window.innerWidth >= '980') ? 51 : 38;
+                // bottomPadding is the bottom of the content, plus nav height and button translateY
+                var bottomPadding = (window.innerWidth >= '980') ? '96' : '45';
+                // topPadding accounts for nav height
+                var topPadding = (window.innerWidth >= '980') ? 51 : 0;
                 if (contentPosition.top <= String(topPadding) && contentPosition.bottom >= bottomPadding) {
                     $(plusButtons[i]).css({
                         'top': (-(contentPosition.top) + topPadding) + 'px',
