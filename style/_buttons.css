@@ -64,6 +64,7 @@
     border-radius: 100%;
     cursor: pointer;
     margin: 0 auto;
+    -webkit-transition: all .6s ease-out;
     transition: all .6s ease-out;
     z-index: 100;
     display: block;
@@ -81,7 +82,9 @@
 
 .clicked-button {
     background-color: rgba(150, 150, 150, .5);
+    -webkit-transform-origin: center;
     transform-origin: center;
+    -webkit-transform: translateY(60px) rotate(225deg);
     transform: translateY(60px) rotate(225deg);
 }
 
@@ -102,6 +105,7 @@
     border-radius: 25px;
     cursor: pointer;
     box-shadow: 0 4px 0 0 #555;
+    -webkit-transition: background-color .3s;
     transition: background-color .3s;
 }
 
@@ -117,6 +121,8 @@
 .call-to-action:active {
     box-shadow: none;
     background-color: rgb(2, 141, 234);
+    -webkit-transform: translateY(4px);
     transform: translateY(4px);
+    -webkit-transition: transform .1s, box-shadow .2s;
     transition: transform .1s, box-shadow .2s;
 }

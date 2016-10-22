@@ -111,7 +111,7 @@
     // mobile-menu show/hide
     if (window.innerWidth < '980') {
         $('#menu-button, #overlay, #menu-items li a').click(function() {
-            if ($('#menu-button').html().includes('MENU')) {
+            if ($('#menu-button').html() == '<i class="fa fa-bars" aria-hidden="true"></i> MENU') {
                 $('#menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');
             } else {
                 $('#menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> MENU');
