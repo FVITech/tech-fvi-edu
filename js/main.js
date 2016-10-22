@@ -26,7 +26,7 @@
                         'transition': '.6s'
                     });
                     banner.style.padding = '100px 0 140px';
-                    banner.style.boxShadow = '0 0 20px 0 #111';
+                    banner.style.boxShadow = '0 0 4px 1px #111';
                     banner.childNodes[1].style.paddingBottom = '20px';
                     $(banner.nextSibling.nextSibling).slideUp(600, 'easeInOutCubic');
                 });
@@ -35,7 +35,7 @@
             else {
                 button.classList.add('clicked-button');
                 banner.style.padding = '20px 0';
-                banner.style.boxShadow = '0 -5px 20px -2px #111';
+                banner.style.boxShadow = '0 -2px 4px 0px #111';
                 banner.childNodes[1].style.paddingBottom = '0';
                 $(banner.nextSibling.nextSibling).slideDown(600, 'easeOutQuad');
             }

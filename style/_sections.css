@@ -17,7 +17,7 @@ section:last-of-type {
     padding: 100px 0 140px;
     text-align: center;
     position: relative;
-    box-shadow: 0 0 20px 0 #111;
+    box-shadow: 0 0 4px 1px #111;
     z-index: 3;
     transition: all .6s ease-in-out;
     background-size: cover;
@@ -51,7 +51,7 @@ section:last-of-type {
 
 .content-container {
     background-color: #eee;
-    box-shadow: 0 0 20px 0 #111;
+    box-shadow: 0 0 4px 1px #111;
     display: none;
 }
 
