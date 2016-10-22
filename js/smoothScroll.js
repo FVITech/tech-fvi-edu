@@ -10,9 +10,10 @@ $(document).ready(function() {
                 if (target.length) {
                     // topPadding is the height of the nav, so it scrolls past the nav
                     var topPadding = ($(target[0]).hasClass('banner')) ? ((window.innerWidth >= '980') ? -51 : 0) : 0;
+                    var timing = (window.scrollY == $(target[0]).offset().top + topPadding) ? 0 : 500;
                     $('body').animate({
                         scrollTop: target.offset().top + topPadding
-                    }, 900, 'easeInOutQuart', function() {
+                    }, timing, 'easeInOutQuart', function() {
                         if($(target[0]).has('span.plus-button')) {
                             var nodes = target[0].childNodes;
                             for(var i = 0, x = nodes.length; i < x; i++) {
