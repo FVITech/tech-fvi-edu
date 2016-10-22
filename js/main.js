@@ -117,7 +117,7 @@
                 $('#menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> MENU');
             }
             $('#overlay').fadeToggle();
-            $('#menu-items').toggle(500);
+            $('nav ul').toggle(500, 'easeOutQuad');
         });
     }
 

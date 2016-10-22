@@ -41,7 +41,6 @@ nav h4:hover {
 /* Menu Items */
 nav ul {
     text-align: center;
-    transition: all .5 ease-out;
 }
 
 nav ul li {
