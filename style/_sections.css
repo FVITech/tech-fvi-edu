@@ -99,12 +99,12 @@ section:last-of-type {
     background-position: center;
 }
 
-#courses {
+#cirriculum {
     background-image: url('../img/courses.jpg');
     background-position: bottom;
 }
 
-#bootcamps {
+#comparison {
     background-image: url('../img/code.jpg');
     background-position: top;
 }
@@ -124,12 +124,12 @@ section:last-of-type {
     background-position: top;
 }
 
-#student-resources {
+#resources {
     background-image: url('../img/resources.jpg');
     background-position: bottom;
 }
 
-#student-projects {
+#student-work {
     background-image: url('../img/projects.jpg');
     background-position: bottom;
 }
