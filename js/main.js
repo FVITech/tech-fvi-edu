@@ -9,35 +9,34 @@
     for (var i = 0, x = plusButtons.length; i < x; i++) {
         $(plusButtons[i]).on('click', function() {
             var button = this;
-            // if button is gray and content is displayed, then slideUp content
-            if (this.classList.contains('clicked-button')) {
-                // first, scroll to top of banner, then slideUp the content
-                if(this.parentNode.classList.contains('banner')) {
-                    // topPadding is the nav height, so it scrolls past the nav
-                    var topPadding = (window.innerWidth >= '980') ? -51 : 0;
-                    var $banner = $(this.parentNode);
-                    $('body').animate({
-                        scrollTop: $banner.offset().top + topPadding
-                    }, 900, 'easeInOutQuart', function() {
-                        this.classList.remove('clicked-button');
-                        $(button).css({
-                            'top': '0px',
-                            'transition': '.6s'
-                        });
-                        button.parentNode.style.padding = '100px 0 140px';
-                        button.parentNode.style.boxShadow = '0 0 20px 0 #111';
-                        button.parentNode.childNodes[1].style.paddingBottom = '20px';
-                        $(button.parentNode.nextSibling.nextSibling).slideUp(600, 'easeInOutCubic');
+            var banner = (this.parentNode.classList.contains('banner')) ? this.parentNode : undefined;
+            // if button is clicked and content is displayed
+            if (button.classList.contains('clicked-button')) {
+                // topPadding is the nav height, so it scrolls past the nav
+                var topPadding = (window.innerWidth >= '980') ? -51 : 0;
+                var $banner = $(banner);
+                // first, scroll to top of banner, then change buton style and slideUp the content
+                $('body').animate({
+                    scrollTop: $banner.offset().top + topPadding
+                }, 900, 'easeInOutQuart', function() {
+                    button.classList.remove('clicked-button');
+                    $(button).css({
+                        'top': '0px',
+                        'transition': '.6s'
                     });
-                }
+                    banner.style.padding = '100px 0 140px';
+                    banner.style.boxShadow = '0 0 20px 0 #111';
+                    banner.childNodes[1].style.paddingBottom = '20px';
+                    $(banner.nextSibling.nextSibling).slideUp(600, 'easeInOutCubic');
+                });
             }
-            // else content must be hidden and button is blue, so slideDown the content
+            // else content must be hidden, so slideDown the content
             else {
-                this.classList.add('clicked-button');
-                this.parentNode.style.padding = '20px 0';
-                this.parentNode.style.boxShadow = '0 -5px 20px -2px #111';
-                this.parentNode.childNodes[1].style.paddingBottom = '0';
-                $(this.parentNode.nextSibling.nextSibling).slideDown(600, 'easeOutQuad');
+                button.classList.add('clicked-button');
+                banner.style.padding = '20px 0';
+                banner.style.boxShadow = '0 -5px 20px -2px #111';
+                banner.childNodes[1].style.paddingBottom = '0';
+                $(banner.nextSibling.nextSibling).slideDown(600, 'easeOutQuad');
             }
         });
     }
@@ -55,8 +54,7 @@
                         'top': (-(contentPosition.top) + topPadding) + 'px',
                         'transition': '0s'
                     });
-                }
-                else {
+                } else {
                     $(plusButtons[i]).css({
                         'top': '0px',
                         'transition': '0s'
@@ -87,17 +85,16 @@
         }
 
         // fade-out down-arrow in landing page when scroll
-        if(window.scrollY > '20') {
+        if (window.scrollY > '20') {
             $('.arrow-down').fadeOut(400);
-        }
-        else {
+        } else {
             $('.arrow-down').slideDown(400);
         }
 
     });
 
     $('.arrow-down').click(function() {
-        if($(this).hasClass('clicked-button')) {
+        if ($(this).hasClass('clicked-button')) {
             $(plusButtons[0]).click();
         }
     });
