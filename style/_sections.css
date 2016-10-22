@@ -1,4 +1,16 @@
-section {
+.example {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: -webkit-linear-gradient(top, white, black);
+    background: linear-gradient(to bottom, white, black);
+}section {
     margin-top: 80px;
     position: relative;
     z-index: 2;
@@ -19,6 +31,7 @@ section:last-of-type {
     position: relative;
     box-shadow: 0 0 4px 1px #111;
     z-index: 3;
+    -webkit-transition: all .6s ease-in-out;
     transition: all .6s ease-in-out;
     background-size: cover;
 }
@@ -32,6 +45,7 @@ section:last-of-type {
     padding: 20px;
     margin: 0;
     display: inline-block;
+    -webkit-transition: all .6s;
     transition: all .6s;
 }
 
