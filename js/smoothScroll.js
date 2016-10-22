@@ -21,7 +21,7 @@ $(document).ready(function() {
                                 }
                             }
                         }
-                    }); // The number here represents the speed of the scroll in milliseconds
+                    });
                     return false;
                 }
             }

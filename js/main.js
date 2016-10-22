@@ -9,7 +9,7 @@
     for (var i = 0, x = plusButtons.length; i < x; i++) {
         $(plusButtons[i]).on('click', function() {
             var button = this;
-            var banner = (this.parentNode.classList.contains('banner')) ? this.parentNode : undefined;
+            var banner = (this.parentNode.classList.contains('banner')) ? this.parentNode : (function() {alert("expected button's parentNode to be a banner, but it was not.")})();
             // if button is clicked and content is displayed
             if (button.classList.contains('clicked-button')) {
                 // topPadding is the nav height, so it scrolls past the nav
@@ -18,7 +18,7 @@
                 // first, scroll to top of banner, then change buton style and slideUp the content
                 $('body').animate({
                     scrollTop: $banner.offset().top + topPadding
-                }, 900, 'easeInOutQuart', function() {
+                }, 500, 'easeInQuart', function() {
                     button.classList.remove('clicked-button');
                     $(button).css({
                         'top': '0px',
