@@ -17,7 +17,7 @@
                 var $banner = $(banner);
                 var timing = (window.scrollY == $banner.offset().top + topPadding) ? 0 : 500;
                 // first, scroll to top of banner, then change buton style and slideUp the content
-                $('body').animate({
+                $('body, html').animate({
                     scrollTop: $banner.offset().top + topPadding
                 }, timing, 'easeOutBack', function() {
                     button.classList.remove('clicked-button');
