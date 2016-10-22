@@ -35,9 +35,9 @@
         for (var i = 0, x = plusButtons.length; i < x; i++) {
             if (plusButtons[i].classList.contains('clicked-button')) {
                 var contentPosition = plusButtons[i].parentNode.nextSibling.nextSibling.getBoundingClientRect();
-                var bottomPadding = (window.innerWidth >= '980') ? '88' : '78';
-                if (contentPosition.top <= '40' && contentPosition.bottom >= bottomPadding) {
-                    var topPadding = (window.innerWidth >= '980') ? 48 : 38;
+                var bottomPadding = (window.innerWidth >= '980') ? '96' : '83';
+                var topPadding = (window.innerWidth >= '980') ? 51 : 38;
+                if (contentPosition.top <= String(topPadding) && contentPosition.bottom >= bottomPadding) {
                     $(plusButtons[i]).css({
                         'top': (-(contentPosition.top) + topPadding) + 'px',
                         'transition': '0s'
