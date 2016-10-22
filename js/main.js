@@ -8,6 +8,7 @@
     // on button click, change button style and show content
     for (var i = 0, x = plusButtons.length; i < x; i++) {
         $(plusButtons[i]).on('click', function() {
+            // if button is gray and content is displayed, then slideUp content
             if (this.classList.contains('clicked-button')) {
                 this.classList.remove('clicked-button');
                 $(this).css({
@@ -18,7 +19,9 @@
                 this.parentNode.style.boxShadow = '0 0 20px 0 #111';
                 this.parentNode.childNodes[1].style.paddingBottom = '20px';
                 $(this.parentNode.nextSibling.nextSibling).slideUp(600, 'easeInOutCubic');
-            } else {
+            }
+            // else content must be hidden and button is blue, so slideDown the content
+            else {
                 this.classList.add('clicked-button');
                 this.parentNode.style.padding = '20px 0';
                 this.parentNode.style.boxShadow = '0 -5px 20px -2px #111';
