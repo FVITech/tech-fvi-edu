@@ -1,3 +1,6 @@
+nav {
+    bottom: 0;
+}
 nav h4 {
     display: block;
     border-bottom: 3px solid #222;
@@ -17,7 +20,7 @@ nav ul li a {
     padding: 10px 0 8px 0;
 }
 .page-landing {
-    top: 38px; /* nav height */
+    top: 0px; /* nav height */
 }
 .page-landing h1 {
     font-size: 2rem;
@@ -29,6 +32,9 @@ nav ul li a {
 }
 .call-to-action {
     margin-top: 20px;
+}
+section:first-of-type {
+    margin-top: 80px;
 }
 .banner h1 {
     font-size: 2rem;

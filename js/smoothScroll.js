@@ -8,7 +8,7 @@ $(document).ready(function() {
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
-                    var topPadding = ($(target[0]).hasClass('banner')) ? -50 : 0;
+                    var topPadding = ($(target[0]).hasClass('banner')) ? ((window.innerWidth >= '980') ? -50 : 0) : 0;
                     $('body').animate({
                         scrollTop: target.offset().top + topPadding
                     }, 900, 'easeInOutQuart', function() {

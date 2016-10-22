@@ -28,9 +28,8 @@
         });
     }
 
-    $(plusButtons[0]).click();
-
     window.addEventListener('scroll', function() {
+
         // on window scroll, fixed clicked button to screen
         for (var i = 0, x = plusButtons.length; i < x; i++) {
             if (plusButtons[i].classList.contains('clicked-button')) {
@@ -54,10 +53,11 @@
 
         // on window scroll, add style to nav item if section is in view
         if (window.innerWidth >= '980') {
+            var topPadding = (window.innerWidth >= '980') ? '51' : '0';
             for (var j = 0, y = banners.length; j < y; j++) {
                 if (landing[0].getBoundingClientRect().bottom < '86') {
                     navItems[0].classList.remove('section-in-view');
-                    if (banners[j].getBoundingClientRect().top <= '51' && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > '43' || banners[j].getBoundingClientRect().bottom > '43')) {
+                    if (banners[j].getBoundingClientRect().top <= topPadding && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > topPadding || banners[j].getBoundingClientRect().bottom > topPadding)) {
                         navItems[j + 1].classList.add('section-in-view');
                         navItems[0].classList.remove('section-in-view');
                     } else {
@@ -82,6 +82,14 @@
 
     });
 
+    $('.arrow-down').click(function() {
+        if($(this).hasClass('clicked-button')) {
+            $(plusButtons[0]).click();
+        }
+    });
+
+
+    // Small screens adjustments below
     if (window.innerWidth < '980') {
         navItems[0].classList.remove('section-in-view');
     }
@@ -89,10 +97,10 @@
     // mobile-menu show/hide
     if (window.innerWidth < '980') {
         $('#menu-button, #overlay, #menu-items li a').click(function() {
-            if ($('#menu-button').html() == 'MENU') {
-                $('#menu-button').html('CLOSE');
+            if ($('#menu-button').html().includes('MENU')) {
+                $('#menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');
             } else {
-                $('#menu-button').html('MENU');
+                $('#menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> MENU');
             }
             $('#overlay').fadeToggle();
             $('#menu-items').toggle(500);
