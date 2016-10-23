@@ -15,7 +15,7 @@
                 // topPadding is the nav height, so it scrolls past the nav
                 var topPadding = (window.innerWidth >= '980') ? -51 : 0;
                 var $banner = $(banner);
-                var timing = (window.scrollY == $banner.offset().top + topPadding) ? 0 : 500;
+                var timing = (window.scrollY == $banner.offset().top + topPadding) ? 0 : 700;
                 // first, scroll to top of banner, then change buton style and slideUp the content
                 $('body, html').animate({
                     scrollTop: $banner.offset().top + topPadding
