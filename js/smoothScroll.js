@@ -13,7 +13,7 @@ $(document).ready(function() {
                     var timing = (window.scrollY == $(target[0]).offset().top + topPadding) ? 0 : 700;
                     $('body, html').animate({
                         scrollTop: target.offset().top + topPadding
-                    }, timing, 'easeOutBack', function() {
+                    }, timing, 'easeInOutQuad', function() {
                         if($(target[0]).has('span.plus-button')) {
                             var nodes = target[0].childNodes;
                             for(var i = 0, x = nodes.length; i < x; i++) {
