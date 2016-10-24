@@ -2,7 +2,7 @@
     background-color: #eee;
     box-sizing: border-box;
     box-shadow: 0 0 4px 1px #111;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 95vw;
     max-width: 600px;
     margin: 20px auto;
@@ -17,11 +17,12 @@
 
 .content h1 {
     background: #ccc;
+    font-size: 2rem;
     display: block;
     padding: 10px 20px;
     margin: 0;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .content-close {
@@ -38,16 +39,22 @@
 }
 
 .content h4 {
+    font-size: 1.5rem;
     color: rgb(0, 51, 82);
     margin: 0;
     padding: 10px 20px;
     border: 1px solid #aaa;
+    border-top-color: #ddd;
     cursor: pointer;
 }
 
+.content h4:first-of-type {
+    border-top-color: #aaa;
+}
+
 .content h4:last-of-type {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .content h4:hover, .content h4:focus {
@@ -61,8 +68,8 @@
 }
 
 .content section:last-of-type {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .content section p {

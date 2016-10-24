@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var fadeSpeed = 700;
+    var fadeSpeed = 300;
     var slideSpeed = 400;
 
     $('.card').click(function() {
@@ -9,6 +9,7 @@ $(document).ready(function() {
             $(this).next().css('top', position + 'px').fadeIn(fadeSpeed);
             $('#overlay').fadeIn(fadeSpeed);
         }
+        $('.tooltip').hide();
     });
 
     $('#overlay').click(function() {
