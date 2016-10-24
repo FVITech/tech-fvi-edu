@@ -2,8 +2,6 @@
 
     var plusButtons = document.getElementsByClassName('plus-button');
     var banners = document.getElementsByClassName('banner');
-    var navItems = document.getElementsByClassName('smoothScroll');
-    var landing = document.getElementsByClassName('page-landing');
 
     // on button click, change button style and show content
     for (var i = 0, x = plusButtons.length; i < x; i++) {
@@ -13,12 +11,12 @@
             // if button is clicked and content is displayed
             if (button.classList.contains('clicked-button')) {
                 // topPadding is the nav height, so it scrolls past the nav
-                var topPadding = (window.innerWidth >= '980') ? -51 : 0;
+                // var topPadding = (window.innerWidth >= '980') ? -51 : 0;
                 var $banner = $(banner);
-                var timing = (window.scrollY == $banner.offset().top + topPadding) ? 0 : 700;
+                var timing = (window.scrollY == $banner.offset().top /* + topPadding */) ? 0 : 700;
                 // first, scroll to top of banner, then change buton style and slideUp the content
                 $('body, html').animate({
-                    scrollTop: $banner.offset().top + topPadding
+                    scrollTop: $banner.offset().top // + topPadding
                 }, timing, 'easeInOutQuad', function() {
                     button.classList.remove('clicked-button');
                     $(button).css({
@@ -66,59 +64,6 @@
             }
         }
 
-        // on window scroll, add style to nav item if section is in view
-        if (window.innerWidth >= '980') {
-            var topPadding = (window.innerWidth >= '980') ? '51' : '0';
-            for (var j = 0, y = banners.length; j < y; j++) {
-                if (landing[0].getBoundingClientRect().bottom < '86') {
-                    navItems[0].classList.remove('section-in-view');
-                    if (banners[j].getBoundingClientRect().top <= topPadding && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > topPadding || banners[j].getBoundingClientRect().bottom > topPadding)) {
-                        navItems[j + 1].classList.add('section-in-view');
-                        navItems[0].classList.remove('section-in-view');
-                    } else {
-                        navItems[j + 1].classList.remove('section-in-view');
-                    }
-                } else {
-                    navItems[0].classList.add('section-in-view');
-                    navItems[j + 1].classList.remove('section-in-view');
-                }
-            }
-        } else {
-            navItems[0].classList.remove('section-in-view');
-        }
-
-        // fade-out down-arrow in landing page when scroll
-        if (window.scrollY > '20') {
-            $('.arrow-down').fadeOut(400);
-        } else {
-            $('.arrow-down').slideDown(400);
-        }
-
     });
-
-    $('.arrow-down').click(function() {
-        if ($(this).hasClass('clicked-button')) {
-            $(plusButtons[0]).click();
-        }
-    });
-
-
-    // Small screens adjustments below
-    if (window.innerWidth < '980') {
-        navItems[0].classList.remove('section-in-view');
-    }
-
-    // mobile-menu show/hide
-    if (window.innerWidth < '980') {
-        $('#menu-button, #overlay, #menu-items li a').click(function() {
-            if ($('#menu-button').html() == '<i class="fa fa-bars" aria-hidden="true"></i> MENU') {
-                $('#menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');
-            } else {
-                $('#menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> MENU');
-            }
-            $('#overlay').fadeToggle();
-            $('nav ul').toggle(500, 'easeOutQuad');
-        });
-    }
 
 }();
