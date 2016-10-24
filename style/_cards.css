@@ -1,10 +1,12 @@
-section {
+.cards-container {
     position: relative;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-section:last-of-type {
-    margin-bottom: 80px;
+.card {
+    width: 200px;
 }
 
 .banner {
@@ -48,8 +50,14 @@ section:last-of-type {
 
 .content-container {
     background-color: #eee;
+    box-sizing: border-box;
     box-shadow: 0 0 4px 1px #111;
+    width: 95vw;
+    max-width: 1280px;
+    margin: 0 auto;
     display: none;
+    position: absolute;
+    top: 0;
 }
 
 .content {
