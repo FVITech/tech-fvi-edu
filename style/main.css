@@ -1,4 +1,5 @@
 @import "_reset.css";
+@import "_landing.css";
 @import "_cards.css";
 @import "_card-content.css";
 @import "_small-screens.css" all and (max-width: 980px);

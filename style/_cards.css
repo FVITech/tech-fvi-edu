@@ -28,6 +28,7 @@
     border-radius: 10px;
     box-shadow: 0 15px 60px -10px rgba(0, 0, 0, .5);
     background-color: #eee;
+    border: 1px solid #bbb;
     cursor: pointer;
     position: relative;
     -webkit-transition: box-shadow .3s;
@@ -66,41 +67,41 @@
     width: 100%;
     height: 150px;
     text-align: center;
-    background-size: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    display: table;
 }
 
 .banner h1 {
-    color: #fff;
-    font-size: 1.5rem;
+    color: #000;
     font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 1);
+    font-size: 1.5rem;
+    font-weight: 400;
     padding: 20px;
     margin: 0;
-    display: inline-block;
+    display: table-cell;
+    vertical-align: middle;
 }
 
-.banner .image-block {
-    display: inline-block;
-    padding-bottom: 30px;
+.image-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-around;
+    padding: 15px;
     position: relative;
-    top: 30px;
 }
 
 .image-block img {
-    display: inline-block;
-    width: 90px;
-    max-height: 75px;
+    width: 60px;
+    max-height: 50px;
     margin: 0.5rem 1rem;
 }
 
 figcaption {
     padding: 10px;
     height: calc(100% - 150px - 20px); /* subtract banner height & figcaption padding*/
-    border: 1px solid #bbb;
-    border-top: none;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -110,43 +111,35 @@ figcaption p {
 }
 
 #when-and-where {
-    background-image: url('../img/keyboard.jpg');
-    background-position: center;
+    background-color: hsl(30, 83%, 62%);
 }
 
 #cirriculum {
-    background-image: url('../img/courses.jpg');
-    background-position: bottom;
+    background-color: hsl(60, 83%, 62%);
 }
 
 #comparison {
-    background-image: url('../img/code.jpg');
-    background-position: top;
+    background-color: hsl(90, 83%, 62%);
 }
 
 #certifications {
-    background-image: url('../img/certifications.jpg');
-    background-position: center;
+    background-color: hsl(150, 83%, 62%);
 }
 
 #partners {
-    background-image: url('../img/partners.jpg');
-    background-position: center;
+    background-color: hsl(180, 83%, 62%)
 }
 
 #pricing {
-    background-image: url('../img/finance.jpg');
-    background-position: top;
+    background-color: hsl(210, 83%, 62%);
 }
 
 #resources {
-    background-image: url('../img/resources.jpg');
-    background-position: bottom;
+    background-color: hsl(270, 73%, 62%);
 }
 
 #student-work {
-    background-image: url('../img/projects.jpg');
-    background-position: bottom;
+    background-color: hsl(300, 63%, 62%);
 }
 
 #call-to-action-section {
