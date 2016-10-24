@@ -1,0 +1,49 @@
+.cyber-main {
+    background-color: #333;
+}
+
+.web-main {
+    background-color: #bbb;
+}
+
+.page-landing {
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 4px 1px #111;
+    height: 100vh;
+    position: relative;
+    top: 51px; /* nav height */
+    text-align: center;
+}
+
+#cyber-landing {
+    background-image: url('../img/cyber-landing.jpg');
+}
+
+#web-landing {
+    background-image: url('../img/web-landing.jpg');
+    background-position: top;
+}
+
+.page-landing h1 {
+    font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fff;
+    padding-top: 25vh;
+    text-align: center;
+    line-height: 1.3;
+    margin: 0;
+}
+
+#web-landing h1 {
+    padding-top: 15vh;
+}
+
+.summary {
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    max-width: 400px;
+    margin: 40px auto 0;
+    padding: 0 10px;
+}
