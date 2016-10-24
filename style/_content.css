@@ -1,0 +1,100 @@
+.content-container {
+    background-color: #eee;
+    box-sizing: border-box;
+    box-shadow: 0 0 4px 1px #111;
+    border-radius: 5px;
+    width: 95vw;
+    max-width: 600px;
+    margin: 20px auto;
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.content {
+    text-align: left;
+}
+
+.content h1 {
+    background: #ccc;
+    display: block;
+    padding: 10px 20px;
+    margin: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.content-close {
+    position: absolute;
+    right: 1.2rem;
+    top: .4rem;
+    color: rgba(200, 0, 0, .8);
+    cursor: pointer;
+}
+
+.content-close:hover {
+    color: rgba(250, 0, 0, 1);
+    transition: color .2s;
+}
+
+.content h4 {
+    color: rgb(0, 51, 82);
+    margin: 0;
+    padding: 10px 20px;
+    border: 1px solid #aaa;
+    cursor: pointer;
+}
+
+.content h4:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.content h4:hover, .content h4:focus {
+    background-color: #ddd;
+    transition: all .2s;
+}
+
+.content section {
+    display: none;
+    background-color: #fff;
+}
+
+.content section:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.content section p {
+    color: #333;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.content section p:first-of-type {
+    padding-top: 20px;
+}
+
+.content section p:last-of-type {
+    padding-bottom: 20px;
+}
+
+.content .bold {
+    font-weight: bolder;
+}
+
+.content a {
+    color: rgb(2, 141, 234);
+    border-bottom: 1px solid rgb(2, 141, 234);
+    text-decoration: none;
+}
+
+.content a:visited {
+    color: rgb(0, 51, 82);
+    border-color: rgb(0, 51, 82);
+}
+
+.content a:hover {
+    border-bottom-width: 2px;
+    text-decoration: none;
+}

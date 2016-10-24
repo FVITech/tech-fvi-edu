@@ -1,48 +1,6 @@
-nav {
-    bottom: 0;
-    box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, .7);
-}
-nav h4 {
-    display: block;
-    border-bottom: 3px solid #222;
-}
-nav h4:hover {
-    border-color: #333;
-}
-nav ul {
-    display: none;
-}
-nav ul li, nav ul li a {
-    display: block;
-}
-nav ul li a {
-    border-top: 1px solid #333;
-    font-size: 14px;
-    padding: 10px 0 8px 0;
-}
-.page-landing {
-    top: 0px; /* nav height */
-}
-.page-landing h1 {
-    font-size: 2rem;
-    padding-top: 10vh;
-}
-#web-landing h1 {
-    padding-top: 8vh;
-    font-size: 1.7rem;
-}
+
 .call-to-action {
     margin-top: 20px;
-}
-section:first-of-type {
-    margin-top: 80px;
-}
-.banner h1 {
-    font-size: 2rem;
-}
-.banner .image-block {
-    display: block;
-    top: 20px;
 }
 
 .image-block img {
