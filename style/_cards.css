@@ -22,8 +22,8 @@
 }
 
 .card {
-    width: 300px;
-    height: 350px;
+    width: 280px;
+    height: 310px;
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0 15px 60px -10px rgba(0, 0, 0, .5);
@@ -65,7 +65,7 @@
 
 .banner {
     width: 100%;
-    height: 150px;
+    height: 120px;
     text-align: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -81,27 +81,15 @@
     margin: 0;
     display: table-cell;
     vertical-align: middle;
-}
-
-.image-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-content: space-around;
-    padding: 15px;
-    position: relative;
-}
-
-.image-block img {
-    width: 60px;
-    max-height: 50px;
-    margin: 0.5rem 1rem;
+    background-color: #aaa;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 figcaption {
     padding: 10px;
-    height: calc(100% - 150px - 20px); /* subtract banner height & figcaption padding*/
+    height: 100%; /* subtract banner height & figcaption padding*/
+    border-top: 3px solid;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -110,37 +98,14 @@ figcaption p {
     margin: 0;
 }
 
-#when-and-where {
-    background-color: hsl(30, 83%, 62%);
-}
-
-#cirriculum {
-    background-color: hsl(60, 83%, 62%);
-}
-
-#comparison {
-    background-color: hsl(90, 83%, 62%);
-}
-
-#certifications {
-    background-color: hsl(150, 83%, 62%);
-}
-
-#partners {
-    background-color: hsl(180, 83%, 62%)
-}
-
-#pricing {
-    background-color: hsl(210, 83%, 62%);
-}
-
-#resources {
-    background-color: hsl(270, 73%, 62%);
-}
-
-#student-work {
-    background-color: hsl(300, 63%, 62%);
-}
+#when-and-where + figcaption {border-top-color: hsla(30, 83%, 62%, .7);}
+#cirriculum + figcaption {border-top-color: hsla(60, 83%, 62%, .7);}
+#comparison + figcaption {border-top-color: hsla(90, 83%, 62%, .7);}
+#certifications + figcaption {border-top-color: hsla(150, 83%, 62%, .7);}
+#partners + figcaption {border-top-color: hsla(180, 83%, 62%, .7);}
+#tuition + figcaption {border-top-color: hsla(210, 83%, 62%, .7);}
+#resources + figcaption {border-top-color: hsla(270, 83%, 62%, .7);}
+#student-work + figcaption {border-top-color: hsla(300, 83%, 62%, .7);}
 
 #call-to-action-section {
     height: 50vh;

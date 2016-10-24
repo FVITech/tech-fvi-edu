@@ -1,8 +1,18 @@
-
-.call-to-action {
-    margin-top: 20px;
+.card {
+    width: 220px;
+    height: 100px;
 }
 
-.image-block img {
-    width: 50px;
+.banner {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.banner h1 {
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+figcaption {
+    display: none;
 }

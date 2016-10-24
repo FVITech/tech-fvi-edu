@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     var fadeSpeed = 300;
+    var easing = 'easeOutBack';
     var slideSpeed = 400;
 
     $('.card').click(function() {
@@ -26,10 +27,10 @@ $(document).ready(function() {
 
     $('.content h4').click(function() {
         if( $(this).next().css('display') == "none" ) {
-            $(this).next().slideDown(slideSpeed);
+            $(this).next().slideDown(slideSpeed, easing);
         }
         else {
-            $(this).next().slideUp(slideSpeed);
+            $(this).next().slideUp(slideSpeed, 'easeOutCubic');
         }
     });
 

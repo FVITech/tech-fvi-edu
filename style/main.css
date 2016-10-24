@@ -2,5 +2,5 @@
 @import "_landing.css";
 @import "_cards.css";
 @import "_card-content.css";
-@import "_small-screens.css" all and (max-width: 980px);
+@import "_small-screens.css" all and (max-width: 767px);
 /*@import "_diagnostics.css";*/

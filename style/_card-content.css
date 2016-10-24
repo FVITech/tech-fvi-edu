@@ -1,11 +1,9 @@
 .content-container {
-    background-color: #eee;
-    box-sizing: border-box;
-    box-shadow: 0 0 4px 1px #111;
-    border-radius: 8px;
-    width: 95vw;
+    width: 100%;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 20px;
     display: none;
     position: absolute;
     z-index: 2;
@@ -13,6 +11,10 @@
 
 .content {
     text-align: left;
+    background-color: #eee;
+    box-shadow: 0 0 4px 1px #111;
+    border-radius: 8px;
+    position: relative;
 }
 
 .content h1 {
@@ -23,13 +25,23 @@
     margin: 0;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    border-bottom: 1px solid #aaa;
 }
+
+.when-and-where h1 {background-color: hsla(30, 83%, 62%, .7);}
+.cirriculum h1 {background-color: hsla(60, 83%, 62%, .7);}
+.comparison h1 {background-color: hsla(90, 83%, 62%, .7);}
+.certifications h1 {background-color: hsla(150, 83%, 62%, .7);}
+.partners h1 {background-color: hsla(180, 83%, 62%, .7);}
+.tuition h1 {background-color: hsla(210, 83%, 62%, .7);}
+.resources h1 {background-color: hsla(270, 83%, 62%, .7);}
+.student-work h1 {background-color: hsla(300, 83%, 62%, .7);}
 
 .content-close {
     position: absolute;
-    right: 1.2rem;
-    top: .4rem;
-    color: rgba(200, 0, 0, .8);
+    right: -12px;
+    top: -16px;
+    color: rgba(170, 0, 0, 1);
     cursor: pointer;
 }
 
@@ -42,14 +54,17 @@
     font-size: 1.5rem;
     color: rgb(0, 51, 82);
     margin: 0;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border: 1px solid #aaa;
     border-top-color: #ddd;
     cursor: pointer;
-}
-
-.content h4:first-of-type {
-    border-top-color: #aaa;
+    background: #ddd;
+    background-image: -webkit-linear-gradient(top, #ddd, #ccc);
+    background-image: -moz-linear-gradient(top, #ddd, #ccc);
+    background-image: -ms-linear-gradient(top, #ddd, #ccc);
+    background-image: -o-linear-gradient(top, #ddd, #ccc);
+    background-image: linear-gradient(to bottom, #ddd, #ccc);
+    transition: all .2s;
 }
 
 .content h4:last-of-type {
@@ -58,8 +73,29 @@
 }
 
 .content h4:hover, .content h4:focus {
-    background-color: #ddd;
-    transition: all .2s;
+    background: #eee;
+    background-image: -webkit-linear-gradient(top, #eee, #ddd);
+    background-image: -moz-linear-gradient(top, #eee, #ddd);
+    background-image: -ms-linear-gradient(top, #eee, #ddd);
+    background-image: -o-linear-gradient(top, #eee, #ddd);
+    background-image: linear-gradient(to bottom, #eee, #ddd);
+}
+
+.image-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-around;
+    padding: 15px;
+    border-bottom: 1px solid #aaa;
+    position: relative;
+}
+
+.image-block img {
+    width: 60px;
+    max-height: 50px;
+    margin: 0.5rem 1rem;
 }
 
 .content section {

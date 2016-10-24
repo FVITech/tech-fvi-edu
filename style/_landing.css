@@ -2,13 +2,23 @@ main {
     text-align: center;
 }
 
+.title h1 {
+    margin-top: 0;
+    padding-top: 1.5rem;
+}
+
+.title p {
+    margin: 10px;
+}
+
 .cta-btn {
     display: inline-block;
     padding: 5px 10px;
+    margin-top: 35px;
+    margin-bottom: 20px;
     font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 400;
     cursor: pointer;
-    border: 1px solid #666;
     box-shadow: 0 2px 0 0 #666;
     border-radius: 5px;
     transition: all .1s;
@@ -22,6 +32,7 @@ main {
 .apply {
     background-color: hsl(0, 83%, 62%);
     color: #fff;
+    margin-right: 8px;
 }
 
 .apply:hover {
@@ -42,5 +53,5 @@ main {
 }
 
 .question:active {
-    background-color: #fff;
+    background-color: #bbb;
 }
