@@ -58,7 +58,7 @@ nav ul li a {
     border-bottom: 3px solid #222;
 }
 
-nav ul li:last-child a {
+.nav-apply-btn {
     background-color: rgb(2, 141, 234);
     border-color: rgb(2, 141, 234);
     color: #fff;
@@ -70,7 +70,7 @@ nav ul li a:hover {
     color: rgb(2, 141, 234);
 }
 
-nav ul li:last-child a:hover {
+.nav-apply-btn:hover {
     background-color: rgb(96, 179, 235);
     border-color: rgb(96, 179, 235);
     color: #000;
@@ -78,4 +78,8 @@ nav ul li:last-child a:hover {
 
 .section-in-view {
     border-color: rgb(2, 141, 234);
+}
+
+.programs-list {
+    display: none;
 }
