@@ -1,5 +1,19 @@
-! function() {
+$(document).ready(function() {
 
+    // Code for home page
+    $('.web-dev').click(function() {
+        $('.home-main').fadeOut(function() {
+            $('.web-main').fadeIn();
+        });
+    });
+
+    $('.network-admin').click(function() {
+        $('.home-main').fadeOut(function() {
+            $('.cyber-main').fadeIn();
+        });
+    });
+
+    // Code for web-dev and network-admin pages below
     var plusButtons = document.getElementsByClassName('plus-button');
     var banners = document.getElementsByClassName('banner');
     var navItems = document.getElementsByClassName('smoothScroll');
@@ -9,7 +23,9 @@
     for (var i = 0, x = plusButtons.length; i < x; i++) {
         $(plusButtons[i]).on('click', function() {
             var button = this;
-            var banner = (this.parentNode.classList.contains('banner')) ? this.parentNode : (function() {alert("expected button's parentNode to be a banner, but it was not.")})();
+            var banner = (this.parentNode.classList.contains('banner')) ? this.parentNode : (function() {
+                alert("expected button's parentNode to be a banner, but it was not.")
+            })();
             // if button is clicked and content is displayed
             if (button.classList.contains('clicked-button')) {
                 // topPadding is the nav height, so it scrolls past the nav
@@ -102,7 +118,6 @@
         }
     });
 
-
     // Small screens adjustments below
     if (window.innerWidth < '980') {
         navItems[0].classList.remove('section-in-view');
@@ -121,4 +136,4 @@
         });
     }
 
-}();
+});

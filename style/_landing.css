@@ -16,21 +16,21 @@
     background-size: cover;
     background-position: center;
     box-shadow: 0 0 4px 1px #111;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     top: 51px; /* nav height */
     text-align: center;
 }
 
-#home-landing {
+.home-landing {
     top: 0;
 }
 
-#cyber-landing {
+.cyber-landing {
     background-image: url('../img/cyber-landing.jpg');
 }
 
-#web-landing {
+.web-landing {
     background-image: url('../img/web-landing.jpg');
     background-position: top;
 }
@@ -46,20 +46,81 @@
     margin: 0;
 }
 
-#home-landing h1 {
+.title-div {
+    display: table;
+    width: 100%;
+    height: 200px;
+}
+
+.title-headers {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+.home-landing h1 {
     margin: 0;
-    padding: 8rem 0 1rem 0;
+    padding: 1rem 0 1rem 0;
     font-size: 3rem;
     color: #222;
 }
 
-#home-landing h3 {
+.home-landing h4 {
     margin: 0;
     padding-bottom: 1rem;
     color: #777;
 }
 
-#web-landing h1 {
+.cards-container {
+    display: flex;
+    box-sizing: border-box;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 20px;
+    min-height: calc(100% - 200px);
+}
+
+.card {
+    width: 280px;
+    margin: 0 30px 40px 30px;
+    cursor: pointer;
+    background-color: #444;
+    border: 3px solid #222;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px 5px rgba(0, 0, 0, .7);
+}
+
+.card-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: block;
+    height: 180px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.web-dev .card-image {
+    background-image: url('../img/web-dev-card-image.png');
+}
+
+.network-admin .card-image {
+    background-image: url('../img/network-admin-card-image.png');
+}
+
+.card h4 {
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.first-letter, .second-letter {
+    font-weight: 400;
+    font-size: 1.4em;
+    color: rgb(2, 141, 234);
+}
+
+.web-landing h1 {
     padding-top: 15vh;
 }
 

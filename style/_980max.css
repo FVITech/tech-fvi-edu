@@ -27,7 +27,13 @@ nav ul li a {
     font-size: 2rem;
     padding-top: 10vh;
 }
-#web-landing h1 {
+.card-image {
+    height: 130px;
+}
+.card h4 {
+    font-size: 1.2rem;
+}
+.web-landing h1 {
     padding-top: 8vh;
     font-size: 1.7rem;
 }
