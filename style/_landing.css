@@ -46,6 +46,10 @@
     margin: 0;
 }
 
+.web-landing h1 {
+    padding-top: 15vh;
+}
+
 .title-div {
     display: table;
     width: 100%;
@@ -55,6 +59,14 @@
 .title-headers {
     display: table-cell;
     vertical-align: middle;
+}
+
+.summary {
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    max-width: 400px;
+    margin: 40px auto 0;
+    padding: 0 10px;
 }
 
 .home-landing h1 {
@@ -79,55 +91,4 @@
     align-content: center;
     padding: 20px;
     min-height: calc(100% - 200px);
-}
-
-.card {
-    width: 280px;
-    margin: 0 30px 40px 30px;
-    cursor: pointer;
-    background-color: #444;
-    border: 3px solid #222;
-    border-radius: 10px;
-    box-shadow: 0 15px 40px 5px rgba(0, 0, 0, .7);
-}
-
-.card-image {
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    display: block;
-    height: 180px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.web-dev .card-image {
-    background-image: url('../img/web-dev-card-image.png');
-}
-
-.network-admin .card-image {
-    background-image: url('../img/network-admin-card-image.png');
-}
-
-.card h4 {
-    color: #fff;
-    padding-bottom: 20px;
-}
-
-.first-letter, .second-letter {
-    font-weight: 400;
-    font-size: 1.4em;
-    color: rgb(2, 141, 234);
-}
-
-.web-landing h1 {
-    padding-top: 15vh;
-}
-
-.summary {
-    color: #fff;
-    text-shadow: 0 0 5px #000;
-    max-width: 400px;
-    margin: 40px auto 0;
-    padding: 0 10px;
 }

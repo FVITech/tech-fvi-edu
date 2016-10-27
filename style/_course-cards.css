@@ -1,0 +1,42 @@
+.card {
+    width: 280px;
+    margin: 0 30px 40px 30px;
+    cursor: pointer;
+    background-color: #444;
+    border: 3px solid #222;
+    border-radius: 6px;
+    overflow:hidden;
+    box-shadow: 0 15px 40px 5px rgba(0, 0, 0, .7);
+    transition: transform .2s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: block;
+    height: 180px;
+}
+
+.web-dev .card-image {
+    background-image: url('../img/web-dev-card-image.png');
+}
+
+.network-admin .card-image {
+    background-image: url('../img/network-admin-card-image.png');
+}
+
+.card h4 {
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.first-letter, .second-letter {
+    font-weight: 400;
+    font-size: 1.4em;
+    color: rgb(2, 141, 234);
+}
