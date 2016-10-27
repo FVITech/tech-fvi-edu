@@ -24,7 +24,7 @@ $(document).ready(function() {
         $(plusButtons[i]).on('click', function() {
             var button = this;
             var banner = (this.parentNode.classList.contains('banner')) ? this.parentNode : (function() {
-                alert("expected button's parentNode to be a banner, but it was not.")
+                alert("expected button's parentNode to be a banner, but it was " + this.parentNode + ".")
             })();
             // if button is clicked and content is displayed
             if (button.classList.contains('clicked-button')) {
