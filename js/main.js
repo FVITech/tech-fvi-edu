@@ -125,13 +125,13 @@ $(document).ready(function() {
 
     // mobile-menu show/hide
     if (window.innerWidth < '980') {
-        $('#menu-button, #overlay, #menu-items li a').click(function() {
-            if ($('#menu-button').html() == '<i class="fa fa-bars" aria-hidden="true"></i> MENU') {
-                $('#menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');
+        $('#web-menu-button, #web-overlay, #web-menu-items li a, #cyber-menu-button, #cyber-overlay, #cyber-menu-items li a').click(function() {
+            if ($('#web-menu-button, #cyber-menu-button').html() == '<i class="fa fa-bars" aria-hidden="true"></i> MENU') {
+                $('#web-menu-button, #cyber-menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');
             } else {
-                $('#menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> MENU');
+                $('#web-menu-button, #cyber-menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> MENU');
             }
-            $('#overlay').fadeToggle();
+            $('#web-overlay, #cyber-overlay').fadeToggle();
             $('nav ul').toggle(500, 'easeOutQuad');
         });
     }

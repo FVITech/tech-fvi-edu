@@ -1,4 +1,4 @@
-#overlay {
+#web-overlay, #cyber-overlay {
     background: #000;
     bottom: 0;
     display: none;
@@ -58,22 +58,10 @@ nav ul li a {
     border-bottom: 3px solid #222;
 }
 
-.nav-apply-btn {
-    background-color: rgb(2, 141, 234);
-    border-color: rgb(2, 141, 234);
-    color: #fff;
-}
-
 nav ul li a:hover {
     background-color: #333;
     border-color: #333;
     color: rgb(2, 141, 234);
-}
-
-.nav-apply-btn:hover {
-    background-color: rgb(96, 179, 235);
-    border-color: rgb(96, 179, 235);
-    color: #000;
 }
 
 .section-in-view {
