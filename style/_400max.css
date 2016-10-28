@@ -9,9 +9,16 @@
     font-size: 1.5rem;
     margin: .5rem 0;
 }
+.web-landing h1 {
+    font-size: 2.2rem;
+}
 .cyber-landing h1 {
     padding-top: 27vh;
     font-size: 1.8rem;
+}
+.web-landing p {
+    margin-top: 1rem;
+    font-size: .9rem;
 }
 .cyber-landing p {
     margin-top: 3vh;
