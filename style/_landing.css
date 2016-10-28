@@ -1,5 +1,7 @@
 .home-main {
     background-color: #ddd;
+    background-image: url('../img/network-background.jpg');
+    background-size: cover;
 }
 
 .web-main {
@@ -39,14 +41,14 @@
     margin: 0;
     padding: 1rem;
     font-size: 3rem;
-    color: #222;
+    color: #eee;
 }
 
 .home-landing h3 {
     margin: 0;
     font-size: 1.8rem;
     padding-bottom: 1rem;
-    color: #777;
+    color: #bbb;
 }
 
 .title-div {
