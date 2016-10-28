@@ -1,6 +1,5 @@
 $(document).ready(function() {
     "use strict";
-
     var plusButtons = document.getElementsByClassName('plus-button');
     var webBanners = document.getElementsByClassName('web-banner');
     var cyberBanners = document.getElementsByClassName('cyber-banner');
@@ -29,8 +28,6 @@ $(document).ready(function() {
     });
 
     function setupPage(page) {
-        "use strict";
-
         var banners = (page == 'web') ? webBanners : cyberBanners;
         var navItems = (page == 'web') ? webNavItems : cyberNavItems;
         var landing = (page == 'web') ? webLanding : cyberLanding;
@@ -60,7 +57,6 @@ $(document).ready(function() {
         }
 
         function buttonStyle() {
-            "use strict";
             var button = this;
             var $banner = (this.parentNode.classList.contains(page + '-banner')) ? $(this.parentNode) : undefined;
             // if button is clicked and content is displayed
@@ -95,9 +91,7 @@ $(document).ready(function() {
         window.addEventListener('scroll', fixedButton);
 
         function fixedButton() {
-            "use strict";
             $('.plus-button').each(function(i, button) {
-                "use strict";
                 if (button.classList.contains('clicked-button')) {
                     var contentPosition = button.parentNode.nextSibling.nextSibling.getBoundingClientRect();
                     // bottomPadding is the bottom of the content, plus nav height and button translateY
@@ -124,7 +118,6 @@ $(document).ready(function() {
         }
 
         function navItemsStyle() {
-            "use strict";
             // if window scroll position is between a banner, add nav style to corresponding nav item
             for (var j = 0, y = banners.length; j < y; j++) {
                 if (landing.getBoundingClientRect().bottom < '86') {
