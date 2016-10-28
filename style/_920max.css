@@ -28,11 +28,11 @@ nav ul {
     display: none;
 }
 
-nav ul li, nav ul li a {
+nav ul li, nav ul li a, nav ul li span {
     display: block;
 }
 
-nav ul li a {
+nav ul li a, nav ul li span {
     border-top: 1px solid #333;
     font-size: 14px;
     padding: 10px 0 8px 0;

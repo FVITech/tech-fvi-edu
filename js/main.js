@@ -13,6 +13,7 @@ $(document).ready(function() {
     // Code for home page
     $('.web-dev').click(function() {
         $('.home-main').fadeOut(function() {
+            window.scrollTo(0, 0);
             $('.web-main').fadeIn(function() {
                 setupPage('web');
             });
@@ -21,6 +22,7 @@ $(document).ready(function() {
 
     $('.network-admin').click(function() {
         $('.home-main').fadeOut(function() {
+            window.scrollTo(0, 0);
             $('.cyber-main').fadeIn(function() {
                 setupPage('cyber');
             });
@@ -136,7 +138,7 @@ $(document).ready(function() {
 
     // mobile-menu show/hide
     if (window.innerWidth < mobileMenuWidth) {
-        $('#web-menu-button, #web-overlay, #web-menu-items li a, #cyber-menu-button, #cyber-overlay, #cyber-menu-items li a').click(function() {
+        $('#web-menu-button, #web-overlay, #web-menu-items li a, #web-menu-items li span, #cyber-menu-button, #cyber-overlay, #cyber-menu-items li a, #cyber-menu-items li span').click(function() {
             var $menuButton = $('#web-menu-button, #cyber-menu-button');
             if ($menuButton.html() === '<i class="fa fa-bars" aria-hidden="true"></i> MENU') {
                 $menuButton.html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');
