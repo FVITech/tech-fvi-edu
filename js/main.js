@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    "use strict";
 
     var plusButtons = document.getElementsByClassName('plus-button');
     var webBanners = document.getElementsByClassName('web-banner');
@@ -28,16 +29,25 @@ $(document).ready(function() {
     });
 
     function setupPage(page) {
+        "use strict";
+
         var banners = (page == 'web') ? webBanners : cyberBanners;
         var navItems = (page == 'web') ? webNavItems : cyberNavItems;
         var landing = (page == 'web') ? webLanding : cyberLanding;
 
         // When click on HOME button
         $('.' + page + '-home-button').click(function() {
+            // Reset everything to default and remove event listeners
             window.removeEventListener('scroll', fixedButton);
             window.removeEventListener('scroll', navItemsStyle);
             for (var i = 0, x = plusButtons.length; i < x; i++) {
+                if(plusButtons[i].classList.contains('clicked-button')) {
+                    $(plusButtons[i]).click();
+                }
                 $(plusButtons[i]).off('click', buttonStyle);
+            }
+            for(var f = 0, g = navItems.length; f < g; f++) {
+                navItems[f].classList.remove('section-in-view');
             }
             $('.' + page + '-main').fadeOut(function() {
                 $('.home-main').fadeIn();
@@ -50,6 +60,7 @@ $(document).ready(function() {
         }
 
         function buttonStyle() {
+            "use strict";
             var button = this;
             var $banner = (this.parentNode.classList.contains(page + '-banner')) ? $(this.parentNode) : undefined;
             // if button is clicked and content is displayed
@@ -85,8 +96,8 @@ $(document).ready(function() {
 
         function fixedButton() {
             "use strict";
-
             $('.plus-button').each(function(i, button) {
+                "use strict";
                 if (button.classList.contains('clicked-button')) {
                     var contentPosition = button.parentNode.nextSibling.nextSibling.getBoundingClientRect();
                     // bottomPadding is the bottom of the content, plus nav height and button translateY
