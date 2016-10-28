@@ -7,6 +7,18 @@
 .home-landing h3 {
     font-size: 1.6rem;
 }
+.cyber-landing h1 {
+    font-size: 2rem;
+    padding-top: 30vh;
+}
+.cyber-landing p {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.web-landing h1 {
+    padding-top: 8vh;
+    font-size: 1.7rem;
+}
 @media all and (max-width: 604px) {
     .title-div {
         height: 150px;

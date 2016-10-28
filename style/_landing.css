@@ -78,7 +78,6 @@
     font-size: 2rem;
     font-weight: 300;
     color: #fff;
-    padding-top: 25vh;
     text-align: center;
     line-height: 1.3;
     margin: 0;
@@ -86,6 +85,10 @@
 
 .web-landing h1 {
     padding-top: 15vh;
+}
+
+.cyber-landing h1 {
+    padding-top: 25vh;
 }
 
 .summary {

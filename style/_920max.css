@@ -23,13 +23,16 @@ nav ul li a {
 .page-landing {
     top: 0px; /* nav height */
 }
-.page-landing h1 {
-    font-size: 2rem;
-    padding-top: 10vh;
+.cyber-landing h1 {
+    font-size: 3rem;
+    padding-top: 28vh;
+}
+.cyber-landing p {
+    font-size: 1.5rem;
 }
 .web-landing h1 {
     padding-top: 8vh;
-    font-size: 1.7rem;
+    font-size: 2rem;
 }
 .call-to-action {
     margin-top: 20px;

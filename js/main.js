@@ -126,6 +126,7 @@ $(document).ready(function() {
             }
 
             // fade-out down-arrow in landing page when scroll
+            console.log(window.scrollY);
             if (window.scrollY > '20') {
                 $('.arrow-down').fadeOut(400);
             } else {
