@@ -75,7 +75,7 @@
 
 .page-landing h1 {
     font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 300;
     color: #fff;
     text-align: center;
@@ -84,17 +84,18 @@
 }
 
 .web-landing h1 {
-    padding-top: 15vh;
+    padding-top: 20vh;
 }
 
 .cyber-landing h1 {
     padding-top: 25vh;
 }
 
-.summary {
+.web-landing p, .cyber-landing p {
     color: #fff;
     text-shadow: 0 0 5px #000;
     max-width: 400px;
     margin: 40px auto 0;
     padding: 0 10px;
+    font-size: 1.3rem;
 }

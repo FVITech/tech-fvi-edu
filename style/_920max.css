@@ -1,3 +1,7 @@
+.home-main {
+    background-position: center;
+}
+
 nav {
     bottom: 0;
     box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, .7);
@@ -59,10 +63,6 @@ nav ul li a, nav ul li span {
 
 .cyber-landing p {
     font-size: 1.5rem;
-}
-
-.call-to-action {
-    margin-top: 20px;
 }
 
 section:first-of-type {
