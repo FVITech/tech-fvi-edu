@@ -66,4 +66,10 @@ nav ul li a:hover {
 
 .section-in-view {
     border-color: rgb(2, 141, 234);
+    background-color: #333;
+}
+
+.home-button:hover {
+    background-color: #000;
+    border-color: rgb(2, 141, 234);
 }
