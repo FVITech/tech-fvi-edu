@@ -105,8 +105,8 @@ $(document).ready(function() {
             }
 
             // on window scroll, add style to nav item if section is in view
-            if (window.innerWidth >= '980') {
-                var topPadding = (window.innerWidth >= '980') ? '51' : '0';
+            if (window.innerWidth >= '920') {
+                var topPadding = (window.innerWidth >= '920') ? '51' : '0';
                 for (var j = 0, y = banners.length; j < y; j++) {
                     if (landing[0].getBoundingClientRect().bottom < '86') {
                         navItems[0].classList.remove('section-in-view');
@@ -141,12 +141,12 @@ $(document).ready(function() {
         });
 
         // Small screens adjustments below
-        if (window.innerWidth < '980') {
+        if (window.innerWidth < '920') {
             navItems[0].classList.remove('section-in-view');
         }
 
         // mobile-menu show/hide
-        if (window.innerWidth < '980') {
+        if (window.innerWidth < '920') {
             $('#web-menu-button, #web-overlay, #web-menu-items li a, #cyber-menu-button, #cyber-overlay, #cyber-menu-items li a').click(function() {
                 if ($('#web-menu-button, #cyber-menu-button').html() == '<i class="fa fa-bars" aria-hidden="true"></i> MENU') {
                     $('#web-menu-button, #cyber-menu-button').html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');

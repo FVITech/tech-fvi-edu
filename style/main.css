@@ -4,5 +4,5 @@
 @import "_course-cards.css";
 @import "_buttons.css";
 @import "_sections.css";
-@import "_980max.css" all and (max-width: 980px);
+@import "_920max.css" all and (max-width: 920px);
 /*@import "_diagnostics.css";*/
