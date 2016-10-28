@@ -35,6 +35,42 @@
     background-position: top;
 }
 
+.home-landing h2 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 3rem;
+    color: #222;
+}
+
+.home-landing h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    padding-bottom: 1rem;
+    color: #777;
+}
+
+.title-div {
+    display: table;
+    width: 100%;
+    height: 250px;
+}
+
+.title-headers {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cards-container {
+    display: flex;
+    box-sizing: border-box;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;;
+    align-content: center;
+    padding: 20px;
+    min-height: calc(100vh - 250px);
+}
+
 .page-landing h1 {
     font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 2rem;
@@ -50,45 +86,10 @@
     padding-top: 15vh;
 }
 
-.title-div {
-    display: table;
-    width: 100%;
-    height: 300px;
-}
-
-.title-headers {
-    display: table-cell;
-    vertical-align: middle;
-}
-
 .summary {
     color: #fff;
     text-shadow: 0 0 5px #000;
     max-width: 400px;
     margin: 40px auto 0;
     padding: 0 10px;
-}
-
-.home-landing h2 {
-    margin: 0;
-    padding: 1rem 0 1rem 0;
-    font-size: 3rem;
-    color: #222;
-}
-
-.home-landing h3 {
-    margin: 0;
-    padding-bottom: 1rem;
-    color: #777;
-}
-
-.cards-container {
-    display: flex;
-    box-sizing: border-box;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 20px;
-    min-height: calc(100% - 200px);
 }

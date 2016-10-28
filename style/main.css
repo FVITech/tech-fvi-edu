@@ -5,4 +5,6 @@
 @import "_buttons.css";
 @import "_sections.css";
 @import "_920max.css" all and (max-width: 920px);
+@import "_760max.css" all and (max-width: 760px);
+@import "_400max.css" all and (max-width: 400px);
 /*@import "_diagnostics.css";*/
