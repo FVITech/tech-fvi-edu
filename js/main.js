@@ -118,7 +118,7 @@ $(document).ready(function() {
                         }
                     } else {
                         navItems[0].classList.add('section-in-view');
-                        navItems[j + 1].classList.remove('section-in-view');
+                        navItems[j].classList.remove('section-in-view');
                     }
                 }
             } else {
