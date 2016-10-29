@@ -91,21 +91,58 @@
     padding-top: 18vh;
 }
 
+.web-landing h1 span {
+    position: relative;
+}
+
+.web-landing h1 .full-stack {
+    -webkit-animation: full-stack 4s infinite;
+    -moz-animation: full-stack 4s infinite;
+    -o-animation: full-stack 4s infinite;
+    animation: full-stack 4s infinite;
+}
+
+.web-landing h1 .web-developer {
+    -webkit-animation: web-developer 4s infinite;
+    -moz-animation: web-developer 4s infinite;
+    -o-animation: web-developer 4s infinite;
+    animation: web-developer 4s infinite;
+}
+
 .cyber-landing h1 {
     padding-top: 25vh;
-    -webkit-animation: cyber-h1 5s infinite;
-    -moz-animation: cyber-h1 5s infinite;
-    -o-animation: cyber-h1 5s infinite;
-    animation: cyber-h1 5s infinite;
+    -webkit-animation: cyber-h1 3s infinite alternate;
+    -moz-animation: cyber-h1 3s infinite alternate;
+    -o-animation: cyber-h1 3s infinite alternate;
+    animation: cyber-h1 3s infinite alternate;
+}
+
+@keyframes full-stack {
+    0% {top: 0; left: 0;}
+    70% {top: 0; left: 0;}
+    95% {top: -4px; left: -12px;}
+    98% {top: 2px; left: 4px;}
+    100% {top: 0; left: 0}
+}
+
+@keyframes web-developer {
+    0% {top: 0; left: 0;}
+    70% {top: 0; left: 0;}
+    95% {top: 4px; left: 12px;}
+    98% {top: -2px; left: -4px;}
+    100% {top: 0; left: 0}
 }
 
 @keyframes cyber-h1 {
     0% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
     60% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
-    60.5% {color: rgba(255, 255, 255, .2);top: 10px; left: 10px;}
+    60.3% {color: rgba(255, 255, 255, .2);top: 5px; left: 5px;}
     61% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
+    62.5% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
+    62.8% {color: rgba(255, 255, 255, .2);top: 8px; left: 8px;}
+    63.6% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
     80% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
-    80.3% {color: rgba(255, 255, 255, .4);top: 14px; left: 14px;}
+    80.3% {color: rgba(255, 255, 255, .4);top: 34px; left: 34px;}
     80.6% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
     83% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
     83.4% {color: rgba(255, 255, 255, .2);top: 12px; left: 12px;}
@@ -113,8 +150,9 @@
     85% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
     85.5% {color: rgba(255, 255, 255, .2);top: 8px; left: 8px;}
     86% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
-    99.4% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
-    99.7% {color: rgba(255, 255, 255, .2);top: 15px; left: 15px;}
+    92.4% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
+    92.7% {color: rgba(255, 255, 255, .2);top: 25px; left: 25px;}
+    93% {color: rgba(255, 255, 255, .8);top: 0; left: 0;}
     100% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
 }
 

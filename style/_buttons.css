@@ -20,13 +20,21 @@
 }
 
 @-webkit-keyframes arrow-down {
-    from {bottom: 23px;}
-    to {bottom: 13px;}
+    from {
+        bottom: 23px;
+    }
+    to {
+        bottom: 13px;
+    }
 }
 
 @keyframes arrow-down {
-    from {bottom: 23px;}
-    to {bottom: 13px;}
+    from {
+        bottom: 23px;
+    }
+    to {
+        bottom: 13px;
+    }
 }
 
 .arrow-up {
@@ -40,13 +48,21 @@
 }
 
 @-webkit-keyframes arrow-up {
-    from {top: -60px;}
-    to {top: -70px;}
+    from {
+        top: -60px;
+    }
+    to {
+        top: -70px;
+    }
 }
 
 @keyframes arrow-up {
-    from {top:-60px;}
-    to {top: -70px;}
+    from {
+        top: -60px;
+    }
+    to {
+        top: -70px;
+    }
 }
 
 .plus-button {
@@ -93,39 +109,57 @@
     color: #fff;
 }
 
-.call-to-action {
+.cta-btn-container {
+    margin: 40px auto;
+}
+
+.cta-btn {
     display: inline-block;
     color: #fff;
-    background-color: rgb(2, 141, 234);
     font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
     padding: 5px 30px;
     border-radius: 25px;
     cursor: pointer;
-    box-shadow: 0 4px 0 0 #555;
+    box-shadow: 0 3px 0 0 #555;
     -webkit-transition: background-color .3s;
     transition: background-color .3s;
 }
 
-.page-landing .call-to-action {
-    margin-top: 40px;
+.apply-btn {
+    background: #e66;
+    background-image: -webkit-linear-gradient(top, #e66, #b33);
+    background-image: -moz-linear-gradient(top, #e66, #b33);
+    background-image: -ms-linear-gradient(top, #e66, #b33);
+    background-image: -o-linear-gradient(top, #e66, #b33);
+    background-image: linear-gradient(to bottom, #e66, #b33);
+    margin-right: 20px;
 }
 
-.call-to-action:hover {
-    box-shadow: 0 4px 0 0 #555;
-    background-color: rgb(96, 179, 235);
+.question-btn {
+    background-color: #999;
 }
 
-.call-to-action:active {
+.apply-btn:hover {
+    background: #f77;
+    background-image: -webkit-linear-gradient(top, #f77, #c44);
+    background-image: -moz-linear-gradient(top, #f77, #c44);
+    background-image: -ms-linear-gradient(top, #f77, #c44);
+    background-image: -o-linear-gradient(top, #f77, #c44);
+    background-image: linear-gradient(to bottom, #f77, #c44);
+}
+
+.question-btn:hover {}
+
+.cta-btn:active {
     box-shadow: none;
-    background-color: rgb(2, 141, 234);
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);
-    -webkit-transition: transform .1s, box-shadow .2s;
-    -webkit-transition: box-shadow .2s, -webkit-transform .1s;
-    transition: box-shadow .2s, -webkit-transform .1s;
-    transition: transform .1s, box-shadow .2s;
-    transition: transform .1s, box-shadow .2s, -webkit-transform .1s;
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+    -webkit-transition: transform .1s, box-shadow .1s;
+    -webkit-transition: box-shadow .1s, -webkit-transform .1s;
+    transition: box-shadow .1s, -webkit-transform .1s;
+    transition: transform .1s, box-shadow .1s;
+    transition: transform .1s, box-shadow .1s, -webkit-transform .1s;
 }
