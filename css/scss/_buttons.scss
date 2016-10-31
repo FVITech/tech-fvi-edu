@@ -85,15 +85,15 @@
     z-index: 100;
     display: block;
     position: relative;
-}
 
-.plus-button:hover {
-    background-color: #fff;
-    color: rgb(2, 141, 234);
-}
+    &:hover {
+        background-color: #fff;
+        color: rgb(2, 141, 234);
+    }
 
-.plus-button:focus {
-    outline: none;
+    &:focus {
+        outline: none;
+    }
 }
 
 .clicked-button {
@@ -102,11 +102,11 @@
     transform-origin: center;
     -webkit-transform: translateY(60px) rotate(225deg);
     transform: translateY(60px) rotate(225deg);
-}
 
-.clicked-button:hover {
-    background-color: rgba(100, 100, 100, .8);
-    color: #fff;
+    &:hover {
+        background-color: rgba(100, 100, 100, .8);
+        color: #fff;
+    }
 }
 
 .cta-btn-container {
@@ -126,42 +126,42 @@
     box-shadow: 0 3px 0 0 #555;
     -webkit-transition: all .3s;
     transition: all .3s;
-}
 
-.apply-btn {
-    background: #e66;
-    background-image: -webkit-linear-gradient(top, #e66, #b33);
-    background-image: -moz-linear-gradient(top, #e66, #b33);
-    background-image: -ms-linear-gradient(top, #e66, #b33);
-    background-image: -o-linear-gradient(top, #e66, #b33);
-    background-image: linear-gradient(to bottom, #e66, #b33);
-    margin-right: 20px;
-}
+    &:active {
+        box-shadow: none;
+        -webkit-transform: translateY(3px);
+        transform: translateY(3px);
+        -webkit-transition: transform .1s, box-shadow .1s;
+        -webkit-transition: box-shadow .1s, -webkit-transform .1s;
+        transition: box-shadow .1s, -webkit-transform .1s;
+        transition: transform .1s, box-shadow .1s;
+        transition: transform .1s, box-shadow .1s, -webkit-transform .1s;
+    }
 
-.question-btn {
-    background-color: #999;
-}
+    .apply-btn {
+        background: #e66;
+        background-image: -webkit-linear-gradient(top, #e66, #b33);
+        background-image: -moz-linear-gradient(top, #e66, #b33);
+        background-image: -ms-linear-gradient(top, #e66, #b33);
+        background-image: -o-linear-gradient(top, #e66, #b33);
+        background-image: linear-gradient(to bottom, #e66, #b33);
+        margin-right: 20px;
 
-.apply-btn:hover {
-    background: #f77;
-    background-image: -webkit-linear-gradient(top, #f77, #c44);
-    background-image: -moz-linear-gradient(top, #f77, #c44);
-    background-image: -ms-linear-gradient(top, #f77, #c44);
-    background-image: -o-linear-gradient(top, #f77, #c44);
-    background-image: linear-gradient(to bottom, #f77, #c44);
-}
+        &:hover {
+            background: #f77;
+            background-image: -webkit-linear-gradient(top, #f77, #c44);
+            background-image: -moz-linear-gradient(top, #f77, #c44);
+            background-image: -ms-linear-gradient(top, #f77, #c44);
+            background-image: -o-linear-gradient(top, #f77, #c44);
+            background-image: linear-gradient(to bottom, #f77, #c44);
+        }
+    }
 
-.question-btn:hover {
-    background-color: #bbb;
-}
+    .question-btn {
+        background-color: #999;
 
-.cta-btn:active {
-    box-shadow: none;
-    -webkit-transform: translateY(3px);
-    transform: translateY(3px);
-    -webkit-transition: transform .1s, box-shadow .1s;
-    -webkit-transition: box-shadow .1s, -webkit-transform .1s;
-    transition: box-shadow .1s, -webkit-transform .1s;
-    transition: transform .1s, box-shadow .1s;
-    transition: transform .1s, box-shadow .1s, -webkit-transform .1s;
+        &:hover {
+            background-color: #bbb;
+        }
+    }
 }

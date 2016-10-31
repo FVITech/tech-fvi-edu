@@ -1,0 +1,76 @@
+#overlay {
+    background: #000;
+    bottom: 0;
+    display: none;
+    left: 0;
+    opacity: .7;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 101;
+    color: rgba(0, 0, 0, 1);
+    font-size: 0;
+}
+
+nav {
+    width: 100%;
+    background-color: #222;
+    position: fixed;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .7);
+
+    /* mobile Menu Button */
+    h4 {
+        font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #ccc;
+        padding: 10px 0 7px 0;
+        display: none;
+        margin: 0;
+
+        &:hover {
+            color: rgb(2, 141, 234);
+            background-color: #333;
+            cursor: pointer;
+        }
+    }
+
+    /* Menu items */
+    ul {
+        text-align: center;
+
+        li {
+            display: inline-block;
+
+            a, span {
+                display: inline-block;
+                text-decoration: none;
+                color: #ccc;
+                font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 15px 15px;
+                border-bottom: 3px solid #222;
+                cursor: pointer;
+            }
+
+            a:hover {
+                background-color: #333;
+                border-color: #333;
+                color: rgb(2, 141, 234);
+            }
+        }
+    }
+}
+
+.section-in-view {
+    border-color: rgb(2, 141, 234);
+    background-color: #333;
+}
+
+.home-button:hover {
+    background-color: #000;
+    border-color: rgb(2, 141, 234);
+}

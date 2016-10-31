@@ -1,0 +1,52 @@
+@media all and (max-width: 760px) {
+    .title-div {
+        height: 200px;
+    }
+
+    .page-landing.home {
+        h2 {
+            font-size: 2.5rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+    }
+
+    .page-landing.web {
+        h1 {
+            font-size: 2.7rem;
+            padding-top: 16vh;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+    }
+
+    .page-landing.cyber {
+        h1 {
+            font-size: 2rem;
+            padding-top: 30vh;
+        }
+        p {
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+    }
+
+    #call-to-action-section .content p {
+        font-size: 1rem;
+        margin: 1rem;
+    }
+
+    @media all and (max-width: 604px) {
+        .title-div {
+            height: 150px;
+        }
+        .page-landing.home h2 {
+            max-width: 370px;
+            margin: auto;
+        }
+    }
+
+}

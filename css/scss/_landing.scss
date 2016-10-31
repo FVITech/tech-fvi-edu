@@ -1,18 +1,11 @@
-.home-main {
-    background-color: #ddd;
-    background-image: url('../img/network-background.jpg');
-    background-size: cover;
-}
-
-.web-main {
+main {
     background-color: #bbb;
-    display: none;
 }
 
-.cyber-main {
+/*.cyber-main {
     background-color: #333;
     display: none;
-}
+}*/
 
 .page-landing {
     background-size: cover;
@@ -22,45 +15,85 @@
     position: relative;
     top: 51px; /* nav height */
     text-align: center;
+
+    h1 {
+        font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 3rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 1);
+        text-align: center;
+        line-height: 1.3;
+        margin: 0 auto;
+        display: inline-block;
+        position: relative;
+    }
+
+    p {
+        color: #fff;
+        text-shadow: 0 0 5px #000;
+        max-width: 400px;
+        margin: 40px auto 0;
+        padding: 0 10px;
+        font-size: 1.3rem;
+    }
 }
 
-.home-landing {
+.page-landing.home {
     top: 0;
+    background-color: #ddd;
+    background-image: url('../img/network-background.jpg');
+    background-size: cover;
+
+    h2 {
+        margin: 0;
+        padding: 1rem;
+        font-size: 3rem;
+        color: #eee;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 1.8rem;
+        padding-bottom: 1rem;
+        color: #ddd;
+    }
 }
 
-.cyber-landing {
-    background-image: url('../img/cyber-landing.jpg');
-}
-
-.web-landing {
+.page-landing.web {
+    display: none;
     background-image: url('../img/web-landing.jpg');
     background-position: top;
+
+    h1 {
+        padding-top: 20vh;
+    }
 }
 
-.home-landing h2 {
-    margin: 0;
-    padding: 1rem;
-    font-size: 3rem;
-    color: #eee;
-}
+.page-landing.cyber {
+    display: none;
+    background-image: url('../img/cyber-landing.jpg');
 
-.home-landing h3 {
-    margin: 0;
-    font-size: 1.8rem;
-    padding-bottom: 1rem;
-    color: #ddd;
+    h1 {
+        padding-top: 25vh;
+        -webkit-animation: cyber-h1 3s infinite alternate;
+        -moz-animation: cyber-h1 3s infinite alternate;
+        -o-animation: cyber-h1 3s infinite alternate;
+        animation: cyber-h1 3s infinite alternate;
+    }
 }
 
 .title-div {
     display: table;
     width: 100%;
     height: 250px;
+
+    .title-headers {
+        display: table-cell;
+        vertical-align: middle;
+    }
 }
 
-.title-headers {
-    display: table-cell;
-    vertical-align: middle;
-}
+
 
 .cards-container {
     display: flex;
@@ -72,30 +105,6 @@
     align-content: center;
     padding: 20px;
     min-height: calc(100vh - 250px);
-}
-
-.page-landing h1 {
-    font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 3rem;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 1);
-    text-align: center;
-    line-height: 1.3;
-    margin: 0 auto;
-    display: inline-block;
-    position: relative;
-}
-
-.web-landing h1 {
-    padding-top: 20vh;
-}
-
-.cyber-landing h1 {
-    padding-top: 25vh;
-    -webkit-animation: cyber-h1 3s infinite alternate;
-    -moz-animation: cyber-h1 3s infinite alternate;
-    -o-animation: cyber-h1 3s infinite alternate;
-    animation: cyber-h1 3s infinite alternate;
 }
 
 @keyframes cyber-h1 {
@@ -119,13 +128,4 @@
     92.7% {color: rgba(255, 255, 255, .2);top: 25px; left: 25px;}
     93% {color: rgba(255, 255, 255, .8);top: 0; left: 0;}
     100% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
-}
-
-.web-landing p, .cyber-landing p {
-    color: #fff;
-    text-shadow: 0 0 5px #000;
-    max-width: 400px;
-    margin: 40px auto 0;
-    padding: 0 10px;
-    font-size: 1.3rem;
 }

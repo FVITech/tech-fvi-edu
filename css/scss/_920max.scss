@@ -1,0 +1,91 @@
+@media all and (max-width: 920px) {
+    .page-landing {
+        top: 0px; /* nav height */
+    }
+
+    .page-landing.home {
+        background-position: center;
+    }
+
+    .page-landing.web {
+        h1 {
+            font-size: 3rem;
+            padding-top: 15vh;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    .page-landing.cyber {
+        h1 {
+            font-size: 3rem;
+            padding-top: 28vh;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+
+    nav {
+        bottom: 0;
+        box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, .7);
+
+        h4 {
+            display: block;
+            border-bottom: 3px solid #222;
+            background: #222;
+            background-image: -webkit-linear-gradient(top, #555, #222);
+            background-image: -moz-linear-gradient(top, #555, #222);
+            background-image: -ms-linear-gradient(top, #555, #222);
+            background-image: -o-linear-gradient(top, #555, #222);
+            background-image: linear-gradient(to bottom, #555, #222);
+
+            &:hover {
+                border-color: #333;
+                background: #333;
+                background-image: -webkit-linear-gradient(top, #666, #333);
+                background-image: -moz-linear-gradient(top, #666, #333);
+                background-image: -ms-linear-gradient(top, #666, #333);
+                background-image: -o-linear-gradient(top, #666, #333);
+                background-image: linear-gradient(to bottom, #666, #333);
+            }
+        }
+
+        ul {
+            display: none;
+
+            li,
+            li a,
+            li span {
+                display: block;
+            }
+
+            li a,
+            li span {
+                border-top: 1px solid #333;
+                font-size: 14px;
+                padding: 10px 0 8px 0;
+            }
+        }
+    }
+
+
+    section:first-of-type {
+        margin-top: 80px;
+    }
+
+    .banner {
+        h1 {
+            font-size: 2rem;
+        }
+        .image-block {
+            display: block;
+            top: 20px;
+
+            img {
+                width: 50px;
+            }
+        }
+    }
+}

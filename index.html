@@ -8,14 +8,16 @@
     <title>FVI Tech</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     <script src="https://use.fontawesome.com/6e24312094.js"></script>
-    <link rel="stylesheet" href="style/main.css" media="all">
+    <link rel="stylesheet" href="css/main.css" media="all">
 </head>
 
 <body>
 
-    <main id="home-top" class="home-main">
+    <main id="top">
 
-        <div class="page-landing home-landing">
+        <div id="overlay">overlay</div>
+
+        <div class="page-landing home">
             <div class="title-div">
                 <div class="title-headers">
                     <h2>The Florida Vocational Institute</h2>
@@ -24,13 +26,13 @@
             </div>
 
             <div class="cards-container">
-                <div class="card web-dev">
+                <div class="card web">
                     <figure>
                         <img src="img/web-dev-card-image.png" alt="image of web development" />
                     </figure>
                     <h4><span class="first-letter">W</span>eb<br><span class="second-letter">D</span>eveloper<br>Program</h4>
                 </div>
-                <div class="card network-admin">
+                <div class="card cyber">
                     <figure>
                         <img src="img/network-admin-card-image.png" alt="image of network administration" />
                     </figure>
@@ -39,39 +41,39 @@
             </div>
         </div>
 
-    </main>
-
-    <main id="web-top" class="web-main">
-
-        <div id="web-overlay">overlay</div>
-
         <nav>
-            <h4 id="web-menu-button"><i class="fa fa-bars" aria-hidden="true"></i> MENU</h4>
-            <ul id="web-menu-items">
-                <li><span class="home-button web-home-button">HOME</span></li><!-- remove space
-             --><li><a class="web-nav-item smoothScroll" href="#web-summary">SUMMARY</a></li><!-- remove space
-             --><li><a class="web-nav-item smoothScroll" href="#web-cirriculum">CIRRICULUM</a></li><!-- remove space
-             --><li><a class="web-nav-item smoothScroll" href="#web-comparison">HOW WE COMPARE</a></li><!-- remove space
-             --><li><a class="web-nav-item smoothScroll" href="#web-partners">PARTNERS</a></li><!-- remove space
-             --><li><a class="web-nav-item smoothScroll" href="#web-tuition">TUITION</a></li><!-- remove space
-             --><li><a class="web-nav-item smoothScroll" href="#web-resources">RESOURCES</a></li><!-- remove space
-             --><li><a class="web-nav-item smoothScroll" href="#web-student-work">STUDENT WORK</a></li>
+            <h4 id="menu-button"><i class="fa fa-bars" aria-hidden="true"></i> MENU</h4>
+            <ul id="menu-items">
+                <li><span class="home-button">HOME</span></li><!-- remove space
+             --><li><a class="nav-item web cyber smoothScroll" href="#summary">SUMMARY</a></li><!-- remove space
+             --><li><a class="nav-item web cyber smoothScroll" href="#cirriculum">CIRRICULUM</a></li><!-- remove space
+             --><li><a class="nav-item web smoothScroll" href="#comparison">HOW WE COMPARE</a></li><!-- remove space
+             --><li><a class="nav-item cyber smoothScroll" href="#certifications">CERTIFICATIONS</a></li><!-- remomve space
+             --><li><a class="nav-item web cyber smoothScroll" href="#partners">PARTNERS</a></li><!-- remove space
+             --><li><a class="nav-item web cyber smoothScroll" href="#tuition">TUITION</a></li><!-- remove space
+             --><li><a class="nav-item web cyber smoothScroll" href="#resources">RESOURCES</a></li><!-- remove space
+             --><li><a class="nav-item web smoothScroll" href="#student-work">STUDENT WORK</a></li>
             </ul>
         </nav>
 
-        <div class="page-landing web-landing">
+        <div class="page-landing web">
             <h1>WEB DEVELOPER</h1>
             <p>Become a Web Developer in 9 months.<br>No experience necessary.<br>Learn more below.</p>
-            <a class="arrow arrow-down smoothScroll" href="#web-summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <a class="arrow arrow-down smoothScroll" href="#summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+        </div>
+        <div class="page-landing cyber">
+            <h1>NETWORK<br>ADMINISTRATOR</h1>
+            <p>Become job-ready in 9 months.<br>No experience necessary.<br>Learn more below.</p>
+            <a class="arrow arrow-down smoothScroll" href="#summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
         </div>
 
-        <section>
-            <div class="banner web-banner" id="web-summary">
+        <section class="web cyber">
+            <div class="banner web cyber" id="summary">
                 <h2>Summary</h2>
                 <span class="plus-button">+</span>
             </div>
             <div class="content-container">
-                <div class="content">
+                <div class="content web">
                     <h4>This Program is Not For Everyone</h4>
                     <p>Our in-person Computer Programming courses are designed for busy adults driven to change their career and/or boost their professional skills. Few other Web Developer Schools offer the length and breadth of material that we do.</p>
                     <p>We are a Computer Programming School devoted to creating Application Developers with sound Computer Science skills. Our curriculum is designed to be completed in a dense, but realistic time frame of nine months.</p>
@@ -86,11 +88,21 @@
                     <p>We are dedicated to helping you achieve success with our passionate and knowledgeable faculty, successful career placement team, and our warm and welcoming community. </p>
                     <p>For consumer information, visit <a target="_blank" title="FVI Consumer Information" href="http://www.fvi.edu/consumer-information/">www.fvi.edu/consumer-information</a>.</p>
                 </div>
+                <div class="content cyber">
+                    <h4>Heading 1</h4>
+                    <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
+                    <h4>Heading 2</h4>
+                    <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de
+                        pinga.
+                    </p>
+                    <h4>Heading 3</h4>
+                    <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
+                </div>
             </div>
         </section>
 
-        <section>
-            <div class="banner web-banner" id="web-cirriculum">
+        <section class="web cyber">
+            <div class="banner web cyber" id="cirriculum">
                 <div class="image-block">
                     <img src="img/logos/angular.svg" alt="Learn Angular JS at Miami's best Code School" />
                     <img src="img/logos/github2.svg" alt="Learn Git and Github at Miami's best Code School" />
@@ -105,7 +117,7 @@
                 <span class="plus-button">+</span>
             </div>
             <div class="content-container">
-                <div class="content">
+                <div class="content web">
                     <h4>Weeks 1-6: Foundations of Front-end Programming.</h4>
                     <p>During the first 6 weeks, we wil introduce you to each of the main skills you need in order to become a front-end Programmer. You will learn HTML5, CSS3, Bootstrap, JavaScript, jQuery, Git, Ajax programming, and build tools (Browserify, npm and Gulp).</p>
                     <h4>Weeks 7-15: Advanced Front-end Programming</h4>
@@ -119,16 +131,24 @@
                     <h4></h4>
                     <p></p>
                 </div>
+                <div class="content cyber">
+                    <h3>Heading 1</h3>
+                    <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
+                    <h3>Heading 2</h3>
+                    <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de pinga.</p>
+                    <h3>Heading 3</h3>
+                    <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
+                </div>
             </div>
         </section>
 
-        <section>
-            <div class="banner web-banner" id="web-comparison">
+        <section class="web">
+            <div class="banner web" id="comparison">
                 <h2>How We Compare to Other Schools</h2>
                 <span class="plus-button">+</span>
             </div>
             <div class="content-container">
-                <div class="content">
+                <div class="content web">
                     <h4>Coding Bootcamps</h4>
                     <p>The South Florida region offers only a handful of coding bootcamps, including <a target="_blank" href="https://wyncode.co/">Wyncode</a> and <a target="_blank" href="https://www.ironhack.com/en/web-development-bootcamp">Ironhack</a>. These programs are often effective, but they take place during the work day and cost  $9,000 - $12,000.</p>
                     <p>FVI's technology programs take place during the evenings and therefore don't interfere with the 9-5 career schedule, all for a third of the cost of bootcamps.</p>
@@ -143,13 +163,40 @@
             </div>
         </section>
 
-        <section>
-            <div class="banner web-banner" id="web-partners">
+        <section class="cyber">
+            <div class="banner cyber" id="certifications">
+                <h2>Certifications</h2>
+                <span class="plus-button">+</span>
+            </div>
+            <div class="content-container">
+                <div class="content cyber">
+                    <h3>Heading 1</h3>
+                    <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
+                    <h3>Heading 2</h3>
+                    <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de pinga.</p>
+                    <h3>Heading 3</h3>
+                    <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="web cyber">
+            <div class="banner web cyber" id="partners">
                 <h2>Employer Partners</h2>
                 <span class="plus-button">+</span>
             </div>
             <div class="content-container">
-                <div class="content">
+                <div class="content web">
+                    <h4>Web Development is a Growing Industry</h4>
+                    <p>The Bureau of Labor Statistics expects web development careers to <a target="_blank" title="Bureau of Labor Statistics: Web Developers" href="http://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm">grow 27%</a> between 2014 and 2024, which is three times faster than average for all occupations.</p>
+                    <h4>What kind of job can I get as a graduate?</h4>
+                    <p>The Web Application Development Program at FVI will prepare graduates to develop practical skills and knowledge needed for entry-level career opportunities in areas involving software design and development, systems analysis, programming, process design and management, and other areas related to computer software production and deployment.</p>
+                    <h4>FVI's Employer Partners</h4>
+                    <p>FVI maintains strong working relationships with top companies in the area so we can match your passion and ability to career opportunities.</p>
+                    <h4>Our Career Services Team</h4>
+                    <p>The career services team at FVI will work with you to provide internships during training and upon graduation assist you in finding a great career as a web or application developer.</p>
+                </div>
+                <div class="content cyber">
                     <h4>Web Development is a Growing Industry</h4>
                     <p>The Bureau of Labor Statistics expects web development careers to <a target="_blank" title="Bureau of Labor Statistics: Web Developers" href="http://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm">grow 27%</a> between 2014 and 2024, which is three times faster than average for all occupations.</p>
                     <h4>What kind of job can I get as a graduate?</h4>
@@ -162,13 +209,20 @@
             </div>
         </section>
 
-        <section>
-            <div class="banner web-banner" id="web-tuition">
+        <section class="web cyber">
+            <div class="banner web cyber" id="tuition">
                 <h2>Tuition</h2>
                 <span class="plus-button">+</span>
             </div>
             <div class="content-container">
-                <div class="content">
+                <div class="content web">
+                    <h4>We Strive to Make quality Education More Affordable.</h4>
+                    <p>With grants, easy payments and other ways to manage tuition costs, investing in your future can be more affordable than you think. Few, if any Coding Boot Camps or Web Developer Schools can offer the amount of options we can offer in terms of financing.</p>
+                    <p>Florida Vocational Institute maintains a staff of financial aid professionals to assist students in obtaining the financial assistance they require to meet their educational expenses. Available resources include federal grant and loan programs, student loans from private lenders.</p>
+                    <p>Federal assistance programs are administered through the U.S. Department of Education. Any U.S. citizen, national, or person in the United States for other than temporary reasons who is enrolled and accepted may apply for these programs. Most forms of financial assistance are available for each July 1-June 30 award period.</p>
+                    <p>Every student considering an application for financial aid should request a copy of the current guide, Funding Your Education, published by the U.S. Department of Education. This important document can be obtained online from <a target="_blank" title="The United States Office of Federal Student Aid" href="http://studentaid.ed.gov/">The United States Office of Federal Student Aid</a> and will assist persons in understanding eligibility requirements.</p>
+                </div>
+                <div class="content cyber">
                     <h4>We Strive to Make quality Education More Affordable.</h4>
                     <p>With grants, easy payments and other ways to manage tuition costs, investing in your future can be more affordable than you think. Few, if any Coding Boot Camps or Web Developer Schools can offer the amount of options we can offer in terms of financing.</p>
                     <p>Florida Vocational Institute maintains a staff of financial aid professionals to assist students in obtaining the financial assistance they require to meet their educational expenses. Available resources include federal grant and loan programs, student loans from private lenders.</p>
@@ -178,13 +232,23 @@
             </div>
         </section>
 
-        <section>
-            <div class="banner web-banner" id="web-resources">
+        <section class="web cyber">
+            <div class="banner web cyber" id="resources">
                 <h2>Resources</h2>
                 <span class="plus-button">+</span>
             </div>
             <div class="content-container">
-                <div class="content">
+                <div class="content web">
+                    <h4>Heading 1</h4>
+                    <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
+                    <h4>Heading 2</h4>
+                    <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de
+                        pinga.
+                    </p>
+                    <h4>Heading 3</h4>
+                    <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
+                </div>
+                <div class="content cyber">
                     <h4>Heading 1</h4>
                     <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
                     <h4>Heading 2</h4>
@@ -197,13 +261,13 @@
             </div>
         </section>
 
-        <section>
-            <div class="banner web-banner" id="web-student-work">
+        <section class="web">
+            <div class="banner web" id="student-work">
                 <h2>Student Work</h2>
                 <span class="plus-button">+</span>
             </div>
             <div class="content-container">
-                <div class="content">
+                <div class="content web">
                     <h4>Heading 1</h4>
                     <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
                     <h4>Heading 2</h4>
@@ -216,8 +280,8 @@
             </div>
         </section>
 
-        <div id="web-call-to-action-section">
-            <a class="arrow arrow-up smoothScroll" href="#web-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+        <section id="call-to-action-section" class="web cyber">
+            <a class="arrow arrow-up smoothScroll" href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
             <div class="content">
                 <div class="cta-btn-container">
                     <span class="cta-btn apply-btn">Apply For Free <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
@@ -226,155 +290,13 @@
                 <p>Level up your job skills.</p>
                 <p>Learn to code in 9 months.</p>
             </div>
-        </div>
-
-    </main>
-
-    <main id="cyber-top" class="cyber-main">
-
-        <div id="cyber-overlay">overlay</div>
-
-        <nav>
-            <h4 id="cyber-menu-button"><i class="fa fa-bars" aria-hidden="true"></i> MENU</h4>
-            <ul id="cyber-menu-items">
-                <li><span class="home-button cyber-home-button">HOME</span></li><!-- remove space
-             --><li><a class="cyber-nav-item smoothScroll" href="#cyber-summary">SUMMARY</a></li><!-- remove space
-             --><li><a class="cyber-nav-item smoothScroll" href="#cyber-cirriculum">CIRRICULUM</a></li><!-- remove space
-             --><li><a class="cyber-nav-item smoothScroll" href="#cyber-certifications">CERTIFICATIONS</a></li><!-- remove space
-             --><li><a class="cyber-nav-item smoothScroll" href="#cyber-partners">PARTNERS</a></li><!-- remove space
-             --><li><a class="cyber-nav-item smoothScroll" href="#cyber-tuition">TUITION</a></li><!-- remove space
-             --><li><a class="cyber-nav-item smoothScroll" href="#cyber-resources">RESOURCES</a></li>
-            </ul>
-        </nav>
-
-        <div class="page-landing cyber-landing">
-            <h1>NETWORK<br>ADMINISTRATOR</h1>
-            <p>Become job-ready in 9 months.<br>No experience necessary.<br>Learn more below.</p>
-            <a class="arrow arrow-down smoothScroll" href="#cyber-summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-        </div>
-
-        <section>
-            <div class="banner cyber-banner" id="cyber-summary">
-                <h2>Summary</h2>
-                <span class="plus-button">+</span>
-            </div>
-            <div class="content-container">
-                <div class="content">
-                    <h4>Heading 1</h4>
-                    <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
-                    <h4>Heading 2</h4>
-                    <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de
-                        pinga.
-                    </p>
-                    <h4>Heading 3</h4>
-                    <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
-                </div>
-            </div>
         </section>
-
-        <section>
-            <div class="banner cyber-banner" id="cyber-cirriculum">
-                <h2>Cirriculum</h2>
-                <span class="plus-button">+</span>
-            </div>
-            <div class="content-container">
-                <div class="content">
-                    <h3>Heading 1</h3>
-                    <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
-                    <h3>Heading 2</h3>
-                    <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de pinga.</p>
-                    <h3>Heading 3</h3>
-                    <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="banner cyber-banner" id="cyber-certifications">
-                <h2>Certifications</h2>
-                <span class="plus-button">+</span>
-            </div>
-            <div class="content-container">
-                <div class="content">
-                    <h3>Heading 1</h3>
-                    <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
-                    <h3>Heading 2</h3>
-                    <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de pinga.</p>
-                    <h3>Heading 3</h3>
-                    <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="banner cyber-banner" id="cyber-partners">
-                <h2>Employer Partners</h2>
-                <span class="plus-button">+</span>
-            </div>
-            <div class="content-container">
-                <div class="content">
-                    <h4>Web Development is a Growing Industry</h4>
-                    <p>The Bureau of Labor Statistics expects web development careers to <a target="_blank" title="Bureau of Labor Statistics: Web Developers" href="http://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm">grow 27%</a> between 2014 and 2024, which is three times faster than average for all occupations.</p>
-                    <h4>What kind of job can I get as a graduate?</h4>
-                    <p>The Web Application Development Program at FVI will prepare graduates to develop practical skills and knowledge needed for entry-level career opportunities in areas involving software design and development, systems analysis, programming, process design and management, and other areas related to computer software production and deployment.</p>
-                    <h4>FVI's Employer Partners</h4>
-                    <p>FVI maintains strong working relationships with top companies in the area so we can match your passion and ability to career opportunities.</p>
-                    <h4>Our Career Services Team</h4>
-                    <p>The career services team at FVI will work with you to provide internships during training and upon graduation assist you in finding a great career as a web or application developer.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="banner cyber-banner" id="cyber-tuition">
-                <h2>Tuition</h2>
-                <span class="plus-button">+</span>
-            </div>
-            <div class="content-container">
-                <div class="content">
-                    <h4>We Strive to Make quality Education More Affordable.</h4>
-                    <p>With grants, easy payments and other ways to manage tuition costs, investing in your future can be more affordable than you think. Few, if any Coding Boot Camps or Web Developer Schools can offer the amount of options we can offer in terms of financing.</p>
-                    <p>Florida Vocational Institute maintains a staff of financial aid professionals to assist students in obtaining the financial assistance they require to meet their educational expenses. Available resources include federal grant and loan programs, student loans from private lenders.</p>
-                    <p>Federal assistance programs are administered through the U.S. Department of Education. Any U.S. citizen, national, or person in the United States for other than temporary reasons who is enrolled and accepted may apply for these programs. Most forms of financial assistance are available for each July 1-June 30 award period.</p>
-                    <p>Every student considering an application for financial aid should request a copy of the current guide, Funding Your Education, published by the U.S. Department of Education. This important document can be obtained online from <a target="_blank" title="The United States Office of Federal Student Aid" href="http://studentaid.ed.gov/">The United States Office of Federal Student Aid</a> and will assist persons in understanding eligibility requirements.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="banner cyber-banner" id="cyber-resources">
-                <h2>Resources</h2>
-                <span class="plus-button">+</span>
-            </div>
-            <div class="content-container">
-                <div class="content">
-                    <h3>Heading 1</h3>
-                    <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
-                    <h3>Heading 2</h3>
-                    <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de pinga.</p>
-                    <h3>Heading 3</h3>
-                    <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
-                </div>
-            </div>
-        </section>
-
-
-        <div id="cyber-call-to-action-section">
-            <a class="arrow arrow-up smoothScroll" href="#cyber-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
-            <div class="content">
-                <div class="cta-btn-container">
-                    <span class="cta-btn apply-btn">Apply For Free <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-                    <span class="cta-btn question-btn">Ask A Question <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-                </div>
-            </div>
-        </div>
 
     </main>
 
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/smoothScroll.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/bundle.js"></script>
 
 </body>
 

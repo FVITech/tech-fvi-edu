@@ -1,0 +1,39 @@
+{
+  "name": "tech-fvi-edu",
+  "version": "1.0.0",
+  "description": "Website for tech.fvi.edu",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-sass": "node-sass -wr css/scss/main.scss -o css/",
+    "watch-js": "watchify js/main.js -o js/bundle.js -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FVITech/tech-fvi-edu.git"
+  },
+  "author": "Brenton Cozby -- bcozby@fvi.edu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FVITech/tech-fvi-edu/issues"
+  },
+  "homepage": "https://github.com/FVITech/tech-fvi-edu#readme",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "node-sass": "^3.10.1",
+    "watchify": "^3.7.0"
+  }
+}
