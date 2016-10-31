@@ -121,11 +121,11 @@
     font-weight: 400;
     text-align: center;
     padding: 5px 30px;
-    border-radius: 25px;
+    border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 3px 0 0 #555;
-    -webkit-transition: background-color .3s;
-    transition: background-color .3s;
+    -webkit-transition: all .3s;
+    transition: all .3s;
 }
 
 .apply-btn {
@@ -151,7 +151,9 @@
     background-image: linear-gradient(to bottom, #f77, #c44);
 }
 
-.question-btn:hover {}
+.question-btn:hover {
+    background-color: #bbb;
+}
 
 .cta-btn:active {
     box-shadow: none;

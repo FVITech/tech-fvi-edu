@@ -20,8 +20,7 @@
     box-shadow: 0 0 4px 1px #111;
     min-height: 100vh;
     position: relative;
-    top: 51px;
-    /* nav height */
+    top: 51px; /* nav height */
     text-align: center;
 }
 
@@ -88,25 +87,7 @@
 }
 
 .web-landing h1 {
-    padding-top: 18vh;
-}
-
-.web-landing h1 span {
-    position: relative;
-}
-
-.web-landing h1 .full-stack {
-    -webkit-animation: full-stack 4s infinite;
-    -moz-animation: full-stack 4s infinite;
-    -o-animation: full-stack 4s infinite;
-    animation: full-stack 4s infinite;
-}
-
-.web-landing h1 .web-developer {
-    -webkit-animation: web-developer 4s infinite;
-    -moz-animation: web-developer 4s infinite;
-    -o-animation: web-developer 4s infinite;
-    animation: web-developer 4s infinite;
+    padding-top: 20vh;
 }
 
 .cyber-landing h1 {
@@ -115,22 +96,6 @@
     -moz-animation: cyber-h1 3s infinite alternate;
     -o-animation: cyber-h1 3s infinite alternate;
     animation: cyber-h1 3s infinite alternate;
-}
-
-@keyframes full-stack {
-    0% {top: 0; left: 0;}
-    70% {top: 0; left: 0;}
-    95% {top: -4px; left: -12px;}
-    98% {top: 2px; left: 4px;}
-    100% {top: 0; left: 0}
-}
-
-@keyframes web-developer {
-    0% {top: 0; left: 0;}
-    70% {top: 0; left: 0;}
-    95% {top: 4px; left: 12px;}
-    98% {top: -2px; left: -4px;}
-    100% {top: 0; left: 0}
 }
 
 @keyframes cyber-h1 {
