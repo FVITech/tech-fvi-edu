@@ -23,7 +23,8 @@ $(document).ready(function () {
     function switchPage(page) {
         $('.page-landing.home').fadeOut(function () {
             window.scrollTo(0, 0);
-            $('.nav-item.' + page).parent().css('display', 'inline-block');
+            var displayType = window.innerWidth >= mobileMenuWidth ? 'inline-block' : 'block';
+            $('.nav-item.' + page).parent().css('display', displayType);
             $('.page-landing.' + page).show();
             $('section.' + page).show();
             $('.content.' + page).show();
@@ -34,50 +35,57 @@ $(document).ready(function () {
 
     function setupPage(page) {
         var navItems = document.getElementsByClassName('nav-item ' + page);
+        var banners = document.getElementsByClassName('banner ' + page);
+        var landing = document.getElementsByClassName('page-landing ' + page)[0];
         // Switch to home page annd reset everything to default
-        $('.home-button').click(function (e) {
+        $('.home-button').on('click', function (e) {
             e.preventDefault();
-            $('.programs-container').fadeOut(function () {
-                $('.page-landing.home').fadeIn(function () {
-                    for (var f = 0, g = navItems.length; f < g; f++) {
-                        navItems[f].classList.remove('section-in-view');
-                    }
-                    for (var i = 0, x = plusButtons.length; i < x; i++) {
-                        if ($(plusButtons[i]).hasClass('clicked-button')) {
-                            $(plusButtons[i]).click();
-                        }
-                    }
-                    $('.content').hide();
-                    $('section.' + page).hide();
-                    $('.page-landing.' + page).hide();
-                    $('.nav-item.' + page).parent().hide();
-                    window.removeEventListener('scroll', navItemsStyle);
-                });
-            });
+            setupHomeButton(navItems, page);
         });
 
         // on window scroll, add style to nav item if section is in view
         if (window.innerWidth >= mobileMenuWidth) {
-            window.addEventListener('scroll', navItemsStyle);
+            $(window).on('scroll', function () {
+                navItemsStyle(navItems, page, banners, landing);
+            });
         }
-
-        var banners = document.getElementsByClassName('banner ' + page);
-        var landing = document.getElementsByClassName('page-landing ' + page)[0];
-        function navItemsStyle() {
-            // if window scroll position is between a banner, add nav style to corresponding nav item
-            if (landing.getBoundingClientRect().bottom < '-24') {
-                for (var j = 0, y = banners.length; j < y; j++) {
-                    if (banners[j].getBoundingClientRect().top <= topPadding && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > topPadding || banners[j].getBoundingClientRect().bottom > topPadding)) {
-                        navItems[j].classList.add('section-in-view');
-                    } else {
-                        navItems[j].classList.remove('section-in-view');
-                    }
-                }
-            } else {
-                $('navItems').removeClass('section-in-view');
-            }
-        } // end navItemsStyle function
     }; // end setupPage function
+
+    function setupHomeButton(navItems, page) {
+        $('.programs-container').fadeOut(function () {
+            for (var i = 0, x = plusButtons.length; i < x; i++) {
+                if ($(plusButtons[i]).hasClass('clicked-button')) {
+                    $(plusButtons[i]).trigger('click');
+                }
+            }
+            $('.page-landing.home').fadeIn(function () {
+                for (var f = 0, g = navItems.length; f < g; f++) {
+                    navItems[f].classList.remove('section-in-view');
+                }
+                $('.content.' + page).hide();
+                $('section.' + page).hide();
+                $('.page-landing.' + page).hide();
+                $('.nav-item.' + page).parent().hide();
+                $(window).off('scroll', navItemsStyle);
+            });
+        });
+        $('.home-button').off('click', setupHomeButton);
+    }
+
+    function navItemsStyle(navItems, page, banners, landing) {
+        // if window scroll position is between a banner, add nav style to corresponding nav item
+        if (landing.getBoundingClientRect().bottom < '-24') {
+            for (var j = 0, y = banners.length; j < y; j++) {
+                if (banners[j].getBoundingClientRect().top <= topPadding && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > topPadding || banners[j].getBoundingClientRect().bottom > topPadding)) {
+                    navItems[j].classList.add('section-in-view');
+                } else {
+                    navItems[j].classList.remove('section-in-view');
+                }
+            }
+        } else {
+            $('navItems').removeClass('section-in-view');
+        }
+    }
 
     // mobile-menu show/hide
     if (window.innerWidth < mobileMenuWidth) {
@@ -103,43 +111,39 @@ $(document).ready(function () {
     });
 
     // on button click, change button style and show content
-    for (var i = 0, x = plusButtons.length; i < x; i++) {
-        $(plusButtons[i]).on('click', buttonStyle);
-    }
+    $('body').on('click', '.plus-button', setupButtons);
 
-    function buttonStyle() {
-        var button = this;
+    function setupButtons() {
+        var $button = $(this);
         var $banner = $(this.parentNode);
         // if button is clicked and content is displayed
-        if (button.classList.contains('clicked-button')) {
+        if ($button.hasClass('clicked-button')) {
             var timing = window.scrollY == $banner.offset().top - topPadding ? 0 : 700;
             // first, scroll to top of banner, then change buton style and slideUp the content
-            $('body, html').stop().animate({
+            $('html, body').stop().animate({ // need to select both html and body for FireFox
                 scrollTop: $banner.offset().top - topPadding
             }, timing, 'easeInOutQuad', function () {
-                button.classList.remove('clicked-button');
-                $(button).css({
+                $button.removeClass('clicked-button');
+                $button.css({
                     'top': '0px',
-                    'transition': '.6s'
+                    'transition': 'all .6s'
                 });
-                $banner.css('padding', '100px 0 140px');
-                $banner.css('box-shadow', '0 0 4px 1px #111');
+                $banner.removeClass('shrink');
                 $banner.children().first().css('padding-bottom', '20px');
                 $banner.next().slideUp(600, 'easeInOutCubic');
             });
         }
         // else content must be hidden, so slideDown the content
         else {
-                button.classList.add('clicked-button');
-                $banner.css('padding', '20px 0');
-                $banner.css('box-shadow', '0 -2px 4px 0px #111');
+                $button.addClass('clicked-button');
+                $banner.addClass('shrink');
                 $banner.children().first().css('padding-bottom', '0');
                 $banner.next().slideDown(600, 'easeOutQuad');
             }
-    } // end buttonStyle function
+    } // end setupButtons function
 
     // on window scroll, fixed clicked button to screen
-    window.addEventListener('scroll', fixedButton);
+    $(window).on('scroll', fixedButton);
 
     function fixedButton() {
         $('.plus-button').each(function (i, button) {
