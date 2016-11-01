@@ -123,8 +123,8 @@ nav {
   nav ul {
     text-align: center; }
     nav ul li {
-      display: inline-block; }
-      nav ul li a, nav ul li span {
+      display: none; }
+      nav ul li a, nav ul li .home-button {
         display: inline-block;
         text-decoration: none;
         color: #ccc;
@@ -138,6 +138,8 @@ nav {
         background-color: #333;
         border-color: #333;
         color: #028dea; }
+    nav ul li:first-of-type {
+      display: inline-block; }
 
 .section-in-view {
   border-color: #028dea;
@@ -162,7 +164,8 @@ main {
   position: relative;
   top: 51px;
   /* nav height */
-  text-align: center; }
+  text-align: center;
+  transition: all 0; }
   .page-landing h1 {
     font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 3rem;
@@ -313,7 +316,6 @@ main {
     color: white;
     top: 0;
     left: 0; } }
-
 .card {
   width: 280px;
   margin: 0 30px 40px 30px;
@@ -360,13 +362,11 @@ main {
     bottom: 23px; }
   to {
     bottom: 13px; } }
-
 @keyframes arrow-down {
   from {
     bottom: 23px; }
   to {
     bottom: 13px; } }
-
 .arrow-up {
   top: -70px;
   -webkit-animation: arrow-up 1s infinite;
@@ -381,13 +381,11 @@ main {
     top: -60px; }
   to {
     top: -70px; } }
-
 @keyframes arrow-up {
   from {
     top: -60px; }
   to {
     top: -70px; } }
-
 .plus-button {
   border: none;
   width: 30px;
@@ -591,18 +589,22 @@ section {
   .page-landing {
     top: 0px;
     /* nav height */ }
+
   .page-landing.home {
     background-position: center; }
+
   .page-landing.web h1 {
     font-size: 3rem;
     padding-top: 15vh; }
   .page-landing.web p {
     font-size: 1.2rem; }
+
   .page-landing.cyber h1 {
     font-size: 3rem;
     padding-top: 28vh; }
   .page-landing.cyber p {
     font-size: 1.5rem; }
+
   nav {
     bottom: 0;
     box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.7); }
@@ -634,8 +636,10 @@ section {
         border-top: 1px solid #333;
         font-size: 14px;
         padding: 10px 0 8px 0; }
+
   section:first-of-type {
     margin-top: 80px; }
+
   .banner h1 {
     font-size: 2rem; }
   .banner .image-block {
@@ -643,56 +647,62 @@ section {
     top: 20px; }
     .banner .image-block img {
       width: 50px; } }
-
 @media all and (max-width: 760px) {
   .title-div {
     height: 200px; }
+
   .page-landing.home h2 {
     font-size: 2.5rem; }
   .page-landing.home h3 {
     font-size: 1.6rem; }
+
   .page-landing.web h1 {
     font-size: 2.7rem;
     padding-top: 16vh; }
   .page-landing.web p {
     font-size: 1.1rem;
     margin-top: 1rem; }
+
   .page-landing.cyber h1 {
     font-size: 2rem;
     padding-top: 30vh; }
   .page-landing.cyber p {
     font-size: 1rem;
     margin-top: 1rem; }
+
   #call-to-action-section .content p {
     font-size: 1rem;
     margin: 1rem; } }
-
 @media all and (max-width: 760px) and (max-width: 604px) {
   .title-div {
     height: 150px; }
+
   .page-landing.home h2 {
     max-width: 370px;
     margin: auto; } }
-
 @media all and (max-width: 400px) {
   .page-landing.home h2 {
     font-size: 1.8rem;
     max-width: 270px; }
   .page-landing.home h3 {
     font-size: 1.1rem; }
+
   .card h4 {
     font-size: 1.5rem;
     margin: .5rem 0; }
+
   .page-landing.web h1 {
     font-size: 2.3rem; }
   .page-landing.web p {
     margin-top: 1rem;
     font-size: .95rem; }
+
   .page-landing.cyber h1 {
     padding-top: 27vh;
     font-size: 1.8rem; }
   .page-landing.cyber p {
     margin-top: 3vh;
     font-size: .9rem; } }
-
 /*@import "_diagnostics.scss";*/
+
+/*# sourceMappingURL=main.css.map */
