@@ -8,6 +8,7 @@ $(document).ready(function() {
     const plusButtonFunctions = require('./plus-buttons');
     const menu = require('./menu');
     const form = require('./form');
+    var $home = $('.page-landing.home');
 
     // on button click, change button style and show content
     $('.plus-button').click(function() {
@@ -41,7 +42,7 @@ $(document).ready(function() {
         $('.content.' + page).show();
         setupPage(page);
         // switch pages
-        $('.page-landing.home').fadeOut(function() {
+        $home.fadeOut(function() {
             window.scrollTo(0, 0);
             $('.programs-container').fadeIn();
         });
