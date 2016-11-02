@@ -25,7 +25,7 @@ $(document).ready(function() {
     // hide all nav items until page is chosen
     $('.nav-item').parent().hide();
 
-    // Code for home page
+    // At home page, switch pages when click on program card
     $('.card.web').click(function() {
         switchPage('web')
     });
@@ -34,14 +34,15 @@ $(document).ready(function() {
     });
 
     function switchPage(page) {
+        // display page-specific content
+        $('.nav-item.' + page).parent().show();
+        $('.page-landing.' + page).show();
+        $('section.' + page).show();
+        $('.content.' + page).show();
+        setupPage(page);
+        // switch pages
         $('.page-landing.home').fadeOut(function() {
             window.scrollTo(0, 0);
-            // var displayType = (window.innerWidth >= g.mobileMenuWidth) ? 'inline-block' : 'block';
-            $('.nav-item.' + page).parent().show();
-            $('.page-landing.' + page).show();
-            $('section.' + page).show();
-            $('.content.' + page).show();
-            setupPage(page);
             $('.programs-container').fadeIn();
         });
     }
@@ -65,13 +66,10 @@ $(document).ready(function() {
 
         // Set form program id
         var id = (page == "web") ? 'WD' : 'IT';
-        $(".apply-pop-up form input[name='program_id']").attr('value', id);
+        $("input[name='program_id']").attr('value', id);
     };
 
-    // mobile-menu show/hide
-    if (window.innerWidth < g.mobileMenuWidth) {
-        $('#menu-button, #menu-items li a').click(menu.mobileClick);
-    }
+
 
     // fade-out down-arrow in landing page when scroll
     window.addEventListener('scroll', function() {
@@ -92,5 +90,10 @@ $(document).ready(function() {
         e.preventDefault();
         form.submit();
     });
+
+    // mobile-menu show/hide
+    if (window.innerWidth < g.mobileMenuWidth) {
+        $('#menu-button, #menu-items li a').click(menu.mobileClick);
+    }
 
 });

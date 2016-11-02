@@ -70,7 +70,7 @@ $(document).ready(function () {
     // hide all nav items until page is chosen
     $('.nav-item').parent().hide();
 
-    // Code for home page
+    // At home page, switch pages when click on program card
     $('.card.web').click(function () {
         switchPage('web');
     });
@@ -79,14 +79,15 @@ $(document).ready(function () {
     });
 
     function switchPage(page) {
+        // display page-specific content
+        $('.nav-item.' + page).parent().show();
+        $('.page-landing.' + page).show();
+        $('section.' + page).show();
+        $('.content.' + page).show();
+        setupPage(page);
+        // switch pages
         $('.page-landing.home').fadeOut(function () {
             window.scrollTo(0, 0);
-            // var displayType = (window.innerWidth >= g.mobileMenuWidth) ? 'inline-block' : 'block';
-            $('.nav-item.' + page).parent().show();
-            $('.page-landing.' + page).show();
-            $('section.' + page).show();
-            $('.content.' + page).show();
-            setupPage(page);
             $('.programs-container').fadeIn();
         });
     }
@@ -110,13 +111,8 @@ $(document).ready(function () {
 
         // Set form program id
         var id = page == "web" ? 'WD' : 'IT';
-        $(".apply-pop-up form input[name='program_id']").attr('value', id);
+        $("input[name='program_id']").attr('value', id);
     };
-
-    // mobile-menu show/hide
-    if (window.innerWidth < g.mobileMenuWidth) {
-        $('#menu-button, #menu-items li a').click(menu.mobileClick);
-    }
 
     // fade-out down-arrow in landing page when scroll
     window.addEventListener('scroll', function () {
@@ -137,6 +133,11 @@ $(document).ready(function () {
         e.preventDefault();
         form.submit();
     });
+
+    // mobile-menu show/hide
+    if (window.innerWidth < g.mobileMenuWidth) {
+        $('#menu-button, #menu-items li a').click(menu.mobileClick);
+    }
 });
 
 },{"./form":1,"./globals":2,"./menu":4,"./plus-buttons":5,"./smoothScroll":6}],4:[function(require,module,exports){
@@ -144,6 +145,27 @@ $(document).ready(function () {
 
 !function () {
     var g = require('./globals');
+
+    function homeButtonSetup(navItems, page) {
+        // switch to home page
+        $('.programs-container').fadeOut(function () {
+            window.scrollTo(0, 0);
+            $('.page-landing.home').fadeIn(function () {
+                // reset things to default
+                $('#overlay, .apply-pop-up').hide();
+                $('.plus-button.opened').css({ 'top': '0px', 'transition': '.6s' }).removeClass('opened');
+                $('.banner.shrink').next().hide();
+                $('.banner.shrink').removeClass('shrink');
+                $('.nav-item').removeClass('section-in-view');
+                $('.content.' + page).hide();
+                $('section.' + page).hide();
+                $('.page-landing.' + page).hide();
+                $('.nav-item.' + page).parent().hide();
+                $(window).off('scroll', navItemsStyle);
+            });
+        });
+        $('.home-button').off('click', homeButtonSetup);
+    }
 
     function navItemsStyle(navItems, page, banners, landing) {
         // if window scroll position is between a banner, add nav style to corresponding nav item
@@ -160,31 +182,14 @@ $(document).ready(function () {
         }
     }
 
-    function homeButtonSetup(navItems, page) {
-        $('#overlay, .apply-pop-up').fadeOut();
-        $('.plus-button.clicked-button').click();
-        $('.programs-container').fadeOut(function () {
-            window.scrollTo(0, 0);
-            $('.page-landing.home').fadeIn(function () {
-                $('.nav-item').removeClass('section-in-view');
-                $('.content.' + page).hide();
-                $('section.' + page).hide();
-                $('.page-landing.' + page).hide();
-                $('.nav-item.' + page).parent().hide();
-                $(window).off('scroll', navItemsStyle);
-            });
-        });
-        $('.home-button').off('click', homeButtonSetup);
-    }
-
     function mobileClick() {
-        var $menuButton = $('#menu-button');
-        if ($menuButton.html() === '<i class="fa fa-bars" aria-hidden="true"></i> MENU') {
+        var $menuButton = $('#menu-button span');
+        if ($menuButton.html() === 'MENU') {
             $('nav ul').show(500, 'easeOutQuad');
-            $menuButton.html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');
+            $menuButton.html('CLOSE');
         } else {
             $('nav ul').hide(500, 'easeOutQuad');
-            $menuButton.html('<i class="fa fa-bars" aria-hidden="true"></i> MENU');
+            $menuButton.html('MENU');
         }
     }
 
@@ -204,7 +209,6 @@ $(document).ready(function () {
         var $banner = $(button.parentNode);
         $button.addClass('opened');
         $banner.addClass('shrink');
-        $banner.children().first().css('padding-bottom', '0');
         $banner.next().slideDown(600, 'easeOutQuad');
     }
 
@@ -222,28 +226,25 @@ $(document).ready(function () {
                 'transition': 'all .6s'
             });
             $banner.removeClass('shrink');
-            $banner.children().first().css('padding-bottom', '20px');
             $banner.next().slideUp(600, 'easeInOutCubic');
         });
     }
 
     function fixed() {
-        $('.plus-button').each(function (i, button) {
-            if (button.classList.contains('opened')) {
-                var contentPosition = button.parentNode.nextSibling.nextSibling.getBoundingClientRect();
-                // bottomPadding is the bottom of the content, plus nav height and button translateY
-                var bottomPadding = window.innerWidth >= g.mobileMenuWidth ? '96' : '45';
-                if (contentPosition.top <= String(g.topPadding) && contentPosition.bottom >= bottomPadding) {
-                    $(button).css({
-                        'top': -contentPosition.top + g.topPadding + 'px',
-                        'transition': '0s'
-                    });
-                } else {
-                    $(button).css({
-                        'top': '0px',
-                        'transition': '0s'
-                    });
-                }
+        $('.plus-button.opened').each(function (i, button) {
+            var contentPosition = button.parentNode.nextSibling.nextSibling.getBoundingClientRect();
+            // bottomPadding is the bottom of the content, plus nav height and button translateY
+            var bottomPadding = window.innerWidth >= g.mobileMenuWidth ? '96' : '45';
+            if (contentPosition.top <= String(g.topPadding) && contentPosition.bottom >= bottomPadding) {
+                $(button).css({
+                    'top': -contentPosition.top + g.topPadding + 'px',
+                    'transition': '0s'
+                });
+            } else {
+                $(button).css({
+                    'top': '0px',
+                    'transition': '0s'
+                });
             }
         });
     }
