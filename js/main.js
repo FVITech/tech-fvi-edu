@@ -7,6 +7,7 @@ $(document).ready(function() {
     var cyberLanding = document.getElementsByClassName('page-landing cyber')[0];
     var mobileMenuWidth = '920';
     var topPadding = (window.innerWidth >= mobileMenuWidth) ? 51 : 0;
+    var $home = $('.page-landing.home');
 
     // Code for home page
     $('.card.web').click(function() {
@@ -17,10 +18,15 @@ $(document).ready(function() {
     });
 
     function switchPage(page) {
-        $('.page-landing.home').fadeOut(function() {
+        $home.fadeOut(function() {
             window.scrollTo(0, 0);
             var displayType = (window.innerWidth >= mobileMenuWidth) ? 'inline-block' : 'block';
+            //this display setting doesnt always need to change.
+            //make an assumption and only change it if the assumption was wrong
             $('.nav-item.' + page).parent().css('display', displayType);
+
+            //this is a lot of shows. Consider only showing one parent component
+            //and keeping the children always visible
             $('.page-landing.' + page).show();
             $('section.' + page).show();
             $('.content.' + page).show();
@@ -51,6 +57,9 @@ $(document).ready(function() {
 
     function setupHomeButton(navItems, page) {
         $('.programs-container').fadeOut(function() {
+          //consider not restoring any of this state information, rather
+          //just remove state (such as the class clicked-button) when
+          //you switch pages
             for (var i = 0, x = plusButtons.length; i < x; i++) {
                 if ($(plusButtons[i]).hasClass('clicked-button')) {
                     $(plusButtons[i]).trigger('click');
@@ -87,8 +96,11 @@ $(document).ready(function() {
 
     // mobile-menu show/hide
     if (window.innerWidth < mobileMenuWidth) {
+      //simplify this css selector, just add a class to those anchors
         $('#menu-button, #overlay, #menu-items li a').click(function() {
             var $menuButton = $('#menu-button');
+            //these are ugly comparisons. Add a span to surround the text that says either MENU or CLOSE
+            //and select that span. eg $('#menu-button span').html()
             if ($menuButton.html() === '<i class="fa fa-bars" aria-hidden="true"></i> MENU') {
                 $menuButton.html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');
             } else {
@@ -111,6 +123,8 @@ $(document).ready(function() {
 
 
     // on button click, change button style and show content
+    //research whether delegating the event from a DOM node closer to
+    //plus-button will speed things up
     $('body').on('click', '.plus-button', setupButtons);
 
     function setupButtons() {
@@ -146,6 +160,8 @@ $(document).ready(function() {
     $(window).on('scroll', fixedButton);
 
     function fixedButton() {
+      //could change this to .blus-button.clicked-button and remove internal
+      //conditional
         $('.plus-button').each(function(i, button) {
             if (button.classList.contains('clicked-button')) {
                 var contentPosition = button.parentNode.nextSibling.nextSibling.getBoundingClientRect();
