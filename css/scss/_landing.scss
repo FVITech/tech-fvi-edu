@@ -17,7 +17,7 @@ main {
     box-shadow: 0 0 4px 1px #111;
     min-height: 100vh;
     position: relative;
-    top: 51px; /* nav height */
+    top: $nav-height; /* nav height */
     text-align: center;
     transition: all 0;
 
@@ -106,7 +106,6 @@ main {
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
-    ;
     align-content: center;
     padding: 20px;
     min-height: calc(100vh - 250px);

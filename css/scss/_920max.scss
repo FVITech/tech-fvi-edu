@@ -29,7 +29,7 @@
 
     nav {
         bottom: 0;
-        box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, .7);
+        box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, .9);
 
         h4 {
             display: block;
@@ -56,13 +56,11 @@
             display: none;
 
             li,
-            li a,
-            li span {
-                display: block;
+            li a {
+                width: 100%;
             }
 
-            li a,
-            li span {
+            li a {
                 border-top: 1px solid #333;
                 font-size: 14px;
                 padding: 10px 0 8px 0;
@@ -73,6 +71,10 @@
 
     section:first-of-type {
         margin-top: 80px;
+    }
+
+    #call-to-action-section {
+        padding-bottom: 50px;
     }
 
     .banner {

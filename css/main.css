@@ -123,7 +123,7 @@ nav {
   nav ul {
     text-align: center; }
     nav ul li {
-      display: none; }
+      display: inline-block; }
       nav ul li a {
         display: inline-block;
         text-decoration: none;
@@ -416,14 +416,14 @@ main {
     outline: none; }
 
 .clicked-button {
+  color: #fff;
   background-color: rgba(150, 150, 150, 0.5);
   -webkit-transform-origin: center;
   transform-origin: center;
   -webkit-transform: translateY(60px) rotate(225deg);
   transform: translateY(60px) rotate(225deg); }
   .clicked-button:hover {
-    background-color: rgba(100, 100, 100, 0.8);
-    color: #fff; }
+    background-color: rgba(100, 100, 100, 0.8); }
 
 .cta-btn-container {
   margin: 40px auto; }
@@ -450,25 +450,27 @@ main {
     transition: box-shadow .1s, -webkit-transform .1s;
     transition: transform .1s, box-shadow .1s;
     transition: transform .1s, box-shadow .1s, -webkit-transform .1s; }
-  .cta-btn .apply-btn {
-    background: #e66;
-    background-image: -webkit-linear-gradient(top, #e66, #b33);
-    background-image: -moz-linear-gradient(top, #e66, #b33);
-    background-image: -ms-linear-gradient(top, #e66, #b33);
-    background-image: -o-linear-gradient(top, #e66, #b33);
-    background-image: linear-gradient(to bottom, #e66, #b33);
-    margin-right: 20px; }
-    .cta-btn .apply-btn:hover {
-      background: #f77;
-      background-image: -webkit-linear-gradient(top, #f77, #c44);
-      background-image: -moz-linear-gradient(top, #f77, #c44);
-      background-image: -ms-linear-gradient(top, #f77, #c44);
-      background-image: -o-linear-gradient(top, #f77, #c44);
-      background-image: linear-gradient(to bottom, #f77, #c44); }
-  .cta-btn .question-btn {
-    background-color: #999; }
-    .cta-btn .question-btn:hover {
-      background-color: #bbb; }
+
+.apply-btn {
+  background: #e66;
+  background-image: -webkit-linear-gradient(top, #e66, #b33);
+  background-image: -moz-linear-gradient(top, #e66, #b33);
+  background-image: -ms-linear-gradient(top, #e66, #b33);
+  background-image: -o-linear-gradient(top, #e66, #b33);
+  background-image: linear-gradient(to bottom, #e66, #b33);
+  margin-right: 20px; }
+  .apply-btn:hover {
+    background: #f77;
+    background-image: -webkit-linear-gradient(top, #f77, #c44);
+    background-image: -moz-linear-gradient(top, #f77, #c44);
+    background-image: -ms-linear-gradient(top, #f77, #c44);
+    background-image: -o-linear-gradient(top, #f77, #c44);
+    background-image: linear-gradient(to bottom, #f77, #c44); }
+
+.question-btn {
+  background-color: #999; }
+  .question-btn:hover {
+    background-color: #bbb; }
 
 section {
   margin-top: 80px;
@@ -584,7 +586,8 @@ section {
   min-height: 50vh;
   background-color: #222;
   position: relative;
-  box-shadow: 0 2px 20px 0 #111; }
+  box-shadow: 0 2px 20px 0 #111;
+  margin-bottom: 0; }
   #call-to-action-section .content {
     padding: 10px;
     text-align: center; }
@@ -617,7 +620,7 @@ section {
 
   nav {
     bottom: 0;
-    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.7); }
+    box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.9); }
     nav h4 {
       display: block;
       border-bottom: 3px solid #222;
@@ -638,17 +641,18 @@ section {
     nav ul {
       display: none; }
       nav ul li,
-      nav ul li a,
-      nav ul li span {
-        display: block; }
-      nav ul li a,
-      nav ul li span {
+      nav ul li a {
+        width: 100%; }
+      nav ul li a {
         border-top: 1px solid #333;
         font-size: 14px;
         padding: 10px 0 8px 0; }
 
   section:first-of-type {
     margin-top: 80px; }
+
+  #call-to-action-section {
+    padding-bottom: 50px; }
 
   .banner h1 {
     font-size: 2rem; }
@@ -689,6 +693,16 @@ section {
 
   .page-landing.home h2 {
     max-width: 370px;
+    margin: auto; }
+
+  .cta-btn {
+    display: block;
+    max-width: 200px; }
+
+  .apply-btn {
+    margin: 10px auto; }
+
+  .question-btn {
     margin: auto; } }
 @media all and (max-width: 400px) {
   .page-landing.home h2 {

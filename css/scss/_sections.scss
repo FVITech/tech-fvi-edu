@@ -84,8 +84,8 @@ section {
         }
 
         a {
-            color: rgb(2, 141, 234);
-            border-bottom: 1px solid rgb(2, 141, 234);
+            color: $fvi-blue;
+            border-bottom: 1px solid $fvi-blue;
             text-decoration: none;
 
             &:hover {
@@ -94,8 +94,8 @@ section {
             }
 
             &:visited {
-                color: rgb(2, 141, 234);
-                border-color: rgb(2, 141, 234);
+                color: $fvi-blue;
+                border-color: $fvi-blue;
             }
         }
     }
@@ -150,6 +150,7 @@ section {
     background-color: #222;
     position: relative;
     box-shadow: 0 2px 20px 0 #111;
+    margin-bottom: 0;
 
     .content {
         padding: 10px;
@@ -165,6 +166,4 @@ section {
             color: #aaa;
         }
     }
-
-
 }
