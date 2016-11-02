@@ -1,15 +1,27 @@
 $(document).ready(function() {
     "use strict";
 
+    $('.page-landing.home').fadeIn(300);
+
     const smoothScroll = require('./smoothScroll');
     const g = require('./globals');
     const plusButtonFunctions = require('./plus-buttons');
     const menu = require('./menu');
+    const form = require('./form');
 
     // on button click, change button style and show content
-    $('body').on('click', '.plus-button', plusButtonFunctions.setup);
+    $('.plus-button').click(function() {
+        if($(this).hasClass('opened')) {
+            plusButtonFunctions.close(this);
+        }
+        else {
+            plusButtonFunctions.open(this);
+        }
+    });
+
     // on window scroll, fixed clicked button to screen
     $(window).on('scroll', plusButtonFunctions.fixed);
+
     // hide all nav items until page is chosen
     $('.nav-item').parent().hide();
 
@@ -47,14 +59,18 @@ $(document).ready(function() {
         // on window scroll, add style to nav item if section is in view
         if (window.innerWidth >= g.mobileMenuWidth) {
             $(window).on('scroll', function() {
-                menu.navItemsStyle(navItems, page, banners, landing)
+                menu.navItemsStyle(navItems, page, banners, landing);
             });
         }
-    }; // end setupPage function
+
+        // Set form program id
+        var id = (page == "web") ? 'WD' : 'IT';
+        $(".apply-pop-up form input[name='program_id']").attr('value', id);
+    };
 
     // mobile-menu show/hide
     if (window.innerWidth < g.mobileMenuWidth) {
-        $('#menu-button, #overlay, #menu-items li a').click(menu.mobileClick);
+        $('#menu-button, #menu-items li a').click(menu.mobileClick);
     }
 
     // fade-out down-arrow in landing page when scroll
@@ -64,6 +80,17 @@ $(document).ready(function() {
         } else {
             $('.arrow-down').slideDown(400);
         }
+    });
+
+    // apply-button and form
+    $('.apply-btn, .nav-item.apply').click(function(e) {
+        e.preventDefault();
+        form.show();
+    });
+    $('.apply-pop-up .close, #overlay').click(form.hide);
+    $('.apply-pop-up form').submit(function(e) {
+        e.preventDefault();
+        form.submit();
     });
 
 });

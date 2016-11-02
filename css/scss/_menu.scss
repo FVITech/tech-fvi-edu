@@ -63,8 +63,16 @@ nav {
             }
         }
 
-        li:first-of-type {
-            display: inline-block;
+        li .apply {
+            color: #fff;
+            background-color: $fvi-blue;
+            border-bottom-color: $fvi-blue;
+
+            &:hover {
+                border-color: #fff;
+                color: #fff;
+                background-color: lighten($fvi-blue, 15%);
+            }
         }
     }
 }

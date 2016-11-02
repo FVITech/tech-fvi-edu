@@ -17,6 +17,7 @@
     }
 
     function homeButtonSetup(navItems, page) {
+        $('#overlay, .apply-pop-up').fadeOut();
         $('.plus-button.clicked-button').click();
         $('.programs-container').fadeOut(function() {
             window.scrollTo(0, 0);
@@ -35,12 +36,12 @@
     function mobileClick() {
         var $menuButton = $('#menu-button');
         if ($menuButton.html() === '<i class="fa fa-bars" aria-hidden="true"></i> MENU') {
+            $('nav ul').show(500, 'easeOutQuad');
             $menuButton.html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');
         } else {
+            $('nav ul').hide(500, 'easeOutQuad');
             $menuButton.html('<i class="fa fa-bars" aria-hidden="true"></i> MENU');
         }
-        $('#overlay').fadeToggle();
-        $('nav ul').toggle(500, 'easeOutQuad');
     }
 
     module.exports.navItemsStyle = navItemsStyle;

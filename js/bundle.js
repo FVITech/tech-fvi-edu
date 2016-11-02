@@ -2,6 +2,38 @@
 'use strict';
 
 !function () {
+    function show() {
+        $('#overlay').fadeIn();
+        $('.apply-pop-up').fadeIn();
+    }
+
+    function hide() {
+        $('#overlay').fadeOut();
+        $('.apply-pop-up').fadeOut();
+    }
+
+    function submit() {
+        $.ajax({
+            url: '',
+            type: 'post',
+            data: $('.apply-pop-up form').serialize(),
+            success: function success() {
+                $(this).closest('form').fadeOut(function () {
+                    $(this).closest('.sent-message').fadeIn();
+                });
+            }
+        });
+    }
+
+    module.exports.show = show;
+    module.exports.hide = hide;
+    module.exports.submit = submit;
+}();
+
+},{}],2:[function(require,module,exports){
+'use strict';
+
+!function () {
     var mobileMenuWidth = '920';
 
     module.exports.plusButtons = document.getElementsByClassName('plus-button');
@@ -9,21 +41,32 @@
     module.exports.topPadding = window.innerWidth >= mobileMenuWidth ? 52 : 0;
 }();
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 'use strict';
 
 $(document).ready(function () {
     "use strict";
 
+    $('.page-landing.home').fadeIn(300);
+
     var smoothScroll = require('./smoothScroll');
     var g = require('./globals');
     var plusButtonFunctions = require('./plus-buttons');
     var menu = require('./menu');
+    var form = require('./form');
 
     // on button click, change button style and show content
-    $('body').on('click', '.plus-button', plusButtonFunctions.setup);
+    $('.plus-button').click(function () {
+        if ($(this).hasClass('opened')) {
+            plusButtonFunctions.close(this);
+        } else {
+            plusButtonFunctions.open(this);
+        }
+    });
+
     // on window scroll, fixed clicked button to screen
     $(window).on('scroll', plusButtonFunctions.fixed);
+
     // hide all nav items until page is chosen
     $('.nav-item').parent().hide();
 
@@ -64,11 +107,15 @@ $(document).ready(function () {
                 menu.navItemsStyle(navItems, page, banners, landing);
             });
         }
-    }; // end setupPage function
+
+        // Set form program id
+        var id = page == "web" ? 'WD' : 'IT';
+        $(".apply-pop-up form input[name='program_id']").attr('value', id);
+    };
 
     // mobile-menu show/hide
     if (window.innerWidth < g.mobileMenuWidth) {
-        $('#menu-button, #overlay, #menu-items li a').click(menu.mobileClick);
+        $('#menu-button, #menu-items li a').click(menu.mobileClick);
     }
 
     // fade-out down-arrow in landing page when scroll
@@ -79,9 +126,20 @@ $(document).ready(function () {
             $('.arrow-down').slideDown(400);
         }
     });
+
+    // apply-button and form
+    $('.apply-btn, .nav-item.apply').click(function (e) {
+        e.preventDefault();
+        form.show();
+    });
+    $('.apply-pop-up .close, #overlay').click(form.hide);
+    $('.apply-pop-up form').submit(function (e) {
+        e.preventDefault();
+        form.submit();
+    });
 });
 
-},{"./globals":1,"./menu":3,"./plus-buttons":4,"./smoothScroll":5}],3:[function(require,module,exports){
+},{"./form":1,"./globals":2,"./menu":4,"./plus-buttons":5,"./smoothScroll":6}],4:[function(require,module,exports){
 'use strict';
 
 !function () {
@@ -103,6 +161,7 @@ $(document).ready(function () {
     }
 
     function homeButtonSetup(navItems, page) {
+        $('#overlay, .apply-pop-up').fadeOut();
         $('.plus-button.clicked-button').click();
         $('.programs-container').fadeOut(function () {
             window.scrollTo(0, 0);
@@ -121,12 +180,12 @@ $(document).ready(function () {
     function mobileClick() {
         var $menuButton = $('#menu-button');
         if ($menuButton.html() === '<i class="fa fa-bars" aria-hidden="true"></i> MENU') {
+            $('nav ul').show(500, 'easeOutQuad');
             $menuButton.html('<i class="fa fa-bars" aria-hidden="true"></i> CLOSE');
         } else {
+            $('nav ul').hide(500, 'easeOutQuad');
             $menuButton.html('<i class="fa fa-bars" aria-hidden="true"></i> MENU');
         }
-        $('#overlay').fadeToggle();
-        $('nav ul').toggle(500, 'easeOutQuad');
     }
 
     module.exports.navItemsStyle = navItemsStyle;
@@ -134,44 +193,43 @@ $(document).ready(function () {
     module.exports.mobileClick = mobileClick;
 }();
 
-},{"./globals":1}],4:[function(require,module,exports){
+},{"./globals":2}],5:[function(require,module,exports){
 'use strict';
 
 !function () {
     var g = require('./globals');
 
-    function setup() {
-        var $button = $(this);
-        var $banner = $(this.parentNode);
-        // if button is clicked and content is displayed
-        if ($button.hasClass('clicked-button')) {
-            var timing = window.scrollY == $banner.offset().top - g.topPadding ? 0 : 700;
-            // first, scroll to top of banner, then change buton style and slideUp the content
-            $('html, body').stop().animate({ // need to select both html and body for FireFox
-                scrollTop: $banner.offset().top - g.topPadding
-            }, timing, 'easeInOutQuad', function () {
-                $button.removeClass('clicked-button');
-                $button.css({
-                    'top': '0px',
-                    'transition': 'all .6s'
-                });
-                $banner.removeClass('shrink');
-                $banner.children().first().css('padding-bottom', '20px');
-                $banner.next().slideUp(600, 'easeInOutCubic');
+    function open(button) {
+        var $button = $(button);
+        var $banner = $(button.parentNode);
+        $button.addClass('opened');
+        $banner.addClass('shrink');
+        $banner.children().first().css('padding-bottom', '0');
+        $banner.next().slideDown(600, 'easeOutQuad');
+    }
+
+    function close(button) {
+        var $button = $(button);
+        var $banner = $(button.parentNode);
+        var timing = window.scrollY == $banner.offset().top - g.topPadding ? 0 : 700;
+        // first, scroll to top of banner, then change buton style and slideUp the content
+        $('html, body').stop().animate({ // need to select both html and body for FireFox
+            scrollTop: $banner.offset().top - g.topPadding
+        }, timing, 'easeInOutQuad', function () {
+            $button.removeClass('opened');
+            $button.css({
+                'top': '0px',
+                'transition': 'all .6s'
             });
-        }
-        // else content must be hidden, so slideDown the content
-        else {
-                $button.addClass('clicked-button');
-                $banner.addClass('shrink');
-                $banner.children().first().css('padding-bottom', '0');
-                $banner.next().slideDown(600, 'easeOutQuad');
-            }
-    } // end setupButtons function
+            $banner.removeClass('shrink');
+            $banner.children().first().css('padding-bottom', '20px');
+            $banner.next().slideUp(600, 'easeInOutCubic');
+        });
+    }
 
     function fixed() {
         $('.plus-button').each(function (i, button) {
-            if (button.classList.contains('clicked-button')) {
+            if (button.classList.contains('opened')) {
                 var contentPosition = button.parentNode.nextSibling.nextSibling.getBoundingClientRect();
                 // bottomPadding is the bottom of the content, plus nav height and button translateY
                 var bottomPadding = window.innerWidth >= g.mobileMenuWidth ? '96' : '45';
@@ -190,11 +248,12 @@ $(document).ready(function () {
         });
     }
 
-    module.exports.setup = setup;
+    module.exports.open = open;
+    module.exports.close = close;
     module.exports.fixed = fixed;
 }();
 
-},{"./globals":1}],5:[function(require,module,exports){
+},{"./globals":2}],6:[function(require,module,exports){
 'use strict';
 
 $(document).ready(function () {
@@ -247,4 +306,4 @@ $(document).ready(function () {
     // });
 });
 
-},{}]},{},[2]);
+},{}]},{},[3]);

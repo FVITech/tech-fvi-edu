@@ -1,0 +1,75 @@
+.apply-pop-up {
+    box-sizing: border-box;
+    display: none;
+    width: calc(90vw - 30px); // 30px of padding
+    max-width: 800px;
+    margin: 10vh auto 0;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12px;
+    padding: 15px;
+    background-color: #bbb;
+    box-shadow: 0 15px 70px 0px #000;
+    z-index: 1001;
+
+    h3 {
+        color: #fff;
+        margin: 0 0 10px 0;
+        text-shadow: 0 0 3px #444;
+    }
+
+    .close {
+        font-size: 1rem;
+        color: #b00;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 0px;
+        right: 3px;
+        padding: 0;
+        margin: 0;
+
+        &:hover {color: #f22;}
+    }
+
+    form {
+        box-sizing: border-box;
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #999;
+            transition: all .1s;
+
+            &:focus, &:hover {
+                outline: none;
+                box-shadow: 0 0 5px #555;
+            }
+        }
+
+        button {
+            font-size: 1.2rem;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: $fvi-blue;
+            color: #fff;
+            margin-top: 10px;
+
+            &:focus, &:hover {
+                background-color: lighten($fvi-blue, 15%);
+            }
+        }
+    }
+
+    .sent-message {
+        display: none;
+    }
+}
