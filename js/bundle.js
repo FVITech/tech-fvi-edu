@@ -56,7 +56,7 @@ $(document).ready(function () {
     var form = require('./form');
     var $home = $('.page-landing.home');
 
-    // on button click, change button style and show content
+    // on button click, change button style and show content-container
     $('.plus-button').click(function () {
         if ($(this).hasClass('opened')) {
             plusButtonFunctions.close(this);
@@ -68,9 +68,6 @@ $(document).ready(function () {
     // on window scroll, fixed clicked button to screen
     $(window).on('scroll', plusButtonFunctions.fixed);
 
-    // hide all nav items until page is chosen
-    $('.nav-item').parent().hide();
-
     // At home page, switch pages when click on program card
     $('.card.web').click(function () {
         switchPage('web');
@@ -81,10 +78,10 @@ $(document).ready(function () {
 
     function switchPage(page) {
         // display page-specific content
-        $('.nav-item.' + page).parent().show();
-        $('.page-landing.' + page).show();
-        $('section.' + page).show();
-        $('.content.' + page).show();
+        // $('.nav-item.' + page).parent().show();
+        // $('.page-landing.' + page).show();
+        // $('section.' + page).show();
+        // $('.content.' + page).show();
         setupPage(page);
         // switch pages
         $home.fadeOut(function () {
@@ -158,10 +155,6 @@ $(document).ready(function () {
                 $('.banner.shrink').next().hide();
                 $('.banner.shrink').removeClass('shrink');
                 $('.nav-item').removeClass('section-in-view');
-                $('.content.' + page).hide();
-                $('section.' + page).hide();
-                $('.page-landing.' + page).hide();
-                $('.nav-item.' + page).parent().hide();
                 $(window).off('scroll', navItemsStyle);
             });
         });
@@ -261,34 +254,37 @@ $(document).ready(function () {
 $(document).ready(function () {
     "use strict";
 
-    $(function () {
-        // This will select everything with the class smoothScroll
-        // This should prevent problems with carousel, scrollspy, etc...
-        $('.smoothScroll').click(function () {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    // topPadding is the height of the nav, so it scrolls past the nav
-                    var topPadding = $(target[0]).hasClass('banner') ? window.innerWidth >= '920' ? -51 : 0 : 0;
-                    var timing = window.scrollY == $(target[0]).offset().top + topPadding ? 0 : 700;
-                    $('body, html').animate({
-                        scrollTop: target.offset().top + topPadding
-                    }, timing, 'easeInOutQuint', function () {
-                        if ($(target[0]).has('span.plus-button')) {
-                            var nodes = target[0].childNodes;
-                            for (var i = 0, x = nodes.length; i < x; i++) {
-                                if (nodes[i].classList == 'plus-button') {
-                                    $(nodes[i]).click();
+    function smoothScroll() {
+        $(function () {
+            // This will select everything with the class smoothScroll
+            // This should prevent problems with carousel, scrollspy, etc...
+            $('.smoothScroll').click(function (e) {
+                e.preventDefault();
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        // topPadding is the height of the nav, so it scrolls past the nav
+                        var topPadding = $(target[0]).hasClass('banner') ? window.innerWidth >= '920' ? -51 : 0 : 0;
+                        var timing = window.scrollY == $(target[0]).offset().top + topPadding ? 0 : 700;
+                        $('body, html').animate({
+                            scrollTop: target.offset().top + topPadding
+                        }, timing, 'easeInOutQuint', function () {
+                            if ($(target[0]).has('span.plus-button')) {
+                                var nodes = target[0].childNodes;
+                                for (var i = 0, x = nodes.length; i < x; i++) {
+                                    if (nodes[i].classList == 'plus-button') {
+                                        $(nodes[i]).click();
+                                    }
                                 }
                             }
-                        }
-                    });
-                    return false;
+                        });
+                        return false;
+                    }
                 }
-            }
+            });
         });
-    });
+    }
 
     //Check to see if the window is top; if not then display back-to-top button
     // $(window).scroll(function() {
@@ -306,6 +302,8 @@ $(document).ready(function () {
     //     }, 400, 'ease-in-out');
     //     return false;
     // });
+
+    module.exports.smoothScroll = smoothScroll;
 });
 
 },{}]},{},[3]);

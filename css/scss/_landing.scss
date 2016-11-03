@@ -7,12 +7,7 @@ main {
     display: none;
 }*/
 
-.programs-container {
-    display: none;
-}
-
 .page-landing {
-    display: none;
     background-size: cover;
     background-position: center;
     box-shadow: 0 0 4px 1px #111;
@@ -48,7 +43,7 @@ main {
 .page-landing.home {
     top: 0;
     background-color: #ddd;
-    background-image: url('../img/bg.svg');
+    background-image: url('../img/network-background.jpg');
     background-size: cover;
 
     h2 {
@@ -69,7 +64,6 @@ main {
 }
 
 .page-landing.web {
-    display: none;
     background-image: url('../img/web-landing.jpg');
     background-position: top;
 
@@ -79,7 +73,6 @@ main {
 }
 
 .page-landing.cyber {
-    display: none;
     background-image: url('../img/cyber-landing.jpg');
 
     h1 {
@@ -137,4 +130,8 @@ main {
     92.7% {color: rgba(255, 255, 255, .2);top: 25px; left: 25px;}
     93% {color: rgba(255, 255, 255, .8);top: 0; left: 0; text-shadow: 0px 0px 0px #fff;}
     100% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
+}
+
+.programs-container {
+    display: none;
 }

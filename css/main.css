@@ -221,11 +221,7 @@ main {
     background-color: #333;
     display: none;
 }*/
-.programs-container {
-  display: none; }
-
 .page-landing {
-  display: none;
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 4px 1px #111;
@@ -257,7 +253,7 @@ main {
 .page-landing.home {
   top: 0;
   background-color: #ddd;
-  background-image: url("../img/bg.svg");
+  background-image: url("../img/network-background.jpg");
   background-size: cover; }
   .page-landing.home h2 {
     margin: 0;
@@ -273,14 +269,12 @@ main {
     text-shadow: 0 0 5px #000; }
 
 .page-landing.web {
-  display: none;
   background-image: url("../img/web-landing.jpg");
   background-position: top; }
   .page-landing.web h1 {
     padding-top: 20vh; }
 
 .page-landing.cyber {
-  display: none;
   background-image: url("../img/cyber-landing.jpg"); }
   .page-landing.cyber h1 {
     padding-top: 25vh;
@@ -397,6 +391,21 @@ main {
     color: white;
     top: 0;
     left: 0; } }
+
+.programs-container {
+  display: none; }
+
+input[name="program-selector"] {
+  position: absolute;
+  opacity: 0;
+  top: -9999px;
+  left: -9999px; }
+
+#radio-web:not(:checked) ~ .programs-container .radio-web {
+  display: none; }
+
+#radio-cyber:not(:checked) ~ .programs-container .radio-cyber {
+  display: none; }
 
 .card {
   width: 280px;
@@ -559,8 +568,7 @@ main {
 section {
   margin-top: 80px;
   position: relative;
-  z-index: 2;
-  display: none; }
+  z-index: 2; }
   section:first-of-type {
     margin-top: 131px; }
   section:last-of-type {
@@ -568,7 +576,7 @@ section {
 
 .banner {
   width: 100%;
-  padding: 100px 0 140px;
+  padding: 80px 0 120px;
   text-align: center;
   position: relative;
   box-shadow: 0 0 4px 1px #111;
@@ -582,7 +590,7 @@ section {
     font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
     text-shadow: 0 1px 8px black;
-    padding: 20px;
+    padding: 40px 0 0 0;
     margin: 0;
     display: inline-block;
     -webkit-transition: all .6s;
@@ -612,8 +620,7 @@ section {
     margin: 0 auto;
     max-width: 600px;
     text-align: left;
-    padding: 10px 20px;
-    display: none; }
+    padding: 10px 20px; }
     .content-container .content h4 {
       color: #003352; }
       .content-container .content h4:first-child {

@@ -3,14 +3,13 @@ $(document).ready(function() {
 
     $('.page-landing.home').fadeIn(300);
 
-    const smoothScroll = require('./smoothScroll');
     const g = require('./globals');
     const plusButtonFunctions = require('./plus-buttons');
     const menu = require('./menu');
     const form = require('./form');
     var $home = $('.page-landing.home');
 
-    // on button click, change button style and show content
+    // on button click, change button style and show content-container
     $('.plus-button').click(function() {
         if($(this).hasClass('opened')) {
             plusButtonFunctions.close(this);
@@ -23,9 +22,6 @@ $(document).ready(function() {
     // on window scroll, fixed clicked button to screen
     $(window).on('scroll', plusButtonFunctions.fixed);
 
-    // hide all nav items until page is chosen
-    $('.nav-item').parent().hide();
-
     // At home page, switch pages when click on program card
     $('.card.web').click(function() {
         switchPage('web')
@@ -36,10 +32,10 @@ $(document).ready(function() {
 
     function switchPage(page) {
         // display page-specific content
-        $('.nav-item.' + page).parent().show();
-        $('.page-landing.' + page).show();
-        $('section.' + page).show();
-        $('.content.' + page).show();
+        // $('.nav-item.' + page).parent().show();
+        // $('.page-landing.' + page).show();
+        // $('section.' + page).show();
+        // $('.content.' + page).show();
         setupPage(page);
         // switch pages
         $home.fadeOut(function() {

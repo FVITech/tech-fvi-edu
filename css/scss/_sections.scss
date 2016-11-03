@@ -2,7 +2,6 @@ section {
     margin-top: 80px;
     position: relative;
     z-index: 2;
-    display: none;
 
     &:first-of-type {
         margin-top: 131px;
@@ -15,7 +14,7 @@ section {
 
 .banner {
     width: 100%;
-    padding: 100px 0 140px;
+    padding: 80px 0 120px;
     text-align: center;
     position: relative;
     box-shadow: 0 0 4px 1px #111;
@@ -30,7 +29,7 @@ section {
         font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         font-weight: 300;
         text-shadow: 0 1px 8px rgba(0, 0, 0, 1);
-        padding: 20px;
+        padding: 40px 0 0 0;
         margin: 0;
         display: inline-block;
         -webkit-transition: all .6s;
@@ -69,7 +68,6 @@ section {
         max-width: 600px;
         text-align: left;
         padding: 10px 20px;
-        display: none;
 
         h4 {
             color: rgb(0, 51, 82);

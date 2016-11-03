@@ -1,0 +1,14 @@
+input[name="program-selector"] {
+    position: absolute;
+    opacity: 0;
+    top: -9999px;
+    left: -9999px;
+}
+
+#radio-web:not(:checked) ~ .programs-container .radio-web {
+    display: none;
+}
+
+#radio-cyber:not(:checked) ~ .programs-container .radio-cyber {
+    display: none;
+}

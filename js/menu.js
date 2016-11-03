@@ -12,10 +12,6 @@
                 $('.banner.shrink').next().hide()
                 $('.banner.shrink').removeClass('shrink');
                 $('.nav-item').removeClass('section-in-view');
-                $('.content.' + page).hide();
-                $('section.' + page).hide();
-                $('.page-landing.' + page).hide();
-                $('.nav-item.' + page).parent().hide();
                 $(window).off('scroll', navItemsStyle);
             });
         });

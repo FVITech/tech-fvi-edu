@@ -26,21 +26,23 @@
             </div>
 
             <div class="cards-container">
-                <div class="card web">
+                <label for="radio-web" class="card web">
                     <figure>
                         <img src="img/web-dev-card-image.png" alt="image of web development" />
                     </figure>
                     <h4><span class="first-letter">W</span>eb<br><span class="second-letter">D</span>eveloper<br>Program</h4>
-                </div>
-                <div class="card cyber">
+                </label>
+                <label for="radio-cyber" class="card cyber">
                     <figure>
                         <img src="img/network-admin-card-image.png" alt="image of network administration" />
                     </figure>
                     <h4><span class="first-letter">N</span>etwork<br><span class="second-letter">A</span>dministrator<br>Program</h4>
-                </div>
+                </label>
             </div>
         </div>
 
+        <input id="radio-web" type="radio" name="program-selector" value="" selected="false">
+        <input id="radio-cyber" type="radio" name="program-selector" value="" selected="false">
         <div class="programs-container">
 
             <nav>
@@ -49,12 +51,12 @@
                     <li><a class="home-button" href="#">HOME</a></li><!-- remove space
                  --><li><a class="nav-item web cyber smoothScroll" href="#summary">SUMMARY</a></li><!-- remove space
                  --><li><a class="nav-item web cyber smoothScroll" href="#cirriculum">CIRRICULUM</a></li><!-- remove space
-                 --><li><a class="nav-item web smoothScroll" href="#comparison">HOW WE COMPARE</a></li><!-- remove space
-                 --><li><a class="nav-item cyber smoothScroll" href="#certifications">CERTIFICATIONS</a></li><!-- remomve space
+                 --><li class="radio-web"><a class="nav-item web smoothScroll" href="#comparison">HOW WE COMPARE</a></li><!-- remove space
+                 --><li class="radio-cyber"><a class="nav-item cyber smoothScroll" href="#certifications">CERTIFICATIONS</a></li><!-- remomve space
                  --><li><a class="nav-item web cyber smoothScroll" href="#partners">PARTNERS</a></li><!-- remove space
                  --><li><a class="nav-item web cyber smoothScroll" href="#tuition">TUITION</a></li><!-- remove space
                  --><li><a class="nav-item web cyber smoothScroll" href="#resources">RESOURCES</a></li><!-- remove space
-                 --><li><a class="nav-item web smoothScroll" href="#student-work">STUDENT WORK</a></li><!-- remomve space
+                 --><li class="radio-web"><a class="nav-item web smoothScroll" href="#student-work">STUDENT WORK</a></li><!-- remomve space
                  --><li><a class="nav-item web cyber apply" href="#">APPLY</a></li>
                  </-->
                 </ul>
@@ -64,8 +66,7 @@
                 <h3>Apply For Free</h3>
                 <button type="button" class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
                 <form>
-                    <input type="text" name="first_name" value="" placeholder="First Name">
-                    <input type="text" name="last_name" value="" placeholder="Last Name">
+                    <input type="text" name="full_name" value="" placeholder="Your Full Name">
                     <input type="tel" name="day_phone" value="" placeholder="Phone Number">
                     <input type="text" name="email" value="" placeholder="Email Address">
                     <input class="program" type="text" name="program_id" value="" style="display: none;">
@@ -77,12 +78,12 @@
                 </div>
             </div>
 
-            <div class="page-landing web">
+            <div class="page-landing web radio-web">
                 <h1>WEB DEVELOPER</h1>
                 <p>Become a Web Developer in 9 months.<br>No experience necessary.<br>Learn more below.</p>
                 <a class="arrow arrow-down smoothScroll" href="#summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
             </div>
-            <div class="page-landing cyber">
+            <div class="page-landing cyber radio-cyber">
                 <h1>NETWORK<br>ADMINISTRATOR</h1>
                 <p>Become job-ready in 9 months.<br>No experience necessary.<br>Learn more below.</p>
                 <a class="arrow arrow-down smoothScroll" href="#summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -94,7 +95,7 @@
                     <span class="plus-button">+</span>
                 </div>
                 <div class="content-container">
-                    <div class="content web">
+                    <div class="content web radio-web">
                         <h4>This Program is Not For Everyone</h4>
                         <p>Our in-person Computer Programming courses are designed for busy adults driven to change their career and/or boost their professional skills. Few other Web Developer Schools offer the length and breadth of material that we do.</p>
                         <p>We are a Computer Programming School devoted to creating Application Developers with sound Computer Science skills. Our curriculum is designed to be completed in a dense, but realistic time frame of nine months.</p>
@@ -109,15 +110,18 @@
                         <p>We are dedicated to helping you achieve success with our passionate and knowledgeable faculty, successful career placement team, and our warm and welcoming community. </p>
                         <p>For consumer information, visit <a target="_blank" title="FVI Consumer Information" href="http://www.fvi.edu/consumer-information/">www.fvi.edu/consumer-information</a>.</p>
                     </div>
-                    <div class="content cyber">
-                        <h4>Heading 1</h4>
-                        <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
-                        <h4>Heading 2</h4>
-                        <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de
-                            pinga.
-                        </p>
-                        <h4>Heading 3</h4>
-                        <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
+                    <div class="content cyber radio-cyber">
+                        <h4>What Does A Network Admininstrator Do?</h4>
+                        <p>As a Network Administrator, you will be able to validate your ability to handle day-to-day management of the server operating system, file structure, and directory services. You will also learn how to handle software distribution and updates, monitor servers, provide troubleshooting support, build and configure servers, implement auditing policy, perform scheduled vulnerability-assessment scans, and monitor logs for firewalls and intrusion-detection systems.</p>
+                        <h4>Which Skills Will I Gain?</h4>
+                        <p>At the completion of this program you will be qualified to manage, support, and troubleshoot information systems in a wide range of computing environments with Microsoft Windows Server 2012 and Linux. Additionally, the course will provide the concepts, commands, and practice required to configure Cisco switches and routers in multi-protocol Internet works. Finally, students will receive an introduction to 21st-century cloud-based systems administration on Azure and Amazon Web Services.</p>
+                        <h4>Will I Obtain Any Certifications?</h4>
+                        <p>Students will be equipped to pass the following certification exams: Network+, Security+ and Window Server Administration Fundamentals (MTA-365). In addition, the curriculum covers a portion of Cisco CCNA and CompTIA Cloud+.</p>
+                        <h4>How Is This Program Structured?</h4>
+                        <p>This course is based on lectures, discussions, demonstrations, exercises, and laboratory projects. Students perform all basic configuration procedures to build LAN and WAN interfaces for the most commonly used routing and routed protocols.</p>
+                        <h4>What Kind of Job Can I Get as a Graduate?</h4>
+                        <p>Graduates are qualified for high demand careers in Network Administration, IT security, and Cloud Computing, such as Security Engineer, Security Consultant, Network Administrator, or IA Technician/Manager.</p>
+                        <p>As organizations move their IT systems into the cloud, the need for Network Administrators trained on cloud computing will increase. FVI’s career services team will assist you in finding a career in IT by working to match you to open positions, connect you to local employers, and ensure your resume and professional readiness are a match for any open positions in IT.</p>
                     </div>
                 </div>
             </section>
@@ -138,7 +142,7 @@
                     <span class="plus-button">+</span>
                 </div>
                 <div class="content-container">
-                    <div class="content web">
+                    <div class="content web radio-web">
                         <h4>Weeks 1-6: Foundations of Front-end Programming.</h4>
                         <p>During the first 6 weeks, we wil introduce you to each of the main skills you need in order to become a front-end Programmer. You will learn HTML5, CSS3, Bootstrap, JavaScript, jQuery, Git, Ajax programming, and build tools (Browserify, npm and Gulp).</p>
                         <h4>Weeks 7-15: Advanced Front-end Programming</h4>
@@ -152,7 +156,7 @@
                         <h4></h4>
                         <p></p>
                     </div>
-                    <div class="content cyber">
+                    <div class="content cyber radio-cyber">
                         <h3>Heading 1</h3>
                         <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
                         <h3>Heading 2</h3>
@@ -163,7 +167,7 @@
                 </div>
             </section>
 
-            <section class="web">
+            <section class="web radio-web">
                 <div class="banner web" id="comparison">
                     <h2>How We Compare to Other Schools</h2>
                     <span class="plus-button">+</span>
@@ -184,7 +188,7 @@
                 </div>
             </section>
 
-            <section class="cyber">
+            <section class="cyber radio-cyber">
                 <div class="banner cyber" id="certifications">
                     <h2>Certifications</h2>
                     <span class="plus-button">+</span>
@@ -207,7 +211,7 @@
                     <span class="plus-button">+</span>
                 </div>
                 <div class="content-container">
-                    <div class="content web">
+                    <div class="content web radio-web">
                         <h4>Web Development is a Growing Industry</h4>
                         <p>The Bureau of Labor Statistics expects web development careers to <a target="_blank" title="Bureau of Labor Statistics: Web Developers" href="http://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm">grow 27%</a> between 2014 and 2024, which is three times faster than average for all occupations.</p>
                         <h4>What kind of job can I get as a graduate?</h4>
@@ -217,7 +221,7 @@
                         <h4>Our Career Services Team</h4>
                         <p>The career services team at FVI will work with you to provide internships during training and upon graduation assist you in finding a great career as a web or application developer.</p>
                     </div>
-                    <div class="content cyber">
+                    <div class="content cyber radio-cyber">
                         <h4>Web Development is a Growing Industry</h4>
                         <p>The Bureau of Labor Statistics expects web development careers to <a target="_blank" title="Bureau of Labor Statistics: Web Developers" href="http://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm">grow 27%</a> between 2014 and 2024, which is three times faster than average for all occupations.</p>
                         <h4>What kind of job can I get as a graduate?</h4>
@@ -236,17 +240,21 @@
                     <span class="plus-button">+</span>
                 </div>
                 <div class="content-container">
-                    <div class="content web">
-                        <h4>We Strive to Make quality Education More Affordable.</h4>
-                        <p>With grants, easy payments and other ways to manage tuition costs, investing in your future can be more affordable than you think. Few, if any Coding Boot Camps or Web Developer Schools can offer the amount of options we can offer in terms of financing.</p>
-                        <p>Florida Vocational Institute maintains a staff of financial aid professionals to assist students in obtaining the financial assistance they require to meet their educational expenses. Available resources include federal grant and loan programs, student loans from private lenders.</p>
+                    <div class="content web radio-web">
+                        <p><span class="bold">Tuition &amp; Fees:</span> $13,925</p>
+                        <p><span class="bold">Books, Laptop, &amp; Supplies:</span> $1,050</p>
+                        <h4>Financial Aid: Everyone Can Afford A Quality Education</h4>
+                        <p>Since we are an accredited institutuion, many students can afford our programs with grants, loans, easy payments and other ways to manage tuition costs. Few, if any Coding Boot Camps or Web Developer Schools can offer the amount of options we can offer in terms of financing.</p>
+                        <p>Florida Vocational Institute maintains a staff of financial aid professionals to assist students in obtaining the financial assistance they require to meet their educational expenses. Available resources include federal grant and loan programs, and student loans from private lenders.</p>
                         <p>Federal assistance programs are administered through the U.S. Department of Education. Any U.S. citizen, national, or person in the United States for other than temporary reasons who is enrolled and accepted may apply for these programs. Most forms of financial assistance are available for each July 1-June 30 award period.</p>
                         <p>Every student considering an application for financial aid should request a copy of the current guide, Funding Your Education, published by the U.S. Department of Education. This important document can be obtained online from <a target="_blank" title="The United States Office of Federal Student Aid" href="http://studentaid.ed.gov/">The United States Office of Federal Student Aid</a> and will assist persons in understanding eligibility requirements.</p>
                     </div>
-                    <div class="content cyber">
-                        <h4>We Strive to Make quality Education More Affordable.</h4>
-                        <p>With grants, easy payments and other ways to manage tuition costs, investing in your future can be more affordable than you think. Few, if any Coding Boot Camps or Web Developer Schools can offer the amount of options we can offer in terms of financing.</p>
-                        <p>Florida Vocational Institute maintains a staff of financial aid professionals to assist students in obtaining the financial assistance they require to meet their educational expenses. Available resources include federal grant and loan programs, student loans from private lenders.</p>
+                    <div class="content cyber radio-cyber">
+                        <p><span class="bold">Tuition &amp; Fees:</span> $13,925</p>
+                        <p><span class="bold">Books, Laptop, &amp; Supplies:</span> $2,475</p>
+                        <h4>Financial Aid: Everyone Can Afford A Quality Education</h4>
+                        <p>Since we are an accredited institutuion, many students can afford our programs with grants, loans, easy payments and other ways to manage tuition costs. Few, if any Coding Boot Camps or Web Developer Schools can offer the amount of options we can offer in terms of financing.</p>
+                        <p>Florida Vocational Institute maintains a staff of financial aid professionals to assist students in obtaining the financial assistance they require to meet their educational expenses. Available resources include federal grant and loan programs, and student loans from private lenders.</p>
                         <p>Federal assistance programs are administered through the U.S. Department of Education. Any U.S. citizen, national, or person in the United States for other than temporary reasons who is enrolled and accepted may apply for these programs. Most forms of financial assistance are available for each July 1-June 30 award period.</p>
                         <p>Every student considering an application for financial aid should request a copy of the current guide, Funding Your Education, published by the U.S. Department of Education. This important document can be obtained online from <a target="_blank" title="The United States Office of Federal Student Aid" href="http://studentaid.ed.gov/">The United States Office of Federal Student Aid</a> and will assist persons in understanding eligibility requirements.</p>
                     </div>
@@ -259,30 +267,28 @@
                     <span class="plus-button">+</span>
                 </div>
                 <div class="content-container">
-                    <div class="content web">
-                        <h4>Heading 1</h4>
-                        <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
-                        <h4>Heading 2</h4>
-                        <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de
-                            pinga.
-                        </p>
-                        <h4>Heading 3</h4>
-                        <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
+                    <div class="content web radio-web">
+                        <h4>Is Web Development Is Right For You?</h4>
+                        <p>The FVI Web Development team has created 8 tutorials for you that you try out right now for free. <a target="_blank" title="FVI Coder's Corner" href="http://www.fvi.edu/coders_corner/introclass/">Visit our Coder's Corner</a> where there are 8 tutorial projects where you will get to use HTML, CSS, and JavaScript to change and create webpages, just like the pros do. Completing these tutorials will give you a taste of Web Development and will help you judge if it is something that truly interests you.</p>
+                        <h4>JavaScript Practice</h4>
+                        <p>After completing the <a target="_blank" title="FVI Coder's Corner" href="http://www.fvi.edu/coders_corner/introclass/">Coder's Corner tutorials</a>, see if you can solve these <a href="http://www.fvi.edu/coders_corner/exercise-grader/">JavaScript problems</a>.</p>
+                        <h4>Learn About Modern Tech From Our Blog</h4>
+                        <p><a href="http://www.fvi.edu/en/blog">Visit our blog</a> to learn about the latest tech trends, the differences between Front-end and Back-end programming, IT careers, and more. We update our bloga few times per week so there is always new information.</p>
+                        <h4>Check Us Out On Youtube</h4>
+                        <p><a target="_blank" title="FVI Tech Youtube Channel" href="https://www.youtube.com/channel/UCPbWkXshrZghR5W7kF7s0mg">Our youtube channel</a> offers video tutorials and explanations for a variety of coding topics.</p>
                     </div>
-                    <div class="content cyber">
+                    <div class="content cyber radio-cyber">
                         <h4>Heading 1</h4>
                         <p>Miami ipsum D. Wade amet cafe con leche park west miami literally basel ricer mission bro collins ave midtown cocowalk completo vizcaya metrorail sweetwater. Que fancy supposably power love hour 836 park west oye morena.</p>
-                        <h4>Heading 2</h4>
-                        <p>Flagler arroz con mango abuelita hialeah pata sucia cafe bustelo. Telly abuelita metrorail critical mass Allapattah coconut grove dolphin mall doral booty bass. Ya tu sabes LIV ño telly abuelita que fancy no yeah, yeah no metrorail de
-                            pinga.
-                        </p>
+                        <h4>Learn About Modern Tech From Our Blog</h4>
+                        <p><a target="_blank" href="http://www.fvi.edu/en/blog">Visit our blog</a> to learn about <a target="_blank" href="http://www.fvi.edu/coding-jobs">Coding Jobs</a>, the differences between <a target="_blank" href="http://www.fvi.edu/Blog/frontend-backend-and-full-stack-web-development/">Front-end and Back-end programming</a>, <a target="_blank" href="http://www.fvi.edu/IT-careers">IT Careers</a>, and more. We update our blog a few times per week so there is always new information.</p>
                         <h4>Heading 3</h4>
                         <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
                     </div>
                 </div>
             </section>
 
-            <section class="web">
+            <section class="web radio-web">
                 <div class="banner web" id="student-work">
                     <h2>Student Work</h2>
                     <span class="plus-button">+</span>
@@ -320,6 +326,7 @@
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="js/bundle.js"></script>
+    <script src="js/smoothScroll.js"></script>
 
 </body>
 
