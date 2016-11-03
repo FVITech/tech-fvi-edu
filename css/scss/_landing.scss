@@ -132,6 +132,27 @@ main {
     100% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
 }
 
+.infographic {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sponsors {
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    margin-top: -7px;
+
+    img {
+        display: inline-block;
+        margin: 20px;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
 .programs-container {
     display: none;
 }
