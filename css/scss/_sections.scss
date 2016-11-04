@@ -134,7 +134,7 @@ section {
 }
 
 #call-to-action-section {
-    background-color: $dark-blue;
+    background-color: darken($dark-blue, 3%);
     position: relative;
     margin-bottom: 0;
 
@@ -150,11 +150,5 @@ section {
             font-size: 1.2rem;
             color: #eee;
         }
-    }
-
-    .line {
-        margin: auto;
-        max-width: 95%;
-        border-top: 2px solid darken($dark-blue, 3%);
     }
 }

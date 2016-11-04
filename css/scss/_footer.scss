@@ -77,18 +77,12 @@ footer {
     }
 }
 
-.line {
-    margin: auto;
-    max-width: 95%;
-    border: none;
-    border-top: 2px solid darken($dark-blue, 3%);
-}
-
 .sponsors-container {
     box-sizing: border-box;
     display: block;
     width: 100%;
     text-align: center;
+    background-color: darken($dark-blue, 3%);
 
     img {
         box-sizing: border-box;

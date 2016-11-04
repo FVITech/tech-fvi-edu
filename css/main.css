@@ -355,17 +355,12 @@ footer {
       font-size: .9rem;
       margin: 0; }
 
-.line {
-  margin: auto;
-  max-width: 95%;
-  border: none;
-  border-top: 2px solid #003558; }
-
 .sponsors-container {
   box-sizing: border-box;
   display: block;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  background-color: #003558; }
   .sponsors-container img {
     box-sizing: border-box;
     display: inline-block;
@@ -794,7 +789,7 @@ section {
   background-position: bottom; }
 
 #call-to-action-section {
-  background-color: #003e67;
+  background-color: #003558;
   position: relative;
   margin-bottom: 0; }
   #call-to-action-section .content {
@@ -805,10 +800,6 @@ section {
     #call-to-action-section .content p {
       font-size: 1.2rem;
       color: #eee; }
-  #call-to-action-section .line {
-    margin: auto;
-    max-width: 95%;
-    border-top: 2px solid #003558; }
 
 @media all and (max-width: 920px) {
   .page-landing {
