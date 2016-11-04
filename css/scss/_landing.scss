@@ -1,5 +1,5 @@
 main {
-    background-color: #bbb;
+    background-color: #111;
 }
 
 /*.cyber-main {
@@ -45,6 +45,13 @@ main {
     background-color: #ddd;
     background-image: url('../img/network-background.jpg');
     background-size: cover;
+
+    .fvi-logo-white {
+        position: absolute;
+        margin: 10px;
+        width: 100%;
+        max-width: 80px;
+    }
 
     h2 {
         margin: 0;
@@ -132,24 +139,68 @@ main {
     100% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
 }
 
-.infographic {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.sponsors {
+.infographic-container {
     width: 100%;
     background-color: #fff;
     text-align: center;
+
+    .infographic {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .fvi-logo {
+        width: 100%;
+        max-width: 300px;
+        padding: 20px;
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(0, 62, 103);
     margin-top: -7px;
 
+    .social-media-container {
+        a {
+            margin: 10px;
+            color: #fff;
+            display: inline-block;
+            font-size: 2rem;
+
+            &:hover, &:focus {
+                color: #ddd;
+            }
+        }
+    }
+
+    .links-container {
+        padding: 15px;
+        padding-top: 0;
+
+        a {
+            font-size: .95rem;
+            @include link(#fff);
+            white-space: nowrap;
+            line-height: 2.5;
+        }
+    }
+}
+
+.sponsors {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ddd;
+    text-align: center;
+
     img {
+        box-sizing: border-box;
         display: inline-block;
-        margin: 20px;
+        padding: 20px;
         width: 100%;
-        max-width: 200px;
+        max-width: 400px;
     }
 }
 

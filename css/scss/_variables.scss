@@ -1,2 +1,17 @@
 $fvi-blue: rgb(2, 141, 234);
 $nav-height: 51px;
+@mixin link($color) {
+    color: $color;
+    border-bottom: 1px solid $color;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        border-bottom-width: 2px;
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: $color;
+        border-color: $color;
+    }
+}

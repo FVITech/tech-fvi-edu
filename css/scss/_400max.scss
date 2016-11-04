@@ -8,14 +8,12 @@
             font-size: 1.1rem;
         }
     }
-
     .card {
         h4 {
             font-size: 1.5rem;
             margin: .5rem 0;
         }
     }
-
     .page-landing.web {
         h1 {
             font-size: 2.3rem;
@@ -25,7 +23,6 @@
             font-size: .95rem;
         }
     }
-
     .page-landing.cyber {
         h1 {
             padding-top: 27vh;
@@ -36,5 +33,11 @@
             font-size: .9rem;
         }
     }
-
+    .links-container {
+        text-align: left;
+        a:after {
+            content: "\a";
+            white-space: pre;
+        }
+    }
 }

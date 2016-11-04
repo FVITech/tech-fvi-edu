@@ -57,6 +57,12 @@
         .question-btn {
             margin: auto;
         }
+        .links-container {
+            a:nth-of-type(2):after {
+                content: "\a";
+                white-space: pre;
+            }
+        }
     }
 
 }

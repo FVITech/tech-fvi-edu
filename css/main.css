@@ -86,6 +86,11 @@ p {
   font-weight: 400;
   line-height: 1.7; }
 
+a {
+  font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  line-height: 1.7; }
+
 #overlay {
   background: #000;
   bottom: 0;
@@ -215,7 +220,7 @@ nav {
     display: none; }
 
 main {
-  background-color: #bbb; }
+  background-color: #111; }
 
 /*.cyber-main {
     background-color: #333;
@@ -255,6 +260,11 @@ main {
   background-color: #ddd;
   background-image: url("../img/network-background.jpg");
   background-size: cover; }
+  .page-landing.home .fvi-logo-white {
+    position: absolute;
+    margin: 10px;
+    width: 100%;
+    max-width: 80px; }
   .page-landing.home h2 {
     margin: 0;
     padding: 1rem;
@@ -392,22 +402,59 @@ main {
     top: 0;
     left: 0; } }
 
-.infographic {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto; }
-
-.sponsors {
+.infographic-container {
   width: 100%;
   background-color: #fff;
-  text-align: center;
-  margin-top: -7px; }
-  .sponsors img {
-    display: inline-block;
-    margin: 20px;
+  text-align: center; }
+  .infographic-container .infographic {
+    box-sizing: border-box;
     width: 100%;
-    max-width: 200px; }
+    max-width: 1000px;
+    margin: 0 auto; }
+  .infographic-container .fvi-logo {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px; }
+
+footer {
+  width: 100%;
+  background-color: #003e67;
+  margin-top: -7px; }
+  footer .social-media-container a {
+    margin: 10px;
+    color: #fff;
+    display: inline-block;
+    font-size: 2rem; }
+    footer .social-media-container a:hover, footer .social-media-container a:focus {
+      color: #ddd; }
+  footer .links-container {
+    padding: 15px;
+    padding-top: 0; }
+    footer .links-container a {
+      font-size: .95rem;
+      color: #fff;
+      border-bottom: 1px solid #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      line-height: 2.5; }
+      footer .links-container a:hover, footer .links-container a:focus {
+        border-bottom-width: 2px;
+        text-decoration: none; }
+      footer .links-container a:visited {
+        color: #fff;
+        border-color: #fff; }
+
+.sponsors {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #ddd;
+  text-align: center; }
+  .sponsors img {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px; }
 
 .programs-container {
   display: none; }
@@ -600,7 +647,9 @@ section {
   z-index: 3;
   -webkit-transition: all .6s ease-in-out;
   transition: all .6s ease-in-out;
-  background-size: cover; }
+  background-size: cover;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222; }
   .banner h2 {
     color: #fff;
     font-size: 2.5rem;
@@ -628,7 +677,7 @@ section {
   box-shadow: 0 -2px 4px 0px #111; }
 
 .content-container {
-  background-color: #eee;
+  background-color: #efefef;
   box-shadow: 0 0 4px 1px #111;
   width: 100%;
   overflow: hidden;
@@ -639,7 +688,8 @@ section {
     text-align: left;
     padding: 10px 20px; }
     .content-container .content h4 {
-      color: #003352; }
+      color: #003352;
+      font-weight: 400; }
       .content-container .content h4:first-child {
         margin-top: 45px; }
     .content-container .content p {
@@ -648,7 +698,7 @@ section {
       color: #028dea;
       border-bottom: 1px solid #028dea;
       text-decoration: none; }
-      .content-container .content a:hover {
+      .content-container .content a:hover, .content-container .content a:focus {
         border-bottom-width: 2px;
         text-decoration: none; }
       .content-container .content a:visited {
@@ -712,6 +762,8 @@ section {
     /* nav height */ }
   .page-landing.home {
     background-position: center; }
+    .page-landing.home .fvi-logo-white {
+      max-width: 50px; }
   .page-landing.web h1 {
     font-size: 3rem;
     padding-top: 15vh; }
@@ -798,7 +850,10 @@ section {
   .apply-btn {
     margin: 10px auto; }
   .question-btn {
-    margin: auto; } }
+    margin: auto; }
+  .links-container a:nth-of-type(2):after {
+    content: "\a";
+    white-space: pre; } }
 
 @media all and (max-width: 400px) {
   .page-landing.home h2 {
@@ -819,6 +874,11 @@ section {
     font-size: 1.8rem; }
   .page-landing.cyber p {
     margin-top: 3vh;
-    font-size: .9rem; } }
+    font-size: .9rem; }
+  .links-container {
+    text-align: left; }
+    .links-container a:after {
+      content: "\a";
+      white-space: pre; } }
 
 /*@import "_diagnostics.scss";*/
