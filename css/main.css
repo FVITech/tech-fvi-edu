@@ -91,141 +91,9 @@ a {
   font-weight: 400;
   line-height: 1.7; }
 
-#overlay {
-  background: #000;
-  bottom: 0;
-  display: none;
-  left: 0;
-  opacity: .7;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 101;
-  color: black;
-  font-size: 0; }
-
-nav {
-  width: 100%;
-  background-color: #222;
-  position: fixed;
-  z-index: 1000;
-  text-align: center;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.7);
-  /* mobile Menu Button */
-  /* Menu items */ }
-  nav h4 {
-    font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: #ccc;
-    padding: 10px 0 7px 0;
-    display: none;
-    margin: 0; }
-    nav h4:hover {
-      color: #028dea;
-      background-color: #333;
-      cursor: pointer; }
-  nav ul {
-    text-align: center; }
-    nav ul li {
-      display: inline-block; }
-      nav ul li a {
-        display: inline-block;
-        text-decoration: none;
-        color: #ccc;
-        font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        padding: 15px 15px;
-        border-bottom: 3px solid #222;
-        cursor: pointer; }
-      nav ul li a:hover {
-        background-color: #333;
-        border-color: #333;
-        color: #028dea; }
-    nav ul li .apply {
-      color: #fff;
-      background-color: #028dea;
-      border-bottom-color: #028dea; }
-      nav ul li .apply:hover {
-        border-color: #fff;
-        color: #fff;
-        background-color: #3baffd; }
-
-.section-in-view {
-  border-color: #028dea;
-  background-color: #333; }
-
-.home-button:hover {
-  background-color: #000;
-  border-color: #028dea; }
-
-.apply-pop-up {
-  box-sizing: border-box;
-  display: none;
-  width: calc(90vw - 30px);
-  max-width: 800px;
-  margin: 10vh auto 0;
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 12px;
-  padding: 15px;
-  background-color: #bbb;
-  box-shadow: 0 15px 70px 0px #000;
-  z-index: 1001; }
-  .apply-pop-up h3 {
-    color: #fff;
-    margin: 0 0 10px 0;
-    text-shadow: 0 0 3px #444; }
-  .apply-pop-up .close {
-    font-size: 1rem;
-    color: #b00;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 0px;
-    right: 3px;
-    padding: 0;
-    margin: 0; }
-    .apply-pop-up .close:hover {
-      color: #f22; }
-  .apply-pop-up form {
-    box-sizing: border-box; }
-    .apply-pop-up form input {
-      box-sizing: border-box;
-      width: 100%;
-      max-width: 400px;
-      border-radius: 5px;
-      font-size: 1.2rem;
-      padding: 8px;
-      margin-top: 10px;
-      border: 1px solid #999;
-      transition: all .1s; }
-      .apply-pop-up form input:focus, .apply-pop-up form input:hover {
-        outline: none;
-        box-shadow: 0 0 5px #555; }
-    .apply-pop-up form button {
-      font-size: 1.2rem;
-      padding: 5px;
-      border: none;
-      border-radius: 5px;
-      background-color: #028dea;
-      color: #fff;
-      margin-top: 10px; }
-      .apply-pop-up form button:focus, .apply-pop-up form button:hover {
-        background-color: #3baffd; }
-  .apply-pop-up .sent-message {
-    display: none; }
-
 main {
   background-color: #111; }
 
-/*.cyber-main {
-    background-color: #333;
-    display: none;
-}*/
 .page-landing {
   background-size: cover;
   background-position: center;
@@ -410,26 +278,34 @@ main {
     box-sizing: border-box;
     width: 100%;
     max-width: 1000px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    display: block; }
   .infographic-container .fvi-logo {
     width: 100%;
     max-width: 300px;
-    padding: 20px; }
+    margin: 30px; }
+
+.programs-container {
+  display: none; }
 
 footer {
   width: 100%;
   background-color: #003e67;
-  margin-top: -7px; }
-  footer .social-media-container a {
-    margin: 10px;
-    color: #fff;
-    display: inline-block;
-    font-size: 2rem; }
-    footer .social-media-container a:hover, footer .social-media-container a:focus {
-      color: #ddd; }
+  margin-top: -7px;
+  text-align: center; }
+  footer .social-media-container {
+    padding-top: 10px; }
+    footer .social-media-container a {
+      margin: 10px;
+      color: #fff;
+      display: inline-block;
+      font-size: 2rem; }
+      footer .social-media-container a:hover, footer .social-media-container a:focus {
+        color: #ddd; }
   footer .links-container {
     padding: 15px;
-    padding-top: 0; }
+    padding-top: 0;
+    text-align: center; }
     footer .links-container a {
       font-size: .95rem;
       color: #fff;
@@ -452,12 +328,138 @@ footer {
   .sponsors img {
     box-sizing: border-box;
     display: inline-block;
+    vertical-align: middle;
     padding: 20px;
     width: 100%;
-    max-width: 400px; }
+    max-width: 300px; }
 
-.programs-container {
-  display: none; }
+#overlay {
+  background: #000;
+  bottom: 0;
+  display: none;
+  left: 0;
+  opacity: .7;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 101;
+  color: black;
+  font-size: 0; }
+
+nav {
+  width: 100%;
+  background-color: #222;
+  position: fixed;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.7);
+  /* mobile Menu Button */
+  /* Menu items */ }
+  nav h4 {
+    font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ccc;
+    padding: 10px 0 7px 0;
+    display: none;
+    margin: 0; }
+    nav h4:hover {
+      color: #028dea;
+      background-color: #333;
+      cursor: pointer; }
+  nav ul {
+    text-align: center; }
+    nav ul li {
+      display: inline-block; }
+      nav ul li a {
+        display: inline-block;
+        text-decoration: none;
+        color: #ccc;
+        font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 15px 15px;
+        border-bottom: 3px solid #222;
+        cursor: pointer; }
+      nav ul li a:hover {
+        background-color: #333;
+        border-color: #333;
+        color: #028dea; }
+    nav ul li .apply {
+      color: #fff;
+      background-color: #028dea;
+      border-bottom-color: #028dea; }
+      nav ul li .apply:hover {
+        border-color: #fff;
+        color: #fff;
+        background-color: #3baffd; }
+
+.section-in-view {
+  border-color: #028dea;
+  background-color: #333; }
+
+.home-button:hover {
+  background-color: #000;
+  border-color: #028dea; }
+
+.apply-pop-up {
+  box-sizing: border-box;
+  display: none;
+  width: calc(90vw - 30px);
+  max-width: 800px;
+  margin: 10vh auto 0;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  padding: 15px;
+  background-color: #bbb;
+  box-shadow: 0 15px 70px 0px #000;
+  z-index: 1001; }
+  .apply-pop-up h3 {
+    color: #fff;
+    margin: 0 0 10px 0;
+    text-shadow: 0 0 3px #444; }
+  .apply-pop-up .close {
+    font-size: 1rem;
+    color: #b00;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 3px;
+    padding: 0;
+    margin: 0; }
+    .apply-pop-up .close:hover {
+      color: #f22; }
+  .apply-pop-up form {
+    box-sizing: border-box; }
+    .apply-pop-up form input {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      padding: 8px;
+      margin-top: 10px;
+      border: 1px solid #999;
+      transition: all .1s; }
+      .apply-pop-up form input:focus, .apply-pop-up form input:hover {
+        outline: none;
+        box-shadow: 0 0 5px #555; }
+    .apply-pop-up form button {
+      font-size: 1.2rem;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #028dea;
+      color: #fff;
+      margin-top: 10px; }
+      .apply-pop-up form button:focus, .apply-pop-up form button:hover {
+        background-color: #3baffd; }
+  .apply-pop-up .sent-message {
+    display: none; }
 
 input[name="program-selector"] {
   position: absolute;
@@ -760,6 +762,8 @@ section {
   .page-landing {
     top: 0px;
     /* nav height */ }
+  footer .sponsors {
+    padding-bottom: 45px; }
   .page-landing.home {
     background-position: center; }
     .page-landing.home .fvi-logo-white {
@@ -822,6 +826,8 @@ section {
     font-size: 2.5rem; }
   .page-landing.home h3 {
     font-size: 1.6rem; }
+  .sponsors img {
+    max-width: 250px; }
   .page-landing.web h1 {
     font-size: 2.7rem;
     padding-top: 16vh; }

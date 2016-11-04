@@ -1,0 +1,50 @@
+footer {
+    width: 100%;
+    background-color: rgb(0, 62, 103);
+    margin-top: -7px;
+    text-align: center;
+
+    .social-media-container {
+        padding-top: 10px;
+
+        a {
+            margin: 10px;
+            color: #fff;
+            display: inline-block;
+            font-size: 2rem;
+
+            &:hover, &:focus {
+                color: #ddd;
+            }
+        }
+    }
+
+    .links-container {
+        padding: 15px;
+        padding-top: 0;
+        text-align: center;
+
+        a {
+            font-size: .95rem;
+            @include link(#fff);
+            white-space: nowrap;
+            line-height: 2.5;
+        }
+    }
+}
+
+.sponsors {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ddd;
+    text-align: center;
+
+    img {
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+}
