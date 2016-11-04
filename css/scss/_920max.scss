@@ -3,7 +3,7 @@
         top: 0px; /* nav height */
     }
 
-    footer .sponsors {
+    footer .sponsors-container {
         padding-bottom: 45px;
     }
 
@@ -73,16 +73,22 @@
                 font-size: 14px;
                 padding: 10px 0 8px 0;
             }
+
+            li .home-button:hover, li .home-button:focus {
+                border-top-color: #333;
+                border-bottom-color: #111;
+            }
+
+            li .apply:hover, li .apply:focus {
+                border-top-color: #333;
+                border-bottom-color: lighten($fvi-blue, 15%);
+            }
         }
     }
 
 
     section:first-of-type {
         margin-top: 80px;
-    }
-
-    #call-to-action-section {
-        padding-bottom: 50px;
     }
 
     .banner {

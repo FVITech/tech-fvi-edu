@@ -38,12 +38,16 @@ main {
 .page-landing.home {
     top: 0;
     background-color: #ddd;
-    background-image: url('../img/network-background.jpg');
-    background-size: cover;
+
+    .above-the-fold {
+        background-image: url('../img/network-background.jpg');
+        background-size: cover;
+    }
 
     .fvi-logo-white {
+        box-sizing: border-box;
         position: absolute;
-        margin: 10px;
+        padding: 10px;
         width: 100%;
         max-width: 80px;
     }
@@ -143,12 +147,6 @@ main {
         max-width: 1000px;
         margin: 0 auto;
         display: block;
-    }
-
-    .fvi-logo {
-        width: 100%;
-        max-width: 300px;
-        margin: 30px;
     }
 }
 

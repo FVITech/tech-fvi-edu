@@ -1,5 +1,9 @@
 $fvi-blue: rgb(2, 141, 234);
+$dark-blue: rgb(0, 62, 103);
 $nav-height: 51px;
+$open-sans: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+
 @mixin link($color) {
     color: $color;
     border-bottom: 1px solid $color;

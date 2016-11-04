@@ -38,7 +38,7 @@
 }
 
 .arrow-up {
-    top: -70px;
+    top: -80px;
     -webkit-animation: arrow-up 1s infinite;
     animation: arrow-up 1s infinite;
     -webkit-animation-timing-function: ease-out;
@@ -49,19 +49,19 @@
 
 @-webkit-keyframes arrow-up {
     from {
-        top: -60px;
+        top: -70px;
     }
     to {
-        top: -70px;
+        top: -80px;
     }
 }
 
 @keyframes arrow-up {
     from {
-        top: -60px;
+        top: -70px;
     }
     to {
-        top: -70px;
+        top: -80px;
     }
 }
 
@@ -110,10 +110,6 @@
     }
 }
 
-.cta-btn-container {
-    margin: 40px auto;
-}
-
 .cta-btn {
     display: inline-block;
     color: #fff;
@@ -122,6 +118,8 @@
     font-weight: 400;
     text-align: center;
     padding: 5px 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 3px 0 0 #555;
@@ -147,7 +145,6 @@
     background-image: -ms-linear-gradient(top, #e66, #b33);
     background-image: -o-linear-gradient(top, #e66, #b33);
     background-image: linear-gradient(to bottom, #e66, #b33);
-    margin-right: 20px;
 
     &:hover {
         background: #f77;

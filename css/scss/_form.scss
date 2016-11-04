@@ -2,21 +2,20 @@
     box-sizing: border-box;
     display: none;
     width: calc(90vw - 30px); // 30px of padding
-    max-width: 800px;
+    max-width: 400px;
     margin: 10vh auto 0;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 12px;
     padding: 15px;
-    background-color: #bbb;
-    box-shadow: 0 15px 70px 0px #000;
+    background-color: #ddd;
+    box-shadow: 0 15px 70px 0 #000;
     z-index: 1001;
 
     h3 {
-        color: #fff;
-        margin: 0 0 10px 0;
-        text-shadow: 0 0 3px #444;
+        color: #000;
+        margin: 0 0 10px;
     }
 
     .close {
@@ -26,45 +25,65 @@
         border: none;
         cursor: pointer;
         position: absolute;
-        top: 0px;
-        right: 3px;
+        top: 3px;
+        right: 5px;
         padding: 0;
         margin: 0;
 
-        &:hover {color: #f22;}
+        &:hover {
+            color: #f22;
+        }
     }
 
     form {
         box-sizing: border-box;
 
-        input {
+        input, textarea {
             box-sizing: border-box;
             width: 100%;
-            max-width: 400px;
             border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             padding: 8px;
             margin-top: 10px;
-            border: 1px solid #999;
-            transition: all .1s;
+            border: 1px solid #ccc;
+            transition: all 0.1s;
 
-            &:focus, &:hover {
+            &:focus,
+            &:hover {
                 outline: none;
-                box-shadow: 0 0 5px #555;
+                box-shadow: 0 0 4px #000;
             }
         }
 
+        textarea {
+            height: 200px;
+            font-family: $open-sans;
+        }
+
         button {
+            display: block;
             font-size: 1.2rem;
             padding: 5px;
             border: none;
             border-radius: 5px;
             background-color: $fvi-blue;
+            background-image: -webkit-linear-gradient(top, #21a6ff, #028DEA);
+            background-image: -moz-linear-gradient(top, #21a6ff, #028DEA);
+            background-image: -ms-linear-gradient(top, #21a6ff, #028DEA);
+            background-image: -o-linear-gradient(top, #21a6ff, #028DEA);
+            background-image: linear-gradient(to bottom, #21a6ff, #028DEA);
             color: #fff;
-            margin-top: 10px;
+            cursor: pointer;
+            margin-top: 3px;
 
-            &:focus, &:hover {
-                background-color: lighten($fvi-blue, 15%);
+            &:focus,
+            &:hover {
+                background: #5abafa;
+                background-image: -webkit-linear-gradient(top, #5abafa, #21a6ff);
+                background-image: -moz-linear-gradient(top, #5abafa, #21a6ff);
+                background-image: -ms-linear-gradient(top, #5abafa, #21a6ff);
+                background-image: -o-linear-gradient(top, #5abafa, #21a6ff);
+                background-image: linear-gradient(to bottom, #5abafa, #21a6ff);
             }
         }
     }

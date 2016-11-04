@@ -12,7 +12,7 @@
         }
     }
 
-    .sponsors img {
+    footer .sponsors-container img {
         max-width: 250px;
     }
 
@@ -61,7 +61,7 @@
         .question-btn {
             margin: auto;
         }
-        .links-container {
+        footer .links-container {
             a:nth-of-type(2):after {
                 content: "\a";
                 white-space: pre;

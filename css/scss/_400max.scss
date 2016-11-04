@@ -33,8 +33,13 @@
             font-size: .9rem;
         }
     }
+    .campus-info-container,
+    .social-media-container,
     .links-container {
-        text-align: left;
+        min-width: 100%;
+    }
+    footer .links-container {
+
         a:after {
             content: "\a";
             white-space: pre;

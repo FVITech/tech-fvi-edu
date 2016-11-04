@@ -1,42 +1,93 @@
 footer {
     width: 100%;
-    background-color: rgb(0, 62, 103);
+    background-color: $dark-blue;
     margin-top: -7px;
     text-align: center;
+}
 
-    .social-media-container {
-        padding-top: 10px;
+.flexbox-container {
+    display: block;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
 
-        a {
-            margin: 10px;
-            color: #fff;
-            display: inline-block;
-            font-size: 2rem;
+.campus-info-container,
+.social-media-container,
+.links-container {
+    box-sizing: border-box;
+    width: calc(100% / 3);
+    min-width: 200px;
+    padding: 20px;
+    padding-top: 20px;
+    display: inline-block;
+    vertical-align: top;
 
-            &:hover, &:focus {
-                color: #ddd;
-            }
-        }
+    h4 {
+        color: $fvi-blue;
+        margin: 0;
+        padding-bottom: 10px;
     }
+}
 
-    .links-container {
-        padding: 15px;
-        padding-top: 0;
-        text-align: center;
+.links-container {
+    a {
+        font-size: .95rem;
+        @include link(#eee);
+        white-space: nowrap;
+        line-height: 2;
+        border-bottom-color: transparent;
 
-        a {
-            font-size: .95rem;
-            @include link(#fff);
-            white-space: nowrap;
-            line-height: 2.5;
+        &:hover, &:focus {
+            border-bottom-color: #eee;;
         }
     }
 }
 
-.sponsors {
+.social-media-container {
+    a {
+        margin: 10px;
+        color: #eee;
+        display: inline-block;
+        font-size: 2rem;
+
+        &:hover, &:focus {
+            color: #ddd;
+        }
+    }
+}
+
+.campus-info-container {
+    text-align: left;
+
+    h4 {text-align: center;}
+    img {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    address {
+        padding-left: 10px;
+        p {
+            color: #eee;
+            font-size: .9rem;
+            margin: 0;
+        }
+    }
+}
+
+.line {
+    margin: auto;
+    max-width: 95%;
+    border: none;
+    border-top: 2px solid darken($dark-blue, 3%);
+}
+
+.sponsors-container {
     box-sizing: border-box;
+    display: block;
     width: 100%;
-    background-color: #ddd;
     text-align: center;
 
     img {

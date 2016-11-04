@@ -17,7 +17,6 @@ section {
     padding: 80px 0 120px;
     text-align: center;
     position: relative;
-    box-shadow: 0 0 4px 1px #111;
     z-index: 3;
     -webkit-transition: all .6s ease-in-out;
     transition: all .6s ease-in-out;
@@ -135,24 +134,27 @@ section {
 }
 
 #call-to-action-section {
-    min-height: 50vh;
-    background-color: #222;
+    background-color: $dark-blue;
     position: relative;
-    box-shadow: 0 2px 20px 0 #111;
     margin-bottom: 0;
 
     .content {
         padding: 10px;
         text-align: center;
 
-        .cta-btn {
-            margin-bottom: 30px;
-            margin-top: 30px;
+        .cta-btn-container {
+            margin: 0 auto;
         }
 
         p {
             font-size: 1.2rem;
-            color: #aaa;
+            color: #eee;
         }
+    }
+
+    .line {
+        margin: auto;
+        max-width: 95%;
+        border-top: 2px solid darken($dark-blue, 3%);
     }
 }
