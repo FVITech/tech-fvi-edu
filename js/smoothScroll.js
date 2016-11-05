@@ -9,7 +9,8 @@ $(document).ready(function() {
             if (target.length) {
                 // topPadding is the height of the nav, so it scrolls past the nav
                 var topPadding = ($(target[0]).hasClass('banner')) ? ((window.innerWidth >= '920') ? -52 : 0) : 0;
-                var timing = (window.scrollY == $(target[0]).offset().top + topPadding) ? 0 : 700;
+                var distance = $(target[0]).offset().top + topPadding - window.scrollY;
+                var timing = (distance < 1 && distance > 0) ? 0 : 700;
                 $('body, html').animate({
                     scrollTop: target.offset().top + topPadding
                 }, timing, 'easeInOutQuint', function() {

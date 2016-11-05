@@ -18,7 +18,7 @@
 
         <div id="overlay">overlay</div>
 
-        <div class="page-landing home">
+        <div class="page-landing home" id="page-landing_home">
             <div class="above-the-fold">
                 <a target="_blank" href="http://www.fvi.edu/"><img class="fvi-logo-white" src="img/FVI-white-simple.png" alt="White FVI Logo"></a>
                 <div class="title-div">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
 
-                <div class="cards-container">
+                <div class="cards-container" id="cards-container">
                     <label for="radio-web" class="card web">
                         <figure>
                             <img src="img/web-dev-card-image.png" alt="image of web development" />
@@ -51,12 +51,12 @@
 
         <input id="radio-web" type="radio" name="program-selector" value="" selected="false">
         <input id="radio-cyber" type="radio" name="program-selector" value="" selected="false">
-        <div class="programs-container">
+        <div class="programs-container" id="programs-container">
 
             <nav>
                 <h4 id="menu-button"><i class="fa fa-bars" aria-hidden="true"></i> <span>MENU</span></h4>
                 <ul id="menu-items">
-                    <li><a class="home-button" href="#">HOME</a></li><!-- remove space
+                    <li><a class="home-button" id="home-button" href="#">HOME</a></li><!-- remove space
                  --><li><a class="nav-item web cyber smoothScroll" href="#summary">SUMMARY</a></li><!-- remove space
                  --><li><a class="nav-item web cyber smoothScroll" href="#cirriculum">CIRRICULUM</a></li><!-- remove space
                  --><li class="radio-web"><a class="nav-item web smoothScroll" href="#comparison">HOW WE COMPARE</a></li><!-- remove space
@@ -65,14 +65,14 @@
                  --><li><a class="nav-item web cyber smoothScroll" href="#tuition">TUITION</a></li><!-- remove space
                  --><li><a class="nav-item web cyber smoothScroll" href="#resources">RESOURCES</a></li><!-- remove space
                  --><li class="radio-web"><a class="nav-item web smoothScroll" href="#student-work">STUDENT WORK</a></li><!-- remomve space
-                 --><li><a class="nav-item web cyber apply" href="#">APPLY</a></li>
+                 --><li><a class="nav-item web cyber apply" id="#nav-apply-btn" href="#">APPLY</a></li>
                  </-->
                 </ul>
             </nav>
 
-            <div class="apply-pop-up">
+            <div class="apply-pop-up" id="apply-pop-up">
                 <h3>Contact Us</h3>
-                <button type="button" class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+                <button type="button" class="close" id="apply-close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
                 <form>
                     <input type="text" name="full_name" value="" placeholder="Your Full Name" required>
                     <input type="tel" name="day_phone" value="" placeholder="Phone Number" required>
@@ -81,18 +81,18 @@
                     <textarea name="message" placeholder="Message..."></textarea>
                     <button type="submit" class="submit" name="submit">Submit</button>
                 </form>
-                <div class="sent-message">
+                <div class="sent-message" id="sent-message">
                     <h3>Message submitted!</h3>
                     <p>A representative from FVI will contact you shortly.</p>
                 </div>
             </div>
 
-            <div class="page-landing web radio-web">
+            <div class="page-landing web radio-web" id="page-landing_web">
                 <h1>WEB DEVELOPER</h1>
                 <p>Become a Web Developer in 9 months.<br>No experience necessary.<br>Learn more below.</p>
                 <a class="arrow arrow-down smoothScroll" href="#summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
             </div>
-            <div class="page-landing cyber radio-cyber">
+            <div class="page-landing cyber radio-cyber" id="page-landing_cyber">
                 <h1>NETWORK<br>ADMINISTRATOR</h1>
                 <p>Become job-ready in 9 months.<br>No experience necessary.<br>Learn more below.</p>
                 <a class="arrow arrow-down smoothScroll" href="#summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -322,7 +322,7 @@
                     <p class="radio-web">Learn to code in 9 months.<br>Become a Web Developer.</p>
                     <p class="radio-cyber">Level up your job skills.<br>Become job-ready 9 months.</p>
                     <div class="cta-btn-container">
-                        <span class="cta-btn apply-btn">Apply For Free <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+                        <span id="cta-apply-btn" class="cta-btn apply-btn">Apply For Free <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
                     </div>
                     <p></p>
                 </div>

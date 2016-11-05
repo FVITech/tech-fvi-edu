@@ -1,23 +1,25 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 !function () {
+    const g = require('./globals');
+
     function show() {
-        $('#overlay').fadeIn();
-        $('.apply-pop-up').fadeIn();
+        g.$overlay.fadeIn();
+        g.$applyPopUp.fadeIn();
     }
 
     function hide() {
-        $('#overlay').fadeOut();
-        $('.apply-pop-up').fadeOut();
+        g.$overlay.fadeOut();
+        g.$applyPopUp.fadeOut();
     }
 
     function submit() {
         $.ajax({
             url: '',
             type: 'post',
-            data: $('.apply-pop-up form').serialize(),
+            data: g.$applyForm.serialize(),
             success: function () {
-                $(this).closest('form').fadeOut(function () {
-                    $(this).closest('.sent-message').fadeIn();
+                g.$applyForm.fadeOut(function () {
+                    $('#sent-message').fadeIn();
                 });
             }
         });
@@ -28,44 +30,70 @@
     module.exports.submit = submit;
 }();
 
-},{}],2:[function(require,module,exports){
+},{"./globals":2}],2:[function(require,module,exports){
 !function () {
-    const mobileMenuWidth = '920';
+    const $overlay = $('#overlay');
+    const $pageLandingHome = $('#page-landing_home');
+    const $pageLandingWeb = $('#page-landing_web');
+    const $pageLandingCyber = $('#page-landing_cyber');
+    const $applyPopUp = $('#apply-pop-up');
+    const $applyForm = $applyPopUp.find('form');
+    const $applyButtons = $('#nav-apply-btn, #cta-apply-btn');
+    const $programsContainer = $('#programs-container');
+    const $homeButton = $('#home-button');
+    const $menu = $('#menu-items');
+    const $navItems = $menu.find('a.nav-item');
+    const $sections = $programsContainer.find('section');
+    const $banners = $sections.find('div.banner');
+    const $plusButtons = $banners.find('span.plus-button');
 
-    module.exports.plusButtons = document.getElementsByClassName('plus-button');
-    module.exports.mobileMenuWidth = mobileMenuWidth;
-    module.exports.topPadding = window.innerWidth >= mobileMenuWidth ? 52 : 0;
+    module.exports.mobileMenuWidth = '920';
+    module.exports.topPadding = window.innerWidth >= '920' ? 52 : 0;
+    module.exports.$overlay = $overlay;
+    module.exports.$pageLandingHome = $pageLandingHome;
+    module.exports.$pageLandingWeb = $pageLandingWeb;
+    module.exports.$pageLandingCyber = $pageLandingCyber;
+    module.exports.$applyPopUp = $applyPopUp;
+    module.exports.$applyForm = $applyForm;
+    module.exports.$applyButtons = $applyButtons;
+    module.exports.$programsContainer = $programsContainer;
+    module.exports.$homeButton = $homeButton;
+    module.exports.$menu = $menu;
+    module.exports.$navItems = $navItems;
+    module.exports.$sections = $sections;
+    module.exports.$banners = $banners;
+    module.exports.$plusButtons = $plusButtons;
 }();
 
 },{}],3:[function(require,module,exports){
 $(document).ready(function () {
     "use strict";
 
-    $('.page-landing.home').fadeIn(300);
+    $('body').fadeIn(300);
 
     const g = require('./globals');
-    const plusButtonFunctions = require('./plus-buttons');
+    const pb = require('./plus-buttons');
     const menu = require('./menu');
     const form = require('./form');
-    var $home = $('.page-landing.home');
 
     // on button click, change button style and show content-container
-    $('.plus-button').click(function () {
+    g.$plusButtons.click(function () {
         if ($(this).hasClass('opened')) {
-            plusButtonFunctions.close(this);
+            pb.close(this);
         } else {
-            plusButtonFunctions.open(this);
+            pb.open(this);
         }
     });
 
     // on window scroll, fixed clicked button to screen
-    $(window).on('scroll', plusButtonFunctions.fixed);
+    $(window).on('scroll', pb.fixed);
 
     // At home page, switch pages when click on program card
-    $('.card.web').click(function () {
+    const $cardsContainer = $('#cards-container');
+    $cardsContainer.find('label.card.web').click(function () {
         switchPage('web');
     });
-    $('.card.cyber').click(function () {
+    $cardsContainer.find('label.card.cyber').click(function () {
         switchPage('cyber');
     });
 
@@ -77,50 +105,51 @@ $(document).ready(function () {
         // $('.content.' + page).show();
         setupPage(page);
         // switch pages
-        $home.fadeOut(function () {
+        g.$pageLandingHome.fadeOut(function () {
             window.scrollTo(0, 0);
-            $('.programs-container').fadeIn();
+            g.$programsContainer.fadeIn();
         });
     }
 
     function setupPage(page) {
-        var navItems = document.getElementsByClassName('nav-item ' + page);
-        var banners = document.getElementsByClassName('banner ' + page);
-        var landing = document.getElementsByClassName('page-landing ' + page)[0];
+        var navItems = g.$menu.find('a.nav-item.' + page);
+        var banners = g.$sections.find('div.banner.' + page);
+        var landing = $('#page-landing_' + page)[0];
         // Switch to home page annd reset everything to default
-        $('.home-button').on('click', function (e) {
+        g.$homeButton.on('click', function (e) {
             e.preventDefault();
-            menu.homeButtonSetup(navItems, page);
+            menu.homeButtonSetup();
         });
 
         // on window scroll, add style to nav item if section is in view
         if (window.innerWidth >= g.mobileMenuWidth) {
             $(window).on('scroll', function () {
-                menu.navItemsStyle(navItems, page, banners, landing);
+                menu.navItemsStyle(navItems, banners, landing);
             });
         }
 
         // Set form program id
-        var id = page == "web" ? 'WD' : 'IT';
-        $("input[name='program_id']").attr('value', id);
+        let id = page == "web" ? 'WD' : 'IT';
+        g.$applyPopUp.find("input[name='program_id']").attr('value', id);
     };
 
     // fade-out down-arrow in landing page when scroll
+    const $arrowDown = g.$programsContainer.find('div.page-landing a.arrow-down');
     window.addEventListener('scroll', function () {
         if (window.scrollY > '20') {
-            $('.arrow-down').fadeOut(400);
+            $arrowDown.fadeOut(400);
         } else {
-            $('.arrow-down').slideDown(400);
+            $arrowDown.slideDown(400);
         }
     });
 
     // apply-button and form
-    $('.apply-btn, .nav-item.apply').click(function (e) {
+    g.$applyButtons.click(function (e) {
         e.preventDefault();
         form.show();
     });
-    $('.apply-pop-up .close, #overlay').click(form.hide);
-    $('.apply-pop-up form').submit(function (e) {
+    $('#apply-close, #overlay').click(form.hide);
+    g.$applyForm.submit(function (e) {
         e.preventDefault();
         form.submit();
     });
@@ -137,22 +166,22 @@ $(document).ready(function () {
 
     function homeButtonSetup(navItems, page) {
         // switch to home page
-        $('.programs-container').fadeOut(function () {
+        g.$programsContainer.fadeOut(function () {
             window.scrollTo(0, 0);
-            $('.page-landing.home').fadeIn(function () {
+            g.$pageLandingHome.fadeIn(function () {
                 // reset things to default
-                $('#overlay, .apply-pop-up').hide();
-                $('.plus-button.opened').css({ 'top': '0px', 'transition': '.6s' }).removeClass('opened');
-                $('.banner.shrink').next().hide();
-                $('.banner.shrink').removeClass('shrink');
-                $('.nav-item').removeClass('section-in-view');
+                g.$overlay.hide();
+                g.$applyPopUp.hide();
+                g.$banners.find('span.plus-button.opened').css({ 'top': '0px', 'transition': '.6s' }).removeClass('opened');
+                g.$sections.find('div.banner.shrink').next().hide().removeClass('shrink');
+                g.$navItems.removeClass('section-in-view');
                 $(window).off('scroll', navItemsStyle);
             });
         });
-        $('.home-button').off('click', homeButtonSetup);
+        g.$homeButton.off('click', homeButtonSetup);
     }
 
-    function navItemsStyle(navItems, page, banners, landing) {
+    function navItemsStyle(navItems, banners, landing) {
         // if window scroll position is between a banner, add nav style to corresponding nav item
         if (landing.getBoundingClientRect().bottom < '-24') {
             for (var j = 0, y = banners.length; j < y; j++) {
@@ -163,17 +192,17 @@ $(document).ready(function () {
                 }
             }
         } else {
-            $('.nav-item').removeClass('section-in-view');
+            g.$navItems.removeClass('section-in-view');
         }
     }
 
     function mobileClick() {
-        var $menuButton = $('#menu-button span');
+        const $menuButton = $('#menu-button span');
         if ($menuButton.html() === 'MENU') {
-            $('nav ul').show(500, 'easeOutQuad');
+            g.$menu.show(500, 'easeOutQuad');
             $menuButton.html('CLOSE');
         } else {
-            $('nav ul').hide(500, 'easeOutQuad');
+            g.$menu.hide(500, 'easeOutQuad');
             $menuButton.html('MENU');
         }
     }
@@ -188,9 +217,8 @@ $(document).ready(function () {
     const g = require('./globals');
 
     function open(button) {
-        var $button = $(button);
         var $banner = $(button.parentNode);
-        $button.addClass('opened');
+        $(button).addClass('opened');
         $banner.addClass('shrink');
         $banner.next().slideDown(600, 'easeOutQuad');
     }
@@ -198,23 +226,21 @@ $(document).ready(function () {
     function close(button) {
         var $button = $(button);
         var $banner = $(button.parentNode);
-        var timing = window.scrollY == $banner.offset().top - g.topPadding ? 0 : 700;
-        // first, scroll to top of banner, then change buton style and slideUp the content
+        var distance = $banner.offset().top - g.topPadding - window.scrollY;
+        var timing = distance < 1 && distance > 0 ? 0 : 700;
         $('html, body').stop().animate({ // need to select both html and body for FireFox
             scrollTop: $banner.offset().top - g.topPadding
         }, timing, 'easeInOutQuad', function () {
-            $button.removeClass('opened');
-            $button.css({
+            $button.removeClass('opened').css({
                 'top': '0px',
                 'transition': 'all .6s'
             });
-            $banner.removeClass('shrink');
-            $banner.next().slideUp(600, 'easeInOutCubic');
+            $banner.removeClass('shrink').next().slideUp(600, 'easeInOutCubic');
         });
     }
 
     function fixed() {
-        $('.plus-button.opened').each(function (i, button) {
+        g.$banners.find('span.plus-button.opened').each(function (i, button) {
             var contentPosition = button.parentNode.nextSibling.nextSibling.getBoundingClientRect();
             // bottomPadding is the bottom of the content, plus nav height and button translateY
             var bottomPadding = window.innerWidth >= g.mobileMenuWidth ? '96' : '45';

@@ -92,7 +92,8 @@ a {
   line-height: 1.7; }
 
 body {
-  background-color: #111; }
+  background-color: #111;
+  display: none; }
 
 .page-landing {
   background-size: cover;

@@ -1,22 +1,24 @@
 ! function() {
+    const g = require('./globals');
+
     function show() {
-        $('#overlay').fadeIn();
-        $('.apply-pop-up').fadeIn();
+        g.$overlay.fadeIn();
+        g.$applyPopUp.fadeIn();
     }
 
     function hide() {
-        $('#overlay').fadeOut();
-        $('.apply-pop-up').fadeOut();
+        g.$overlay.fadeOut();
+        g.$applyPopUp.fadeOut();
     }
 
     function submit() {
         $.ajax({
             url: '',
             type: 'post',
-            data: $('.apply-pop-up form').serialize(),
+            data: g.$applyForm.serialize(),
             success: function() {
-                $(this).closest('form').fadeOut(function() {
-                    $(this).closest('.sent-message').fadeIn();
+                g.$applyForm.fadeOut(function() {
+                    $('#sent-message').fadeIn();
                 });
             }
         });

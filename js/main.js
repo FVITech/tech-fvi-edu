@@ -1,32 +1,32 @@
 $(document).ready(function() {
     "use strict";
 
-    $('.page-landing.home').fadeIn(300);
+    $('body').fadeIn(300);
 
     const g = require('./globals');
-    const plusButtonFunctions = require('./plus-buttons');
+    const pb = require('./plus-buttons');
     const menu = require('./menu');
     const form = require('./form');
-    var $home = $('.page-landing.home');
 
     // on button click, change button style and show content-container
-    $('.plus-button').click(function() {
+    g.$plusButtons.click(function() {
         if($(this).hasClass('opened')) {
-            plusButtonFunctions.close(this);
+            pb.close(this);
         }
         else {
-            plusButtonFunctions.open(this);
+            pb.open(this);
         }
     });
 
     // on window scroll, fixed clicked button to screen
-    $(window).on('scroll', plusButtonFunctions.fixed);
+    $(window).on('scroll', pb.fixed);
 
     // At home page, switch pages when click on program card
-    $('.card.web').click(function() {
+    const $cardsContainer = $('#cards-container');
+    $cardsContainer.find('label.card.web').click(function() {
         switchPage('web')
     });
-    $('.card.cyber').click(function() {
+    $cardsContainer.find('label.card.cyber').click(function() {
         switchPage('cyber')
     });
 
@@ -38,52 +38,51 @@ $(document).ready(function() {
         // $('.content.' + page).show();
         setupPage(page);
         // switch pages
-        $home.fadeOut(function() {
+        g.$pageLandingHome.fadeOut(function() {
             window.scrollTo(0, 0);
-            $('.programs-container').fadeIn();
+            g.$programsContainer.fadeIn();
         });
     }
 
     function setupPage(page) {
-        var navItems = document.getElementsByClassName('nav-item ' + page);
-        var banners = document.getElementsByClassName('banner ' + page);
-        var landing = document.getElementsByClassName('page-landing ' + page)[0];
+        var navItems = g.$menu.find('a.nav-item.' + page);
+        var banners = g.$sections.find('div.banner.' + page);
+        var landing = $('#page-landing_' + page)[0];
         // Switch to home page annd reset everything to default
-        $('.home-button').on('click', function(e) {
+        g.$homeButton.on('click', function(e) {
             e.preventDefault();
-            menu.homeButtonSetup(navItems, page);
+            menu.homeButtonSetup();
         });
 
         // on window scroll, add style to nav item if section is in view
         if (window.innerWidth >= g.mobileMenuWidth) {
             $(window).on('scroll', function() {
-                menu.navItemsStyle(navItems, page, banners, landing);
+                menu.navItemsStyle(navItems, banners, landing);
             });
         }
 
         // Set form program id
-        var id = (page == "web") ? 'WD' : 'IT';
-        $("input[name='program_id']").attr('value', id);
+        let id = (page == "web") ? 'WD' : 'IT';
+        g.$applyPopUp.find("input[name='program_id']").attr('value', id);
     };
 
-
-
     // fade-out down-arrow in landing page when scroll
+    const $arrowDown = g.$programsContainer.find('div.page-landing a.arrow-down');
     window.addEventListener('scroll', function() {
         if (window.scrollY > '20') {
-            $('.arrow-down').fadeOut(400);
+            $arrowDown.fadeOut(400);
         } else {
-            $('.arrow-down').slideDown(400);
+            $arrowDown.slideDown(400);
         }
     });
 
     // apply-button and form
-    $('.apply-btn, .nav-item.apply').click(function(e) {
+    g.$applyButtons.click(function(e) {
         e.preventDefault();
         form.show();
     });
-    $('.apply-pop-up .close, #overlay').click(form.hide);
-    $('.apply-pop-up form').submit(function(e) {
+    $('#apply-close, #overlay').click(form.hide);
+    g.$applyForm.submit(function(e) {
         e.preventDefault();
         form.submit();
     });
