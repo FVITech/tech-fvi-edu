@@ -16,6 +16,7 @@
         else {
             pb.open(this);
         }
+        return false;
     });
 
     // on window scroll, fixed clicked button to screen
@@ -25,22 +26,19 @@
     const $cards = $('#cards-container label.card');
     $cards.filter('.web').click(function() {
         switchPage('web')
+        return false;
     });
     $cards.filter('.cyber').click(function() {
         switchPage('cyber')
+        return false;
     });
 
     function switchPage(page) {
-        // display page-specific content
-        // $('.nav-item.' + page).parent().show();
-        // $('.page-landing.' + page).show();
-        // $('section.' + page).show();
-        // $('.content.' + page).show();
         setupPage(page);
-        // switch pages
         g.$pageLandingHome.fadeOut(function() {
             window.scrollTo(0, 0);
             g.$programsContainer.fadeIn();
+            return false;
         });
     }
 
@@ -52,6 +50,7 @@
         g.$homeButton.on('click', function(e) {
             e.preventDefault();
             menu.homeButtonSetup();
+            return false;
         });
 
         // on window scroll, add style to nav item if section is in view
@@ -59,11 +58,13 @@
             $(window).on('scroll', function() {
                 menu.navItemsStyle(navItems, banners, landing);
             });
+            return false;
         }
 
         // Set form program id
         let id = (page == "web") ? 'WD' : 'IT';
         g.$applyPopUp.find("input[name='program_id']").attr('value', id);
+        return false;
     };
 
     // fade-out down-arrow in landing page when scroll
@@ -74,6 +75,7 @@
         } else {
             $arrowDown.slideDown(400);
         }
+        return false;
     });
 
     // mobile-menu show/hide
@@ -85,11 +87,13 @@
     g.$applyButtons.click(function(e) {
         e.preventDefault();
         form.show();
+        return false;
     });
     $('#apply-close, #overlay').click(form.hide);
     g.$applyForm.submit(function(e) {
         e.preventDefault();
         form.submit();
+        return false;
     });
 
 }();

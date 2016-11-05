@@ -13,9 +13,12 @@
                 g.$banners.filter('.shrink').next().hide().removeClass('shrink');
                 g.$navItems.removeClass('section-in-view');
                 $(window).off('scroll', navItemsStyle);
+                return false;
             });
+            return false;
         });
         g.$homeButton.off('click', homeButtonSetup);
+        return false;
     }
 
     function navItemsStyle(navItems, banners, landing) {
@@ -31,6 +34,7 @@
         } else {
             g.$navItems.removeClass('section-in-view');
         }
+        return false;
     }
 
     function mobileClick() {
@@ -42,6 +46,7 @@
             g.$menuItems.hide(500, 'easeOutQuad');
             $menuButton.html('MENU');
         }
+        return false;
     }
 
     module.exports.navItemsStyle = navItemsStyle;

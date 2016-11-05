@@ -6,6 +6,7 @@
         $(button).addClass('opened');
         $banner.addClass('shrink');
         $banner.next().slideDown(600, 'easeOutQuad');
+        return false;
     }
 
     function close(button) {
@@ -21,7 +22,9 @@
                 'transition': 'all .6s'
             });
             $banner.removeClass('shrink').next().slideUp(600, 'easeInOutCubic');
+            return false;
         });
+        return false;
     }
 
     function fixed() {
@@ -42,6 +45,7 @@
                 });
             }
         }
+        return false;
     }
 
     module.exports.open = open;

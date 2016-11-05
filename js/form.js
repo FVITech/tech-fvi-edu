@@ -4,11 +4,13 @@
     function show() {
         g.$overlay.fadeIn();
         g.$applyPopUp.fadeIn();
+        return false;
     }
 
     function hide() {
         g.$overlay.fadeOut();
         g.$applyPopUp.fadeOut();
+        return false;
     }
 
     function submit() {
@@ -22,6 +24,7 @@
                 });
             }
         });
+        return false;
     }
 
     module.exports.show = show;
