@@ -25,22 +25,23 @@
     }
 
     function fixed() {
-        g.$plusButtons.filter('.opened').each(function(i, button) {
-            var contentPosition = button.parentNode.nextSibling.nextSibling.getBoundingClientRect();
-            // bottomPadding is the bottom of the content, plus nav height and button translateY
-            var bottomPadding = (window.innerWidth >= g.mobileMenuWidth) ? '96' : '45';
+        // bottomPadding is the bottom of the content, plus nav height and button translateY
+        let bottomPadding = (window.innerWidth >= g.mobileMenuWidth) ? '96' : '45';
+        let $openButtons = g.$plusButtons.filter('.opened');
+        for(let i = 0, x = $openButtons.length; i < x; i++) {
+            let contentPosition = $openButtons[i].parentNode.nextSibling.nextSibling.getBoundingClientRect();
             if (contentPosition.top <= String(g.topPadding) && contentPosition.bottom >= bottomPadding) {
-                $(button).css({
+                $($openButtons[i]).css({
                     'top': (-(contentPosition.top) + g.topPadding) + 'px',
                     'transition': '0s'
                 });
             } else {
-                $(button).css({
+                $($openButtons[i]).css({
                     'top': '0px',
                     'transition': '0s'
                 });
             }
-        });
+        }
     }
 
     module.exports.open = open;

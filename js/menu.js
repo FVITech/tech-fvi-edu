@@ -21,7 +21,7 @@
     function navItemsStyle(navItems, banners, landing) {
         // if window scroll position is between a banner, add nav style to corresponding nav item
         if (landing.getBoundingClientRect().bottom < '-24') {
-            for (var j = 0, y = banners.length; j < y; j++) {
+            for (let j = 0, y = banners.length; j < y; j++) {
                 if (banners[j].getBoundingClientRect().top <= g.topPadding && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > g.topPadding || banners[j].getBoundingClientRect().bottom > g.topPadding)) {
                     navItems[j].classList.add('section-in-view');
                 } else {
