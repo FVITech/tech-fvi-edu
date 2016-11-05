@@ -1,6 +1,8 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
 !function () {
-    const g = require('./globals');
+    var g = require('./globals');
 
     function show() {
         g.$overlay.fadeIn();
@@ -17,7 +19,7 @@
             url: '',
             type: 'post',
             data: g.$applyForm.serialize(),
-            success: function () {
+            success: function success() {
                 g.$applyForm.fadeOut(function () {
                     $('#sent-message').fadeIn();
                 });
@@ -31,21 +33,23 @@
 }();
 
 },{"./globals":2}],2:[function(require,module,exports){
+'use strict';
+
 !function () {
-    const $overlay = $('#overlay');
-    const $pageLandingHome = $('#page-landing_home');
-    const $pageLandingWeb = $('#page-landing_web');
-    const $pageLandingCyber = $('#page-landing_cyber');
-    const $applyPopUp = $('#apply-pop-up');
-    const $applyForm = $applyPopUp.find('form');
-    const $applyButtons = $('#nav-apply-btn, #cta-apply-btn');
-    const $programsContainer = $('#programs-container');
-    const $homeButton = $('#home-button');
-    const $menu = $('#menu-items');
-    const $navItems = $menu.find('a.nav-item');
-    const $sections = $programsContainer.find('section');
-    const $banners = $sections.find('div.banner');
-    const $plusButtons = $banners.find('span.plus-button');
+    var $overlay = $('#overlay');
+    var $pageLandingHome = $('#page-landing_home');
+    var $pageLandingWeb = $('#page-landing_web');
+    var $pageLandingCyber = $('#page-landing_cyber');
+    var $applyPopUp = $('#apply-pop-up');
+    var $applyForm = $applyPopUp.find('form');
+    var $applyButtons = $('#nav-apply-btn, #cta-apply-btn');
+    var $programsContainer = $('#programs-container');
+    var $homeButton = $('#home-button');
+    var $menu = $('#menu-items');
+    var $navItems = $menu.find('a.nav-item');
+    var $sections = $programsContainer.find('section');
+    var $banners = $sections.find('div.banner');
+    var $plusButtons = $banners.find('span.plus-button');
 
     module.exports.mobileMenuWidth = '920';
     module.exports.topPadding = window.innerWidth >= '920' ? 52 : 0;
@@ -66,15 +70,17 @@
 }();
 
 },{}],3:[function(require,module,exports){
+'use strict';
+
 $(document).ready(function () {
     "use strict";
 
     $('body').fadeIn(300);
 
-    const g = require('./globals');
-    const pb = require('./plus-buttons');
-    const menu = require('./menu');
-    const form = require('./form');
+    var g = require('./globals');
+    var pb = require('./plus-buttons');
+    var menu = require('./menu');
+    var form = require('./form');
 
     // on button click, change button style and show content-container
     g.$plusButtons.click(function () {
@@ -89,7 +95,7 @@ $(document).ready(function () {
     $(window).on('scroll', pb.fixed);
 
     // At home page, switch pages when click on program card
-    const $cardsContainer = $('#cards-container');
+    var $cardsContainer = $('#cards-container');
     $cardsContainer.find('label.card.web').click(function () {
         switchPage('web');
     });
@@ -129,12 +135,12 @@ $(document).ready(function () {
         }
 
         // Set form program id
-        let id = page == "web" ? 'WD' : 'IT';
+        var id = page == "web" ? 'WD' : 'IT';
         g.$applyPopUp.find("input[name='program_id']").attr('value', id);
     };
 
     // fade-out down-arrow in landing page when scroll
-    const $arrowDown = g.$programsContainer.find('div.page-landing a.arrow-down');
+    var $arrowDown = g.$programsContainer.find('div.page-landing a.arrow-down');
     window.addEventListener('scroll', function () {
         if (window.scrollY > '20') {
             $arrowDown.fadeOut(400);
@@ -161,8 +167,10 @@ $(document).ready(function () {
 });
 
 },{"./form":1,"./globals":2,"./menu":4,"./plus-buttons":5}],4:[function(require,module,exports){
+'use strict';
+
 !function () {
-    const g = require('./globals');
+    var g = require('./globals');
 
     function homeButtonSetup(navItems, page) {
         // switch to home page
@@ -197,7 +205,7 @@ $(document).ready(function () {
     }
 
     function mobileClick() {
-        const $menuButton = $('#menu-button span');
+        var $menuButton = $('#menu-button span');
         if ($menuButton.html() === 'MENU') {
             g.$menu.show(500, 'easeOutQuad');
             $menuButton.html('CLOSE');
@@ -213,8 +221,10 @@ $(document).ready(function () {
 }();
 
 },{"./globals":2}],5:[function(require,module,exports){
+'use strict';
+
 !function () {
-    const g = require('./globals');
+    var g = require('./globals');
 
     function open(button) {
         var $banner = $(button.parentNode);

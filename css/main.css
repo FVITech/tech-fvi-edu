@@ -689,8 +689,6 @@ section {
   z-index: 2; }
   section:first-of-type {
     margin-top: 131px; }
-  section:last-of-type {
-    margin-bottom: 80px; }
 
 .banner {
   width: 100%;
@@ -795,8 +793,7 @@ section {
 
 #call-to-action-section {
   background-color: #003558;
-  position: relative;
-  margin-bottom: 0; }
+  position: relative; }
   #call-to-action-section .content {
     padding: 10px;
     text-align: center; }
@@ -938,6 +935,8 @@ section {
   .page-landing.cyber p {
     margin-top: 3vh;
     font-size: .9rem; }
+  .banner {
+    padding: 40px 0 80px; }
   .campus-info-container,
   .social-media-container,
   .links-container {

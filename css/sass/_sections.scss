@@ -6,10 +6,6 @@ section {
     &:first-of-type {
         margin-top: 131px;
     }
-
-    &:last-of-type {
-        margin-bottom: 80px;
-    }
 }
 
 .banner {
@@ -136,7 +132,6 @@ section {
 #call-to-action-section {
     background-color: darken($dark-blue, 3%);
     position: relative;
-    margin-bottom: 0;
 
     .content {
         padding: 10px;
