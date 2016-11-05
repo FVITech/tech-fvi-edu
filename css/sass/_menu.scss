@@ -22,7 +22,7 @@ nav {
 
     /* mobile Menu Button */
     h4 {
-        font-family: 'Raleway', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-family: $open-sans;
         font-size: 14px;
         font-weight: 400;
         color: #ccc;
@@ -48,7 +48,7 @@ nav {
                 display: inline-block;
                 text-decoration: none;
                 color: #ccc;
-                font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+                font-family: $open-sans;
                 font-size: 12px;
                 font-weight: 600;
                 padding: 15px 15px;

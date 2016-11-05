@@ -1,6 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict';
-
 !function () {
     function show() {
         $('#overlay').fadeIn();
@@ -17,7 +15,7 @@
             url: '',
             type: 'post',
             data: $('.apply-pop-up form').serialize(),
-            success: function success() {
+            success: function () {
                 $(this).closest('form').fadeOut(function () {
                     $(this).closest('.sent-message').fadeIn();
                 });
@@ -31,10 +29,8 @@
 }();
 
 },{}],2:[function(require,module,exports){
-'use strict';
-
 !function () {
-    var mobileMenuWidth = '920';
+    const mobileMenuWidth = '920';
 
     module.exports.plusButtons = document.getElementsByClassName('plus-button');
     module.exports.mobileMenuWidth = mobileMenuWidth;
@@ -42,17 +38,15 @@
 }();
 
 },{}],3:[function(require,module,exports){
-'use strict';
-
 $(document).ready(function () {
     "use strict";
 
     $('.page-landing.home').fadeIn(300);
 
-    var g = require('./globals');
-    var plusButtonFunctions = require('./plus-buttons');
-    var menu = require('./menu');
-    var form = require('./form');
+    const g = require('./globals');
+    const plusButtonFunctions = require('./plus-buttons');
+    const menu = require('./menu');
+    const form = require('./form');
     var $home = $('.page-landing.home');
 
     // on button click, change button style and show content-container
@@ -138,10 +132,8 @@ $(document).ready(function () {
 });
 
 },{"./form":1,"./globals":2,"./menu":4,"./plus-buttons":5}],4:[function(require,module,exports){
-'use strict';
-
 !function () {
-    var g = require('./globals');
+    const g = require('./globals');
 
     function homeButtonSetup(navItems, page) {
         // switch to home page
@@ -192,10 +184,8 @@ $(document).ready(function () {
 }();
 
 },{"./globals":2}],5:[function(require,module,exports){
-'use strict';
-
 !function () {
-    var g = require('./globals');
+    const g = require('./globals');
 
     function open(button) {
         var $button = $(button);
