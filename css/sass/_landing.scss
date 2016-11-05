@@ -7,9 +7,9 @@ body {
     background-size: cover;
     background-position: center;
     box-shadow: 0 0 4px 1px #111;
-    min-height: 100vh;
+    min-height: calc(100vh - 51px);
     position: relative;
-    top: $nav-height; /* nav height */
+    top: $nav-height;
     text-align: center;
     transition: all 0;
 
@@ -39,6 +39,7 @@ body {
 .page-landing.home {
     top: 0;
     background-color: #ddd;
+    min-height: 100vh;
 
     .above-the-fold {
         background-image: url('../img/network-background-dark.jpg');

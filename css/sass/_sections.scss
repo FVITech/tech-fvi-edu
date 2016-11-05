@@ -4,7 +4,7 @@ section {
     z-index: 2;
 
     &:first-of-type {
-        margin-top: 131px;
+        margin-top: 131px; /* 80px + nav-height, since page-landing is pushed down */
     }
 }
 

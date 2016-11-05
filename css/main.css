@@ -99,10 +99,9 @@ body {
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 4px 1px #111;
-  min-height: 100vh;
+  min-height: calc(100vh - 51px);
   position: relative;
   top: 51px;
-  /* nav height */
   text-align: center;
   transition: all 0; }
   .page-landing h1 {
@@ -126,7 +125,8 @@ body {
 
 .page-landing.home {
   top: 0;
-  background-color: #ddd; }
+  background-color: #ddd;
+  min-height: 100vh; }
   .page-landing.home .above-the-fold {
     background-image: url("../img/network-background-dark.jpg");
     background-size: cover; }
@@ -688,7 +688,8 @@ section {
   position: relative;
   z-index: 2; }
   section:first-of-type {
-    margin-top: 131px; }
+    margin-top: 131px;
+    /* 80px + nav-height, since page-landing is pushed down */ }
 
 .banner {
   width: 100%;

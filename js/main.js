@@ -10,10 +10,9 @@
 
     // on button click, change button style and show content-container
     g.$plusButtons.click(function() {
-        if($(this).hasClass('opened')) {
+        if ($(this).hasClass('opened')) {
             pb.close(this);
-        }
-        else {
+        } else {
             pb.open(this);
         }
         return false;
@@ -25,12 +24,10 @@
     // At home page, switch pages when click on program card
     const $cards = $('#cards-container label.card');
     $cards.filter('.web').click(function() {
-        switchPage('web')
-        return false;
+        switchPage('web');
     });
     $cards.filter('.cyber').click(function() {
-        switchPage('cyber')
-        return false;
+        switchPage('cyber');
     });
 
     function switchPage(page) {
@@ -40,6 +37,7 @@
             g.$programsContainer.fadeIn();
             return false;
         });
+        return false;
     }
 
     function setupPage(page) {
@@ -57,8 +55,8 @@
         if (window.innerWidth >= g.mobileMenuWidth) {
             $(window).on('scroll', function() {
                 menu.navItemsStyle(navItems, banners, landing);
+                return false;
             });
-            return false;
         }
 
         // Set form program id

@@ -7,11 +7,13 @@
     function show() {
         g.$overlay.fadeIn();
         g.$applyPopUp.fadeIn();
+        return false;
     }
 
     function hide() {
         g.$overlay.fadeOut();
         g.$applyPopUp.fadeOut();
+        return false;
     }
 
     function submit() {
@@ -25,6 +27,7 @@
                 });
             }
         });
+        return false;
     }
 
     module.exports.show = show;
@@ -89,6 +92,7 @@
         } else {
             pb.open(this);
         }
+        return false;
     });
 
     // on window scroll, fixed clicked button to screen
@@ -104,17 +108,13 @@
     });
 
     function switchPage(page) {
-        // display page-specific content
-        // $('.nav-item.' + page).parent().show();
-        // $('.page-landing.' + page).show();
-        // $('section.' + page).show();
-        // $('.content.' + page).show();
         setupPage(page);
-        // switch pages
         g.$pageLandingHome.fadeOut(function () {
             window.scrollTo(0, 0);
             g.$programsContainer.fadeIn();
+            return false;
         });
+        return false;
     }
 
     function setupPage(page) {
@@ -125,18 +125,21 @@
         g.$homeButton.on('click', function (e) {
             e.preventDefault();
             menu.homeButtonSetup();
+            return false;
         });
 
         // on window scroll, add style to nav item if section is in view
         if (window.innerWidth >= g.mobileMenuWidth) {
             $(window).on('scroll', function () {
                 menu.navItemsStyle(navItems, banners, landing);
+                return false;
             });
         }
 
         // Set form program id
         var id = page == "web" ? 'WD' : 'IT';
         g.$applyPopUp.find("input[name='program_id']").attr('value', id);
+        return false;
     };
 
     // fade-out down-arrow in landing page when scroll
@@ -147,6 +150,7 @@
         } else {
             $arrowDown.slideDown(400);
         }
+        return false;
     });
 
     // mobile-menu show/hide
@@ -158,11 +162,13 @@
     g.$applyButtons.click(function (e) {
         e.preventDefault();
         form.show();
+        return false;
     });
     $('#apply-close, #overlay').click(form.hide);
     g.$applyForm.submit(function (e) {
         e.preventDefault();
         form.submit();
+        return false;
     });
 }();
 
@@ -184,9 +190,12 @@
                 g.$banners.filter('.shrink').next().hide().removeClass('shrink');
                 g.$navItems.removeClass('section-in-view');
                 $(window).off('scroll', navItemsStyle);
+                return false;
             });
+            return false;
         });
         g.$homeButton.off('click', homeButtonSetup);
+        return false;
     }
 
     function navItemsStyle(navItems, banners, landing) {
@@ -202,6 +211,7 @@
         } else {
             g.$navItems.removeClass('section-in-view');
         }
+        return false;
     }
 
     function mobileClick() {
@@ -213,6 +223,7 @@
             g.$menuItems.hide(500, 'easeOutQuad');
             $menuButton.html('MENU');
         }
+        return false;
     }
 
     module.exports.navItemsStyle = navItemsStyle;
@@ -231,6 +242,7 @@
         $(button).addClass('opened');
         $banner.addClass('shrink');
         $banner.next().slideDown(600, 'easeOutQuad');
+        return false;
     }
 
     function close(button) {
@@ -246,7 +258,9 @@
                 'transition': 'all .6s'
             });
             $banner.removeClass('shrink').next().slideUp(600, 'easeInOutCubic');
+            return false;
         });
+        return false;
     }
 
     function fixed() {
@@ -267,6 +281,7 @@
                 });
             }
         }
+        return false;
     }
 
     module.exports.open = open;
