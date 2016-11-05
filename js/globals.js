@@ -8,8 +8,8 @@
     const $applyButtons = $('#nav-apply-btn, #cta-apply-btn');
     const $programsContainer = $('#programs-container');
     const $homeButton = $('#home-button');
-    const $menu = $('#menu-items');
-    const $navItems = $menu.find('a.nav-item');
+    const $menuItems = $('#menu-items');
+    const $navItems = $menuItems.find('a.nav-item');
     const $sections = $programsContainer.find('section');
     const $banners = $sections.find('div.banner');
     const $plusButtons = $banners.find('span.plus-button');
@@ -25,7 +25,7 @@
     module.exports.$applyButtons = $applyButtons;
     module.exports.$programsContainer = $programsContainer;
     module.exports.$homeButton = $homeButton;
-    module.exports.$menu = $menu;
+    module.exports.$menuItems = $menuItems;
     module.exports.$navItems = $navItems;
     module.exports.$sections = $sections;
     module.exports.$banners = $banners;

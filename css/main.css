@@ -445,7 +445,7 @@ nav {
 .apply-pop-up {
   box-sizing: border-box;
   display: none;
-  width: calc(90vw - 30px);
+  width: calc(100vw - 40px);
   max-width: 400px;
   margin: 60px auto 0;
   position: fixed;
@@ -487,7 +487,7 @@ nav {
         outline: none;
         box-shadow: 0 0 4px #000; }
     .apply-pop-up form textarea {
-      height: 200px;
+      height: 250px;
       font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
     .apply-pop-up form button {
       display: block;
@@ -923,7 +923,7 @@ section {
   .apply-pop-up {
     margin-top: 20px; }
     .apply-pop-up form textarea {
-      height: 150px; }
+      height: 200px; }
   .page-landing.web h1 {
     font-size: 2.3rem; }
   .page-landing.web p {

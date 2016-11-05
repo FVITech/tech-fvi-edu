@@ -11,8 +11,8 @@
     function close(button) {
         var $button = $(button);
         var $banner = $(button.parentNode);
-        var distance = $banner.offset().top - g.topPadding - window.scrollY;
-        var timing = (distance < 1 && distance > 0) ? 0 : 700;
+        var distance = (window.innerWidth >= g.mobileMenuWidth) ? $banner.offset().top - g.topPadding - window.scrollY : $banner.offset().top - window.scrollY;
+        var timing = (distance <= 1 && distance >= 0) ? 0 : 700;
         $('html, body').stop().animate({ // need to select both html and body for FireFox
             scrollTop: $banner.offset().top - g.topPadding
         }, timing, 'easeInOutQuad', function() {
@@ -25,7 +25,7 @@
     }
 
     function fixed() {
-        g.$banners.find('span.plus-button.opened').each(function(i, button) {
+        g.$plusButtons.filter('.opened').each(function(i, button) {
             var contentPosition = button.parentNode.nextSibling.nextSibling.getBoundingClientRect();
             // bottomPadding is the bottom of the content, plus nav height and button translateY
             var bottomPadding = (window.innerWidth >= g.mobileMenuWidth) ? '96' : '45';

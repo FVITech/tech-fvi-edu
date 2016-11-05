@@ -1,4 +1,4 @@
-$(document).ready(function() {
+!function() {
     "use strict";
 
     $('body').fadeIn(300);
@@ -22,11 +22,11 @@ $(document).ready(function() {
     $(window).on('scroll', pb.fixed);
 
     // At home page, switch pages when click on program card
-    const $cardsContainer = $('#cards-container');
-    $cardsContainer.find('label.card.web').click(function() {
+    const $cards = $('#cards-container label.card');
+    $cards.filter('.web').click(function() {
         switchPage('web')
     });
-    $cardsContainer.find('label.card.cyber').click(function() {
+    $cards.filter('.cyber').click(function() {
         switchPage('cyber')
     });
 
@@ -45,8 +45,8 @@ $(document).ready(function() {
     }
 
     function setupPage(page) {
-        var navItems = g.$menu.find('a.nav-item.' + page);
-        var banners = g.$sections.find('div.banner.' + page);
+        var navItems = g.$navItems.filter('.' + page);
+        var banners = g.$banners.filter('.' + page);
         var landing = $('#page-landing_' + page)[0];
         // Switch to home page annd reset everything to default
         g.$homeButton.on('click', function(e) {
@@ -76,6 +76,11 @@ $(document).ready(function() {
         }
     });
 
+    // mobile-menu show/hide
+    if (window.innerWidth < g.mobileMenuWidth) {
+        $('#menu-button, #menu-items li a').click(menu.mobileClick);
+    }
+
     // apply-button and form
     g.$applyButtons.click(function(e) {
         e.preventDefault();
@@ -87,9 +92,4 @@ $(document).ready(function() {
         form.submit();
     });
 
-    // mobile-menu show/hide
-    if (window.innerWidth < g.mobileMenuWidth) {
-        $('#menu-button, #menu-items li a').click(menu.mobileClick);
-    }
-
-});
+}();

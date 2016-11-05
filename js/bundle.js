@@ -45,8 +45,8 @@
     var $applyButtons = $('#nav-apply-btn, #cta-apply-btn');
     var $programsContainer = $('#programs-container');
     var $homeButton = $('#home-button');
-    var $menu = $('#menu-items');
-    var $navItems = $menu.find('a.nav-item');
+    var $menuItems = $('#menu-items');
+    var $navItems = $menuItems.find('a.nav-item');
     var $sections = $programsContainer.find('section');
     var $banners = $sections.find('div.banner');
     var $plusButtons = $banners.find('span.plus-button');
@@ -62,7 +62,7 @@
     module.exports.$applyButtons = $applyButtons;
     module.exports.$programsContainer = $programsContainer;
     module.exports.$homeButton = $homeButton;
-    module.exports.$menu = $menu;
+    module.exports.$menuItems = $menuItems;
     module.exports.$navItems = $navItems;
     module.exports.$sections = $sections;
     module.exports.$banners = $banners;
@@ -72,7 +72,7 @@
 },{}],3:[function(require,module,exports){
 'use strict';
 
-$(document).ready(function () {
+!function () {
     "use strict";
 
     $('body').fadeIn(300);
@@ -95,11 +95,11 @@ $(document).ready(function () {
     $(window).on('scroll', pb.fixed);
 
     // At home page, switch pages when click on program card
-    var $cardsContainer = $('#cards-container');
-    $cardsContainer.find('label.card.web').click(function () {
+    var $cards = $('#cards-container label.card');
+    $cards.filter('.web').click(function () {
         switchPage('web');
     });
-    $cardsContainer.find('label.card.cyber').click(function () {
+    $cards.filter('.cyber').click(function () {
         switchPage('cyber');
     });
 
@@ -118,8 +118,8 @@ $(document).ready(function () {
     }
 
     function setupPage(page) {
-        var navItems = g.$menu.find('a.nav-item.' + page);
-        var banners = g.$sections.find('div.banner.' + page);
+        var navItems = g.$navItems.filter('.' + page);
+        var banners = g.$banners.filter('.' + page);
         var landing = $('#page-landing_' + page)[0];
         // Switch to home page annd reset everything to default
         g.$homeButton.on('click', function (e) {
@@ -149,6 +149,11 @@ $(document).ready(function () {
         }
     });
 
+    // mobile-menu show/hide
+    if (window.innerWidth < g.mobileMenuWidth) {
+        $('#menu-button, #menu-items li a').click(menu.mobileClick);
+    }
+
     // apply-button and form
     g.$applyButtons.click(function (e) {
         e.preventDefault();
@@ -159,12 +164,7 @@ $(document).ready(function () {
         e.preventDefault();
         form.submit();
     });
-
-    // mobile-menu show/hide
-    if (window.innerWidth < g.mobileMenuWidth) {
-        $('#menu-button, #menu-items li a').click(menu.mobileClick);
-    }
-});
+}();
 
 },{"./form":1,"./globals":2,"./menu":4,"./plus-buttons":5}],4:[function(require,module,exports){
 'use strict';
@@ -180,8 +180,8 @@ $(document).ready(function () {
                 // reset things to default
                 g.$overlay.hide();
                 g.$applyPopUp.hide();
-                g.$banners.find('span.plus-button.opened').css({ 'top': '0px', 'transition': '.6s' }).removeClass('opened');
-                g.$sections.find('div.banner.shrink').next().hide().removeClass('shrink');
+                g.$plusButtons.filter('.opened').css({ 'top': '0px', 'transition': '.6s' }).removeClass('opened');
+                g.$banners.filter('.shrink').next().hide().removeClass('shrink');
                 g.$navItems.removeClass('section-in-view');
                 $(window).off('scroll', navItemsStyle);
             });
@@ -207,10 +207,10 @@ $(document).ready(function () {
     function mobileClick() {
         var $menuButton = $('#menu-button span');
         if ($menuButton.html() === 'MENU') {
-            g.$menu.show(500, 'easeOutQuad');
+            g.$menuItems.show(500, 'easeOutQuad');
             $menuButton.html('CLOSE');
         } else {
-            g.$menu.hide(500, 'easeOutQuad');
+            g.$menuItems.hide(500, 'easeOutQuad');
             $menuButton.html('MENU');
         }
     }
@@ -236,8 +236,8 @@ $(document).ready(function () {
     function close(button) {
         var $button = $(button);
         var $banner = $(button.parentNode);
-        var distance = $banner.offset().top - g.topPadding - window.scrollY;
-        var timing = distance < 1 && distance > 0 ? 0 : 700;
+        var distance = window.innerWidth >= g.mobileMenuWidth ? $banner.offset().top - g.topPadding - window.scrollY : $banner.offset().top - window.scrollY;
+        var timing = distance <= 1 && distance >= 0 ? 0 : 700;
         $('html, body').stop().animate({ // need to select both html and body for FireFox
             scrollTop: $banner.offset().top - g.topPadding
         }, timing, 'easeInOutQuad', function () {
@@ -250,7 +250,7 @@ $(document).ready(function () {
     }
 
     function fixed() {
-        g.$banners.find('span.plus-button.opened').each(function (i, button) {
+        g.$plusButtons.filter('.opened').each(function (i, button) {
             var contentPosition = button.parentNode.nextSibling.nextSibling.getBoundingClientRect();
             // bottomPadding is the bottom of the content, plus nav height and button translateY
             var bottomPadding = window.innerWidth >= g.mobileMenuWidth ? '96' : '45';

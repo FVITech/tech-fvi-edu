@@ -9,8 +9,8 @@
                 // reset things to default
                 g.$overlay.hide();
                 g.$applyPopUp.hide();
-                g.$banners.find('span.plus-button.opened').css({'top': '0px', 'transition': '.6s'}).removeClass('opened');
-                g.$sections.find('div.banner.shrink').next().hide().removeClass('shrink');
+                g.$plusButtons.filter('.opened').css({'top': '0px', 'transition': '.6s'}).removeClass('opened');
+                g.$banners.filter('.shrink').next().hide().removeClass('shrink');
                 g.$navItems.removeClass('section-in-view');
                 $(window).off('scroll', navItemsStyle);
             });
@@ -36,10 +36,10 @@
     function mobileClick() {
         const $menuButton = $('#menu-button span');
         if ($menuButton.html() === 'MENU') {
-            g.$menu.show(500, 'easeOutQuad');
+            g.$menuItems.show(500, 'easeOutQuad');
             $menuButton.html('CLOSE');
         } else {
-            g.$menu.hide(500, 'easeOutQuad');
+            g.$menuItems.hide(500, 'easeOutQuad');
             $menuButton.html('MENU');
         }
     }
