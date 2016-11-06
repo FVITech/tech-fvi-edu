@@ -5,15 +5,19 @@
   "main": "index.html",
   "scripts": {
     "build-js": "browserify src/js/main.js -o src/js/bundle.js",
-    "build-min-js": "browserify src/js/main.js | uglifyjs -o dist/js/bundle.min.js",
-    "build-sass": "node-sass src/css/main.scss src/css/main.css",
-    "prefix-css": "postcss --use autoprefixer src/css/main.css -d src/css",
-    "build-min-sass": "node-sass src/css/main.scss | cleancss -o dist/css/main.min.css",
-    "watch-js": "watchify src/js/main.js -o src/js/bundle.js -v",
-    "watch-sass": "nodemon -e src/css -x \"npm run build-sass\"",
-    "build": "npm run build-js & npm run build-sass",
-    "watch": "npm run watch-js & npm run watch-sass",
-    "dist": "npm run build-min-js & npm run build-min-sass"
+    "watch-js": "onchange 'src/js/*.js' -- npm run build-js",
+    "build-js-min": "browserify src/js/main.js | uglifyjs -o dist/js/bundle.min.js",
+    "watch-js-min": "onchange 'src/js/*.js' -- npm run build-js-min",
+    "sass": "node-sass src/css/main.scss src/css/main.css",
+    "autoprefixer": "postcss -u autoprefixer -r src/css/main.css",
+    "build-css": "npm run sass && npm run autoprefixer",
+    "watch-css": "onchange 'src/css/*.scss' -- npm run build-css",
+    "build-css-min": "npm run sass && npm run autoprefixer | cleancss -o dist/css/main.min.css",
+    "watch-css-min": "onchange 'src/css/*.scss' -- npm run build-css-min",
+    "build-src": "npm run build-js & npm run build-css",
+    "watch-src": "npm run watch-js & npm run watch-css",
+    "build-dist": "npm run build-js-min & npm run build-css-min",
+    "watch-dist": "npm run watch-js-min & npm run watch-css-min"
   },
   "repository": {
     "type": "git",
@@ -36,9 +40,11 @@
     "babelify": "^7.3.0"
   },
   "devDependencies": {
+    "autoprefixer": "^6.5.2",
     "babel-preset-es2015": "^6.18.0",
-    "clean-css": "^3.4.20",
     "node-sass": "^3.10.1",
+    "onchange": "^3.0.2",
+    "postcss-cli": "^2.6.0",
     "uglifyjs": "^2.4.10"
   }
 }

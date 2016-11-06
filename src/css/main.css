@@ -103,6 +103,7 @@ body {
   position: relative;
   top: 51px;
   text-align: center;
+  -webkit-transition: all 0;
   transition: all 0; }
   .page-landing h1 {
     font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -163,8 +164,6 @@ body {
     padding-top: 25vh;
     text-shadow: 0 0 5px #fff;
     -webkit-animation: cyber-h1 3s infinite alternate;
-    -moz-animation: cyber-h1 3s infinite alternate;
-    -o-animation: cyber-h1 3s infinite alternate;
     animation: cyber-h1 3s infinite alternate; }
 
 .title-div {
@@ -176,14 +175,112 @@ body {
     vertical-align: middle; }
 
 .cards-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
   padding: 20px;
   min-height: calc(100vh - 250px); }
+
+@-webkit-keyframes cyber-h1 {
+  0% {
+    color: white;
+    top: 0;
+    left: 0; }
+  60% {
+    color: white;
+    top: 0;
+    left: 0; }
+  60.3% {
+    color: rgba(255, 255, 255, 0.2);
+    top: 5px;
+    left: 5px; }
+  61% {
+    color: white;
+    top: 0;
+    left: 0; }
+  62.5% {
+    color: white;
+    top: 0;
+    left: 0; }
+  62.8% {
+    color: rgba(255, 255, 255, 0.2);
+    top: 8px;
+    left: 8px; }
+  63.6% {
+    color: white;
+    top: 0;
+    left: 0; }
+  80% {
+    color: white;
+    top: 0;
+    left: 0;
+    text-shadow: 0px 0px 0px #fff; }
+  80.3% {
+    color: rgba(255, 255, 255, 0.4);
+    top: 34px;
+    left: 34px;
+    text-shadow: 3px 3px 3px #fff; }
+  80.6% {
+    color: white;
+    top: 0;
+    left: 0;
+    text-shadow: 0px 0px 5px #fff; }
+  83% {
+    color: white;
+    top: 0;
+    left: 0; }
+  83.4% {
+    color: rgba(255, 255, 255, 0.2);
+    top: 12px;
+    left: 12px;
+    text-shadow: 3px 3px 3px #fff; }
+  83.8% {
+    color: white;
+    top: 0;
+    left: 0;
+    text-shadow: 0px 0px 5px #fff; }
+  85% {
+    color: white;
+    top: 0;
+    left: 0; }
+  85.5% {
+    color: rgba(255, 255, 255, 0.2);
+    top: 8px;
+    left: 8px; }
+  86% {
+    color: white;
+    top: 0;
+    left: 0;
+    text-shadow: 0px 0px 0px #fff; }
+  92.4% {
+    color: white;
+    top: 0;
+    left: 0;
+    text-shadow: 3px 3px 3px #fff; }
+  92.7% {
+    color: rgba(255, 255, 255, 0.2);
+    top: 25px;
+    left: 25px; }
+  93% {
+    color: rgba(255, 255, 255, 0.8);
+    top: 0;
+    left: 0;
+    text-shadow: 0px 0px 0px #fff; }
+  100% {
+    color: white;
+    top: 0;
+    left: 0; } }
 
 @keyframes cyber-h1 {
   0% {
@@ -454,7 +551,8 @@ nav {
   margin: 60px auto 0;
   position: fixed;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   border-radius: 12px;
   padding: 15px;
   background-color: #ddd;
@@ -486,6 +584,7 @@ nav {
       padding: 8px;
       margin-top: 10px;
       border: 1px solid #ccc;
+      -webkit-transition: all 0.1s;
       transition: all 0.1s; }
       .apply-pop-up form input:focus, .apply-pop-up form input:hover, .apply-pop-up form textarea:focus, .apply-pop-up form textarea:hover {
         outline: none;
@@ -501,9 +600,6 @@ nav {
       border-radius: 5px;
       background-color: #028dea;
       background-image: -webkit-linear-gradient(top, #21a6ff, #028DEA);
-      background-image: -moz-linear-gradient(top, #21a6ff, #028DEA);
-      background-image: -ms-linear-gradient(top, #21a6ff, #028DEA);
-      background-image: -o-linear-gradient(top, #21a6ff, #028DEA);
       background-image: linear-gradient(to bottom, #21a6ff, #028DEA);
       color: #fff;
       cursor: pointer;
@@ -511,9 +607,6 @@ nav {
       .apply-pop-up form button:focus, .apply-pop-up form button:hover {
         background: #5abafa;
         background-image: -webkit-linear-gradient(top, #5abafa, #21a6ff);
-        background-image: -moz-linear-gradient(top, #5abafa, #21a6ff);
-        background-image: -ms-linear-gradient(top, #5abafa, #21a6ff);
-        background-image: -o-linear-gradient(top, #5abafa, #21a6ff);
         background-image: linear-gradient(to bottom, #5abafa, #21a6ff); }
   .apply-pop-up .sent-message {
     display: none; }
@@ -539,9 +632,13 @@ input[name="program-selector"] {
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 15px 40px 5px rgba(0, 0, 0, 0.7);
-  transition: transform .2s; }
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s; }
   .card:hover {
-    transform: scale(1.03); }
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03); }
   .card figure img {
     width: 100%; }
   .card h4 {
@@ -670,16 +767,10 @@ input[name="program-selector"] {
 .apply-btn {
   background: #e66;
   background-image: -webkit-linear-gradient(top, #e66, #b33);
-  background-image: -moz-linear-gradient(top, #e66, #b33);
-  background-image: -ms-linear-gradient(top, #e66, #b33);
-  background-image: -o-linear-gradient(top, #e66, #b33);
   background-image: linear-gradient(to bottom, #e66, #b33); }
   .apply-btn:hover {
     background: #f77;
     background-image: -webkit-linear-gradient(top, #f77, #c44);
-    background-image: -moz-linear-gradient(top, #f77, #c44);
-    background-image: -ms-linear-gradient(top, #f77, #c44);
-    background-image: -o-linear-gradient(top, #f77, #c44);
     background-image: linear-gradient(to bottom, #f77, #c44); }
 
 .question-btn {
@@ -838,17 +929,11 @@ section {
       border-bottom: 3px solid #222;
       background: #222;
       background-image: -webkit-linear-gradient(top, #555, #222);
-      background-image: -moz-linear-gradient(top, #555, #222);
-      background-image: -ms-linear-gradient(top, #555, #222);
-      background-image: -o-linear-gradient(top, #555, #222);
       background-image: linear-gradient(to bottom, #555, #222); }
       nav h4:hover {
         border-color: #333;
         background: #333;
         background-image: -webkit-linear-gradient(top, #666, #333);
-        background-image: -moz-linear-gradient(top, #666, #333);
-        background-image: -ms-linear-gradient(top, #666, #333);
-        background-image: -o-linear-gradient(top, #666, #333);
         background-image: linear-gradient(to bottom, #666, #333); }
     nav ul {
       display: none; }

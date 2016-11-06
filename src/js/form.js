@@ -14,7 +14,7 @@
     }
 
     function submit() {
-        
+
         function sendForm() {
             return $.ajax({
                 url: '',
