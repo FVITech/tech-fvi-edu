@@ -7,6 +7,7 @@
     "build-js": "browserify src/js/main.js -o src/js/bundle.js",
     "build-min-js": "browserify src/js/main.js | uglifyjs -o dist/js/bundle.min.js",
     "build-sass": "node-sass src/css/main.scss src/css/main.css",
+    "prefix-css": "postcss --use autoprefixer src/css/main.css -d src/css",
     "build-min-sass": "node-sass src/css/main.scss | cleancss -o dist/css/main.min.css",
     "watch-js": "watchify src/js/main.js -o src/js/bundle.js -v",
     "watch-sass": "nodemon -e src/css -x \"npm run build-sass\"",
