@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-!function () {
+(function () {
     var g = require('./globals');
 
     function show() {
@@ -17,15 +17,19 @@
     }
 
     function submit() {
-        $.ajax({
-            url: '',
-            type: 'post',
-            data: g.$applyForm.serialize(),
-            success: function success() {
-                g.$applyForm.fadeOut(function () {
-                    $('#sent-message').fadeIn();
-                });
-            }
+
+        function sendForm() {
+            return $.ajax({
+                url: '',
+                type: 'post',
+                data: g.$applyForm.serialize()
+            });
+        }
+
+        sendForm().done(function () {
+            g.$applyForm.fadeOut(function () {
+                $('#sent-message').fadeIn();
+            });
         });
         return false;
     }
@@ -33,12 +37,12 @@
     module.exports.show = show;
     module.exports.hide = hide;
     module.exports.submit = submit;
-}();
+})();
 
 },{"./globals":2}],2:[function(require,module,exports){
 'use strict';
 
-!function () {
+(function () {
     var $overlay = $('#overlay');
     var $pageLandingHome = $('#page-landing_home');
     var $pageLandingWeb = $('#page-landing_web');
@@ -70,112 +74,134 @@
     module.exports.$sections = $sections;
     module.exports.$banners = $banners;
     module.exports.$plusButtons = $plusButtons;
-}();
+})();
 
 },{}],3:[function(require,module,exports){
-'use strict';
+"use strict";
 
-!function () {
+(function (code) {
     "use strict";
 
-    $('body').fadeIn(300);
+    code(window.jQuery, window, document);
+})(function ($, window, document) {
+    "use strict";
 
     var g = require('./globals');
     var pb = require('./plus-buttons');
     var menu = require('./menu');
     var form = require('./form');
+    var ss = require('./smoothScroll');
 
-    // on button click, change button style and show content-container
-    g.$plusButtons.click(function () {
-        if ($(this).hasClass('opened')) {
-            pb.close(this);
-        } else {
-            pb.open(this);
-        }
-        return false;
-    });
+    $(document).ready(function () {
+        $('body').fadeIn(300);
+        ss.init();
 
-    // on window scroll, fixed clicked button to screen
-    $(window).on('scroll', pb.fixed);
-
-    // At home page, switch pages when click on program card
-    var $cards = $('#cards-container label.card');
-    $cards.filter('.web').click(function () {
-        switchPage('web');
-    });
-    $cards.filter('.cyber').click(function () {
-        switchPage('cyber');
-    });
-
-    function switchPage(page) {
-        setupPage(page);
-        g.$pageLandingHome.fadeOut(function () {
-            window.scrollTo(0, 0);
-            g.$programsContainer.fadeIn();
-            return false;
-        });
-        return false;
-    }
-
-    function setupPage(page) {
-        var navItems = g.$navItems.filter('.' + page);
-        var banners = g.$banners.filter('.' + page);
-        var landing = $('#page-landing_' + page)[0];
-        // Switch to home page annd reset everything to default
-        g.$homeButton.on('click', function (e) {
-            e.preventDefault();
-            menu.homeButtonSetup();
+        // on button click, change button style and show content-container
+        g.$plusButtons.click(function () {
+            if ($(this).hasClass('opened')) {
+                pb.close(this);
+            } else {
+                pb.open(this);
+            }
             return false;
         });
 
-        // on window scroll, add style to nav item if section is in view
-        if (window.innerWidth >= g.mobileMenuWidth) {
-            $(window).on('scroll', function () {
-                menu.navItemsStyle(navItems, banners, landing);
+        g.$programsContainer.on('click', 'section div.banner span.plus-button', function () {
+            if ($(this).hasClass('opened')) {
+                pb.close(this);
+            } else {
+                pb.open(this);
+            }
+            return false;
+        });
+
+        // At home page, switch pages when click on program card
+        var $cards = $('#cards-container label.card');
+        $cards.filter('.web').click(function () {
+            switchPage('web');
+        });
+        $cards.filter('.cyber').click(function () {
+            switchPage('cyber');
+        });
+
+        function switchPage(page) {
+            setupPage(page);
+            g.$pageLandingHome.fadeOut(function () {
+                window.scrollTo(0, 0);
+                g.$programsContainer.fadeIn();
                 return false;
             });
+            return false;
         }
 
-        // Set form program id
-        var id = page == "web" ? 'WD' : 'IT';
-        g.$applyPopUp.find("input[name='program_id']").attr('value', id);
-        return false;
-    };
+        function setupPage(page) {
+            var navItems = g.$navItems.filter('.' + page);
+            var banners = g.$banners.filter('.' + page);
+            var landing = $('#page-landing_' + page)[0];
+            var $arrowDown = g.$programsContainer.find('div.page-landing a.arrow-down');
 
-    // fade-out down-arrow in landing page when scroll
-    var $arrowDown = g.$programsContainer.find('div.page-landing a.arrow-down');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > '20') {
-            $arrowDown.fadeOut(400);
-        } else {
-            $arrowDown.slideDown(400);
+            // Switch to home page annd reset everything to default
+            g.$homeButton.on('click', function (e) {
+                e.preventDefault();
+                menu.homeButtonSetup();
+                return false;
+            });
+
+            // on scroll, fix plus-buttons to screen and add nav styles
+            if (window.innerWidth >= g.mobileMenuWidth) {
+                $(window).on('scroll', function () {
+                    buttonsAndArrowScroll();
+                    menu.navItemsStyle(navItems, banners, landing);
+                    return false;
+                });
+            } else {
+                $(window).on('scroll', buttonsAndArrowScroll);
+            }
+
+            function buttonsAndArrowScroll() {
+                // fix plus-buttons to screen
+                pb.fixed();
+                // fade out down arrow
+                if (window.scrollY > '20') {
+                    $arrowDown.fadeOut(400);
+                } else {
+                    $arrowDown.slideDown(400);
+                }
+                return false;
+            }
+
+            // Set form program id
+            var id = page == "web" ? 'WD' : 'IT';
+            g.$applyPopUp.find("input[name='program_id']").attr('value', id);
+            return false;
+        };
+
+        // mobile-menu show/hide
+        if (window.innerWidth < g.mobileMenuWidth) {
+            $('#menu-button, #menu-items li a').click(menu.mobileClick);
         }
+
+        // apply-button and form
+        g.$applyButtons.click(function (e) {
+            e.preventDefault();
+            form.show();
+            return false;
+        });
+        $('#apply-close, #overlay').click(form.hide);
+        g.$applyForm.submit(function (e) {
+            e.preventDefault();
+            form.submit();
+            return false;
+        });
         return false;
     });
+    return false;
+});
 
-    // mobile-menu show/hide
-    if (window.innerWidth < g.mobileMenuWidth) {
-        $('#menu-button, #menu-items li a').click(menu.mobileClick);
-    }
-
-    // apply-button and form
-    g.$applyButtons.click(function (e) {
-        e.preventDefault();
-        form.show();
-        return false;
-    });
-    $('#apply-close, #overlay').click(form.hide);
-    g.$applyForm.submit(function (e) {
-        e.preventDefault();
-        form.submit();
-        return false;
-    });
-}();
-
-},{"./form":1,"./globals":2,"./menu":4,"./plus-buttons":5}],4:[function(require,module,exports){
+},{"./form":1,"./globals":2,"./menu":4,"./plus-buttons":5,"./smoothScroll":6}],4:[function(require,module,exports){
 'use strict';
 
-!function () {
+(function () {
     var g = require('./globals');
 
     function homeButtonSetup(navItems, page) {
@@ -229,12 +255,12 @@
     module.exports.navItemsStyle = navItemsStyle;
     module.exports.homeButtonSetup = homeButtonSetup;
     module.exports.mobileClick = mobileClick;
-}();
+})();
 
 },{"./globals":2}],5:[function(require,module,exports){
 'use strict';
 
-!function () {
+(function () {
     var g = require('./globals');
 
     function open(button) {
@@ -287,6 +313,52 @@
     module.exports.open = open;
     module.exports.close = close;
     module.exports.fixed = fixed;
+})();
+
+},{"./globals":2}],6:[function(require,module,exports){
+'use strict';
+
+!function () {
+    // This will select everything with the class smoothScroll
+    // This should prevent problems with carousel, scrollspy, etc...
+    function init() {
+        // menu items
+        $('#menu-items').on('click', '.smoothScroll', smoothScrollFunc);
+        // arrow down
+        $('#programs-container div.page-landing .smoothScroll').click(smoothScrollFunc);
+        // arrow up scroll to top
+        $('#call-to-action-section .smoothScroll').click(smoothScrollFunc);
+        return false;
+    }
+
+    function smoothScrollFunc() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                // topPadding is the height of the nav, so it scrolls past the nav
+                var topPadding = $(target[0]).hasClass('banner') ? window.innerWidth >= '920' ? -52 : 0 : 0;
+                var distance = $(target[0]).offset().top + topPadding - window.scrollY;
+                var timing = distance < 1 && distance >= 0 ? 0 : 700;
+                $('body, html').animate({
+                    scrollTop: target.offset().top + topPadding
+                }, timing, 'easeInOutQuint', function () {
+                    if ($(target[0]).has('span.plus-button')) {
+                        var nodes = target[0].childNodes;
+                        for (var i = 0, x = nodes.length; i < x; i++) {
+                            if (nodes[i].classList == 'plus-button') {
+                                $(nodes[i]).click();
+                            }
+                        }
+                    }
+                    return false;
+                });
+            }
+        }
+        return false;
+    }
+
+    module.exports.init = init;
 }();
 
-},{"./globals":2}]},{},[3]);
+},{}]},{},[3]);

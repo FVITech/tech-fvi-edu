@@ -1,4 +1,4 @@
-!function() {
+(function() {
     const $overlay = $('#overlay');
     const $pageLandingHome = $('#page-landing_home');
     const $pageLandingWeb = $('#page-landing_web');
@@ -30,4 +30,4 @@
     module.exports.$sections = $sections;
     module.exports.$banners = $banners;
     module.exports.$plusButtons = $plusButtons;
-}();
+})();

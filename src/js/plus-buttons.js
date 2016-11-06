@@ -1,4 +1,4 @@
-! function() {
+(function() {
     const g = require('./globals');
 
     function open(button) {
@@ -51,4 +51,4 @@
     module.exports.open = open;
     module.exports.close = close;
     module.exports.fixed = fixed;
-}();
+})();

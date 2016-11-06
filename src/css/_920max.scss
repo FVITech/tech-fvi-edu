@@ -1,6 +1,7 @@
 @media all and (max-width: 920px) {
     .page-landing {
         top: 0px; /* nav height */
+        min-height: calc(100vh - 38px);
     }
 
     footer .sponsors-container {

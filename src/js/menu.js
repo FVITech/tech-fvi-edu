@@ -1,4 +1,4 @@
-!function() {
+(function() {
     const g = require('./globals');
 
     function homeButtonSetup(navItems, page) {
@@ -52,4 +52,4 @@
     module.exports.navItemsStyle = navItemsStyle;
     module.exports.homeButtonSetup = homeButtonSetup;
     module.exports.mobileClick = mobileClick;
-}();
+})();

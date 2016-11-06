@@ -1,8 +1,17 @@
-$(document).ready(function() {
-    "use strict";
+!function() {
     // This will select everything with the class smoothScroll
     // This should prevent problems with carousel, scrollspy, etc...
-    $('.smoothScroll').click(function() {
+    function init() {
+        // menu items
+        $('#menu-items').on('click', '.smoothScroll', smoothScrollFunc);
+        // arrow down
+        $('#programs-container div.page-landing .smoothScroll').click(smoothScrollFunc);
+        // arrow up scroll to top
+        $('#call-to-action-section .smoothScroll').click(smoothScrollFunc);
+        return false;
+    }
+
+    function smoothScrollFunc() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -10,7 +19,7 @@ $(document).ready(function() {
                 // topPadding is the height of the nav, so it scrolls past the nav
                 var topPadding = ($(target[0]).hasClass('banner')) ? ((window.innerWidth >= '920') ? -52 : 0) : 0;
                 var distance = $(target[0]).offset().top + topPadding - window.scrollY;
-                var timing = (distance < 1 && distance > 0) ? 0 : 700;
+                var timing = (distance < 1 && distance >= 0) ? 0 : 700;
                 $('body, html').animate({
                     scrollTop: target.offset().top + topPadding
                 }, timing, 'easeInOutQuint', function() {
@@ -27,6 +36,7 @@ $(document).ready(function() {
             }
         }
         return false;
-    });
-    return false;
-});
+    }
+
+    module.exports.init = init;
+}();

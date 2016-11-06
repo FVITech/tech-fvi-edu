@@ -128,7 +128,7 @@ body {
   background-color: #ddd;
   min-height: 100vh; }
   .page-landing.home .above-the-fold {
-    background-image: url("../img/network-background-dark.jpg");
+    background-image: url("../../img/network-background-dark.jpg");
     background-size: cover; }
   .page-landing.home .fvi-logo-white {
     box-sizing: border-box;
@@ -152,13 +152,13 @@ body {
     text-shadow: 0 0 5px #000; }
 
 .page-landing.web {
-  background-image: url("../img/web-landing.jpg");
+  background-image: url("../../img/web-landing.jpg");
   background-position: top; }
   .page-landing.web h1 {
     padding-top: 20vh; }
 
 .page-landing.cyber {
-  background-image: url("../img/cyber-landing.jpg"); }
+  background-image: url("../../img/cyber-landing.jpg"); }
   .page-landing.cyber h1 {
     padding-top: 25vh;
     text-shadow: 0 0 5px #fff;
@@ -307,7 +307,7 @@ footer {
 .links-container {
   box-sizing: border-box;
   width: calc(100% / 3);
-  min-width: 200px;
+  min-width: 250px;
   padding: 20px;
   padding-top: 20px;
   display: inline-block;
@@ -318,6 +318,10 @@ footer {
     color: #028dea;
     margin: 0;
     padding-bottom: 10px; }
+
+.links-container ul {
+  padding-left: 20%;
+  text-align: left; }
 
 .links-container a {
   font-size: .95rem;
@@ -559,7 +563,7 @@ input[name="program-selector"] {
   z-index: 100; }
 
 .arrow-down {
-  bottom: 13px;
+  bottom: -33px;
   -webkit-animation: arrow-down 1s infinite;
   animation: arrow-down 1s infinite;
   -webkit-animation-timing-function: ease-out;
@@ -569,15 +573,15 @@ input[name="program-selector"] {
 
 @-webkit-keyframes arrow-down {
   from {
-    bottom: 23px; }
+    bottom: -33px; }
   to {
-    bottom: 13px; } }
+    bottom: -43px; } }
 
 @keyframes arrow-down {
   from {
-    bottom: 23px; }
+    bottom: -33px; }
   to {
-    bottom: 13px; } }
+    bottom: -43px; } }
 
 .arrow-up {
   top: -80px;
@@ -761,35 +765,35 @@ section {
   font-weight: bolder; }
 
 #summary {
-  background-image: url("../img/keyboard.jpg");
+  background-image: url("../../img/keyboard.jpg");
   background-position: center; }
 
 #cirriculum {
-  background-image: url("../img/courses.jpg");
+  background-image: url("../../img/courses.jpg");
   background-position: bottom; }
 
 #comparison {
-  background-image: url("../img/code.jpg");
+  background-image: url("../../img/code.jpg");
   background-position: top; }
 
 #certifications {
-  background-image: url("../img/certifications.jpg");
+  background-image: url("../../img/certifications.jpg");
   background-position: center; }
 
 #partners {
-  background-image: url("../img/partners.jpg");
+  background-image: url("../../img/partners.jpg");
   background-position: center; }
 
 #tuition {
-  background-image: url("../img/finance.jpg");
+  background-image: url("../../img/finance.jpg");
   background-position: top; }
 
 #resources {
-  background-image: url("../img/resources.jpg");
+  background-image: url("../../img/resources.jpg");
   background-position: bottom; }
 
 #student-work {
-  background-image: url("../img/projects.jpg");
+  background-image: url("../../img/projects.jpg");
   background-position: bottom; }
 
 #call-to-action-section {
@@ -808,7 +812,8 @@ section {
 @media all and (max-width: 920px) {
   .page-landing {
     top: 0px;
-    /* nav height */ }
+    /* nav height */
+    min-height: calc(100vh - 38px); }
   footer .sponsors-container {
     padding-bottom: 45px; }
   .page-landing.home {
@@ -879,6 +884,11 @@ section {
     font-size: 1.6rem; }
   footer .sponsors-container img {
     max-width: 250px; }
+  .campus-info-container,
+  .social-media-container,
+  .links-container {
+    width: 100%;
+    max-width: 350px; }
   .page-landing.web h1 {
     font-size: 2.7rem;
     padding-top: 16vh; }

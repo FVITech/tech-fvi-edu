@@ -1,4 +1,4 @@
-! function() {
+(function() {
     const g = require('./globals');
 
     function show() {
@@ -14,15 +14,19 @@
     }
 
     function submit() {
-        $.ajax({
-            url: '',
-            type: 'post',
-            data: g.$applyForm.serialize(),
-            success: function() {
-                g.$applyForm.fadeOut(function() {
-                    $('#sent-message').fadeIn();
-                });
-            }
+        
+        function sendForm() {
+            return $.ajax({
+                url: '',
+                type: 'post',
+                data: g.$applyForm.serialize()
+            });
+        }
+
+        sendForm().done(function() {
+            g.$applyForm.fadeOut(function() {
+                $('#sent-message').fadeIn();
+            });
         });
         return false;
     }
@@ -30,4 +34,4 @@
     module.exports.show = show;
     module.exports.hide = hide;
     module.exports.submit = submit;
-}();
+})();

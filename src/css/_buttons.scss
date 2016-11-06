@@ -10,7 +10,7 @@
 }
 
 .arrow-down {
-    bottom: 13px;
+    bottom: -33px;
     -webkit-animation: arrow-down 1s infinite;
     animation: arrow-down 1s infinite;
     -webkit-animation-timing-function: ease-out;
@@ -21,19 +21,19 @@
 
 @-webkit-keyframes arrow-down {
     from {
-        bottom: 23px;
+        bottom: -33px;
     }
     to {
-        bottom: 13px;
+        bottom: -43px;
     }
 }
 
 @keyframes arrow-down {
     from {
-        bottom: 23px;
+        bottom: -33px;
     }
     to {
-        bottom: 13px;
+        bottom: -43px;
     }
 }
 

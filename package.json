@@ -4,15 +4,15 @@
   "description": "Website for tech.fvi.edu",
   "main": "index.html",
   "scripts": {
-    "build-js": "browserify js/main.js -o js/bundle.js",
-    "build-min-js": "browserify js/main.js | uglifyjs -o js/bundle.min.js",
-    "build-sass": "node-sass css/sass/main.scss css/main.css",
-    "build-min-sass": "node-sass css/sass/main.scss | cleancss -o css/main.min.css",
-    "watch-js": "nodemon -e js -x \"npm run build-js\"",
-    "watch-sass": "nodemon -e scss -x \"npm run build-sass\"",
+    "build-js": "browserify src/js/main.js -o src/js/bundle.js",
+    "build-min-js": "browserify src/js/main.js | uglifyjs -o dist/js/bundle.min.js",
+    "build-sass": "node-sass src/css/main.scss src/css/main.css",
+    "build-min-sass": "node-sass src/css/main.scss | cleancss -o dist/css/main.min.css",
+    "watch-js": "watchify src/js/main.js -o src/js/bundle.js -v",
+    "watch-sass": "nodemon -e src/css -x \"npm run build-sass\"",
     "build": "npm run build-js & npm run build-sass",
     "watch": "npm run watch-js & npm run watch-sass",
-    "build-min": "npm run build-min-js & npm run build-min-sass"
+    "dist": "npm run build-min-js & npm run build-min-sass"
   },
   "repository": {
     "type": "git",
