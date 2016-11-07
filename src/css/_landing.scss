@@ -56,6 +56,30 @@ body {
         max-width: 80px;
     }
 
+    ul {
+        text-align: right;
+        padding: 10px;
+        margin: 0;
+
+        a {
+            @include link(#fff);
+            display: inline-block;
+            border-bottom: 2px solid rgba(0, 0, 0, 0);
+            padding: 2px 0;
+            margin: 0 10px;
+            font-size: .8rem;
+            font-weight: 300;
+
+            &:hover {
+                border-color: #fff;
+            }
+
+            &::first-letter {
+                font-size: 1.3em;
+            }
+        }
+    }
+
     h2 {
         margin: 0;
         padding: 1rem;
@@ -140,9 +164,44 @@ body {
     100% {color: rgba(255, 255, 255, 1);top: 0; left: 0;}
 }
 
+.about-wrapper {
+    background-color: #fff;
+    text-align: left;
+    padding: 20px;
+
+    h5 {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 3px;
+
+        &::first-letter {
+            font-size: 1.3em;
+        }
+    }
+
+    .about-content-container {
+        margin: auto;
+        max-width: 1000px;
+        box-sizing: border-box;
+    }
+
+    p {
+        text-shadow: none;
+        color: #444;
+        max-width: 600px;
+        font-size: 1.1rem;
+        margin: 30px auto;
+    }
+
+    .request-info {
+        display: block;
+        margin: 30px auto;
+    }
+}
+
 .infographic-container {
     width: 100%;
-    background-color: #fff;
+    background-color: rgb(240, 240, 250);
     text-align: center;
 
     .infographic {

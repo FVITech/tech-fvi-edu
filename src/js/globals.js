@@ -5,7 +5,7 @@
     const $pageLandingCyber = $('#page-landing_cyber');
     const $applyPopUp = $('#apply-pop-up');
     const $applyForm = $applyPopUp.find('form');
-    const $applyButtons = $('#nav-apply-btn, #cta-apply-btn');
+    const $applyButtons = $('#nav-apply-btn, #cta-apply-btn, #contact-home, .request-info');
     const $programsContainer = $('#programs-container');
     const $homeButton = $('#home-button');
     const $menuItems = $('#menu-items');

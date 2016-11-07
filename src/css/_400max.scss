@@ -9,10 +9,13 @@
         }
     }
     .card {
+        height: 250px;
+        width: 205px;
         h4 {
             font-size: 1.5rem;
             margin: .5rem 0;
         }
+        p {display: none}
     }
     .apply-pop-up {
       margin-top: 20px;
@@ -43,10 +46,13 @@
     .banner {
         padding: 40px 0 80px;
     }
-    .campus-info-container,
+    .contact-us-container,
     .social-media-container,
     .links-container {
         min-width: 100%;
+    }
+    .contact-us-container address, .links-container ul {
+        padding-left: 20%;
     }
     footer .links-container {
         a:after {

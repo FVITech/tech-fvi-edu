@@ -1,5 +1,6 @@
 .card {
     width: 280px;
+    height: 333px;
     margin: 0 30px 40px 30px;
     cursor: pointer;
     background-color: #444;
@@ -9,8 +10,25 @@
     box-shadow: 0 15px 40px 5px rgba(0, 0, 0, .7);
     transition: transform .2s;
 
-    &:hover {
+    &:focus, &:hover {
         transform: scale(1.03);
+    }
+
+    p {
+        opacity: 0;
+        display: table;
+        vertical-align: middle;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0, 62, 103, .95);
+        margin: 0;
+        padding: 10px;
+        font-size: 1.2rem;
+        transition: all .15s;
+
+        &:focus, &:hover {
+            opacity: 1;
+        }
     }
 
     figure img {

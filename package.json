@@ -14,11 +14,9 @@
     "watch-css": "onchange 'src/css/*.scss' -- npm run build-css",
     "cleancss": "cleancss -o dist/css/main.min.css src/css/main.css ",
     "build-css-min": "npm run sass && npm run autoprefixer && npm run cleancss",
-    "watch-css-min": "onchange 'src/css/*.scss' -- npm run build-css-min",
+    "watch-css-min": "onchange 'src/css/*.scss' -v -i -- npm run build-css-min",
     "build-src": "npm run build-js & npm run build-css",
-    "watch-src": "npm run watch-js & npm run watch-css",
-    "build-dist": "npm run build-js-min & npm run build-css-min",
-    "watch-dist": "npm run watch-js-min & npm run watch-css-min"
+    "build-dist": "npm run build-js-min & npm run build-css-min"
   },
   "repository": {
     "type": "git",

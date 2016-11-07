@@ -3,11 +3,7 @@
     // This should prevent problems with carousel, scrollspy, etc...
     function init() {
         // menu items
-        $('#menu-items').on('click', '.smoothScroll', smoothScrollFunc);
-        // arrow down
-        $('#programs-container div.page-landing .smoothScroll').click(smoothScrollFunc);
-        // arrow up scroll to top
-        $('#call-to-action-section .smoothScroll').click(smoothScrollFunc);
+        $('.smoothScroll').click(smoothScrollFunc);
         return false;
     }
 

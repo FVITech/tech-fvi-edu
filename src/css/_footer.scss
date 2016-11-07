@@ -12,7 +12,7 @@ footer {
     margin: auto;
 }
 
-.campus-info-container,
+.contact-us-container,
 .social-media-container,
 .links-container {
     box-sizing: border-box;
@@ -54,31 +54,43 @@ footer {
         margin: 10px;
         color: #eee;
         display: inline-block;
-        font-size: 2rem;
+        font-size: 2rem !important;
 
         &:hover, &:focus {
             color: #ddd;
         }
+
+        &:last-of-type {
+            display: block;
+            margin: auto;
+
+            img {
+                box-sizing: border-box;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
     }
 }
 
-.campus-info-container {
+.contact-us-container {
     text-align: left;
 
     h4 {text-align: center;}
-    img {
-        box-sizing: border-box;
-        width: 100%;
-        max-width: 300px;
-    }
 
     address {
-        padding-left: 10px;
-        p {
-            color: #eee;
-            font-size: .9rem;
-            margin: 0;
-        }
+        padding-left: 20%;
+    }
+
+    p {
+        color: #eee;
+        font-size: .9rem;
+        margin: 0;
+    }
+
+    a {
+        @include link(#eee);
+        border: none;
     }
 }
 

@@ -1,0 +1,13 @@
+@media all and (max-width: 560px) {
+    .contact-us-container,
+    .social-media-container,
+    .links-container {
+        min-width: 100%;
+
+        h4 {font-size: 1.75rem}
+        p, a {font-size: 1rem}
+    }
+    .contact-us-container address, .links-container ul {
+        padding-left: 30%;
+    }
+}

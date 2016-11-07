@@ -157,6 +157,12 @@
     }
 }
 
+.request-info {
+    @extend .cta-btn;
+    @extend .apply-btn;
+    border: none;
+}
+
 .question-btn {
     background-color: #999;
 
