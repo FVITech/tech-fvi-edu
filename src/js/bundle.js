@@ -213,7 +213,7 @@
                 g.$overlay.hide();
                 g.$applyPopUp.hide();
                 g.$plusButtons.filter('.opened').css({ 'top': '0px', 'transition': '.6s' }).removeClass('opened');
-                g.$banners.filter('.shrink').next().hide().removeClass('shrink');
+                g.$banners.filter('.shrink').removeClass('shrink').next().hide();
                 g.$navItems.removeClass('section-in-view');
                 $(window).off('scroll', navItemsStyle);
                 return false;
