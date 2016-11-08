@@ -18,9 +18,33 @@
 
         <div id="overlay">overlay</div>
 
+        <div class="apply-pop-up" id="apply-pop-up">
+            <h3>Contact Us</h3>
+            <button type="button" class="close" id="apply-close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            <form>
+                <input type="text" name="full_name" value="" placeholder="Your Full Name" required>
+                <input type="tel" name="day_phone" value="" placeholder="Phone Number" required>
+                <input type="text" name="email" value="" placeholder="Email Address" required>
+                <input class="program" type="text" name="program_id" value="" style="display: none;">
+                <textarea name="message" placeholder="Questions?"></textarea>
+                <button type="submit" class="submit" name="submit">Submit</button>
+            </form>
+            <div class="sent-message" id="sent-message">
+                <h3>Message submitted!</h3>
+                <p>A representative from FVI will contact you shortly.</p>
+            </div>
+        </div>
+
         <div class="page-landing home" id="page-landing_home">
             <div class="above-the-fold">
                 <a target="_blank" href="http://www.fvi.edu/"><img class="fvi-logo-white" src="../img/FVI-white-simple.png" alt="White FVI Logo"></a>
+                <div id="home-menu">
+                    <ul>
+                        <a target="_blank" href="http://www.fvi.edu/en/blog">BLOG</a>
+                        <a class="smoothScroll" href="#about">ABOUT</a>
+                        <a href="#" id="contact-home">CONTACT</a>
+                    </ul>
+                </div>
                 <div class="title-div">
                     <div class="title-headers">
                         <h2>The Florida Vocational Institute</h2>
@@ -30,17 +54,29 @@
 
                 <div class="cards-container" id="cards-container">
                     <label for="radio-web" class="card web">
+                        <p class="card-hover">This program is designed to turn someone with no programming experience into a full stack web developer in Node.JS and php, with ample practice in interacting with APIs, and creating SPAs.</p>
                         <figure>
                             <img src="../img/web-dev-card-image.png" alt="image of web development" />
                         </figure>
                         <h4><span class="first-letter">W</span>eb<br><span class="second-letter">D</span>eveloper<br>Program</h4>
                     </label>
                     <label for="radio-cyber" class="card cyber">
+                        <p class="card-hover">This program is designed to teach you the ins and outs of configuring a cisco network, managing a Windows or Linux server Infrastructure, and managing IaaS and PaaS platforms in the cloud (AWS and Azure).</p>
                         <figure>
                             <img src="../img/network-admin-card-image.png" alt="image of network administration" />
                         </figure>
                         <h4><span class="first-letter">N</span>etwork<br><span class="second-letter">A</span>dministrator<br>Program</h4>
                     </label>
+                </div>
+            </div>
+
+            <div id="about" class="about-wrapper">
+                <h5>ABOUT</h5>
+                <hr>
+                <div class="about-content-container">
+                    <p>Florida Vocational Institute is committed to providing you a quality education in a lifelong, rewarding career. FVI tech takes pride in offering first-class training and the guidance, tools and support needed to prepare you for the job you want.</p>
+                    <p>We are real developers dedicated to giving you a quality education to prepare you to get a job. We don't waste your time making you jump through hoops or taking a bunch of boring classes you don't need.</p>
+                    <button type="button" class="request-info">Request Info</button>
                 </div>
             </div>
 
@@ -68,23 +104,6 @@
                  --><li><a class="nav-item web cyber apply" id="nav-apply-btn" href="#">APPLY</a></li>
                 </ul>
             </nav>
-
-            <div class="apply-pop-up" id="apply-pop-up">
-                <h3>Contact Us</h3>
-                <button type="button" class="close" id="apply-close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-                <form>
-                    <input type="text" name="full_name" value="" placeholder="Your Full Name" required>
-                    <input type="tel" name="day_phone" value="" placeholder="Phone Number" required>
-                    <input type="text" name="email" value="" placeholder="Email Address" required>
-                    <input class="program" type="text" name="program_id" value="" style="display: none;">
-                    <textarea name="message" placeholder="Message, questions, or special requests..."></textarea>
-                    <button type="submit" class="submit" name="submit">Submit</button>
-                </form>
-                <div class="sent-message" id="sent-message">
-                    <h3>Message submitted!</h3>
-                    <p>A representative from FVI will contact you shortly.</p>
-                </div>
-            </div>
 
             <div class="page-landing web radio-web" id="page-landing_web">
                 <h1>WEB DEVELOPER</h1>
@@ -337,7 +356,7 @@
             <div class="links-container">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a target="_blank" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Blog</a></li>
+                    <li><a target="_blank" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Our Tech Blog</a></li>
                     <li><a target="_blank" href="http://www.fvi.edu/consumer-information/"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Consumer Information</a></li>
                     <li><a target="_blank" href="http://www.fvi.edu/net-price-calculator/"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Net Price Calculator</a></li>
                     <li><a target="_blank" href="http://fvi.edu/annual_security_report/2015-Annual-Security-Report-FVI.pdf"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Annual Security Report</a></li>
@@ -348,17 +367,17 @@
                 <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                 <a target="_blank" href="http://twitter.com/fvitech"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
                 <a target="_blank" href="http://plus.google.com/u/1/b/105289039757508765516/105289039757508765516"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                <a target="_blank" class="fvi-logo" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
             </div><!-- remove space
-         --><div class="campus-info-container">
+         --><div class="contact-us-container">
                 <h4>Contact Us</h4>
-                <a target="_blank" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
                 <address>
                     <p>
-                        <a href="mailto:info@fvi.edu"><i class="fa fa-envelope-o" aria-hidden="true"></i> info@fvi.edu</a><br>
-                        <i class="fa fa-phone" aria-hidden="true"></i> 786-574-9511<br>
+                        <a href="mailto:info@fvi.edu"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;info@fvi.edu</a><br>
+                        <i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;786-574-9511<br>
                         Mall of Americas<br>
-                        7757 West Flagler Street #220<br>
-                        Second Floor<br>
+                        7757 West Flagler Street<br>
+                        #220, Second Floor<br>
                         Miami, FL 33144
                     </p>
                 </address>
