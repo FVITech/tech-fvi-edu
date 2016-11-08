@@ -30,8 +30,7 @@
   "homepage": "https://github.com/FVITech/tech-fvi-edu#readme",
   "browserify": {
     "transform": [
-      "babelify",
-      "envify"
+      "babelify"
     ]
   },
   "dependecies": {

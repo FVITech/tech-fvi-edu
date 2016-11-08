@@ -56,9 +56,11 @@ section {
 .content-container {
     background-color: #efefef;
     box-shadow: 0 0 4px 1px #111;
+    position: relative;
     width: 100%;
     overflow: hidden;
     display: none;
+    text-align: center;
 
     .content {
         margin: 0 auto;
@@ -82,6 +84,43 @@ section {
         a {
             @include link($fvi-blue);
         }
+    }
+
+    .social-media-summary {
+        @extend .content;
+        text-align: center;
+
+        a {
+            font-size: 1.4rem;
+            color: $fvi-blue;
+            border: none;
+            display: inline;
+            vertical-align: center;
+            padding: 0 10px;
+            white-space: nowrap;
+
+            &:focus, &:hover {
+                color: lighten($fvi-blue, 20%);
+            }
+
+            &:visited {
+                color: $fvi-blue;
+            }
+        }
+
+        .fvi-logo {
+            display: block;
+            margin: 10px auto 0;
+
+            img {
+                max-width: 250px;
+            }
+        }
+    }
+
+    .request-info {
+        position: relative;
+        top: -20px;
     }
 }
 

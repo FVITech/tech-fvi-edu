@@ -49,7 +49,7 @@
     var $pageLandingCyber = $('#page-landing_cyber');
     var $applyPopUp = $('#apply-pop-up');
     var $applyForm = $applyPopUp.find('form');
-    var $applyButtons = $('#nav-apply-btn, #cta-apply-btn');
+    var $applyButtons = $('#nav-apply-btn, #cta-apply-btn, #contact-home, .request-info');
     var $programsContainer = $('#programs-container');
     var $homeButton = $('#home-button');
     var $menuItems = $('#menu-items');
@@ -323,11 +323,7 @@
     // This should prevent problems with carousel, scrollspy, etc...
     function init() {
         // menu items
-        $('#menu-items').on('click', '.smoothScroll', smoothScrollFunc);
-        // arrow down
-        $('#programs-container div.page-landing .smoothScroll').click(smoothScrollFunc);
-        // arrow up scroll to top
-        $('#call-to-action-section .smoothScroll').click(smoothScrollFunc);
+        $('.smoothScroll').click(smoothScrollFunc);
         return false;
     }
 

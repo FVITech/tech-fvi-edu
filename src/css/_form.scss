@@ -63,7 +63,7 @@
         button {
             display: block;
             font-size: 1.2rem;
-            padding: 5px;
+            padding: 5px 15px;
             border: none;
             border-radius: 5px;
             background-color: $fvi-blue;
@@ -74,16 +74,23 @@
             background-image: linear-gradient(to bottom, #21a6ff, #028DEA);
             color: #fff;
             cursor: pointer;
-            margin-top: 3px;
+            margin-top: 10px;
 
             &:focus,
             &:hover {
+                outline: none;
+                box-shadow: 0 0 4px #000;
                 background: #5abafa;
                 background-image: -webkit-linear-gradient(top, #5abafa, #21a6ff);
                 background-image: -moz-linear-gradient(top, #5abafa, #21a6ff);
                 background-image: -ms-linear-gradient(top, #5abafa, #21a6ff);
                 background-image: -o-linear-gradient(top, #5abafa, #21a6ff);
                 background-image: linear-gradient(to bottom, #5abafa, #21a6ff);
+            }
+
+            &:active {
+                box-shadow: none;
+                background-color: $fvi-blue;
             }
         }
     }
