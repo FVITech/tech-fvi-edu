@@ -49,7 +49,7 @@
     var $pageLandingCyber = $('#page-landing_cyber');
     var $applyPopUp = $('#apply-pop-up');
     var $applyForm = $applyPopUp.find('form');
-    var $applyButtons = $('#nav-apply-btn, #cta-apply-btn');
+    var $applyButtons = $('#nav-apply-btn, #cta-apply-btn, #contact-home, .request-info');
     var $programsContainer = $('#programs-container');
     var $homeButton = $('#home-button');
     var $menuItems = $('#menu-items');
@@ -213,7 +213,7 @@
                 g.$overlay.hide();
                 g.$applyPopUp.hide();
                 g.$plusButtons.filter('.opened').css({ 'top': '0px', 'transition': '.6s' }).removeClass('opened');
-                g.$banners.filter('.shrink').next().hide().removeClass('shrink');
+                g.$banners.filter('.shrink').removeClass('shrink').next().hide();
                 g.$navItems.removeClass('section-in-view');
                 $(window).off('scroll', navItemsStyle);
                 return false;
@@ -323,11 +323,7 @@
     // This should prevent problems with carousel, scrollspy, etc...
     function init() {
         // menu items
-        $('#menu-items').on('click', '.smoothScroll', smoothScrollFunc);
-        // arrow down
-        $('#programs-container div.page-landing .smoothScroll').click(smoothScrollFunc);
-        // arrow up scroll to top
-        $('#call-to-action-section .smoothScroll').click(smoothScrollFunc);
+        $('.smoothScroll').click(smoothScrollFunc);
         return false;
     }
 

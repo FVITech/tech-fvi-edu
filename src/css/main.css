@@ -199,20 +199,8 @@ body {
     vertical-align: middle; }
 
 .cards-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  display: block;
+  text-align: center;
   padding: 20px;
   min-height: calc(100vh - 250px); }
 
@@ -402,7 +390,8 @@ body {
   padding: 20px; }
   .about-wrapper h5 {
     display: block;
-    margin-top: 0; }
+    margin-top: 0;
+    margin-bottom: 3px; }
     .about-wrapper h5::first-letter {
       font-size: 1.3em; }
   .about-wrapper .about-content-container {
@@ -656,7 +645,7 @@ nav {
     .apply-pop-up form button {
       display: block;
       font-size: 1.2rem;
-      padding: 5px;
+      padding: 5px 15px;
       border: none;
       border-radius: 5px;
       background-color: #028dea;
@@ -664,11 +653,16 @@ nav {
       background-image: linear-gradient(to bottom, #21a6ff, #028DEA);
       color: #fff;
       cursor: pointer;
-      margin-top: 3px; }
+      margin-top: 10px; }
       .apply-pop-up form button:focus, .apply-pop-up form button:hover {
+        outline: none;
+        box-shadow: 0 0 4px #000;
         background: #5abafa;
         background-image: -webkit-linear-gradient(top, #5abafa, #21a6ff);
         background-image: linear-gradient(to bottom, #5abafa, #21a6ff); }
+      .apply-pop-up form button:active {
+        box-shadow: none;
+        background-color: #028dea; }
   .apply-pop-up .sent-message {
     display: none; }
 
@@ -685,6 +679,8 @@ input[name="program-selector"] {
   display: none; }
 
 .card {
+  display: inline-block;
+  position: relative;
   width: 280px;
   height: 333px;
   margin: 0 30px 40px 30px;
@@ -693,20 +689,16 @@ input[name="program-selector"] {
   border: 3px solid #222;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 15px 40px 5px rgba(0, 0, 0, 0.7);
-  -webkit-transition: -webkit-transform .2s;
-  transition: -webkit-transform .2s;
-  transition: transform .2s;
-  transition: transform .2s, -webkit-transform .2s; }
-  .card:focus, .card:hover {
-    -webkit-transform: scale(1.03);
-            transform: scale(1.03); }
+  box-shadow: 0 15px 40px 5px rgba(0, 0, 0, 0.7); }
   .card p {
     opacity: 0;
-    display: table;
-    vertical-align: middle;
+    display: block;
+    box-sizing: border-box;
     height: 100%;
+    width: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
     background-color: rgba(0, 62, 103, 0.95);
     margin: 0;
     padding: 10px;
@@ -905,33 +897,57 @@ section {
 .content-container {
   background-color: #efefef;
   box-shadow: 0 0 4px 1px #111;
+  position: relative;
   width: 100%;
   overflow: hidden;
-  display: none; }
-  .content-container .content {
+  display: none;
+  text-align: center; }
+  .content-container .content, .content-container .social-media-summary {
     margin: 0 auto;
     max-width: 600px;
     text-align: left;
     padding: 10px 20px; }
-    .content-container .content h4 {
+    .content-container .content h4, .content-container .social-media-summary h4 {
       color: #003352;
       font-weight: 400; }
-      .content-container .content h4:first-child {
+      .content-container .content h4:first-child, .content-container .social-media-summary h4:first-child {
         margin-top: 45px; }
-    .content-container .content p {
+    .content-container .content p, .content-container .social-media-summary p {
       color: #333; }
-    .content-container .content a {
+    .content-container .content a, .content-container .social-media-summary a {
       color: #028dea;
       border-bottom: 1px solid #028dea;
       text-decoration: none; }
-      .content-container .content a:hover, .content-container .content a:focus {
+      .content-container .content a:hover, .content-container .social-media-summary a:hover, .content-container .content a:focus, .content-container .social-media-summary a:focus {
         border-bottom-width: 2px;
         text-decoration: none; }
-      .content-container .content a:visited {
+      .content-container .content a:visited, .content-container .social-media-summary a:visited {
         color: #028dea;
         border-color: #028dea; }
+  .content-container .social-media-summary {
+    text-align: center; }
+    .content-container .social-media-summary a {
+      font-size: 1.4rem;
+      color: #028dea;
+      border: none;
+      display: inline;
+      vertical-align: center;
+      padding: 0 10px;
+      white-space: nowrap; }
+      .content-container .social-media-summary a:focus, .content-container .social-media-summary a:hover {
+        color: #54bafe; }
+      .content-container .social-media-summary a:visited {
+        color: #028dea; }
+    .content-container .social-media-summary .fvi-logo {
+      display: block;
+      margin: 10px auto 0; }
+      .content-container .social-media-summary .fvi-logo img {
+        max-width: 250px; }
+  .content-container .request-info {
+    position: relative;
+    top: -20px; }
 
-.content .bold {
+.content .bold, .content-container .social-media-summary .bold {
   font-weight: bolder; }
 
 #summary {
@@ -969,12 +985,12 @@ section {
 #call-to-action-section {
   background-color: #003558;
   position: relative; }
-  #call-to-action-section .content {
+  #call-to-action-section .content, #call-to-action-section .content-container .social-media-summary, .content-container #call-to-action-section .social-media-summary {
     padding: 10px;
     text-align: center; }
-    #call-to-action-section .content .cta-btn-container {
+    #call-to-action-section .content .cta-btn-container, #call-to-action-section .content-container .social-media-summary .cta-btn-container, .content-container #call-to-action-section .social-media-summary .cta-btn-container {
       margin: 0 auto; }
-    #call-to-action-section .content p {
+    #call-to-action-section .content p, #call-to-action-section .content-container .social-media-summary p, .content-container #call-to-action-section .social-media-summary p {
       font-size: 1.2rem;
       margin: 2rem 0 1rem;
       color: #eee; }
@@ -1078,7 +1094,7 @@ section {
   .page-landing.cyber p {
     font-size: 1rem;
     margin-top: 1rem; }
-  #call-to-action-section .content p {
+  #call-to-action-section .content p, #call-to-action-section .content-container .social-media-summary p, .content-container #call-to-action-section .social-media-summary p {
     font-size: 1rem;
     margin: 1rem; } }
 

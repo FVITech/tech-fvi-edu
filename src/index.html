@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="../img/fvi-white-simple.ico">
+    <link rel="icon" href="../img/fvi-white-simple.ico" type="image/x-icon">
     <title>Coding School Miami | FVI Technology Department</title>
+    <meta name="description" content="Become a Web Developer or a Network Administrator. No experience necessary.">
+    <meta name="author" content="Brenton Cozby">
+    <meta name="og:url" content="http://tech.fvi.edu/">
+    <meta name="og:type" content="website">
+    <meta name="og:title" content="Coding School Miami | FVI Technology Department">
+    <meta name="og:description" content="Become a Web Developer or a Network Administrator. No experience necessary.">
+    <meta name="og:image" content="../img/FVI-Tech-card-image.png">
+    <meta name="twitter:title" content="Coding School Miami | FVI Technology Department">
+    <meta name="twitter:description" content="Become a Web Developer or a Network Administrator. No experience necessary.">
+    <meta name="twitter:image" content="../img/FVI-Tech-card-image.png">
+    <meta name="twitter:image:alt" content="Florida Vocational Institute Technology Department">
+    <meta name="twitter:creator" content="@BrentonCozby">
+    <meta name="twitter:site" content="@FVIMiami">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     <script src="https://use.fontawesome.com/6e24312094.js"></script>
     <link rel="stylesheet" href="css/main.css" media="all">
@@ -18,9 +31,33 @@
 
         <div id="overlay">overlay</div>
 
+        <div class="apply-pop-up" id="apply-pop-up">
+            <h3>Contact Us</h3>
+            <button type="button" class="close" id="apply-close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            <form>
+                <input type="text" name="full_name" value="" placeholder="Your Full Name" required>
+                <input type="tel" name="day_phone" value="" placeholder="Phone Number" required>
+                <input type="text" name="email" value="" placeholder="Email Address" required>
+                <input class="program" type="text" name="program_id" value="" style="display: none;">
+                <textarea name="message" placeholder="Questions?"></textarea>
+                <button type="submit" class="submit" name="submit">Submit</button>
+            </form>
+            <div class="sent-message" id="sent-message">
+                <h3>Message submitted!</h3>
+                <p>A representative from FVI will contact you shortly.</p>
+            </div>
+        </div>
+
         <div class="page-landing home" id="page-landing_home">
             <div class="above-the-fold">
                 <a target="_blank" href="http://www.fvi.edu/"><img class="fvi-logo-white" src="../img/FVI-white-simple.png" alt="White FVI Logo"></a>
+                <div id="home-menu">
+                    <ul>
+                        <a target="_blank" href="http://www.fvi.edu/en/blog">BLOG</a>
+                        <a class="smoothScroll" href="#about">ABOUT</a>
+                        <a href="#" id="contact-home">CONTACT</a>
+                    </ul>
+                </div>
                 <div class="title-div">
                     <div class="title-headers">
                         <h2>The Florida Vocational Institute</h2>
@@ -30,17 +67,29 @@
 
                 <div class="cards-container" id="cards-container">
                     <label for="radio-web" class="card web">
+                        <p class="card-hover">This program is designed to turn someone with no programming experience into a full stack web developer in Node.JS and php, with ample practice in interacting with APIs, and creating SPAs.</p>
                         <figure>
                             <img src="../img/web-dev-card-image.png" alt="image of web development" />
                         </figure>
                         <h4><span class="first-letter">W</span>eb<br><span class="second-letter">D</span>eveloper<br>Program</h4>
                     </label>
                     <label for="radio-cyber" class="card cyber">
+                        <p class="card-hover">This program is designed to teach you the ins and outs of configuring a cisco network, managing a Windows or Linux server Infrastructure, and managing IaaS and PaaS platforms in the cloud (AWS and Azure).</p>
                         <figure>
                             <img src="../img/network-admin-card-image.png" alt="image of network administration" />
                         </figure>
                         <h4><span class="first-letter">N</span>etwork<br><span class="second-letter">A</span>dministrator<br>Program</h4>
                     </label>
+                </div>
+            </div>
+
+            <div id="about" class="about-wrapper">
+                <h5>ABOUT</h5>
+                <hr>
+                <div class="about-content-container">
+                    <p>Florida Vocational Institute is committed to providing you a quality education in a lifelong, rewarding career. FVI tech takes pride in offering first-class training and the guidance, tools and support needed to prepare you for the job you want.</p>
+                    <p>We are real developers dedicated to giving you a quality education to prepare you to get a job. We don't waste your time making you jump through hoops or taking a bunch of boring classes you don't need.</p>
+                    <button type="button" class="request-info">Request Info</button>
                 </div>
             </div>
 
@@ -69,23 +118,6 @@
                 </ul>
             </nav>
 
-            <div class="apply-pop-up" id="apply-pop-up">
-                <h3>Contact Us</h3>
-                <button type="button" class="close" id="apply-close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-                <form>
-                    <input type="text" name="full_name" value="" placeholder="Your Full Name" required>
-                    <input type="tel" name="day_phone" value="" placeholder="Phone Number" required>
-                    <input type="text" name="email" value="" placeholder="Email Address" required>
-                    <input class="program" type="text" name="program_id" value="" style="display: none;">
-                    <textarea name="message" placeholder="Message, questions, or special requests..."></textarea>
-                    <button type="submit" class="submit" name="submit">Submit</button>
-                </form>
-                <div class="sent-message" id="sent-message">
-                    <h3>Message submitted!</h3>
-                    <p>A representative from FVI will contact you shortly.</p>
-                </div>
-            </div>
-
             <div class="page-landing web radio-web" id="page-landing_web">
                 <h1>WEB DEVELOPER</h1>
                 <p>Become a Web Developer in 9 months.<br>No experience necessary.<br>Learn more below.</p>
@@ -105,10 +137,10 @@
                 <div class="content-container">
                     <div class="content web radio-web">
                         <h4>This Program is Not For Everyone</h4>
-                        <p>Our in-person Computer Programming courses are designed for busy adults driven to boost their professional skills and, often, to change their career. Few other Web Developer Schools offer the length and breadth of material that we do.</p>
+                        <p>Our in-person Computer Programming courses are designed for busy adults driven to boost their professional skills and, often, to change their career. Few Coding Schools offer the length and breadth of material that we do.</p>
                         <p>We are a Computer Programming School devoted to creating Web Application Developers with sound Computer Science skills. Our curriculum is designed to be completed in a dense, but realistic time frame of nine months.</p>
-                        <p>By the end of the 9-month program, students have their own portfolio full of web applications, something which university graduates lack and employers desperately seek.</p>
-                        <p><span class="bold">Do you have what it takes?</span> The FVI Web Development team has created 8 tutorials for you to try out right now for free. <a target="_blank" title="FVI Coder's Corner" href="http://www.fvi.edu/coders_corner/introclass/">Visit our Coder's Corner</a> where you will get to use the same computer languages that the professionals use to create web applications. Completing these tutorials will give you a taste of Web Development and will help you judge if web development is right for you.</p>
+                        <p>By the end of the 9-month program, each student will have their own portfolio full of web applications, something which university graduates lack and employers desperately seek.</p>
+                        <p><span class="bold">Do you have what it takes?</span> The FVI Web Development team has created 8 tutorials for you to try out for free right now. <a target="_blank" title="FVI Coder's Corner" href="http://www.fvi.edu/coders_corner/introclass/">Visit our Coder's Corner</a> where you will get to use the same computer languages that the professionals use to create web applications. Completing these tutorials will give you a taste of Web Development and will help you judge if web development is right for you.</p>
                         <h4>Program Logistics</h4>
                         <p><span class="bold">Next Start Date:</span> Whenever you are ready. Our program's module system is designed for flexibility.</p>
                         <p><span class="bold">Time:</span> 5:30pm - 10:30pm, every Monday, Tuesday, Wednesday, and Thursday</p>
@@ -132,6 +164,14 @@
                         <p>Graduates are qualified for high demand careers in Network Administration, IT security, and Cloud Computing, such as Security Engineer, Security Consultant, Network Administrator, or IA Technician/Manager.</p>
                         <p>As organizations move their IT systems into the cloud, the need for Network Administrators trained on cloud computing will increase. FVI’s career services team will assist you in finding a career in IT by working to match you to open positions, connect you to local employers, and ensure your resume and professional readiness are a match for any open positions in IT.</p>
                     </div>
+                    <div class="social-media-summary">
+                       <a target="_blank" title="Blog | FVI Technology Department" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;Blog</a>
+                       <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-lg fa-facebook-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://twitter.com/fvitech"><i class="fa fa-lg fa-twitter-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://plus.google.com/u/1/b/105289039757508765516/105289039757508765516"><i class="fa fa-lg fa-google-plus-square" aria-hidden="true"></i></a>
+                       <a target="_blank" class="fvi-logo" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
+                   </div>
+                   <button type="button" class="request-info">Request Info</button>
                 </div>
             </section>
 
@@ -173,6 +213,14 @@
                         <h4>Heading 3</h4>
                         <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
                     </div>
+                    <div class="social-media-summary">
+                       <a target="_blank" title="Blog | FVI Technology Department" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;Blog</a>
+                       <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-lg fa-facebook-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://twitter.com/fvitech"><i class="fa fa-lg fa-twitter-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://plus.google.com/u/1/b/105289039757508765516/105289039757508765516"><i class="fa fa-lg fa-google-plus-square" aria-hidden="true"></i></a>
+                       <a target="_blank" class="fvi-logo" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
+                   </div>
+                   <button type="button" class="request-info">Request Info</button>
                 </div>
             </section>
 
@@ -193,6 +241,14 @@
                         <p>There are a few different online coding schools and websites that can take a beginner from amateur to intermediate at a low cost, and often for free. For example, <a target="_blank" href="http://codecademy.com">Codecademy</a> provides many good introductions to various programming languages for free, <a target="_blank" href="http://teamtreehouse.com">Team Tree House</a> provides learning paths with videos and exercises for a low monthly fee, and <a target="_blank" href="http://coursera.org">Coursera</a> provides a few online computer science courses from excellent universities, for free.</p>
                         <p>However, online programs are notorious for <a target="_blank" href="https://books.google.com/books?hl=en&lr=&id=JvfZDAAAQBAJ&oi=fnd&pg=PA24&dq=mooc+completion+rates&ots=lUaqVHHaY1&sig=anAMbrl1dAW98oA_ysNeVcTss30#v=onepage&q=mooc%20completion%20rates&f=false" >low completion rates</a>. As a student in FVI's web developer program, you will be learning and coding with a professional web developer in the same room who can immediately answer any questions, look at your code, and offer you feedback and encouragement. Such a close student-mentor relationship cannot be found in online programs.</p>
                     </div>
+                    <div class="social-media-summary">
+                       <a target="_blank" title="Blog | FVI Technology Department" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;Blog</a>
+                       <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-lg fa-facebook-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://twitter.com/fvitech"><i class="fa fa-lg fa-twitter-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://plus.google.com/u/1/b/105289039757508765516/105289039757508765516"><i class="fa fa-lg fa-google-plus-square" aria-hidden="true"></i></a>
+                       <a target="_blank" class="fvi-logo" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
+                   </div>
+                   <button type="button" class="request-info">Request Info</button>
                 </div>
             </section>
 
@@ -210,6 +266,14 @@
                         <h4>Heading 3</h4>
                         <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
                     </div>
+                    <div class="social-media-summary">
+                       <a target="_blank" title="Blog | FVI Technology Department" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;Blog</a>
+                       <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-lg fa-facebook-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://twitter.com/fvitech"><i class="fa fa-lg fa-twitter-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://plus.google.com/u/1/b/105289039757508765516/105289039757508765516"><i class="fa fa-lg fa-google-plus-square" aria-hidden="true"></i></a>
+                       <a target="_blank" class="fvi-logo" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
+                   </div>
+                   <button type="button" class="request-info">Request Info</button>
                 </div>
             </section>
 
@@ -239,6 +303,14 @@
                         <h4>Our Career Services Team</h4>
                         <p>The career services team at FVI will work with you to provide internships during training and upon graduation assist you in finding a great career as a web or application developer.</p>
                     </div>
+                    <div class="social-media-summary">
+                       <a target="_blank" title="Blog | FVI Technology Department" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;Blog</a>
+                       <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-lg fa-facebook-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://twitter.com/fvitech"><i class="fa fa-lg fa-twitter-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://plus.google.com/u/1/b/105289039757508765516/105289039757508765516"><i class="fa fa-lg fa-google-plus-square" aria-hidden="true"></i></a>
+                       <a target="_blank" class="fvi-logo" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
+                   </div>
+                   <button type="button" class="request-info">Request Info</button>
                 </div>
             </section>
 
@@ -266,6 +338,14 @@
                         <p>Federal assistance programs are administered through the U.S. Department of Education. Any U.S. citizen, national, or person in the United States for other than temporary reasons who is enrolled and accepted may apply for these programs. Most forms of financial assistance are available for each July 1-June 30 award period.</p>
                         <p>Every student considering an application for financial aid should request a copy of the current guide, Funding Your Education, published by the U.S. Department of Education. This important document can be obtained online from <a target="_blank" title="The United States Office of Federal Student Aid" href="http://studentaid.ed.gov/">The United States Office of Federal Student Aid</a> and will assist persons in understanding eligibility requirements.</p>
                     </div>
+                    <div class="social-media-summary">
+                       <a target="_blank" title="Blog | FVI Technology Department" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;Blog</a>
+                       <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-lg fa-facebook-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://twitter.com/fvitech"><i class="fa fa-lg fa-twitter-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://plus.google.com/u/1/b/105289039757508765516/105289039757508765516"><i class="fa fa-lg fa-google-plus-square" aria-hidden="true"></i></a>
+                       <a target="_blank" class="fvi-logo" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
+                   </div>
+                   <button type="button" class="request-info">Request Info</button>
                 </div>
             </section>
 
@@ -282,7 +362,7 @@
                         <p>After completing the <a target="_blank" title="FVI Coder's Corner" href="http://www.fvi.edu/coders_corner/introclass/">Coder's Corner tutorials</a>, see if you can solve these <a href="http://www.fvi.edu/coders_corner/exercise-grader/">JavaScript problems</a>.</p>
                         <h4>Learn About Modern Tech From Our Blog</h4>
                         <p><a href="http://www.fvi.edu/en/blog">Visit our blog</a> to learn about the latest tech trends, the differences between Front-end and Back-end programming, IT careers, and more. We update our bloga few times per week so there is always new information.</p>
-                        <h4>Check Us Out On Youtube</h4>
+                        <h4>Youtube Tutorials</h4>
                         <p><a target="_blank" title="FVI Tech Youtube Channel" href="https://www.youtube.com/channel/UCPbWkXshrZghR5W7kF7s0mg">Our youtube channel</a> offers video tutorials and explanations for a variety of coding topics.</p>
                     </div>
                     <div class="content cyber radio-cyber">
@@ -293,6 +373,14 @@
                         <h4>Heading 3</h4>
                         <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
                     </div>
+                    <div class="social-media-summary">
+                       <a target="_blank" title="Blog | FVI Technology Department" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;Blog</a>
+                       <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-lg fa-facebook-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://twitter.com/fvitech"><i class="fa fa-lg fa-twitter-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://plus.google.com/u/1/b/105289039757508765516/105289039757508765516"><i class="fa fa-lg fa-google-plus-square" aria-hidden="true"></i></a>
+                       <a target="_blank" class="fvi-logo" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
+                   </div>
+                   <button type="button" class="request-info">Request Info</button>
                 </div>
             </section>
 
@@ -312,6 +400,14 @@
                         <h4>Heading 3</h4>
                         <p>Pero like que cute irregardless, pastelitos LIV civic center vizcaya souwesera ocean drive ño critical mass art basel gorda. FIU quesito little haiti westchester Miami time doral cafe llave.</p>
                     </div>
+                    <div class="social-media-summary">
+                       <a target="_blank" title="Blog | FVI Technology Department" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;Blog</a>
+                       <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-lg fa-facebook-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://twitter.com/fvitech"><i class="fa fa-lg fa-twitter-square" aria-hidden="true"></i></a>
+                       <a target="_blank" href="http://plus.google.com/u/1/b/105289039757508765516/105289039757508765516"><i class="fa fa-lg fa-google-plus-square" aria-hidden="true"></i></a>
+                       <a target="_blank" class="fvi-logo" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
+                   </div>
+                   <button type="button" class="request-info">Request Info</button>
                 </div>
             </section>
 
@@ -337,7 +433,7 @@
             <div class="links-container">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a target="_blank" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Blog</a></li>
+                    <li><a target="_blank" href="http://www.fvi.edu/en/blog"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Our Tech Blog</a></li>
                     <li><a target="_blank" href="http://www.fvi.edu/consumer-information/"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Consumer Information</a></li>
                     <li><a target="_blank" href="http://www.fvi.edu/net-price-calculator/"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Net Price Calculator</a></li>
                     <li><a target="_blank" href="http://fvi.edu/annual_security_report/2015-Annual-Security-Report-FVI.pdf"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Annual Security Report</a></li>
@@ -345,20 +441,20 @@
             </div><!-- remove space
          --><div class="social-media-container">
                 <h4>Social Media</h4>
-                <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                <a target="_blank" href="http://www.facebook.com/FVITech/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
                 <a target="_blank" href="http://twitter.com/fvitech"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
                 <a target="_blank" href="http://plus.google.com/u/1/b/105289039757508765516/105289039757508765516"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                <a target="_blank" class="fvi-logo" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
             </div><!-- remove space
-         --><div class="campus-info-container">
+         --><div class="contact-us-container">
                 <h4>Contact Us</h4>
-                <a target="_blank" href="http://www.fvi.edu/"><img src="../img/fvi-gray.png" alt="Gray FVI Logo"></a>
                 <address>
                     <p>
-                        <a href="mailto:info@fvi.edu"><i class="fa fa-envelope-o" aria-hidden="true"></i> info@fvi.edu</a><br>
-                        <i class="fa fa-phone" aria-hidden="true"></i> 786-574-9511<br>
+                        <a href="mailto:info@fvi.edu"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;info@fvi.edu</a><br>
+                        <i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;786-574-9511<br>
                         Mall of Americas<br>
-                        7757 West Flagler Street #220<br>
-                        Second Floor<br>
+                        7757 West Flagler Street<br>
+                        #220, Second Floor<br>
                         Miami, FL 33144
                     </p>
                 </address>

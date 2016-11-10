@@ -131,12 +131,14 @@ body {
 }
 
 .cards-container {
-    display: flex;
-    box-sizing: border-box;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: center;
+    display: block;
+    text-align: center;
+    // display: flex;
+    // box-sizing: border-box;
+    // flex-flow: row wrap;
+    // justify-content: center;
+    // align-items: flex-start;
+    // align-content: center;
     padding: 20px;
     min-height: calc(100vh - 250px);
 }
