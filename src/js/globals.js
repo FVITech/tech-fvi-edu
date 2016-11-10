@@ -11,7 +11,7 @@
     const $menuItems = $('#menu-items');
     const $navItems = $menuItems.find('a.nav-item');
     const $sections = $programsContainer.find('section');
-    const $banners = $sections.find('div.banner');
+    const $banners = $sections.find('.banner');
     const $plusButtons = $banners.find('span.plus-button');
 
     module.exports.mobileMenuWidth = '920';
