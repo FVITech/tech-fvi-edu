@@ -25,7 +25,7 @@
             return false;
         });
 
-        g.$programsContainer.on('click', 'section div.banner span.plus-button', function() {
+        g.$programsContainer.on('click', 'section span.plus-button', function() {
             if ($(this).hasClass('opened')) {
                 pb.close(this);
             } else {
@@ -57,7 +57,7 @@
             var navItems = g.$navItems.filter('.' + page);
             var banners = g.$banners.filter('.' + page);
             var landing = $('#page-landing_' + page)[0];
-            const $arrowDown = g.$programsContainer.find('div.page-landing a.arrow-down');
+            const $arrowDown = g.$programsContainer.find('a.arrow-down');
 
             // Switch to home page annd reset everything to default
             g.$homeButton.on('click', function(e) {
@@ -98,7 +98,7 @@
 
         // mobile-menu show/hide
         if (window.innerWidth < g.mobileMenuWidth) {
-            $('#menu-button, #menu-items li a').click(menu.mobileClick);
+            $('#menu-button, #menu-items a').click(menu.mobileClick);
         }
 
         // apply-button and form
