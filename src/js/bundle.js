@@ -45,6 +45,7 @@
 (function () {
     var $overlay = $('#overlay');
     var $pageLandingHome = $('#page-landing_home');
+    var $cards = $('label.card');
     var $pageLandingWeb = $('#page-landing_web');
     var $pageLandingCyber = $('#page-landing_cyber');
     var $applyPopUp = $('#apply-pop-up');
@@ -62,6 +63,7 @@
     module.exports.topPadding = window.innerWidth >= '920' ? 52 : 0;
     module.exports.$overlay = $overlay;
     module.exports.$pageLandingHome = $pageLandingHome;
+    module.exports.$cards = $cards;
     module.exports.$pageLandingWeb = $pageLandingWeb;
     module.exports.$pageLandingCyber = $pageLandingCyber;
     module.exports.$applyPopUp = $applyPopUp;
@@ -94,81 +96,81 @@
     var form = require('./form');
     var smoothScroll = require('./smoothScroll');
 
-    smoothScroll.init();
-
-    // At home page, switch pages when click on program card
-    var $cards = $('label.card');
-    $cards.filter('.web').click(function () {
-        switchPage('web');
-    });
-    $cards.filter('.cyber').click(function () {
-        switchPage('cyber');
-    });
-
-    // init functionality of contact-us/apply/request-info buttons and form
-    g.$applyButtons.click(function (e) {
-        e.preventDefault();
-        form.show();
-        return false;
-    });
-    $('#apply-close, #overlay').click(form.hide);
-    g.$applyForm.submit(function (e) {
-        e.preventDefault();
-        form.submit();
-        return false;
-    });
-
-    // on button click, change button style and show content-container
-    g.$plusButtons.click(function () {
-        $(this).hasClass('opened') ? pb.close(this) : pb.open(this);
-        return false;
-    });
-
-    // mobile-menu show/hide
-    if (window.innerWidth < g.mobileMenuWidth) {
-        $('#menu-button, #menu-items a').click(menu.mobileClick);
-    }
-
-    function switchPage(page) {
-        var navItems = g.$navItems.filter('.' + page);
-        var banners = g.$banners.filter('.' + page);
-        var landing = $('#page-landing_' + page)[0];
-
-        // Switch to home page annd reset everything to default
-        g.$homeButton.on('click', function (e) {
-            e.preventDefault();
-            menu.homeButtonSetup();
+    var pageSetup = {
+        onReady: function onReady() {
+            smoothScroll.init();
+            g.$cards.filter('.web').on('click', function () {
+                pageSetup.switchPage('web');
+            });
+            g.$cards.filter('.cyber').on('click', function () {
+                pageSetup.switchPage('cyber');
+            });
+            g.$applyButtons.on('click', pageSetup.applyButtonsFunctionality);
+            $('#apply-close, #overlay').on('click', form.hide);
+            g.$applyForm.on('click', pageSetup.formSubmit);
+            g.$plusButtons.on('click', pageSetup.plusButtonsFunctionality);
+            if (window.innerWidth < g.mobileMenuWidth) {
+                $('#menu-button, #menu-items a').click(menu.mobileClick);
+            }
             return false;
-        });
+        },
+        switchPage: function switchPage(page) {
+            var navItems = g.$navItems.filter('.' + page);
+            var banners = g.$banners.filter('.' + page);
+            var landing = $('#page-landing_' + page)[0];
 
-        // on scroll, fix plus-buttons to screen and add nav styles
-        var $downArrows = $('a.arrow-down');
-        if (window.innerWidth >= g.mobileMenuWidth) {
-            $(window).on('scroll', function () {
-                pb.fixed();
-                window.scrollY > '20' ? $downArrows.fadeOut(400) : $downArrows.slideDown(400);
-                menu.navItemsStyle(navItems, banners, landing);
+            // Switch to home page annd reset everything to default
+            g.$homeButton.on('click', function (e) {
+                e.preventDefault();
+                menu.homeButtonSetup();
                 return false;
             });
-        } else {
-            $(window).on('scroll', function () {
-                pb.fixed();
-                window.scrollY > '20' ? $downArrows.fadeOut(400) : $downArrows.slideDown(400);
+
+            // on scroll, fix plus-buttons to screen and add nav styles
+            var $downArrows = $('a.arrow-down');
+            if (window.innerWidth >= g.mobileMenuWidth) {
+                $(window).on('scroll', function () {
+                    pb.fixed();
+                    window.scrollY > '20' ? $downArrows.fadeOut(400) : $downArrows.slideDown(400);
+                    menu.navItemsStyle(navItems, banners, landing);
+                    return false;
+                });
+            } else {
+                $(window).on('scroll', function () {
+                    pb.fixed();
+                    window.scrollY > '20' ? $downArrows.fadeOut(400) : $downArrows.slideDown(400);
+                });
+            }
+
+            // Set form program id
+            var id = page == "web" ? 'WD' : 'IT';
+            g.$applyPopUp.find("input[name='program_id']").attr('value', id);
+
+            // animate switching pages
+            g.$pageLandingHome.fadeOut(function () {
+                window.scrollTo(0, 0);
+                g.$programsContainer.fadeIn();
+                return false;
             });
-        }
-
-        // Set form program id
-        var id = page == "web" ? 'WD' : 'IT';
-        g.$applyPopUp.find("input[name='program_id']").attr('value', id);
-
-        // animate switching pages
-        g.$pageLandingHome.fadeOut(function () {
-            window.scrollTo(0, 0);
-            g.$programsContainer.fadeIn();
             return false;
-        });
-        return false;
-    }
+        },
+        applyButtonsFunctionality: function applyButtonsFunctionality(e) {
+            e.preventDefault();
+            form.show();
+            return false;
+        },
+        formSubmit: function formSubmit(e) {
+            e.preventDefault();
+            form.submit();
+            return false;
+        },
+        plusButtonsFunctionality: function plusButtonsFunctionality() {
+            $(this).hasClass('opened') ? pb.close(this) : pb.open(this);
+            return false;
+        }
+    };
+
+    $(document).ready(pageSetup.onReady);
 
     return false;
 });

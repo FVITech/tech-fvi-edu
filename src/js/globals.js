@@ -1,6 +1,7 @@
 (function() {
     const $overlay = $('#overlay');
     const $pageLandingHome = $('#page-landing_home');
+    const $cards = $('label.card');
     const $pageLandingWeb = $('#page-landing_web');
     const $pageLandingCyber = $('#page-landing_cyber');
     const $applyPopUp = $('#apply-pop-up');
@@ -18,6 +19,7 @@
     module.exports.topPadding = (window.innerWidth >= '920') ? 52 : 0;
     module.exports.$overlay = $overlay;
     module.exports.$pageLandingHome = $pageLandingHome;
+    module.exports.$cards = $cards;
     module.exports.$pageLandingWeb = $pageLandingWeb;
     module.exports.$pageLandingCyber = $pageLandingCyber;
     module.exports.$applyPopUp = $applyPopUp;

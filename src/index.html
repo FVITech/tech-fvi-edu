@@ -66,14 +66,14 @@
                 </div>
 
                 <div class="cards-container" id="cards-container">
-                    <label for="radio-web" class="card web">
+                    <label for="radio-web" class="card web" data-page="web">
                         <p class="card-hover">This program is designed to turn someone with no programming experience into a full stack web developer in Node.JS and php, with ample practice in interacting with APIs, and creating SPAs.</p>
                         <figure>
                             <img src="../img/web-dev-card-image.png" alt="image of web development" />
                         </figure>
                         <h4><span class="first-letter">W</span>eb<br><span class="second-letter">D</span>eveloper<br>Program</h4>
                     </label>
-                    <label for="radio-cyber" class="card cyber">
+                    <label for="radio-cyber" class="card cyber" data-page="cyber">
                         <p class="card-hover">This program is designed to teach you the ins and outs of configuring a cisco network, managing a Windows or Linux server Infrastructure, and managing IaaS and PaaS platforms in the cloud (AWS and Azure).</p>
                         <figure>
                             <img src="../img/network-admin-card-image.png" alt="image of network administration" />
@@ -98,8 +98,8 @@
             </div>
         </div>
 
-        <input id="radio-web" type="radio" name="program-selector" value="" selected="false">
-        <input id="radio-cyber" type="radio" name="program-selector" value="" selected="false">
+        <input id="radio-web" type="radio" name="program-selector" value="" data-page="web" selected="false">
+        <input id="radio-cyber" type="radio" name="program-selector" value="" data-page="cyber" selected="false">
         <div class="programs-container" id="programs-container">
 
             <nav id="menu">
