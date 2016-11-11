@@ -92,11 +92,11 @@ a {
   line-height: 1.7; }
 
 html {
-  background-color: #111; }
-
-body {
   background-color: #111;
   display: none; }
+
+body {
+  background-color: #111; }
 
 .page-landing {
   background-size: cover;
