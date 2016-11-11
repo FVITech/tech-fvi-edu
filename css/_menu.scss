@@ -42,7 +42,7 @@ nav {
         text-align: center;
         position: relative;
 
-        a:first-of-type {
+        a.logo-anchor {
           &:focus, &:hover {
               background-color: #222;
           }
