@@ -115,6 +115,9 @@
             g.$cards.filter('.cyber').on('click', function () {
                 pageSetup.switchPage('cyber');
             });
+            $(window).on('popstate', function () {
+                g.$homeButton.click();
+            });
             g.$applyButtons.on('click', pageSetup.applyButtonsFunctionality);
             $('#apply-close, #overlay').on('click', form.hide);
             g.$applyForm.on('click', form.show);
@@ -126,6 +129,10 @@
             return false;
         },
         switchPage: function switchPage(page) {
+            var address = page === 'web' ? 'web-developer-program' : 'network-administrator-program';
+            var state = { page: address };
+            history.pushState(state, "", "");
+
             var navItems = g.$navItems.filter('.' + page);
             var banners = g.$banners.filter('.' + page);
             var landing = $('#page-landing_' + page)[0];
