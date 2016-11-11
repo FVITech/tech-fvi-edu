@@ -13,7 +13,7 @@
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
                 // topPadding is the height of the nav, so it scrolls past the nav
-                var topPadding = ($(target[0]).hasClass('banner')) ? ((window.innerWidth >= '920') ? -52 : 0) : 0;
+                var topPadding = ($(target[0]).hasClass('banner')) ? ((window.innerWidth >= '960') ? -52 : 0) : 0;
                 var distance = $(target[0]).offset().top + topPadding - window.scrollY;
                 var timing = (distance < 1 && distance >= 0) ? 0 : 700;
                 $('body, html').animate({

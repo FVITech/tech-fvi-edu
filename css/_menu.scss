@@ -40,6 +40,14 @@ nav {
     /* Menu items */
     ul {
         text-align: center;
+        position: relative;
+
+        .fvi-logo-white {
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            height: 25px;
+        }
 
         li {
             display: inline-block;

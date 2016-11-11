@@ -559,7 +559,13 @@ nav {
       background-color: #333;
       cursor: pointer; }
   nav ul {
-    text-align: center; }
+    text-align: center;
+    position: relative; }
+    nav ul .fvi-logo-white {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      height: 25px; }
     nav ul li {
       display: inline-block; }
       nav ul li a {
@@ -607,6 +613,7 @@ nav {
   padding: 15px;
   background-color: #ddd;
   box-shadow: 0 15px 70px 0 #000;
+  overflow: visible;
   z-index: 1001; }
   .apply-pop-up h3 {
     color: #000;
@@ -625,7 +632,8 @@ nav {
     .apply-pop-up .close:hover {
       color: #f22; }
   .apply-pop-up form {
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    overflow: visible; }
     .apply-pop-up form input, .apply-pop-up form textarea {
       box-sizing: border-box;
       width: 100%;
@@ -634,6 +642,7 @@ nav {
       padding: 8px;
       margin-top: 10px;
       border: 1px solid #ccc;
+      overflow: visible;
       -webkit-transition: all 0.1s;
       transition: all 0.1s; }
       .apply-pop-up form input:focus, .apply-pop-up form input:hover, .apply-pop-up form textarea:focus, .apply-pop-up form textarea:hover {
@@ -934,10 +943,10 @@ section {
       vertical-align: center;
       padding: 0 10px;
       white-space: nowrap; }
-      .content-container .social-media-summary a:focus, .content-container .social-media-summary a:hover {
-        color: #54bafe; }
       .content-container .social-media-summary a:visited {
         color: #028dea; }
+      .content-container .social-media-summary a:focus, .content-container .social-media-summary a:hover {
+        color: #54bafe; }
     .content-container .social-media-summary .fvi-logo {
       display: block;
       margin: 10px auto 0; }
@@ -995,7 +1004,7 @@ section {
       margin: 2rem 0 1rem;
       color: #eee; }
 
-@media all and (max-width: 920px) {
+@media all and (max-width: 960px) {
   .page-landing {
     top: 0px;
     /* nav height */

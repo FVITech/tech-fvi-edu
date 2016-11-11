@@ -11,6 +11,7 @@
     padding: 15px;
     background-color: #ddd;
     box-shadow: 0 15px 70px 0 #000;
+    overflow: visible;
     z-index: 1001;
 
     h3 {
@@ -37,6 +38,7 @@
 
     form {
         box-sizing: border-box;
+        overflow: visible;
 
         input, textarea {
             box-sizing: border-box;
@@ -46,6 +48,7 @@
             padding: 8px;
             margin-top: 10px;
             border: 1px solid #ccc;
+            overflow: visible;
             transition: all 0.1s;
 
             &:focus,

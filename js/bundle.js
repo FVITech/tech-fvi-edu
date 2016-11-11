@@ -3,6 +3,7 @@
 
 (function () {
     var g = require('./globals');
+    var $message = $('#sent-message');
 
     function show() {
         g.$overlay.fadeIn();
@@ -12,7 +13,10 @@
 
     function hide() {
         g.$overlay.fadeOut();
-        g.$applyPopUp.fadeOut();
+        g.$applyPopUp.fadeOut(function () {
+            g.$applyForm.show();
+            $message.hide();
+        });
         return false;
     }
 
@@ -28,8 +32,14 @@
 
         sendForm().done(function () {
             g.$applyForm.fadeOut(function () {
-                $('#sent-message').fadeIn();
+                $message.fadeIn();
+                g.$applyForm[0].reset();
             });
+        }).fail(function (error) {
+            console.log(error);
+            $message.fadeIn();
+            $message.find('h3').html('Uh Oh!');
+            $message.find('p').html('Looks like there was an error sending your message.\nPlease call 786-574-9511 to speak with a representative from FVI.');
         });
         return false;
     }
@@ -59,8 +69,8 @@
     var $banners = $sections.find('.banner');
     var $plusButtons = $banners.find('span.plus-button');
 
-    module.exports.mobileMenuWidth = '920';
-    module.exports.topPadding = window.innerWidth >= '920' ? 52 : 0;
+    module.exports.mobileMenuWidth = '960';
+    module.exports.topPadding = window.innerWidth >= '960' ? 52 : 0;
     module.exports.$overlay = $overlay;
     module.exports.$pageLandingHome = $pageLandingHome;
     module.exports.$cards = $cards;
@@ -107,7 +117,8 @@
             });
             g.$applyButtons.on('click', pageSetup.applyButtonsFunctionality);
             $('#apply-close, #overlay').on('click', form.hide);
-            g.$applyForm.on('click', pageSetup.formSubmit);
+            g.$applyForm.on('click', form.show);
+            $('#submit-apply').on('click', pageSetup.formSubmit);
             g.$plusButtons.on('click', pageSetup.plusButtonsFunctionality);
             if (window.innerWidth < g.mobileMenuWidth) {
                 $('#menu-button, #menu-items a').click(menu.mobileClick);
@@ -310,7 +321,7 @@
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
                 // topPadding is the height of the nav, so it scrolls past the nav
-                var topPadding = $(target[0]).hasClass('banner') ? window.innerWidth >= '920' ? -52 : 0 : 0;
+                var topPadding = $(target[0]).hasClass('banner') ? window.innerWidth >= '960' ? -52 : 0 : 0;
                 var distance = $(target[0]).offset().top + topPadding - window.scrollY;
                 var timing = distance < 1 && distance >= 0 ? 0 : 700;
                 $('body, html').animate({

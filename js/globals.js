@@ -15,8 +15,8 @@
     const $banners = $sections.find('.banner');
     const $plusButtons = $banners.find('span.plus-button');
 
-    module.exports.mobileMenuWidth = '920';
-    module.exports.topPadding = (window.innerWidth >= '920') ? 52 : 0;
+    module.exports.mobileMenuWidth = '960';
+    module.exports.topPadding = (window.innerWidth >= '960') ? 52 : 0;
     module.exports.$overlay = $overlay;
     module.exports.$pageLandingHome = $pageLandingHome;
     module.exports.$cards = $cards;

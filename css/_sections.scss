@@ -99,12 +99,12 @@ section {
             padding: 0 10px;
             white-space: nowrap;
 
-            &:focus, &:hover {
-                color: lighten($fvi-blue, 20%);
-            }
-
             &:visited {
                 color: $fvi-blue;
+            }
+
+            &:focus, &:hover {
+                color: lighten($fvi-blue, 20%);
             }
         }
 
