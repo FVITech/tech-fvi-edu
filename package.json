@@ -4,19 +4,15 @@
   "description": "Website for tech.fvi.edu",
   "main": "index.html",
   "scripts": {
-    "build-js": "browserify src/js/main.js -o src/js/bundle.js",
-    "watch-js": "onchange 'src/js/*.js' -- npm run build-js",
-    "build-js-min": "browserify src/js/main.js | uglifyjs -o dist/js/bundle.min.js",
-    "watch-js-min": "onchange 'src/js/*.js' -- npm run build-js-min",
-    "sass": "node-sass src/css/main.scss src/css/main.css",
-    "autoprefixer": "postcss --use autoprefixer src/css/main.css -d src/css",
+    "build-js": "browserify js/main.js -o js/bundle.js",
+    "build-js-min": "browserify js/main.js | uglifyjs -o js/bundle.min.js",
+    "sass": "node-sass css/main.scss css/main.css",
+    "autoprefixer": "postcss --use autoprefixer css/main.css -d css",
     "build-css": "npm run sass && npm run autoprefixer",
-    "watch-css": "onchange 'src/css/*.scss' -- npm run build-css",
-    "cleancss": "cleancss -o dist/css/main.min.css src/css/main.css ",
+    "cleancss": "cleancss -o css/main.min.css css/main.css ",
     "build-css-min": "npm run sass && npm run autoprefixer && npm run cleancss",
-    "watch-css-min": "onchange 'src/css/*.scss' -v -i -- npm run build-css-min",
-    "build-src": "npm run build-js & npm run build-css",
-    "build-dist": "npm run build-js-min & npm run build-css-min"
+    "build": "npm run build-js & npm run build-css",
+    "build-min": "npm run build-js-min & npm run build-css-min"
   },
   "repository": {
     "type": "git",
