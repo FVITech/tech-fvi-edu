@@ -5,7 +5,7 @@
 }(function($, window, document) {
     "use strict";
 
-    $('body').fadeIn(300);
+    $('body').fadeIn(900);
 
     const g = require('./globals');
     const pb = require('./plus-buttons');

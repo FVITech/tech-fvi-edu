@@ -91,6 +91,9 @@ a {
   font-weight: 400;
   line-height: 1.7; }
 
+html {
+  background-color: #111; }
+
 body {
   background-color: #111;
   display: none; }
@@ -561,6 +564,8 @@ nav {
   nav ul {
     text-align: center;
     position: relative; }
+    nav ul a:first-of-type:focus, nav ul a:first-of-type:hover {
+      background-color: #222; }
     nav ul .fvi-logo-white {
       position: absolute;
       left: 10px;
@@ -799,8 +804,7 @@ input[name="program-selector"] {
   display: block;
   position: relative; }
   .plus-button:hover {
-    background-color: #fff;
-    color: #028dea; }
+    background-color: #3baffd; }
   .plus-button:focus {
     outline: none; }
 
@@ -936,7 +940,7 @@ section {
   .content-container .social-media-summary {
     text-align: center; }
     .content-container .social-media-summary a {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: #028dea;
       border: none;
       display: inline;
@@ -949,9 +953,9 @@ section {
         color: #54bafe; }
     .content-container .social-media-summary .fvi-logo {
       display: block;
-      margin: 10px auto 0; }
+      margin: 20px auto 0; }
       .content-container .social-media-summary .fvi-logo img {
-        max-width: 250px; }
+        max-width: 200px; }
   .content-container .request-info {
     position: relative;
     top: -20px; }
