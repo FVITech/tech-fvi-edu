@@ -20,7 +20,8 @@
             g.$cards.filter('.cyber').on('click', () => {pageSetup.switchPage('cyber')});
             g.$applyButtons.on('click', pageSetup.applyButtonsFunctionality);
             $('#apply-close, #overlay').on('click', form.hide);
-            g.$applyForm.on('click', pageSetup.formSubmit);
+            g.$applyForm.on('click', form.show);
+            $('#submit-apply').on('click', pageSetup.formSubmit);
             g.$plusButtons.on('click', pageSetup.plusButtonsFunctionality);
             if (window.innerWidth < g.mobileMenuWidth) {
                 $('#menu-button, #menu-items a').click(menu.mobileClick);

@@ -9,7 +9,10 @@
 
     function hide() {
         g.$overlay.fadeOut();
-        g.$applyPopUp.fadeOut();
+        g.$applyPopUp.fadeOut(function() {
+          g.$applyForm.show();
+          $('#sent-message').hide();
+        });
         return false;
     }
 
@@ -17,7 +20,7 @@
 
         function sendForm() {
             return $.ajax({
-                url: '',
+                url: 'http://fvi-grad.com:4004/fakeform',
                 type: 'post',
                 data: g.$applyForm.serialize()
             });

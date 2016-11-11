@@ -129,7 +129,7 @@ body {
   background-color: #ddd;
   min-height: 100vh; }
   .page-landing.home .above-the-fold {
-    background-image: url("../../img/network-background-dark.jpg");
+    background-image: url("../img/network-background-dark.jpg");
     background-size: cover; }
   .page-landing.home .fvi-logo-white {
     box-sizing: border-box;
@@ -177,13 +177,13 @@ body {
     text-shadow: 0 0 5px #000; }
 
 .page-landing.web {
-  background-image: url("../../img/web-landing.jpg");
+  background-image: url("../img/web-landing.jpg");
   background-position: top; }
   .page-landing.web h1 {
     padding-top: 20vh; }
 
 .page-landing.cyber {
-  background-image: url("../../img/cyber-landing.jpg"); }
+  background-image: url("../img/cyber-landing.jpg"); }
   .page-landing.cyber h1 {
     padding-top: 25vh;
     text-shadow: 0 0 5px #fff;
@@ -951,35 +951,35 @@ section {
   font-weight: bolder; }
 
 #summary {
-  background-image: url("../../img/keyboard.jpg");
+  background-image: url("../img/keyboard.jpg");
   background-position: center; }
 
 #cirriculum {
-  background-image: url("../../img/courses.jpg");
+  background-image: url("../img/courses.jpg");
   background-position: bottom; }
 
 #comparison {
-  background-image: url("../../img/code.jpg");
+  background-image: url("../img/code.jpg");
   background-position: top; }
 
 #certifications {
-  background-image: url("../../img/certifications.jpg");
+  background-image: url("../img/certifications.jpg");
   background-position: center; }
 
 #partners {
-  background-image: url("../../img/partners.jpg");
+  background-image: url("../img/partners.jpg");
   background-position: center; }
 
 #tuition {
-  background-image: url("../../img/finance.jpg");
+  background-image: url("../img/finance.jpg");
   background-position: top; }
 
 #resources {
-  background-image: url("../../img/resources.jpg");
+  background-image: url("../img/resources.jpg");
   background-position: bottom; }
 
 #student-work {
-  background-image: url("../../img/projects.jpg");
+  background-image: url("../img/projects.jpg");
   background-position: bottom; }
 
 #call-to-action-section {

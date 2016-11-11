@@ -20,7 +20,7 @@
 
         function sendForm() {
             return $.ajax({
-                url: '',
+                url: 'http://fvi-grad.com:4004/fakeform',
                 type: 'post',
                 data: g.$applyForm.serialize()
             });

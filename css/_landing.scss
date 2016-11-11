@@ -42,7 +42,7 @@ body {
     min-height: 100vh;
 
     .above-the-fold {
-        background-image: url('../../img/network-background-dark.jpg');
+        background-image: url('../img/network-background-dark.jpg');
         background-size: cover;
     }
 
@@ -98,7 +98,7 @@ body {
 }
 
 .page-landing.web {
-    background-image: url('../../img/web-landing.jpg');
+    background-image: url('../img/web-landing.jpg');
     background-position: top;
 
     h1 {
@@ -107,7 +107,7 @@ body {
 }
 
 .page-landing.cyber {
-    background-image: url('../../img/cyber-landing.jpg');
+    background-image: url('../img/cyber-landing.jpg');
 
     h1 {
         padding-top: 25vh;
