@@ -1,0 +1,127 @@
+.page.home {
+    top: 0;
+    background-color: #ddd;
+    min-height: 100vh;
+
+    .above-the-fold {
+        background-image: url('../img/network-background-dark.jpg');
+        background-size: cover;
+    }
+
+    .fvi-logo-white {
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        width: 100%;
+        max-width: 80px;
+    }
+
+    ul {
+        text-align: right;
+        padding: 10px;
+        margin: 0;
+
+        a {
+            @include link(#fff);
+            display: inline-block;
+            border-bottom: 2px solid rgba(0, 0, 0, 0);
+            padding: 2px 0;
+            margin: 0 10px;
+            font-size: .8rem;
+            font-weight: 300;
+
+            &:hover {
+                border-color: #fff;
+            }
+
+            &::first-letter {
+                font-size: 1.3em;
+            }
+        }
+    }
+}
+
+.title-div {
+    display: table;
+    width: 100%;
+    height: 250px;
+
+    .title-headers {
+        display: table-cell;
+        vertical-align: middle;
+
+        h2 {
+            margin: 0;
+            padding: 1rem;
+            font-size: 3rem;
+            color: #eee;
+            text-shadow: 0 0 5px #000;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            padding-bottom: 1rem;
+            color: #ddd;
+            text-shadow: 0 0 5px #000;
+        }
+    }
+}
+
+.cards-container {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    min-height: calc(100vh - 250px);
+}
+
+.about-wrapper {
+    background-color: #fff;
+    text-align: left;
+    padding: 20px;
+
+    h5 {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 3px;
+
+        &::first-letter {
+            font-size: 1.3em;
+        }
+    }
+
+    .about-content-container {
+        margin: auto;
+        max-width: 1000px;
+        box-sizing: border-box;
+    }
+
+    p {
+        text-shadow: none;
+        color: #444;
+        max-width: 600px;
+        font-size: 1.1rem;
+        margin: 30px auto;
+    }
+
+    .request-info {
+        display: block;
+        margin: 30px auto;
+    }
+}
+
+.infographic-container {
+    width: 100%;
+    background-color: rgb(240, 240, 250);
+    text-align: center;
+
+    .infographic {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: block;
+    }
+}

@@ -20,7 +20,7 @@
         return false;
     }
 
-    function submit() {
+    function send() {
 
         function sendForm() {
             return $.ajax({
@@ -46,7 +46,7 @@
 
     module.exports.show = show;
     module.exports.hide = hide;
-    module.exports.submit = submit;
+    module.exports.send = send;
 })();
 
 },{"./globals":2}],2:[function(require,module,exports){
@@ -54,32 +54,26 @@
 
 (function () {
     var $overlay = $('#overlay');
-    var $pageLandingHome = $('#page-landing_home');
     var $cards = $('label.card');
-    var $pageLandingWeb = $('#page-landing_web');
-    var $pageLandingCyber = $('#page-landing_cyber');
     var $applyPopUp = $('#apply-pop-up');
     var $applyForm = $applyPopUp.find('form');
     var $applyButtons = $('#nav-apply-btn, #cta-apply-btn, #contact-home, .request-info');
-    var $programsContainer = $('#programs-container');
+    var $pagesContainer = $('#pages-container');
     var $homeButton = $('#home-button');
     var $menuItems = $('#menu-items');
     var $navItems = $menuItems.find('a.nav-item');
-    var $sections = $programsContainer.find('section');
+    var $sections = $pagesContainer.find('section');
     var $banners = $sections.find('.banner');
     var $plusButtons = $banners.find('span.plus-button');
 
     module.exports.mobileMenuWidth = '960';
     module.exports.topPadding = window.innerWidth >= '960' ? 52 : 0;
     module.exports.$overlay = $overlay;
-    module.exports.$pageLandingHome = $pageLandingHome;
     module.exports.$cards = $cards;
-    module.exports.$pageLandingWeb = $pageLandingWeb;
-    module.exports.$pageLandingCyber = $pageLandingCyber;
     module.exports.$applyPopUp = $applyPopUp;
     module.exports.$applyForm = $applyForm;
     module.exports.$applyButtons = $applyButtons;
-    module.exports.$programsContainer = $programsContainer;
+    module.exports.$pagesContainer = $pagesContainer;
     module.exports.$homeButton = $homeButton;
     module.exports.$menuItems = $menuItems;
     module.exports.$navItems = $navItems;
@@ -99,167 +93,96 @@
     "use strict";
 
     var g = require('./globals');
+    var router = require('./router');
     var pb = require('./plus-buttons');
     var menu = require('./menu');
     var form = require('./form');
     var smoothScroll = require('./smoothScroll');
-    var viewsData = {
-        home: {
-            path: 'home',
-            title: 'Learn to Code at the Florida Vocational Institute - Evening Coding Bootcamp'
-        },
-        web: {
-            path: 'web-developer-program',
-            title: 'Web Developer Evening Bootcamp by The Florida Vocational Institute'
-        },
-        cyber: {
-            path: 'network-administrator-program',
-            title: 'Network Administrator Evening Bootcamp by The Florida Vocational Institute'
-        }
-    };
-    var initialUrlHasPath = void 0;
-    location.href.includes('?') && !location.href.includes('?home') ? initialUrlHasPath = true : initialUrlHasPath = false;
+    var preventPopstateScroll = require('prevent-popstate-scroll');
 
-    var pageSetup = {
+    var main = {
         onReady: function onReady() {
-            pageSetup.loadPage();
+            // Load initial URL
+            main.urlRouter();
+            // Initialize functionality to change page content and URL
+            // when user click on certain elements
+            main.clickRouter();
+            // Initialize functionality to scroll smoothly to different
+            // location on the same page when local link is clicked
             smoothScroll.init();
-            g.$cards.filter('.web').on('click', function () {
-                pageSetup.switchPage('web');
-                history.pushState(viewsData.web, viewsData.web.path, "?" + viewsData.web.path);
+            // Change page content and URL when click browser's forward or back buttons
+            $(window).on('popstate', main.urlRouter);
+            // prevent browser from scrolling to top when onpopstate event emits
+            preventPopstateScroll.prevent();
+            // Contact form functionality
+            g.$applyButtons.on('click', function (e) {
+                e.preventDefault();form.show();return false;
             });
-            g.$cards.filter('.cyber').on('click', function () {
-                pageSetup.switchPage('cyber');
-                history.pushState(viewsData.cyber, viewsData.cyber.path, "?" + viewsData.cyber.path);
+            $('#apply-close, #overlay').on('click', form.hide);
+            $('#submit-apply').on('click', function (e) {
+                e.preventDefault();form.send();return false;
             });
-            g.$homeButton.on('click', function (e) {
-                e.preventDefault();
-                history.pushState(viewsData.home, viewsData.home.path, "?" + viewsData.home.path);
-                menu.loadHome();
+            // Setup plus buttons functionality
+            g.$plusButtons.on('click', function () {
+                $(this).hasClass('opened') ? pb.close(this) : pb.open(this);
                 return false;
             });
-            $(window).on('popstate', function () {
-                pageSetup.loadPage(false);
-            });
-            g.$applyButtons.on('click', pageSetup.applyButtonsFunctionality);
-            $('#apply-close, #overlay').on('click', form.hide);
-            g.$applyForm.on('click', form.show);
-            $('#submit-apply').on('click', pageSetup.formSubmit);
-            g.$plusButtons.on('click', pageSetup.plusButtonsFunctionality);
+            // Setup mobile menu
             if (window.innerWidth < g.mobileMenuWidth) {
                 $('#menu-button, #menu-items a').click(menu.mobileClick);
             }
             return false;
         },
-        loadPage: function loadPage(pageInit) {
-            if (location.href.includes('web-developer-program')) {
-                $('#radio-web')[0].checked = true;
-                document.title = viewsData.web.title;
-                pageSetup.switchPage('web');
-            } else if (location.href.includes('network-administrator-program')) {
-                $('#radio-cyber')[0].checked = true;
-                document.title = viewsData.cyber.title;
-                pageSetup.switchPage('cyber');
+        urlRouter: function urlRouter() {
+            if (location.hash == "") {
+                document.title = router.routes.home.title;
+                router.load(router.routes.home);
+                history.replaceState(router.routes.home, router.routes.home.path, "#/" + router.routes.home.path);
             } else {
-                menu.loadHome();
-                document.title = viewsData.home.title;
-                $('html').fadeIn(900);
-                history.replaceState(viewsData.home, viewsData.home.path, "?" + viewsData.home.path);
+                for (var route in router.routes) {
+                    if (location.hash.slice(2) == router.routes[route]['path']) {
+                        router.load(router.routes[route]);
+                        return;
+                    }
+                }
             }
         },
-        switchPage: function switchPage(page) {
-            var navItems = g.$navItems.filter('.' + page);
-            var banners = g.$banners.filter('.' + page);
-            var landing = $('#page-landing_' + page)[0];
-
-            // on scroll, fix plus-buttons to screen and add nav styles
-            var $downArrows = $('a.arrow-down');
-            if (window.innerWidth >= g.mobileMenuWidth) {
-                $(window).on('scroll', function () {
-                    pb.fixed();
-                    window.scrollY > '20' ? $downArrows.fadeOut(400) : $downArrows.slideDown(400);
-                    menu.navItemsStyle(navItems, banners, landing);
+        clickRouter: function clickRouter() {
+            var _loop = function _loop(route) {
+                g.$cards.filter("." + router.routes[route]['class']).click(function (e) {
+                    e.preventDefault();
+                    router.loadAndPushState(router.routes[route]);
                     return false;
                 });
-            } else {
-                $(window).on('scroll', function () {
-                    pb.fixed();
-                    window.scrollY > '20' ? $downArrows.fadeOut(400) : $downArrows.slideDown(400);
-                });
+            };
+
+            for (var route in router.routes) {
+                _loop(route);
             }
-
-            // Set form program id
-            var id = page == "web" ? 'WD' : 'IT';
-            g.$applyPopUp.find("input[name='program_id']").attr('value', id);
-
-            // animate switching pages
-            if (initialUrlHasPath) {
-                g.$pageLandingHome.hide();
-                g.$programsContainer.show();
-                $('html').fadeIn();
-                initialUrlHasPath = false;
-            } else {
-                g.$pageLandingHome.fadeOut(function () {
-                    window.scrollTo(0, 0);
-                    g.$programsContainer.fadeIn();
-                    return false;
-                });
-            }
-
-            return false;
-        },
-        applyButtonsFunctionality: function applyButtonsFunctionality(e) {
-            e.preventDefault();
-            form.show();
-            return false;
-        },
-        formSubmit: function formSubmit(e) {
-            e.preventDefault();
-            form.submit();
-            return false;
-        },
-        plusButtonsFunctionality: function plusButtonsFunctionality() {
-            $(this).hasClass('opened') ? pb.close(this) : pb.open(this);
-            return false;
+            g.$homeButton.on('click', function (e) {
+                e.preventDefault();
+                router.loadAndPushState(router.routes.home);
+                return false;
+            });
         }
     };
 
-    $(document).ready(pageSetup.onReady);
+    $(document).ready(main.onReady);
 
     return false;
 });
 
-},{"./form":1,"./globals":2,"./menu":4,"./plus-buttons":5,"./smoothScroll":6}],4:[function(require,module,exports){
+},{"./form":1,"./globals":2,"./menu":4,"./plus-buttons":5,"./router":6,"./smoothScroll":7,"prevent-popstate-scroll":11}],4:[function(require,module,exports){
 'use strict';
 
 (function () {
     var g = require('./globals');
 
-    function loadHome() {
-        // switch to home page
-        g.$programsContainer.fadeOut(function () {
-            window.scrollTo(0, 0);
-            g.$pageLandingHome.fadeIn(function () {
-                // reset things to default
-                g.$overlay.hide();
-                g.$applyPopUp.hide();
-                g.$plusButtons.filter('.opened').css({ 'top': '0px', 'transition': '.6s' }).removeClass('opened');
-                g.$banners.filter('.shrink').removeClass('shrink').next().hide();
-                g.$navItems.removeClass('section-in-view');
-                $(window).off('scroll', navItemsStyle);
-                return false;
-            });
-            return false;
-        });
-        g.$homeButton.off('click', loadHome);
-        return false;
-    }
-
     function navItemsStyle(navItems, banners, landing) {
         // if window scroll position is between a banner, add nav style to corresponding nav item
         if (landing.getBoundingClientRect().bottom < '-24') {
             for (var j = 0, y = banners.length; j < y; j++) {
-                if (banners[j].getBoundingClientRect().top <= g.topPadding && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > g.topPadding || banners[j].getBoundingClientRect().bottom > g.topPadding)) {
+                if (banners[j].getBoundingClientRect().top <= g.topPadding + 1 && (banners[j].nextSibling.nextSibling.getBoundingClientRect().bottom > g.topPadding || banners[j].getBoundingClientRect().bottom > g.topPadding)) {
                     navItems[j].classList.add('section-in-view');
                 } else {
                     navItems[j].classList.remove('section-in-view');
@@ -284,7 +207,6 @@
     }
 
     module.exports.navItemsStyle = navItemsStyle;
-    module.exports.loadHome = loadHome;
     module.exports.mobileClick = mobileClick;
 })();
 
@@ -349,6 +271,97 @@
 },{"./globals":2}],6:[function(require,module,exports){
 'use strict';
 
+(function () {
+    var g = require('./globals');
+    var pb = require('./plus-buttons');
+    var menu = require('./menu');
+    var $downArrows = $('a.arrow-down');
+
+    var routes = {
+        home: {
+            path: 'home',
+            title: 'Learn to Code at the Florida Vocational Institute - Evening Coding Bootcamp',
+            class: 'home'
+        },
+        web: {
+            path: 'web-developer-program',
+            title: 'Web Developer Evening Bootcamp by The Florida Vocational Institute',
+            class: 'web'
+        },
+        cyber: {
+            path: 'network-administrator-program',
+            title: 'Network Administrator Evening Bootcamp by The Florida Vocational Institute',
+            class: 'cyber'
+        }
+    };
+
+    function createrRouteLoader(pushState) {
+        function loader(route) {
+            document.title = route.title;
+            updateContent(route.class);
+            if (pushState) {
+                history.pushState(route, route.path, "#/" + route.path);
+            }
+            return false;
+        }
+        return loader;
+    }
+
+    var load = createrRouteLoader(false);
+    var loadAndPushState = createrRouteLoader(true);
+
+    function updateContent(pageClass) {
+        $('html').fadeOut(function () {
+            // reset to defaults
+            g.$navItems.removeClass('section-in-view');
+            g.$overlay.hide();
+            g.$applyPopUp.hide();
+            g.$plusButtons.filter('.opened').css({ 'top': '0px', 'transition': '.6s' }).removeClass('opened');
+            g.$banners.filter('.shrink').removeClass('shrink').next().hide();
+            g.$navItems.removeClass('section-in-view');
+            $(window).off('scroll', scrollHandlerBody);
+            window.scroll(0, 0);
+
+            $('#radio-' + pageClass)[0].checked = true;
+            pageClass == "home" ? $('#menu, #sections-container').hide() : $('#menu, #sections-container').show();
+
+            var navItems = g.$navItems.filter('.' + pageClass);
+            var banners = g.$banners.filter('.' + pageClass);
+            var landing = $('#page_' + pageClass)[0];
+
+            // on scroll, fix plus-buttons to screen and add nav styles
+            var scrollHandlerBody = window.innerWidth >= g.mobileMenuWidth ? scrollHandlerDesktop : scrollHandlerMobile;
+            $(window).on('scroll', function scrollHandler() {
+                scrollHandlerBody($downArrows, navItems, banners, landing);
+            });
+
+            $('html').fadeIn();
+        });
+        return false;
+    }
+
+    function scrollHandlerDesktop($arrows, items, sectionBanners, landingPage) {
+        pb.fixed();
+        window.scrollY > '20' ? $arrows.fadeOut(400) : $arrows.slideDown(400);
+        menu.navItemsStyle(items, sectionBanners, landingPage);
+        return false;
+    }
+
+    function scrollHandlerMobile($arrows, items, sectionBanners, landingPage) {
+        pb.fixed();
+        window.scrollY > '20' ? $arrows.fadeOut(400) : $arrows.slideDown(400);
+        return false;
+    }
+
+    module.exports.routes = routes;
+    module.exports.load = load;
+    module.exports.loadAndPushState = loadAndPushState;
+    module.exports.updateContent = updateContent;
+})();
+
+},{"./globals":2,"./menu":4,"./plus-buttons":5}],7:[function(require,module,exports){
+'use strict';
+
 !function () {
     // This will select everything with the class smoothScroll
     // This should prevent problems with carousel, scrollspy, etc...
@@ -388,4 +401,106 @@
     module.exports.init = init;
 }();
 
-},{}]},{},[3]);
+},{}],8:[function(require,module,exports){
+'use strict';
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+function getScrollTop() {
+	return window.pageYOffset || document.body.scrollTop;
+}
+
+function getScrollLeft() {
+	return window.pageXOffset || document.body.scrollLeft;
+}
+exports['default'] = getScrollTop;
+exports.getScrollLeft = getScrollLeft;
+exports.getScrollTop = getScrollTop;
+exports.left = getScrollLeft;
+exports.top = getScrollTop;
+
+
+},{}],9:[function(require,module,exports){
+module.exports = on;
+module.exports.on = on;
+module.exports.off = off;
+
+function on (element, type, listener, useCapture) {
+  element.addEventListener(type, listener, useCapture);
+  return listener;
+}
+
+function off (element, type, listener, useCapture) {
+  element.removeEventListener(type, listener, useCapture);
+  return listener;
+}
+
+},{}],10:[function(require,module,exports){
+/*! npm.im/one-event */
+'use strict';
+
+function once(target, type, listener, useCapture) {
+	target.addEventListener(type, listener, useCapture);
+	target.addEventListener(type, function selfRemoving() {
+		target.removeEventListener(type, listener, useCapture);
+		target.removeEventListener(type, selfRemoving, useCapture);
+	}, useCapture);
+}
+
+once.promise = function (target, type, useCapture) { return new Promise(function (resolve) { return once(target, type, resolve, useCapture); }); };
+
+module.exports = once;
+},{}],11:[function(require,module,exports){
+'use strict';
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var getScroll = require('get-scroll');
+var onOff = require('on-off');
+var once = _interopDefault(require('one-event'));
+
+exports.isPrevented = false;
+
+/**
+ * Scroll functions
+ */
+var lastScrollPosition = void 0;
+function resetScroll() {
+	window.scrollTo.apply(window, lastScrollPosition);
+}
+function waitForScroll() {
+	lastScrollPosition = [getScroll.getScrollLeft(), getScroll.getScrollTop()];
+	once(window, 'scroll', resetScroll);
+}
+
+/**
+ * Toggle functions
+ */
+function event(action) {
+	// run "remove" only if it's prevented
+	// otherwise run "attach" or "once" only if it's not already prevented
+	if (action === onOff.off === exports.isPrevented) {
+		action(window, 'popstate', waitForScroll);
+	}
+}
+function allow() {
+	event(onOff.off);
+	exports.isPrevented = false;
+}
+function prevent() {
+	event(onOff.on);
+	exports.isPrevented = true;
+}
+function preventOnce() {
+	event(once);
+}
+
+var index = (function (toggle) {
+	(toggle ? prevent : allow)();
+});
+
+exports.allow = allow;
+exports.prevent = prevent;
+exports.preventOnce = preventOnce;
+exports['default'] = index;
+},{"get-scroll":8,"on-off":9,"one-event":10}]},{},[3]);

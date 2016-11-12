@@ -1,6 +1,7 @@
 @import "_variables.scss";
 @import "_reset.scss";
-@import "_landing.scss";
+@import "_pages.scss";
+@import "_homepage.scss";
 @import "_footer.scss";
 @import "_menu.scss";
 @import "_form.scss";
@@ -13,3 +14,12 @@
 @import "_560max.scss";
 @import "_400max.scss";
 /*@import "_diagnostics.scss";*/
+
+html {
+    background-color: #111;
+    display: none;
+}
+
+body {
+    background-color: #111;
+}

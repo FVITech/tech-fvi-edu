@@ -1,31 +1,25 @@
 (function() {
     const $overlay = $('#overlay');
-    const $pageLandingHome = $('#page-landing_home');
     const $cards = $('label.card');
-    const $pageLandingWeb = $('#page-landing_web');
-    const $pageLandingCyber = $('#page-landing_cyber');
     const $applyPopUp = $('#apply-pop-up');
     const $applyForm = $applyPopUp.find('form');
     const $applyButtons = $('#nav-apply-btn, #cta-apply-btn, #contact-home, .request-info');
-    const $programsContainer = $('#programs-container');
+    const $pagesContainer = $('#pages-container');
     const $homeButton = $('#home-button');
     const $menuItems = $('#menu-items');
     const $navItems = $menuItems.find('a.nav-item');
-    const $sections = $programsContainer.find('section');
+    const $sections = $pagesContainer.find('section');
     const $banners = $sections.find('.banner');
     const $plusButtons = $banners.find('span.plus-button');
 
     module.exports.mobileMenuWidth = '960';
     module.exports.topPadding = (window.innerWidth >= '960') ? 52 : 0;
     module.exports.$overlay = $overlay;
-    module.exports.$pageLandingHome = $pageLandingHome;
     module.exports.$cards = $cards;
-    module.exports.$pageLandingWeb = $pageLandingWeb;
-    module.exports.$pageLandingCyber = $pageLandingCyber;
     module.exports.$applyPopUp = $applyPopUp;
     module.exports.$applyForm = $applyForm;
     module.exports.$applyButtons = $applyButtons;
-    module.exports.$programsContainer = $programsContainer;
+    module.exports.$pagesContainer = $pagesContainer;
     module.exports.$homeButton = $homeButton;
     module.exports.$menuItems = $menuItems;
     module.exports.$navItems = $navItems;

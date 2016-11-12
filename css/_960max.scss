@@ -1,5 +1,5 @@
 @media all and (max-width: 960px) {
-    .page-landing {
+    .page {
         top: 0px; /* nav height */
         min-height: calc(100vh - 38px);
     }
@@ -8,7 +8,7 @@
         padding-bottom: 45px;
     }
 
-    .page-landing.home {
+    .page.home {
         background-position: center;
 
         .fvi-logo-white {
@@ -16,7 +16,7 @@
         }
     }
 
-    .page-landing.web {
+    .page.web {
         h1 {
             font-size: 3rem;
             padding-top: 15vh;
@@ -26,7 +26,7 @@
         }
     }
 
-    .page-landing.cyber {
+    .page.cyber {
         h1 {
             font-size: 3rem;
             padding-top: 28vh;

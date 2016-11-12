@@ -17,7 +17,7 @@
         return false;
     }
 
-    function submit() {
+    function send() {
 
         function sendForm() {
             return $.ajax({
@@ -43,5 +43,5 @@
 
     module.exports.show = show;
     module.exports.hide = hide;
-    module.exports.submit = submit;
+    module.exports.send = send;
 })();

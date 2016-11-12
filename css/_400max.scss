@@ -1,5 +1,5 @@
 @media all and (max-width: 400px) {
-    .page-landing.home {
+    .page.home {
         h2 {
             font-size: 1.8rem;
             max-width: 270px;
@@ -24,7 +24,7 @@
         height: 200px;
       }
     }
-    .page-landing.web {
+    .page.web {
         h1 {
             font-size: 2.3rem;
         }
@@ -33,7 +33,7 @@
             font-size: .95rem;
         }
     }
-    .page-landing.cyber {
+    .page.cyber {
         h1 {
             padding-top: 27vh;
             font-size: 1.8rem;

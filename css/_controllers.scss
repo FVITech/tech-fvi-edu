@@ -5,10 +5,14 @@ input[name="program-selector"] {
     left: -9999px;
 }
 
-#radio-web:not(:checked) ~ .programs-container .radio-web {
+#radio-home:not(:checked) ~ .pages-container .radio-home {
     display: none;
 }
 
-#radio-cyber:not(:checked) ~ .programs-container .radio-cyber {
+#radio-web:not(:checked) ~ .pages-container .radio-web {
+    display: none;
+}
+
+#radio-cyber:not(:checked) ~ .pages-container .radio-cyber {
     display: none;
 }

@@ -26,12 +26,16 @@
   "homepage": "https://github.com/FVITech/tech-fvi-edu#readme",
   "browserify": {
     "transform": [
-      "babelify"
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ],
+      "envify"
     ]
-  },
-  "dependecies": {
-    "envify": "^3.4.1",
-    "babelify": "^7.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.2",
@@ -40,5 +44,10 @@
     "onchange": "^3.0.2",
     "postcss-cli": "^2.6.0",
     "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "prevent-popstate-scroll": "^2.0.0",
+    "envify": "^3.4.1",
+    "babelify": "^7.3.0"
   }
 }

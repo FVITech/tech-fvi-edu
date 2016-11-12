@@ -91,14 +91,7 @@ a {
   font-weight: 400;
   line-height: 1.7; }
 
-html {
-  background-color: #111;
-  display: none; }
-
-body {
-  background-color: #111; }
-
-.page-landing {
+.page {
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 4px 1px #111;
@@ -108,7 +101,7 @@ body {
   text-align: center;
   -webkit-transition: all 0;
   transition: all 0; }
-  .page-landing h1 {
+  .page h1 {
     font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 3rem;
     font-weight: 300;
@@ -119,7 +112,7 @@ body {
     margin: 0 auto;
     display: inline-block;
     position: relative; }
-  .page-landing p {
+  .page p {
     color: #fff;
     text-shadow: 0 0 5px #000;
     max-width: 400px;
@@ -127,85 +120,19 @@ body {
     padding: 0 10px;
     font-size: 1.3rem; }
 
-.page-landing.home {
-  top: 0;
-  background-color: #ddd;
-  min-height: 100vh; }
-  .page-landing.home .above-the-fold {
-    background-image: url("../img/network-background-dark.jpg");
-    background-size: cover; }
-  .page-landing.home .fvi-logo-white {
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    width: 100%;
-    max-width: 80px; }
-  .page-landing.home ul {
-    text-align: right;
-    padding: 10px;
-    margin: 0; }
-    .page-landing.home ul a {
-      color: #fff;
-      border-bottom: 1px solid #fff;
-      text-decoration: none;
-      display: inline-block;
-      border-bottom: 2px solid transparent;
-      padding: 2px 0;
-      margin: 0 10px;
-      font-size: .8rem;
-      font-weight: 300; }
-      .page-landing.home ul a:hover, .page-landing.home ul a:focus {
-        border-bottom-width: 2px;
-        text-decoration: none; }
-      .page-landing.home ul a:visited {
-        color: #fff;
-        border-color: #fff; }
-      .page-landing.home ul a:hover {
-        border-color: #fff; }
-      .page-landing.home ul a::first-letter {
-        font-size: 1.3em; }
-  .page-landing.home h2 {
-    margin: 0;
-    padding: 1rem;
-    font-size: 3rem;
-    color: #eee;
-    text-shadow: 0 0 5px #000; }
-  .page-landing.home h3 {
-    margin: 0;
-    font-size: 1.8rem;
-    padding-bottom: 1rem;
-    color: #ddd;
-    text-shadow: 0 0 5px #000; }
-
-.page-landing.web {
+.page.web {
   background-image: url("../img/web-landing.jpg");
   background-position: top; }
-  .page-landing.web h1 {
+  .page.web h1 {
     padding-top: 20vh; }
 
-.page-landing.cyber {
+.page.cyber {
   background-image: url("../img/cyber-landing.jpg"); }
-  .page-landing.cyber h1 {
+  .page.cyber h1 {
     padding-top: 25vh;
     text-shadow: 0 0 5px #fff;
     -webkit-animation: cyber-h1 3s infinite alternate;
     animation: cyber-h1 3s infinite alternate; }
-
-.title-div {
-  display: table;
-  width: 100%;
-  height: 250px; }
-  .title-div .title-headers {
-    display: table-cell;
-    vertical-align: middle; }
-
-.cards-container {
-  display: block;
-  text-align: center;
-  padding: 20px;
-  min-height: calc(100vh - 250px); }
 
 @-webkit-keyframes cyber-h1 {
   0% {
@@ -387,6 +314,72 @@ body {
     top: 0;
     left: 0; } }
 
+.page.home {
+  top: 0;
+  background-color: #ddd;
+  min-height: 100vh; }
+  .page.home .above-the-fold {
+    background-image: url("../img/network-background-dark.jpg");
+    background-size: cover; }
+  .page.home .fvi-logo-white {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    max-width: 80px; }
+  .page.home ul {
+    text-align: right;
+    padding: 10px;
+    margin: 0; }
+    .page.home ul a {
+      color: #fff;
+      border-bottom: 1px solid #fff;
+      text-decoration: none;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      padding: 2px 0;
+      margin: 0 10px;
+      font-size: .8rem;
+      font-weight: 300; }
+      .page.home ul a:hover, .page.home ul a:focus {
+        border-bottom-width: 2px;
+        text-decoration: none; }
+      .page.home ul a:visited {
+        color: #fff;
+        border-color: #fff; }
+      .page.home ul a:hover {
+        border-color: #fff; }
+      .page.home ul a::first-letter {
+        font-size: 1.3em; }
+
+.title-div {
+  display: table;
+  width: 100%;
+  height: 250px; }
+  .title-div .title-headers {
+    display: table-cell;
+    vertical-align: middle; }
+    .title-div .title-headers h2 {
+      margin: 0;
+      padding: 1rem;
+      font-size: 3rem;
+      color: #eee;
+      text-shadow: 0 0 5px #000; }
+    .title-div .title-headers h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      padding-bottom: 1rem;
+      color: #ddd;
+      text-shadow: 0 0 5px #000; }
+
+.cards-container {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  min-height: calc(100vh - 250px); }
+
 .about-wrapper {
   background-color: #fff;
   text-align: left;
@@ -421,10 +414,6 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     display: block; }
-
-.programs-container {
-  display: none;
-  background-color: #111; }
 
 footer {
   width: 100%;
@@ -686,10 +675,13 @@ input[name="program-selector"] {
   top: -9999px;
   left: -9999px; }
 
-#radio-web:not(:checked) ~ .programs-container .radio-web {
+#radio-home:not(:checked) ~ .pages-container .radio-home {
   display: none; }
 
-#radio-cyber:not(:checked) ~ .programs-container .radio-cyber {
+#radio-web:not(:checked) ~ .pages-container .radio-web {
+  display: none; }
+
+#radio-cyber:not(:checked) ~ .pages-container .radio-cyber {
   display: none; }
 
 .card {
@@ -967,7 +959,7 @@ section {
   background-image: url("../img/keyboard.jpg");
   background-position: center; }
 
-#cirriculum {
+#curriculum {
   background-image: url("../img/courses.jpg");
   background-position: bottom; }
 
@@ -1009,25 +1001,25 @@ section {
       color: #eee; }
 
 @media all and (max-width: 960px) {
-  .page-landing {
+  .page {
     top: 0px;
     /* nav height */
     min-height: calc(100vh - 38px); }
   footer .sponsors-container {
     padding-bottom: 45px; }
-  .page-landing.home {
+  .page.home {
     background-position: center; }
-    .page-landing.home .fvi-logo-white {
+    .page.home .fvi-logo-white {
       max-width: 50px; }
-  .page-landing.web h1 {
+  .page.web h1 {
     font-size: 3rem;
     padding-top: 15vh; }
-  .page-landing.web p {
+  .page.web p {
     font-size: 1.2rem; }
-  .page-landing.cyber h1 {
+  .page.cyber h1 {
     font-size: 3rem;
     padding-top: 28vh; }
-  .page-landing.cyber p {
+  .page.cyber p {
     font-size: 1.5rem; }
   nav {
     bottom: 0;
@@ -1073,11 +1065,11 @@ section {
 @media all and (max-width: 760px) {
   .title-div {
     height: 200px; }
-  .page-landing.home ul a {
+  .page.home ul a {
     font-size: .7rem; }
-  .page-landing.home h2 {
+  .page.home h2 {
     font-size: 2.5rem; }
-  .page-landing.home h3 {
+  .page.home h3 {
     font-size: 1.6rem; }
   footer .sponsors-container img {
     max-width: 250px; }
@@ -1097,16 +1089,16 @@ section {
       font-size: .8rem; }
   .contact-us-container address, .links-container ul {
     padding-left: 10%; }
-  .page-landing.web h1 {
+  .page.web h1 {
     font-size: 2.7rem;
     padding-top: 16vh; }
-  .page-landing.web p {
+  .page.web p {
     font-size: 1.1rem;
     margin-top: 1rem; }
-  .page-landing.cyber h1 {
+  .page.cyber h1 {
     font-size: 2rem;
     padding-top: 30vh; }
-  .page-landing.cyber p {
+  .page.cyber p {
     font-size: 1rem;
     margin-top: 1rem; }
   #call-to-action-section .content p, #call-to-action-section .content-container .social-media-summary p, .content-container #call-to-action-section .social-media-summary p {
@@ -1116,7 +1108,7 @@ section {
 @media all and (max-width: 760px) and (max-width: 604px) {
   .title-div {
     height: 150px; }
-  .page-landing.home h2 {
+  .page.home h2 {
     max-width: 370px;
     margin: auto; }
   .cta-btn, .request-info {
@@ -1149,10 +1141,10 @@ section {
     padding-left: 30%; } }
 
 @media all and (max-width: 400px) {
-  .page-landing.home h2 {
+  .page.home h2 {
     font-size: 1.8rem;
     max-width: 270px; }
-  .page-landing.home h3 {
+  .page.home h3 {
     font-size: 1.1rem; }
   .card {
     height: 250px;
@@ -1166,15 +1158,15 @@ section {
     margin-top: 20px; }
     .apply-pop-up form textarea {
       height: 200px; }
-  .page-landing.web h1 {
+  .page.web h1 {
     font-size: 2.3rem; }
-  .page-landing.web p {
+  .page.web p {
     margin-top: 1rem;
     font-size: .95rem; }
-  .page-landing.cyber h1 {
+  .page.cyber h1 {
     padding-top: 27vh;
     font-size: 1.8rem; }
-  .page-landing.cyber p {
+  .page.cyber p {
     margin-top: 3vh;
     font-size: .9rem; }
   .banner {
@@ -1190,3 +1182,9 @@ section {
     white-space: pre; } }
 
 /*@import "_diagnostics.scss";*/
+html {
+  background-color: #111;
+  display: none; }
+
+body {
+  background-color: #111; }
