@@ -1,7 +1,7 @@
 (function() {
     const g = require('./globals');
 
-    function homeButton() {
+    function loadHome() {
         // switch to home page
         g.$programsContainer.fadeOut(function() {
             window.scrollTo(0, 0);
@@ -21,7 +21,7 @@
             });
             return false;
         });
-        g.$homeButton.off('click', homeButton);
+        g.$homeButton.off('click', loadHome);
         return false;
     }
 
@@ -54,6 +54,6 @@
     }
 
     module.exports.navItemsStyle = navItemsStyle;
-    module.exports.homeButton = homeButton;
+    module.exports.loadHome = loadHome;
     module.exports.mobileClick = mobileClick;
 })();

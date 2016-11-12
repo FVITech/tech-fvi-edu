@@ -10,47 +10,43 @@
     const menu = require('./menu');
     const form = require('./form');
     const smoothScroll = require('./smoothScroll');
+    const viewsData = {
+        home: {
+            path: 'home',
+            title: 'Learn to Code at the Florida Vocational Institute - Evening Coding Bootcamp'
+        },
+        web: {
+            path: 'web-developer-program',
+            title: 'Web Developer Evening Bootcamp by The Florida Vocational Institute'
+        },
+        cyber: {
+            path: 'network-administrator-program',
+            title: 'Network Administrator Evening Bootcamp by The Florida Vocational Institute'
+        }
+    };
     let initialUrlHasPath;
-    const homeData = {
-        path: 'home',
-        title: 'Learn to Code at the Florida Vocational Institute - Evening Coding Bootcamp'
-    };
-    const webData = {
-        path: 'web-developer-program',
-        title: 'FVI Will Turn You Into A Web Developer'
-    };
-    const cyberData = {
-        path: 'network-administrator-program',
-        title: 'FVI Will Turn You Into A Network Administrator'
-    };
-    if(window.location.href.indexOf('web-developer-program') !== -1 ||
-       window.location.href.indexOf('network-administrator-program') !== -1) {
-         initialUrlHasPath = true;
-    } else {
-        initialUrlHasPath = false;
-        history.replaceState(homeData, homeData.path, "#/" + homeData.path);
-    }
-    var state;
+    (location.href.includes('?') && !location.href.includes('?home')) ? initialUrlHasPath = true: initialUrlHasPath = false;
 
     var pageSetup = {
         onReady: function() {
-            pageSetup.checkUrl();
+            pageSetup.loadPage();
             smoothScroll.init();
             g.$cards.filter('.web').on('click', () => {
-                pageSetup.switchPage('web')
+                pageSetup.switchPage('web');
+                history.pushState(viewsData.web, viewsData.web.path, "?" + viewsData.web.path);
             });
             g.$cards.filter('.cyber').on('click', () => {
-                pageSetup.switchPage('cyber')
+                pageSetup.switchPage('cyber');
+                history.pushState(viewsData.cyber, viewsData.cyber.path, "?" + viewsData.cyber.path);
             });
-            g.$homeButton.on('click', function(e) {
+            g.$homeButton.on('click', (e) => {
                 e.preventDefault();
-                history.pushState(homeData, homeData.path, '#/' + homeData.path);
-                menu.homeButton();
+                history.pushState(viewsData.home, viewsData.home.path, "?" + viewsData.home.path);
+                menu.loadHome();
                 return false;
             });
-            $(window).on('popstate', (e) => {
-                pageSetup.checkUrl();
-                state = window.history.state.path;
+            $(window).on('popstate', () => {
+                pageSetup.loadPage(false);
             });
             g.$applyButtons.on('click', pageSetup.applyButtonsFunctionality);
             $('#apply-close, #overlay').on('click', form.hide);
@@ -62,26 +58,23 @@
             }
             return false;
         },
-        checkUrl: function() {
-            if(window.history.state.path === state || window.location.href.indexOf('home') !== -1) {
-                document.title = homeData.title;
-                history.pushState(homeData, homeData.path, "#/" + homeData.path);
-                menu.homeButton();
-                $('html').fadeIn(900);
-            } else if (window.location.href.indexOf('web-developer-program') !== -1) {
+        loadPage: function(pageInit) {
+            if (location.href.includes('web-developer-program')) {
                 $('#radio-web')[0].checked = true;
+                document.title = viewsData.web.title;
                 pageSetup.switchPage('web');
-            } else if (window.location.href.indexOf('network-administrator-program') !== -1) {
+            } else if (location.href.includes('network-administrator-program')) {
                 $('#radio-cyber')[0].checked = true;
+                document.title = viewsData.cyber.title;
                 pageSetup.switchPage('cyber');
+            } else {
+                menu.loadHome();
+                document.title = viewsData.home.title;
+                $('html').fadeIn(900);
+                history.replaceState(viewsData.home, viewsData.home.path, "?" + viewsData.home.path);
             }
         },
         switchPage: function(page) {
-            var stateData = (page === 'web') ? webData : cyberData;
-            history.pushState(stateData, stateData.path, "#/" + stateData.path);
-            document.title = stateData.title;
-            window.history.forward();
-
             var navItems = g.$navItems.filter('.' + page);
             var banners = g.$banners.filter('.' + page);
             var landing = $('#page-landing_' + page)[0];
@@ -107,17 +100,17 @@
             g.$applyPopUp.find("input[name='program_id']").attr('value', id);
 
             // animate switching pages
-            if(initialUrlHasPath) {
+            if (initialUrlHasPath) {
                 g.$pageLandingHome.hide();
                 g.$programsContainer.show();
                 $('html').fadeIn();
-            }
-            else {
-              g.$pageLandingHome.fadeOut(function() {
-                  window.scrollTo(0, 0);
-                  g.$programsContainer.fadeIn();
-                  return false;
-              });
+                initialUrlHasPath = false;
+            } else {
+                g.$pageLandingHome.fadeOut(function() {
+                    window.scrollTo(0, 0);
+                    g.$programsContainer.fadeIn();
+                    return false;
+                });
             }
 
             return false;
