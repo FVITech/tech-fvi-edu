@@ -1,4 +1,4 @@
-(function() {
+(function menu() {
     const g = require('./globals');
 
     function navItemsStyle(navItems, banners, landing) {

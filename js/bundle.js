@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-(function () {
+(function form() {
     var g = require('./globals');
     var $message = $('#sent-message');
 
@@ -52,7 +52,7 @@
 },{"./globals":2}],2:[function(require,module,exports){
 'use strict';
 
-(function () {
+(function globals() {
     var $overlay = $('#overlay');
     var $cards = $('label.card');
     var $applyPopUp = $('#apply-pop-up');
@@ -85,11 +85,11 @@
 },{}],3:[function(require,module,exports){
 "use strict";
 
-(function (code) {
+(function main(mainFunction) {
     "use strict";
 
-    code(window.jQuery, window, document);
-})(function ($, window, document) {
+    mainFunction(window.jQuery, window, document);
+})(function mainFunction($, window, document) {
     "use strict";
 
     var g = require('./globals');
@@ -100,18 +100,18 @@
     var smoothScroll = require('./smoothScroll');
     var preventPopstateScroll = require('prevent-popstate-scroll');
 
-    var main = {
+    var setup = {
         onReady: function onReady() {
             // Load initial URL
-            main.urlRouter();
+            setup.urlRouter();
             // Initialize functionality to change page content and URL
             // when user click on certain elements
-            main.clickRouter();
+            setup.clickRouter();
             // Initialize functionality to scroll smoothly to different
             // location on the same page when local link is clicked
             smoothScroll.init();
             // Change page content and URL when click browser's forward or back buttons
-            $(window).on('popstate', main.urlRouter);
+            $(window).on('popstate', setup.urlRouter);
             // prevent browser from scrolling to top when onpopstate event emits
             preventPopstateScroll.prevent();
             // Contact form functionality
@@ -167,7 +167,7 @@
         }
     };
 
-    $(document).ready(main.onReady);
+    $(document).ready(setup.onReady);
 
     return false;
 });
@@ -175,7 +175,7 @@
 },{"./form":1,"./globals":2,"./menu":4,"./plus-buttons":5,"./router":6,"./smoothScroll":7,"prevent-popstate-scroll":11}],4:[function(require,module,exports){
 'use strict';
 
-(function () {
+(function menu() {
     var g = require('./globals');
 
     function navItemsStyle(navItems, banners, landing) {
@@ -213,7 +213,7 @@
 },{"./globals":2}],5:[function(require,module,exports){
 'use strict';
 
-(function () {
+(function plusButtons() {
     var g = require('./globals');
 
     function open(button) {
@@ -271,7 +271,7 @@
 },{"./globals":2}],6:[function(require,module,exports){
 'use strict';
 
-(function () {
+(function router() {
     var g = require('./globals');
     var pb = require('./plus-buttons');
     var menu = require('./menu');
@@ -362,7 +362,7 @@
 },{"./globals":2,"./menu":4,"./plus-buttons":5}],7:[function(require,module,exports){
 'use strict';
 
-!function () {
+(function smoothScroll() {
     // This will select everything with the class smoothScroll
     // This should prevent problems with carousel, scrollspy, etc...
     function init() {
@@ -399,7 +399,7 @@
     }
 
     module.exports.init = init;
-}();
+})();
 
 },{}],8:[function(require,module,exports){
 'use strict';

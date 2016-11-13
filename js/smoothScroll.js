@@ -1,4 +1,4 @@
-!function() {
+(function smoothScroll() {
     // This will select everything with the class smoothScroll
     // This should prevent problems with carousel, scrollspy, etc...
     function init() {
@@ -35,4 +35,4 @@
     }
 
     module.exports.init = init;
-}();
+})();

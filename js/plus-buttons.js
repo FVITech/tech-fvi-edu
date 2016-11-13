@@ -1,4 +1,4 @@
-(function() {
+(function plusButtons() {
     const g = require('./globals');
 
     function open(button) {

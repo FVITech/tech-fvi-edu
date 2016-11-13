@@ -1,4 +1,4 @@
-(function() {
+(function form() {
     const g = require('./globals');
     let $message = $('#sent-message');
 

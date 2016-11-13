@@ -1,8 +1,8 @@
-(function(code) {
+(function main(mainFunction) {
     "use strict";
-    code(window.jQuery, window, document);
+    mainFunction(window.jQuery, window, document);
 
-}(function($, window, document) {
+}(function mainFunction($, window, document) {
     "use strict";
 
     const g = require('./globals');
@@ -13,18 +13,18 @@
     const smoothScroll = require('./smoothScroll');
     const preventPopstateScroll = require('prevent-popstate-scroll');
 
-    var main = {
+    var setup = {
         onReady: function() {
             // Load initial URL
-            main.urlRouter();
+            setup.urlRouter();
             // Initialize functionality to change page content and URL
             // when user click on certain elements
-            main.clickRouter();
+            setup.clickRouter();
             // Initialize functionality to scroll smoothly to different
             // location on the same page when local link is clicked
             smoothScroll.init();
             // Change page content and URL when click browser's forward or back buttons
-            $(window).on('popstate', main.urlRouter);
+            $(window).on('popstate', setup.urlRouter);
             // prevent browser from scrolling to top when onpopstate event emits
             preventPopstateScroll.prevent();
             // Contact form functionality
@@ -73,7 +73,7 @@
         }
     };
 
-    $(document).ready(main.onReady);
+    $(document).ready(setup.onReady);
 
     return false;
 }));

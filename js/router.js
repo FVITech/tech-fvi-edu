@@ -1,4 +1,4 @@
-(function() {
+(function router() {
     const g = require('./globals');
     const pb = require('./plus-buttons');
     const menu = require('./menu');
