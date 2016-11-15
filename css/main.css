@@ -884,6 +884,9 @@ section {
     display: inline-block;
     -webkit-transition: all .6s;
     transition: all .6s; }
+  .banner .bannerDescription {
+    color: #fff;
+    text-shadow: 0 1px 5px #000; }
   .banner .image-block {
     display: inline-block;
     padding-bottom: 30px;
@@ -971,7 +974,7 @@ section {
   background-image: url("../img/certifications.jpg");
   background-position: center; }
 
-#partners {
+#careers {
   background-image: url("../img/partners.jpg");
   background-position: center; }
 
