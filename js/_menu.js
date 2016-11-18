@@ -1,5 +1,5 @@
-(function menu() {
-    const g = require('./globals');
+(function _menu() {
+    const g = require('./_globals');
 
     function navItemsStyle(navItems, banners, landing) {
         // if window scroll position is between a banner, add nav style to corresponding nav item

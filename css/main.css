@@ -805,8 +805,8 @@ input[name="program-selector"] {
   background-color: rgba(150, 150, 150, 0.5);
   -webkit-transform-origin: center;
   transform-origin: center;
-  -webkit-transform: translateY(60px) rotate(225deg);
-  transform: translateY(60px) rotate(225deg); }
+  -webkit-transform: translateY(100px) rotate(225deg);
+  transform: translateY(100px) rotate(225deg); }
   .plus-button.opened:hover {
     color: #fff;
     background-color: rgba(100, 100, 100, 0.8); }
@@ -864,7 +864,8 @@ section {
 
 .banner {
   width: 100%;
-  padding: 80px 0 120px;
+  padding: 120px 10px 120px;
+  box-sizing: border-box;
   text-align: center;
   position: relative;
   z-index: 3;
@@ -879,7 +880,7 @@ section {
     font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
     text-shadow: 0 1px 8px black;
-    padding: 40px 0 0 0;
+    padding: 0;
     margin: 0;
     display: inline-block;
     -webkit-transition: all .6s;
@@ -899,7 +900,7 @@ section {
       margin: 0.5rem 1rem; }
 
 .banner.shrink {
-  padding: 20px 0;
+  padding: 60px 0;
   box-shadow: 0 -2px 4px 0px #111; }
 
 .content-container {
@@ -1141,7 +1142,11 @@ section {
     .links-container a {
       font-size: 1rem; }
   .contact-us-container address, .links-container ul {
-    padding-left: 30%; } }
+    padding-left: 30%; }
+  .content-container .content h4, .content-container .social-media-summary h4 {
+    font-size: 1.4rem; }
+  .content-container .content p, .content-container .social-media-summary p {
+    font-size: .9rem; } }
 
 @media all and (max-width: 400px) {
   .page.home h2 {

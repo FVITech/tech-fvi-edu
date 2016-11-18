@@ -1,5 +1,5 @@
-(function form() {
-    const g = require('./globals');
+(function _form() {
+    const g = require('./_globals');
     let $message = $('#sent-message');
 
     function show() {

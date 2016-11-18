@@ -1,5 +1,5 @@
-(function plusButtons() {
-    const g = require('./globals');
+(function _plusButtons() {
+    const g = require('./_globals');
 
     function open(button) {
         var $banner = $(button.parentNode);

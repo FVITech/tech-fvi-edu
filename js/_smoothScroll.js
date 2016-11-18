@@ -1,13 +1,13 @@
-(function smoothScroll() {
+(function _smoothScroll() {
     // This will select everything with the class smoothScroll
     // This should prevent problems with carousel, scrollspy, etc...
     function init() {
         // menu items
-        $('.smoothScroll').click(smoothScrollFunc);
+        $('.smoothScroll').click(_smoothScrollFunc);
         return false;
     }
 
-    function smoothScrollFunc() {
+    function _smoothScrollFunc() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');

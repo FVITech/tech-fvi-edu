@@ -1,7 +1,7 @@
-(function router() {
-    const g = require('./globals');
-    const pb = require('./plus-buttons');
-    const menu = require('./menu');
+(function _router() {
+    const g = require('./_globals');
+    const pb = require('./_plus-buttons');
+    const menu = require('./_menu');
     let $downArrows = $('a.arrow-down');
 
     const routes = {
@@ -22,7 +22,7 @@
         }
     };
 
-    function createrRouteLoader(pushState) {
+    function _createrRouteLoader(pushState) {
         function loader(route) {
             document.title = route.title;
             updateContent(route.class);
@@ -32,8 +32,8 @@
         return loader;
     }
 
-    let load = createrRouteLoader(false);
-    let loadAndPushState = createrRouteLoader(true);
+    let load = _createrRouteLoader(false);
+    let loadAndPushState = _createrRouteLoader(true);
 
     function updateContent(pageClass) {
         $('html').fadeOut(function() {
@@ -59,7 +59,7 @@
             var landing = $('#page_' + pageClass)[0];
 
             // on scroll, fix plus-buttons to screen and add nav styles
-            let scrollHandlerBody = (window.innerWidth >= g.mobileMenuWidth) ? scrollHandlerDesktop : scrollHandlerMobile;
+            let scrollHandlerBody = (window.innerWidth >= g.mobileMenuWidth) ? _scrollHandlerDesktop : _scrollHandlerMobile;
             $(window).on('scroll', function scrollHandler() {
                 scrollHandlerBody($downArrows, navItems, banners, landing);
             });
@@ -69,14 +69,14 @@
         return false;
     }
 
-    function scrollHandlerDesktop($arrows, items, sectionBanners, landingPage) {
+    function _scrollHandlerDesktop($arrows, items, sectionBanners, landingPage) {
         pb.fixed();
         (window.scrollY > '20') ? $arrows.fadeOut(400): $arrows.slideDown(400);
         menu.navItemsStyle(items, sectionBanners, landingPage);
         return false;
     }
 
-    function scrollHandlerMobile($arrows, items, sectionBanners, landingPage) {
+    function _scrollHandlerMobile($arrows, items, sectionBanners, landingPage) {
         pb.fixed();
         (window.scrollY > '20') ? $arrows.fadeOut(400): $arrows.slideDown(400);
         return false

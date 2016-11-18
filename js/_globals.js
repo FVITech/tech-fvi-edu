@@ -1,4 +1,4 @@
-(function globals() {
+(function _globals() {
     const $overlay = $('#overlay');
     const $cards = $('label.card');
     const $applyPopUp = $('#apply-pop-up');
