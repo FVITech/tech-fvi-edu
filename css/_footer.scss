@@ -59,17 +59,14 @@ footer {
         &:hover, &:focus {
             color: #ddd;
         }
+    }
 
-        &:last-of-type {
-            display: block;
-            margin: auto;
-
-            img {
-                box-sizing: border-box;
-                width: 100%;
-                max-width: 300px;
-            }
-        }
+    img {
+        box-sizing: border-box;
+        display: block;
+        margin: auto;
+        width: 100%;
+        max-width: 300px;
     }
 }
 
@@ -108,5 +105,9 @@ footer {
         padding: 20px;
         width: 100%;
         max-width: 300px;
+    }
+
+    img.cfoe {
+        padding: 0 100px;
     }
 }

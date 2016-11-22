@@ -11,8 +11,8 @@
     "build-css": "npm run sass && npm run autoprefixer",
     "cleancss": "cleancss -o css/main.min.css css/main.css ",
     "build-css-min": "npm run sass && npm run autoprefixer && npm run cleancss",
-    "build": "npm run build-js & npm run build-css",
-    "build-min": "npm run build-js-min & npm run build-css-min"
+    "build-all": "npm run build-js & npm run build-css",
+    "build-all-min": "npm run build-js-min & npm run build-css-min"
   },
   "repository": {
     "type": "git",

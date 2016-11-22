@@ -130,6 +130,7 @@ a {
   background-image: url("../img/cyber-landing.jpg"); }
   .page.cyber h1 {
     padding-top: 25vh;
+    font-size: 2.4rem;
     text-shadow: 0 0 5px #fff;
     -webkit-animation: cyber-h1 3s infinite alternate;
     animation: cyber-h1 3s infinite alternate; }
@@ -351,8 +352,6 @@ a {
         border-color: #fff; }
       .page.home ul a:hover {
         border-color: #fff; }
-      .page.home ul a::first-letter {
-        font-size: 1.3em; }
 
 .title-div {
   display: table;
@@ -472,13 +471,13 @@ footer {
   font-size: 2rem !important; }
   .social-media-container a:hover, .social-media-container a:focus {
     color: #ddd; }
-  .social-media-container a:last-of-type {
-    display: block;
-    margin: auto; }
-    .social-media-container a:last-of-type img {
-      box-sizing: border-box;
-      width: 100%;
-      max-width: 300px; }
+
+.social-media-container img {
+  box-sizing: border-box;
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 300px; }
 
 .contact-us-container {
   text-align: left; }
@@ -515,6 +514,8 @@ footer {
     padding: 20px;
     width: 100%;
     max-width: 300px; }
+  .sponsors-container img.cfoe {
+    padding: 0 100px; }
 
 #overlay {
   background: #000;
@@ -900,7 +901,7 @@ section {
       margin: 0.5rem 1rem; }
 
 .banner.shrink {
-  padding: 60px 0;
+  padding: 60px 10px;
   box-shadow: 0 -2px 4px 0px #111; }
 
 .content-container {
@@ -947,11 +948,10 @@ section {
         color: #028dea; }
       .content-container .social-media-summary a:focus, .content-container .social-media-summary a:hover {
         color: #54bafe; }
-    .content-container .social-media-summary .fvi-logo {
+    .content-container .social-media-summary img {
+      max-width: 200px;
       display: block;
       margin: 20px auto 0; }
-      .content-container .social-media-summary .fvi-logo img {
-        max-width: 200px; }
   .content-container .request-info {
     position: relative;
     top: -20px; }
@@ -1029,6 +1029,8 @@ section {
     bottom: 0;
     box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.9); }
     nav ul a.logo-anchor {
+      display: none; }
+    nav ul .fvi-logo-white {
       display: none; }
     nav h4 {
       display: block;
@@ -1146,7 +1148,9 @@ section {
   .content-container .content h4, .content-container .social-media-summary h4 {
     font-size: 1.4rem; }
   .content-container .content p, .content-container .social-media-summary p {
-    font-size: .9rem; } }
+    font-size: .9rem; }
+  .sponsors-container img.cfoe {
+    padding: 0 70px; } }
 
 @media all and (max-width: 400px) {
   .page.home h2 {
@@ -1156,9 +1160,9 @@ section {
     font-size: 1.1rem; }
   .card {
     height: 250px;
-    width: 205px; }
+    width: 215px; }
     .card h4 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin: .5rem 0; }
     .card p {
       display: none; }
@@ -1178,7 +1182,7 @@ section {
     margin-top: 3vh;
     font-size: .9rem; }
   .banner {
-    padding: 40px 0 80px; }
+    padding: 80px 10px; }
   .contact-us-container,
   .social-media-container,
   .links-container {
@@ -1188,6 +1192,11 @@ section {
   footer .links-container a:after {
     content: "\a";
     white-space: pre; } }
+
+@media all and (max-width: 374px) {
+  .page.cyber h1 {
+    -webkit-animation: none;
+            animation: none; } }
 
 /*@import "_diagnostics.scss";*/
 html {

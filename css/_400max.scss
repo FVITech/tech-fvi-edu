@@ -10,9 +10,9 @@
     }
     .card {
         height: 250px;
-        width: 205px;
+        width: 215px;
         h4 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin: .5rem 0;
         }
         p {display: none}
@@ -44,7 +44,7 @@
         }
     }
     .banner {
-        padding: 40px 0 80px;
+        padding: 80px 10px;
     }
     .contact-us-container,
     .social-media-container,
@@ -60,4 +60,8 @@
             white-space: pre;
         }
     }
+}
+
+@media all and (max-width: 374px) {
+    .page.cyber h1 {animation: none;}
 }
