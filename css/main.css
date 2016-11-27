@@ -669,6 +669,10 @@ nav {
         background-color: #028dea; }
   .apply-pop-up .sent-message {
     display: none; }
+  .apply-pop-up hr {
+    margin: 30px 0 20px 0; }
+  .apply-pop-up h5 {
+    margin-top: 15px; }
 
 input[name="program-selector"] {
   position: absolute;

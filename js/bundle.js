@@ -199,7 +199,7 @@
             class: 'web'
         },
         cyber: {
-            path: 'network-administrator-program',
+            path: 'cyber-security-and-network-administrator-program',
             title: 'Network Administrator Evening Bootcamp by The Florida Vocational Institute',
             class: 'cyber'
         }
