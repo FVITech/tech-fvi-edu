@@ -233,7 +233,11 @@
             window.scroll(0, 0);
 
             $('#radio-' + pageClass)[0].checked = true;
-            pageClass == "home" ? $('#menu, #sections-container').hide() : $('#menu, #sections-container').show();
+            if (pageClass == "home") {
+                $('#menu, #sections-container').hide();
+            } else {
+                $('#menu, #sections-container').show();
+            }
 
             var navItems = g.$navItems.filter('.' + pageClass);
             var banners = g.$banners.filter('.' + pageClass);
@@ -252,14 +256,22 @@
 
     function _scrollHandlerDesktop($arrows, items, sectionBanners, landingPage) {
         pb.fixed();
-        window.scrollY > '20' ? $arrows.fadeOut(400) : $arrows.slideDown(400);
+        if (window.scrollY > '20') {
+            $arrows.fadeOut(400);
+        } else {
+            $arrows.slideDown(400);
+        }
         menu.navItemsStyle(items, sectionBanners, landingPage);
         return false;
     }
 
-    function _scrollHandlerMobile($arrows, items, sectionBanners, landingPage) {
+    function _scrollHandlerMobile($arrows) {
         pb.fixed();
-        window.scrollY > '20' ? $arrows.fadeOut(400) : $arrows.slideDown(400);
+        if (window.scrollY > '20') {
+            $arrows.fadeOut(400);
+        } else {
+            $arrows.slideDown(400);
+        }
         return false;
     }
 
@@ -363,13 +375,13 @@
             return false;
         },
         urlRouter: function urlRouter() {
-            if (location.hash == "") {
+            if (location.hash === "") {
                 document.title = router.routes.home.title;
                 router.load(router.routes.home);
                 history.replaceState(router.routes.home, router.routes.home.path, "#/" + router.routes.home.path);
             } else {
                 for (var route in router.routes) {
-                    if (location.hash.slice(2) == router.routes[route]['path']) {
+                    if (location.hash.slice(2) == router.routes[route].path) {
                         router.load(router.routes[route]);
                         return;
                     }
@@ -378,11 +390,13 @@
         },
         clickRouter: function clickRouter() {
             var _loop = function _loop(route) {
-                g.$cards.filter("." + router.routes[route]['class']).click(function (e) {
-                    e.preventDefault();
-                    router.loadAndPushState(router.routes[route]);
-                    return false;
-                });
+                if (router.routes.hasOwnProperty(route)) {
+                    g.$cards.filter("." + router.routes[route]['class']).click(function (e) {
+                        e.preventDefault();
+                        router.loadAndPushState(router.routes[route]);
+                        return false;
+                    });
+                }
             };
 
             for (var route in router.routes) {
