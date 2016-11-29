@@ -52,14 +52,19 @@
             window.scroll(0, 0);
 
             $('#radio-' + pageClass)[0].checked = true;
-            (pageClass == "home") ? $('#menu, #sections-container').hide() : $('#menu, #sections-container').show();
+            if(pageClass == "home") {
+              $('#menu, #sections-container').hide();
+            }
+            else {
+              $('#menu, #sections-container').show();
+            }
 
             var navItems = g.$navItems.filter('.' + pageClass);
             var banners = g.$banners.filter('.' + pageClass);
             var landing = $('#page_' + pageClass)[0];
 
             // on scroll, fix plus-buttons to screen and add nav styles
-            let scrollHandlerBody = (window.innerWidth >= g.mobileMenuWidth) ? _scrollHandlerDesktop : _scrollHandlerMobile;
+            var scrollHandlerBody = (window.innerWidth >= g.mobileMenuWidth) ? _scrollHandlerDesktop : _scrollHandlerMobile;
             $(window).on('scroll', function scrollHandler() {
                 scrollHandlerBody($downArrows, navItems, banners, landing);
             });
@@ -71,15 +76,25 @@
 
     function _scrollHandlerDesktop($arrows, items, sectionBanners, landingPage) {
         pb.fixed();
-        (window.scrollY > '20') ? $arrows.fadeOut(400): $arrows.slideDown(400);
+        if(window.scrollY > '20') {
+          $arrows.fadeOut(400);
+        }
+        else {
+          $arrows.slideDown(400);
+        }
         menu.navItemsStyle(items, sectionBanners, landingPage);
         return false;
     }
 
-    function _scrollHandlerMobile($arrows, items, sectionBanners, landingPage) {
+    function _scrollHandlerMobile($arrows) {
         pb.fixed();
-        (window.scrollY > '20') ? $arrows.fadeOut(400): $arrows.slideDown(400);
-        return false
+        if(window.scrollY > '20') {
+          $arrows.fadeOut(400);
+        }
+        else {
+          $arrows.slideDown(400);
+        }
+        return false;
     }
 
     module.exports.routes = routes;

@@ -43,14 +43,14 @@
             return false;
         },
         urlRouter: function() {
-            if (location.hash == "") {
+            if (location.hash === "") {
                 document.title = router.routes.home.title;
                 router.load(router.routes.home);
                 history.replaceState(router.routes.home, router.routes.home.path, "#/" + router.routes.home.path);
             }
             else {
                 for(let route in router.routes) {
-                    if(location.hash.slice(2) == router.routes[route]['path']) {
+                    if(location.hash.slice(2) == router.routes[route].path) {
                         router.load(router.routes[route]);
                         return;
                     }
@@ -59,11 +59,13 @@
         },
         clickRouter: function() {
             for(let route in router.routes) {
-                g.$cards.filter("." + router.routes[route]['class']).click(function(e) {
-                    e.preventDefault();
-                    router.loadAndPushState(router.routes[route]);
-                    return false;
-                });
+                if(router.routes.hasOwnProperty(route)) {
+                  g.$cards.filter("." + router.routes[route]['class']).click(function(e) {
+                      e.preventDefault();
+                      router.loadAndPushState(router.routes[route]);
+                      return false;
+                  });
+                }
             }
             g.$homeButton.on('click', (e) => {
                 e.preventDefault();
