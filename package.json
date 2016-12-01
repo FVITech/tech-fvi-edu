@@ -5,10 +5,12 @@
   "main": "index.html",
   "scripts": {
     "build-js": "browserify js/main.js -o js/bundle.js",
+    "watch-js": "watchify js/main.js -o js/bundle.js --poll -v",
     "build-js-min": "browserify js/main.js | uglifyjs -o js/bundle.min.js",
     "sass": "node-sass css/main.scss css/main.css",
     "autoprefixer": "postcss --use autoprefixer css/main.css -d css",
     "build-css": "npm run sass && npm run autoprefixer",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "cleancss": "cleancss -o css/main.min.css css/main.css ",
     "build-css-min": "npm run sass && npm run autoprefixer && npm run cleancss",
     "build-all": "npm run build-js & npm run build-css",
@@ -44,7 +46,8 @@
     "clean-css": "^3.4.21",
     "node-sass": "^3.10.1",
     "postcss-cli": "^2.6.0",
-    "uglifyjs": "^2.4.10"
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
     "prevent-popstate-scroll": "^2.0.0",
