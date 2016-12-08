@@ -131,44 +131,11 @@ section {
     font-weight: bolder;
 }
 
-#summary {
-    background-image: url('../img/keyboard.jpg');
-    background-position: center;
-}
-
-#curriculum {
-    background-image: url('../img/courses.jpg');
-    background-position: bottom;
-}
-
-#comparison {
-    background-image: url('../img/code.jpg');
-    background-position: top;
-}
-
-#certifications {
-    background-image: url('../img/certifications.jpg');
-    background-position: center;
-}
-
-#careers {
-    background-image: url('../img/partners.jpg');
-    background-position: center;
-}
-
-#tuition {
-    background-image: url('../img/finance.jpg');
-    background-position: top;
-}
-
-#resources {
-    background-image: url('../img/resources.jpg');
-    background-position: bottom;
-}
-
-#student-work {
-    background-image: url('../img/projects.jpg');
-    background-position: bottom;
+@each $banner, $position in $banner-backgrounds {
+    .banner.#{$banner} {
+        background-image: url('../img/banners/#{$banner}.jpg');
+        background-position: $position;
+    }
 }
 
 #student-work-content {

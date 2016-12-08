@@ -2,6 +2,15 @@ $fvi-blue: rgb(2, 141, 234);
 $dark-blue: rgb(0, 62, 103);
 $nav-height: 51px;
 $open-sans: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$banner-backgrounds:
+    (summary, center),
+    (curriculum, bottom),
+    (comparison, top),
+    (certifications, center),
+    (careers, center),
+    (tuition, top),
+    (resources, bottom),
+    (student-work, bottom);
 
 
 @mixin link($color) {

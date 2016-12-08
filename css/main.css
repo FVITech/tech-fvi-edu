@@ -963,36 +963,36 @@ section {
 .content .bold, .content-container .social-media-summary .bold {
   font-weight: bolder; }
 
-#summary {
-  background-image: url("../img/keyboard.jpg");
+.banner.summary {
+  background-image: url("../img/banners/summary.jpg");
   background-position: center; }
 
-#curriculum {
-  background-image: url("../img/courses.jpg");
+.banner.curriculum {
+  background-image: url("../img/banners/curriculum.jpg");
   background-position: bottom; }
 
-#comparison {
-  background-image: url("../img/code.jpg");
+.banner.comparison {
+  background-image: url("../img/banners/comparison.jpg");
   background-position: top; }
 
-#certifications {
-  background-image: url("../img/certifications.jpg");
+.banner.certifications {
+  background-image: url("../img/banners/certifications.jpg");
   background-position: center; }
 
-#careers {
-  background-image: url("../img/partners.jpg");
+.banner.careers {
+  background-image: url("../img/banners/careers.jpg");
   background-position: center; }
 
-#tuition {
-  background-image: url("../img/finance.jpg");
+.banner.tuition {
+  background-image: url("../img/banners/tuition.jpg");
   background-position: top; }
 
-#resources {
-  background-image: url("../img/resources.jpg");
+.banner.resources {
+  background-image: url("../img/banners/resources.jpg");
   background-position: bottom; }
 
-#student-work {
-  background-image: url("../img/projects.jpg");
+.banner.student-work {
+  background-image: url("../img/banners/student-work.jpg");
   background-position: bottom; }
 
 #student-work-content {
