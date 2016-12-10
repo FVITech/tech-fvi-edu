@@ -571,27 +571,49 @@ nav {
         font-size: 12px;
         font-weight: 600;
         padding: 15px 15px;
-        border-bottom: 3px solid #222;
         cursor: pointer; }
-      nav ul li a:hover {
-        background-color: #333;
-        border-color: #333;
-        color: #028dea; }
+        nav ul li a:hover {
+          background-color: #333; }
+      nav ul li a::after {
+        display: block;
+        width: calc(100% + 30px);
+        content: '';
+        position: relative;
+        bottom: -15px;
+        left: -15px;
+        border-bottom: 3px solid #028dea;
+        -webkit-transition: -webkit-transform 200ms ease-in-out;
+        transition: -webkit-transform 200ms ease-in-out;
+        transition: transform 200ms ease-in-out;
+        transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0); }
+      nav ul li a:hover:after {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1); }
     nav ul li .apply {
       color: #fff;
       background-color: #028dea;
       border-bottom-color: #028dea; }
       nav ul li .apply:hover {
-        border-color: #fff;
         color: #fff;
         background-color: #3baffd; }
+    nav ul .apply:hover:after {
+      border-color: #fff; }
 
 .section-in-view {
-  border-color: #028dea;
   background-color: #333; }
 
+.section-in-view:after {
+  border-color: #028dea;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1); }
+
 .home-button:hover {
-  background-color: #000;
+  background-color: #fff;
+  color: #000; }
+
+.home-button:hover:after {
   border-color: #028dea; }
 
 .apply-pop-up {

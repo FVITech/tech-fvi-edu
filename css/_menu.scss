@@ -66,14 +66,27 @@ nav {
                 font-size: 12px;
                 font-weight: 600;
                 padding: 15px 15px;
-                border-bottom: 3px solid #222;
                 cursor: pointer;
+
+                &:hover {
+                    background-color: #333;
+                }
             }
 
-            a:hover {
-                background-color: #333;
-                border-color: #333;
-                color: $fvi-blue;
+            a::after {
+                display: block;
+                width: calc(100% + 30px);
+                content: '';
+                position: relative;
+                bottom: -15px;
+                left: -15px;
+                border-bottom: 3px solid $fvi-blue;
+                transition: transform 200ms ease-in-out;
+                transform: scaleX(0);
+            }
+
+            a:hover:after {
+                transform: scaleX(1);
             }
         }
 
@@ -83,20 +96,31 @@ nav {
             border-bottom-color: $fvi-blue;
 
             &:hover {
-                border-color: #fff;
                 color: #fff;
                 background-color: lighten($fvi-blue, 15%);
             }
+        }
+
+        .apply:hover:after {
+            border-color: #fff;
         }
     }
 }
 
 .section-in-view {
-    border-color: $fvi-blue;
     background-color: #333;
 }
 
+.section-in-view:after {
+    border-color: $fvi-blue;
+    transform: scaleX(1);
+}
+
 .home-button:hover {
-    background-color: #000;
+    background-color: #fff;
+    color: #000;
+}
+
+.home-button:hover:after {
     border-color: $fvi-blue;
 }
