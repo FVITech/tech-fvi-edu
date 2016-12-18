@@ -30,7 +30,7 @@ nav {
         display: none;
         margin: 0;
 
-        &:hover {
+        &:active {
             color: $fvi-blue;
             background-color: #333;
             cursor: pointer;
@@ -41,12 +41,6 @@ nav {
     ul {
         text-align: center;
         position: relative;
-
-        a.logo-anchor {
-          &:focus, &:hover {
-              background-color: #222;
-          }
-        }
 
         .fvi-logo-white {
             position: absolute;
@@ -67,6 +61,7 @@ nav {
                 font-weight: 600;
                 padding: 15px 15px;
                 cursor: pointer;
+                transition: all 200ms;
 
                 &:hover {
                     background-color: #333;
@@ -82,11 +77,13 @@ nav {
                 left: -15px;
                 border-bottom: 3px solid $fvi-blue;
                 transition: transform 200ms ease-in-out;
-                transform: scaleX(0);
+                transform: scaleX(.8);
+                opacity: 0;
             }
 
             a:hover:after {
                 transform: scaleX(1);
+                opacity: 1;
             }
         }
 
@@ -114,6 +111,7 @@ nav {
 .section-in-view:after {
     border-color: $fvi-blue;
     transform: scaleX(1);
+    opacity: 1;
 }
 
 .home-button:hover {
