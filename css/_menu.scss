@@ -76,7 +76,7 @@ nav {
                 bottom: -15px;
                 left: -15px;
                 border-bottom: 3px solid $fvi-blue;
-                transition: transform 200ms ease-in-out;
+                transition: all 200ms ease-in-out;
                 transform: scaleX(.8);
                 opacity: 0;
             }

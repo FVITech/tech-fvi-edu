@@ -582,10 +582,8 @@ nav {
         bottom: -15px;
         left: -15px;
         border-bottom: 3px solid #028dea;
-        -webkit-transition: -webkit-transform 200ms ease-in-out;
-        transition: -webkit-transform 200ms ease-in-out;
-        transition: transform 200ms ease-in-out;
-        transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+        -webkit-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
         -webkit-transform: scaleX(0.8);
                 transform: scaleX(0.8);
         opacity: 0; }
