@@ -9,12 +9,12 @@
     "build-js-min": "browserify js/main.js | uglifyjs -o js/bundle.min.js",
     "sass": "node-sass css/main.scss css/main.css",
     "autoprefixer": "postcss --use autoprefixer css/main.css -d css",
-    "build-css": "npm run sass && npm run autoprefixer",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "build-css": "yarn run sass && yarn run autoprefixer",
+    "watch-css": "nodemon -e scss -x \"yarn run build-css\"",
     "cleancss": "cleancss -o css/main.min.css css/main.css ",
-    "build-css-min": "npm run sass && npm run autoprefixer && npm run cleancss",
-    "build-all": "npm run build-js & npm run build-css",
-    "build-all-min": "npm run build-js-min & npm run build-css-min"
+    "build-css-min": "yarn run sass && yarn run autoprefixer && yarn run cleancss",
+    "build-all": "yarn run build-js & yarn run build-css",
+    "build-all-min": "yarn run build-js-min & yarn run build-css-min"
   },
   "repository": {
     "type": "git",
@@ -50,8 +50,9 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "prevent-popstate-scroll": "^2.0.0",
+    "babelify": "^7.3.0",
     "envify": "^3.4.1",
-    "babelify": "^7.3.0"
+    "nodemon": "^1.11.0",
+    "prevent-popstate-scroll": "^2.0.0"
   }
 }

@@ -547,15 +547,13 @@ nav {
     padding: 10px 0 7px 0;
     display: none;
     margin: 0; }
-    nav h4:hover {
+    nav h4:active {
       color: #028dea;
       background-color: #333;
       cursor: pointer; }
   nav ul {
     text-align: center;
     position: relative; }
-    nav ul a.logo-anchor:focus, nav ul a.logo-anchor:hover {
-      background-color: #222; }
     nav ul .fvi-logo-white {
       position: absolute;
       left: 10px;
@@ -571,7 +569,9 @@ nav {
         font-size: 12px;
         font-weight: 600;
         padding: 15px 15px;
-        cursor: pointer; }
+        cursor: pointer;
+        -webkit-transition: all 200ms;
+        transition: all 200ms; }
         nav ul li a:hover {
           background-color: #333; }
       nav ul li a::after {
@@ -582,15 +582,15 @@ nav {
         bottom: -15px;
         left: -15px;
         border-bottom: 3px solid #028dea;
-        -webkit-transition: -webkit-transform 200ms ease-in-out;
-        transition: -webkit-transform 200ms ease-in-out;
-        transition: transform 200ms ease-in-out;
-        transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
-        -webkit-transform: scaleX(0);
-                transform: scaleX(0); }
+        -webkit-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+        -webkit-transform: scaleX(0.8);
+                transform: scaleX(0.8);
+        opacity: 0; }
       nav ul li a:hover:after {
         -webkit-transform: scaleX(1);
-                transform: scaleX(1); }
+                transform: scaleX(1);
+        opacity: 1; }
     nav ul li .apply {
       color: #fff;
       background-color: #028dea;
@@ -607,7 +607,8 @@ nav {
 .section-in-view:after {
   border-color: #028dea;
   -webkit-transform: scaleX(1);
-          transform: scaleX(1); }
+          transform: scaleX(1);
+  opacity: 1; }
 
 .home-button:hover {
   background-color: #fff;
