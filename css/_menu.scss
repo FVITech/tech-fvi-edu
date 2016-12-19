@@ -113,7 +113,7 @@ nav {
 
 .section-in-view:after {
     border-color: $fvi-blue;
-    transform: scaleX(1);
+    transform: scaleX();
 }
 
 .home-button:hover {
