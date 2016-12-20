@@ -762,7 +762,6 @@ input[name="program-selector"] {
   z-index: 100; }
 
 .arrow-down {
-  bottom: -33px;
   -webkit-animation: arrow-down 1s infinite;
   animation: arrow-down 1s infinite;
   -webkit-animation-timing-function: ease-out;
@@ -772,15 +771,27 @@ input[name="program-selector"] {
 
 @-webkit-keyframes arrow-down {
   from {
-    bottom: -33px; }
+    bottom: 20px; }
   to {
-    bottom: -43px; } }
+    bottom: -30px; } }
 
 @keyframes arrow-down {
   from {
-    bottom: -33px; }
+    bottom: 20px; }
   to {
-    bottom: -43px; } }
+    bottom: -30px; } }
+
+@media all and (max-width: 960px) {
+  @-webkit-keyframes arrow-down {
+    from {
+      bottom: 40px; }
+    to {
+      bottom: 30px; } }
+  @keyframes arrow-down {
+    from {
+      bottom: 40px; }
+    to {
+      bottom: 30px; } } }
 
 .arrow-up {
   top: -80px;

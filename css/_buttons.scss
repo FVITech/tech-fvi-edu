@@ -10,7 +10,6 @@
 }
 
 .arrow-down {
-    bottom: -33px;
     -webkit-animation: arrow-down 1s infinite;
     animation: arrow-down 1s infinite;
     -webkit-animation-timing-function: ease-out;
@@ -19,21 +18,19 @@
     animation-direction: alternate;
 }
 
-@-webkit-keyframes arrow-down {
+@keyframes arrow-down {
     from {
-        bottom: -33px;
+        bottom: 20px;
     }
     to {
-        bottom: -43px;
+        bottom: -30px;
     }
 }
 
-@keyframes arrow-down {
-    from {
-        bottom: -33px;
-    }
-    to {
-        bottom: -43px;
+@media all and (max-width: 960px) {
+    @keyframes arrow-down {
+        from {bottom: 40px}
+        to {bottom: 30px}
     }
 }
 
@@ -45,15 +42,6 @@
     animation-timing-function: ease-out;
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
-}
-
-@-webkit-keyframes arrow-up {
-    from {
-        top: -70px;
-    }
-    to {
-        top: -80px;
-    }
 }
 
 @keyframes arrow-up {
