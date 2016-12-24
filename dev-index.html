@@ -35,9 +35,12 @@
             <h3>Request Info</h3>
             <button type="button" class="close" id="apply-close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
             <form>
-                <input type="text" name="full_name" value="" placeholder="Your Full Name" autocorrect=off autocapitalize=words autofocus required>
-                <input type="tel" name="day_phone" value="" placeholder="Phone Number" autocorrect=off autocapitalize=words required>
-                <input type="email" name="email" value="" placeholder="Email Address" autocorrect=off autocapitalize=words required>
+                <label class="form-label" for="form-full_name">Full Name</label>
+                <input id="form-full_name" type="text" name="full_name" value="" autocorrect="off" autocapitalize="words" autofocus required>
+                <label class="form-label" for="form-email">Email</label>
+                <input id="form-email" type="email" name="email" value="" autocorrect=off autocapitalize=words required>
+                <label class="form-label" for="form-day_phone">Phone</label>
+                <input id="form-day_phone" type="tel" name="day_phone" value="" autocorrect="off" autocapitalize="words" required>
                 <button type="submit" id="submit-apply" class="submit" name="submit">Submit</button>
             </form>
             <div class="sent-message" id="sent-message">

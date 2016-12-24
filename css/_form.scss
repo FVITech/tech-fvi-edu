@@ -40,21 +40,25 @@
         box-sizing: border-box;
         overflow: visible;
 
+        .form-label {
+            font-family: 'Open Sans', sans-serif;
+            margin: 12px 0 0 1px;
+            display: block;
+            font-size: .9rem;
+        }
+
         input, textarea {
             box-sizing: border-box;
             width: 100%;
             border-radius: 5px;
             font-size: 1rem;
             padding: 8px;
-            margin-top: 10px;
             border: 1px solid #ccc;
             overflow: visible;
             transition: all 0.1s;
 
-            &:focus,
-            &:hover {
-                outline: none;
-                box-shadow: 0 0 4px #000;
+            &:focus  {
+                outline-color: $fvi-blue;
             }
         }
 
@@ -78,11 +82,10 @@
             color: #fff;
             cursor: pointer;
             margin-top: 10px;
+            box-shadow: 0 2px 0 0 #666;
 
-            &:focus,
-            &:hover {
-                outline: none;
-                box-shadow: 0 0 4px #000;
+            &:focus {
+                outline: #fff;
                 background: #5abafa;
                 background-image: -webkit-linear-gradient(top, #5abafa, #21a6ff);
                 background-image: -moz-linear-gradient(top, #5abafa, #21a6ff);
@@ -94,6 +97,7 @@
             &:active {
                 box-shadow: none;
                 background-color: $fvi-blue;
+                transform: translateY(2px);
             }
         }
     }

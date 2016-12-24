@@ -652,20 +652,23 @@ nav {
   .apply-pop-up form {
     box-sizing: border-box;
     overflow: visible; }
+    .apply-pop-up form .form-label {
+      font-family: 'Open Sans', sans-serif;
+      margin: 12px 0 0 1px;
+      display: block;
+      font-size: .9rem; }
     .apply-pop-up form input, .apply-pop-up form textarea {
       box-sizing: border-box;
       width: 100%;
       border-radius: 5px;
       font-size: 1rem;
       padding: 8px;
-      margin-top: 10px;
       border: 1px solid #ccc;
       overflow: visible;
       -webkit-transition: all 0.1s;
       transition: all 0.1s; }
-      .apply-pop-up form input:focus, .apply-pop-up form input:hover, .apply-pop-up form textarea:focus, .apply-pop-up form textarea:hover {
-        outline: none;
-        box-shadow: 0 0 4px #000; }
+      .apply-pop-up form input:focus, .apply-pop-up form textarea:focus {
+        outline-color: #028dea; }
     .apply-pop-up form textarea {
       height: 250px;
       font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
@@ -680,16 +683,18 @@ nav {
       background-image: linear-gradient(to bottom, #21a6ff, #028DEA);
       color: #fff;
       cursor: pointer;
-      margin-top: 10px; }
-      .apply-pop-up form button:focus, .apply-pop-up form button:hover {
-        outline: none;
-        box-shadow: 0 0 4px #000;
+      margin-top: 10px;
+      box-shadow: 0 2px 0 0 #666; }
+      .apply-pop-up form button:focus {
+        outline: #fff;
         background: #5abafa;
         background-image: -webkit-linear-gradient(top, #5abafa, #21a6ff);
         background-image: linear-gradient(to bottom, #5abafa, #21a6ff); }
       .apply-pop-up form button:active {
         box-shadow: none;
-        background-color: #028dea; }
+        background-color: #028dea;
+        -webkit-transform: translateY(2px);
+                transform: translateY(2px); }
   .apply-pop-up .sent-message {
     display: none; }
   .apply-pop-up hr {
