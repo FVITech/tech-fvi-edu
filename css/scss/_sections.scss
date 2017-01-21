@@ -138,6 +138,26 @@ section {
     }
 }
 
+.mongo-svg {
+    transform-origin: bottom;
+    animation: leaf infinite 2s ease-in-out;
+    animation-direction: alternate;
+}
+
+.react-svg {
+    animation: spin infinite 20s linear;
+}
+
+@keyframes leaf {
+    from { transform: rotate(-8deg);}
+    to { transform: rotate(8deg);}
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
 #student-work-content {
     width: 100%;
     max-width: none;

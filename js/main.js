@@ -5,12 +5,12 @@
 }(function mainFunction($, window, document) {
     "use strict";
 
-    const g = require('./_globals');
-    const router = require('./_router');
-    const pb = require('./_plus-buttons');
-    const menu = require('./_menu');
-    const form = require('./_form');
-    const smoothScroll = require('./_smoothScroll');
+    const g = require('./partials/_globals');
+    const router = require('./partials/_router');
+    const pb = require('./partials/_plus-buttons');
+    const menu = require('./partials/_menu');
+    const form = require('./partials/_form');
+    const smoothScroll = require('./partials/_smoothScroll');
     const preventPopstateScroll = require('prevent-popstate-scroll');
 
     var setup = {
