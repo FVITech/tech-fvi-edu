@@ -1,7 +1,7 @@
 {
     "name": "tech-fvi-edu",
     "version": "1.0.0",
-    "description": "Website for tech.fvi.edu",
+    "description": "Website for tech.fvi.edu. SPA that uses only jQuery and HTML5 History API.",
     "main": "index.html",
     "scripts": {
         "build": "yarn run build-js && yarn run build-css",
