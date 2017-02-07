@@ -10,10 +10,10 @@
             title: 'Learn to Code at the Florida Vocational Institute - Evening Coding Bootcamp',
             class: 'home'
         },
-        web: {
+        webdev: {
             path: 'web-developer-program',
             title: 'Web Developer Evening Bootcamp by The Florida Vocational Institute',
-            class: 'web'
+            class: 'webdev'
         },
         cyber: {
             path: 'cyber-security-and-network-administrator-program',

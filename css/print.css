@@ -1,0 +1,82 @@
+#menu,
+.arrow,
+.plus-button,
+.apply-btn {
+    display: none !important;
+}
+
+html, body {
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: #444 !important;
+}
+
+.page {
+    top: 0;
+    background: none !important;
+    min-height: inherit !important;
+    box-shadow: none !important;
+    margin-bottom: 50px !important;
+}
+
+.page .page-title,
+.page .page-subtitle {
+    display: block !important;
+    text-shadow: none !important;
+    color: #444 !important;
+    padding-top: 20px !important;
+}
+
+.page .page-title:before {
+    content: "Techlaunch at FVI";
+    font-size: 4rem;
+    display: block;
+    margin: 30px;
+}
+
+.sections-container {
+    padding: 15px !important;
+}
+
+.banner {
+    background: none !important;
+    padding: 20px 0 0 0 !important;
+    margin: 20px 0 0 0 !important;
+    border: none !important;
+    border-top: 1px solid #ccc !important;
+}
+
+.banner h2,
+.banner p {
+    text-shadow: none !important;
+    color: #444 !important;
+}
+
+section {
+    margin: 0 !important;
+}
+
+.content-container {
+    display: block !important;
+    box-shadow: none !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    page-break-after: always;
+}
+
+.content h4:first-child {
+    margin-top: 20px !important;
+}
+
+.content-container .request-info {
+    background: none !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
+    color: #444 !important;
+}
+
+.content-container .request-info:after {
+    content: " by calling 786-574-3350" !important;
+}
+
+.social-media-summary {
+    display: none;
+}

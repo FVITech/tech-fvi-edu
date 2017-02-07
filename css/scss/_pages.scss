@@ -6,7 +6,7 @@
     position: relative;
     top: $nav-height;
     text-align: center;
-    transition: all 0;
+    transition: all 0s;
 
     .page-title {
         opacity: 0;
@@ -41,7 +41,7 @@
     }
 }
 
-.page.web {
+.page.webdev {
     background-image: url('../img/web-landing.jpg');
     background-position: top;
 

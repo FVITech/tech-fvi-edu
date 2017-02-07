@@ -99,7 +99,7 @@ a {
   position: relative;
   top: 51px;
   text-align: center;
-  transition: all 0; }
+  transition: all 0s; }
   .page .page-title {
     opacity: 0;
     font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -129,10 +129,10 @@ a {
     animation-iteration-count: 1;
     animation-fill-mode: forwards; }
 
-.page.web {
+.page.webdev {
   background-image: url("../img/web-landing.jpg");
   background-position: top; }
-  .page.web .page-title {
+  .page.webdev .page-title {
     padding-top: 20vh; }
 
 @keyframes slideDownFadeIn {
@@ -255,55 +255,60 @@ a {
 
 .page.home {
   top: 0;
-  background-color: #ddd;
+  background-color: #ddd; }
+
+.above-the-fold {
+  background-image: url("../img/network-background-dark.jpg");
+  background-size: cover;
   min-height: 100vh; }
-  .page.home .above-the-fold {
-    background-image: url("../img/network-background-dark.jpg");
-    background-size: cover; }
-  .page.home .fvi-logo-white {
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    max-width: 80px; }
-  .page.home .techlaunch-logo {
-    max-width: 100px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%); }
-  .page.home ul {
-    text-align: right;
-    padding: 10px;
-    margin: 0; }
-    .page.home ul a {
+
+.fvi-logo-white {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  max-width: 80px; }
+
+.techlaunch-logo {
+  max-width: 150px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.home-menu {
+  text-align: right;
+  padding: 10px;
+  margin: 0; }
+  .home-menu a {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    padding: 2px 0;
+    margin: 0 10px;
+    font-size: .8rem;
+    font-weight: 300; }
+    .home-menu a:hover, .home-menu a:focus {
+      border-bottom-width: 2px;
+      text-decoration: none; }
+    .home-menu a:visited {
       color: #fff;
-      border-bottom: 1px solid #fff;
-      text-decoration: none;
-      display: inline-block;
-      border-bottom: 2px solid transparent;
-      padding: 2px 0;
-      margin: 0 10px;
-      font-size: .8rem;
-      font-weight: 300; }
-      .page.home ul a:hover, .page.home ul a:focus {
-        border-bottom-width: 2px;
-        text-decoration: none; }
-      .page.home ul a:visited {
-        color: #fff;
-        border-color: #fff; }
-      .page.home ul a:hover {
-        border-color: #fff; }
+      border-color: #fff; }
+    .home-menu a:hover {
+      border-color: #fff; }
 
 .title-div {
   display: table;
   width: 100%;
-  height: 250px; }
+  height: 250px;
+  padding-top: 50px; }
   .title-div .title-headers {
     display: table-cell;
     vertical-align: middle; }
-    .title-div .title-headers h2 {
+    .title-div .title-headers h1 {
       margin: 0;
       padding: 1rem;
       font-size: 3rem;
@@ -319,8 +324,7 @@ a {
 .cards-container {
   display: block;
   text-align: center;
-  padding: 20px;
-  min-height: calc(100vh - 250px); }
+  padding: 20px; }
 
 .about-wrapper {
   background-color: #fff;
@@ -497,11 +501,12 @@ nav {
   nav ul {
     text-align: center;
     position: relative; }
-    nav ul .fvi-logo-white {
+    nav ul .techlaunch-logo-main-menu {
       position: absolute;
       left: 10px;
-      top: 15px;
-      height: 25px; }
+      top: 5px;
+      height: 45px;
+      padding: 0; }
     nav ul li {
       display: inline-block; }
       nav ul li a {
@@ -655,7 +660,7 @@ input[name="program-selector"] {
 #radio-home:not(:checked) ~ .pages-container .radio-home {
   display: none; }
 
-#radio-web:not(:checked) ~ .pages-container .radio-web {
+#radio-webdev:not(:checked) ~ .pages-container .radio-webdev {
   display: none; }
 
 #radio-cyber:not(:checked) ~ .pages-container .radio-cyber {
@@ -711,11 +716,8 @@ input[name="program-selector"] {
   z-index: 100; }
 
 .arrow-down {
-  -webkit-animation: arrow-down 1s infinite;
   animation: arrow-down 1s infinite;
-  -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
-  -webkit-animation-direction: alternate;
   animation-direction: alternate; }
 
 @keyframes arrow-down {
@@ -733,11 +735,8 @@ input[name="program-selector"] {
 
 .arrow-up {
   top: -80px;
-  -webkit-animation: arrow-up 1s infinite;
   animation: arrow-up 1s infinite;
-  -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
-  -webkit-animation-direction: alternate;
   animation-direction: alternate; }
 
 @keyframes arrow-up {
@@ -761,7 +760,6 @@ input[name="program-selector"] {
   border-radius: 100%;
   cursor: pointer;
   margin: 20px auto 0;
-  -webkit-transition: all .6s ease-out;
   transition: all .6s ease-out;
   z-index: 100;
   display: block;
@@ -774,9 +772,7 @@ input[name="program-selector"] {
 .plus-button.opened {
   color: #fff;
   background-color: rgba(150, 150, 150, 0.5);
-  -webkit-transform-origin: center;
   transform-origin: center;
-  -webkit-transform: translateY(40px) rotate(225deg);
   transform: translateY(40px) rotate(225deg); }
   .plus-button.opened:hover {
     color: #fff;
@@ -796,17 +792,11 @@ input[name="program-selector"] {
   cursor: pointer;
   box-shadow: 0 3px 0 0 #555;
   z-index: 200;
-  -webkit-transition: all .3s;
   transition: all .3s; }
   .cta-btn:active, .request-info:active {
     box-shadow: none;
-    -webkit-transform: translateY(3px);
     transform: translateY(3px);
-    -webkit-transition: transform .1s, box-shadow .1s;
-    -webkit-transition: box-shadow .1s, -webkit-transform .1s;
-    transition: box-shadow .1s, -webkit-transform .1s;
-    transition: transform .1s, box-shadow .1s;
-    transition: transform .1s, box-shadow .1s, -webkit-transform .1s; }
+    transition: transform .1s, box-shadow .1s; }
 
 .apply-btn, .request-info {
   background: #e66;
@@ -1038,7 +1028,7 @@ section {
       margin: 2rem 0 1rem;
       color: #eee; }
 
-@media all and (max-width: 960px) {
+@media all and (max-width: 992px) {
   .page {
     top: 0px;
     /* nav height */
@@ -1051,10 +1041,12 @@ section {
       max-width: 50px; }
     .page.home .techlaunch-logo {
       max-width: 80px; }
-  .page.web h1 {
+  .techlaunch-logo-main-menu {
+    display: none; }
+  .page.webdev h1 {
     font-size: 3rem;
     padding-top: 15vh; }
-  .page.web p {
+  .page.webdev p {
     font-size: 1.2rem; }
   .page.cyber h1 {
     font-size: 3rem;
@@ -1137,10 +1129,10 @@ section {
       font-size: .8rem; }
   .contact-us-container address, .links-container ul {
     padding-left: 10%; }
-  .page.web h1 {
+  .page.webdev h1 {
     font-size: 2.7rem;
     padding-top: 16vh; }
-  .page.web p {
+  .page.webdev p {
     font-size: 1.1rem;
     margin-top: 1rem; }
   .page.cyber h1 {
@@ -1200,6 +1192,13 @@ section {
     max-width: 270px; }
   .page.home h3 {
     font-size: 1.1rem; }
+  .home-menu .menu-link-blog,
+  .home-menu .menu-link-about {
+    display: none; }
+  .techlaunch-logo {
+    max-width: 100px; }
+  .title-div {
+    padding-top: 25px; }
   .card {
     height: 250px;
     width: 215px; }
@@ -1212,9 +1211,9 @@ section {
     margin-top: 20px; }
     .apply-pop-up form textarea {
       height: 200px; }
-  .page.web h1 {
+  .page.webdev h1 {
     font-size: 2.3rem; }
-  .page.web p {
+  .page.webdev p {
     margin-top: 1rem;
     font-size: .95rem; }
   .page.cyber h1 {
@@ -1239,7 +1238,6 @@ section {
   .page.cyber h1 {
     animation: none; } }
 
-/*@import "_diagnostics.scss";*/
 html {
   background-color: #111;
   display: none; }
