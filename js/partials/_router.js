@@ -1,8 +1,8 @@
 (function _router() {
-    const g = require('./_globals');
-    const pb = require('./_plus-buttons');
-    const menu = require('./_menu');
-    let $downArrows = $('a.arrow-down');
+    const g = require('./_globals')
+    const pb = require('./_plus-buttons')
+    const menu = require('./_menu')
+    let $downArrows = $('a.arrow-down')
 
     const routes = {
         home: {
@@ -16,89 +16,89 @@
             class: 'webdev'
         },
         cyber: {
-            path: 'cyber-security-and-network-administrator-program',
+            path: 'network-administrator-program',
             title: 'Network Administrator Evening Bootcamp by The Florida Vocational Institute',
             class: 'cyber'
         }
-    };
-
-    function _createrRouteLoader(pushState) {
-        function loader(route) {
-            document.title = route.title;
-            updateContent(route.class);
-            if(pushState) {history.pushState(route, route.path, "#/" + route.path)}
-            return false;
-        }
-        return loader;
-    }
-
-    let load = _createrRouteLoader(false);
-    let loadAndPushState = _createrRouteLoader(true);
-
-    function updateContent(pageClass) {
-        $('html').fadeOut(function() {
-            // reset to defaults
-            g.$navItems.removeClass('section-in-view');
-            g.$overlay.hide();
-            g.$applyPopUp.hide();
-            g.$plusButtons.filter('.opened')
-                .css({'top': '0px', 'transition': '.6s'})
-                .removeClass('opened');
-            g.$banners.filter('.shrink')
-                .removeClass('shrink')
-                .next().hide();
-            g.$navItems.removeClass('section-in-view');
-            $(window).off('scroll', scrollHandlerBody);
-            window.scroll(0, 0);
-
-            $('#radio-' + pageClass)[0].checked = true;
-            if(pageClass == "home") {
-              $('#menu, #sections-container').hide();
-            }
-            else {
-              $('#menu, #sections-container').show();
-            }
-
-            var navItems = g.$navItems.filter('.' + pageClass);
-            var banners = g.$banners.filter('.' + pageClass);
-            var landing = $('#page_' + pageClass)[0];
-
-            // on scroll, fix plus-buttons to screen and add nav styles
-            var scrollHandlerBody = (window.innerWidth >= g.mobileMenuWidth) ? _scrollHandlerDesktop : _scrollHandlerMobile;
-            $(window).on('scroll', function scrollHandler() {
-                scrollHandlerBody($downArrows, navItems, banners, landing);
-            });
-
-            $('html').fadeIn();
-        });
-        return false;
     }
 
     function _scrollHandlerDesktop($arrows, items, sectionBanners, landingPage) {
-        pb.fixed();
+        pb.fixed()
         if(window.scrollY > '20') {
-          $arrows.fadeOut(400);
+          $arrows.forEach(a => a.addClass('hidden'))
         }
         else {
-          $arrows.slideDown(400);
+          $arrows.forEach(a => a.slideDown(400))
         }
-        menu.navItemsStyle(items, sectionBanners, landingPage);
-        return false;
+        menu.navItemsStyle(items, sectionBanners, landingPage)
     }
 
     function _scrollHandlerMobile($arrows) {
-        pb.fixed();
+        pb.fixed()
         if(window.scrollY > '20') {
-          $arrows.fadeOut(400);
+          $arrows.forEach(a => a.addClass('hidden'))
         }
         else {
-          $arrows.slideDown(400);
+          $arrows.forEach(a => a.slideDown(400))
         }
-        return false;
     }
 
-    module.exports.routes = routes;
-    module.exports.load = load;
-    module.exports.loadAndPushState = loadAndPushState;
-    module.exports.updateContent = updateContent;
-})();
+    function updateContent(pageClass) {
+        // reset to defaults
+        $('html').style.opacity = '0'
+        g.$navItems.removeClass('section-in-view')
+        g.$overlay.addClass('hidden')
+        g.$applyPopUp.addClass('hidden')
+        if(window.innerWidth <= g.mobileMenuWidth) {
+            g.$menuItems.slideUp(10)
+        }
+        $('.plus-button.opened').forEach(btn => {
+            btn.style.top = '0px'
+            btn.style.transition = '.6s'
+            btn.removeClass('opened')
+        })
+        $('.banner').removeClass('shrink')
+        $('.content-container').forEach(c => c.slideUp(10))
+        g.$navItems.removeClass('section-in-view')
+        window.removeEventListener('scroll', scrollHandlerBody)
+        window.scrollTo(0, 0)
+
+        $('#radio-' + pageClass).checked = true
+        if(pageClass === "home") {
+          $('#menu').style.display = 'none'
+          $('#sections-container').addClass('hidden')
+        }
+        else {
+            $('#menu').style.display = 'block'
+            $('#sections-container').removeClass('hidden')
+        }
+
+        var navItems = $('a.nav-item.' + pageClass)
+        var banners = $('.banner.' + pageClass)
+        var landing = $('#page_' + pageClass)
+
+        // on scroll, fix plus-buttons to screen and add nav styles
+        var scrollHandlerBody = (window.innerWidth >= g.mobileMenuWidth) ? _scrollHandlerDesktop : _scrollHandlerMobile
+        window.addEventListener('scroll', function scrollHandler() {
+            scrollHandlerBody($downArrows, navItems, banners, landing)
+        })
+        $('html').style.opacity = '1'
+    }
+
+    function _createrRouteLoader(pushState) {
+        function loader(route) {
+            document.title = route.title
+            updateContent(route.class)
+            if(pushState) {history.pushState(route, route.path, "#/" + route.path)}
+        }
+        return loader
+    }
+
+    let load = _createrRouteLoader(false)
+    let loadAndPushState = _createrRouteLoader(true)
+
+    module.exports.routes = routes
+    module.exports.load = load
+    module.exports.loadAndPushState = loadAndPushState
+    module.exports.updateContent = updateContent
+})()

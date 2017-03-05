@@ -1,11 +1,11 @@
 .apply-pop-up {
     box-sizing: border-box;
-    display: none;
     width: calc(100vw - 40px);
     max-width: 400px;
     margin: 60px auto 0;
     position: fixed;
     left: 50%;
+    opacity: 1;
     transform: translateX(-50%);
     border-radius: 12px;
     padding: 15px;
@@ -13,6 +13,7 @@
     box-shadow: 0 15px 70px 0 #000;
     overflow: visible;
     z-index: 1001;
+    transition: opacity 600ms;
 
     h3 {
         color: #000;

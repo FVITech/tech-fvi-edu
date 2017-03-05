@@ -15,10 +15,43 @@
 @import "_400max.scss";
 
 html {
-    background-color: #111;
-    display: none;
+    background-color: $fvi-blue;
+    opacity: 0;
 }
 
 body {
+    background-color: $fvi-blue;
+}
+
+.pages-container {
     background-color: #111;
+}
+
+#overlay {
+    background: #000;
+    bottom: 0;
+    opacity: .7;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 101;
+    color: rgba(0, 0, 0, 1);
+    font-size: 0;
+    transition: opacity 200ms;
+}
+
+.hidden {
+    visibility: hidden !important;
+    opacity: 0.01 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    width: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
 }
