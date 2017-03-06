@@ -10,6 +10,7 @@
 
     function close($button) {
         const $banner = $button.parentNode
+        zenscroll.to($banner, 300)
         $button.removeClass('opened')
         $button.style.top = '0px'
         $button.style.transition = 'all 0.6s'

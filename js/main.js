@@ -3,7 +3,6 @@
 
     require('./dom-query.js')
     require('dom-slider')
-    require('smoothscroll')
     const g = require('./partials/_globals')
     const router = require('./partials/_router')
     const pb = require('./partials/_plus-buttons')
@@ -22,6 +21,8 @@
             window.addEventListener('popstate', setup.urlRouter)
             // prevent browser from scrolling to top when onpopstate event emits
             preventPopstateScroll.prevent()
+            // smoothScroll initialization
+            setup.smoothScroll()
             // Contact form functionality
             g.$applyButtons.forEach(btn => {
                 btn.addEventListener('click', e => {
@@ -88,6 +89,20 @@
             g.$homeButton.addEventListener('click', (e) => {
                 e.preventDefault()
                 router.loadAndPushState(router.routes.home)
+            })
+        },
+        smoothScroll: function() {
+            $('a.smoothScroll').forEach(anchor => {
+                anchor.addEventListener('click', e => {
+                    e.preventDefault()
+                    const dest = $( anchor.getAttribute('href') )
+                    zenscroll.to(dest, 400, function() {
+                        const btn = dest.querySelector('.plus-button')
+                        if(btn && !btn.classList.contains('opened')) {
+                            btn.click()
+                        }
+                    })
+                })
             })
         }
     }

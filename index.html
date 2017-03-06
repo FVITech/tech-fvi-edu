@@ -66,7 +66,7 @@
                     <img class="techlaunch-logo" title="Techlaunch at FVI: Learn to Code at Miami's Best Code School" src="img/techlaunch-blackbg.svg" alt="TechLaunch Logo">
                     <div id="home-menu" class="home-menu">
                         <a class="menu-link-blog" rel="noopener" target="_blank" href="http://www.fvi.edu/en/blog">BLOG</a>
-                        <a class="menu-link-about" data-scroll rel="noopener" href="#about">ABOUT</a>
+                        <a class="menu-link-about smoothScroll" rel="noopener" href="#about">ABOUT</a>
                         <a class="menu-link-contact" rel="noopener" href="#" id="contact-home">CONTACT</a>
                     </div>
                     <div class="title-div">
@@ -123,14 +123,14 @@
                 <ul id="menu-items">
                     <img class="techlaunch-logo-main-menu" title="Techlaunch at FVI: Learn to Code at Miami's Best Code School" src="img/techlaunch-blackbg.svg" alt="Techlaunch Logo"><!-- remove space
                  --><li><a rel="noopener" class="home-button" id="home-button" href="#">HOME</a></li><!-- remove space
-                 --><li><a rel="noopener" class="nav-item webdev cyber" data-scroll href="#summary">SUMMARY</a></li><!-- remove space
-                 --><li><a rel="noopener" class="nav-item webdev cyber" data-scroll href="#curriculum">CURRICULUM</a></li><!-- remove space
-                 --><li class="radio-webdev"><a rel="noopener" class="nav-item webdev" data-scroll href="#comparison">HOW WE COMPARE</a></li><!-- remove space
-                 --><li class="radio-cyber"><a rel="noopener" class="nav-item cyber" data-scroll href="#certifications">CERTIFICATIONS</a></li><!-- remomve space
-                 --><li><a rel="noopener" class="nav-item webdev cyber" data-scroll href="#careers">CAREERS</a></li><!-- remove space
-                 --><li><a rel="noopener" class="nav-item webdev cyber" data-scroll href="#tuition">TUITION</a></li><!-- remove space
-                 --><li><a rel="noopener" class="nav-item webdev cyber" data-scroll href="#resources">RESOURCES</a></li><!-- remove space
-                 --><li class="radio-webdev"><a rel="noopener" class="nav-item webdev" data-scroll href="#student-work">STUDENT WORK</a></li><!-- remomve space
+                 --><li><a rel="noopener" class="nav-item webdev cyber smoothScroll" href="#summary">SUMMARY</a></li><!-- remove space
+                 --><li><a rel="noopener" class="nav-item webdev cyber smoothScroll" href="#curriculum">CURRICULUM</a></li><!-- remove space
+                 --><li class="radio-webdev"><a rel="noopener" class="nav-item webdev smoothScroll" href="#comparison">HOW WE COMPARE</a></li><!-- remove space
+                 --><li class="radio-cyber"><a rel="noopener" class="nav-item cyber smoothScroll" href="#certifications">CERTIFICATIONS</a></li><!-- remomve space
+                 --><li><a rel="noopener" class="nav-item webdev cyber smoothScroll" href="#careers">CAREERS</a></li><!-- remove space
+                 --><li><a rel="noopener" class="nav-item webdev cyber smoothScroll" href="#tuition">TUITION</a></li><!-- remove space
+                 --><li><a rel="noopener" class="nav-item webdev cyber smoothScroll" href="#resources">RESOURCES</a></li><!-- remove space
+                 --><li class="radio-webdev"><a rel="noopener" class="nav-item webdev smoothScroll" href="#student-work">STUDENT WORK</a></li><!-- remomve space
                  --><li><a rel="noopener" class="nav-item webdev cyber apply" id="nav-apply-btn" href="#">APPLY</a></li>
                 </ul>
             </nav>
@@ -138,12 +138,12 @@
             <div class="page webdev radio-webdev" id="page_webdev">
                 <h1 class="page-title">WEB DEVELOPER</h1>
                 <p class="page-subtitle">Become a Web Developer in 9 months.<br>No experience necessary.<br>Learn more below.</p>
-                <a rel="noopener" class="arrow arrow-down" data-scroll href="#summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <a rel="noopener" class="arrow arrow-down smoothScroll" href="#summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
             </div>
             <div class="page cyber radio-cyber" id="page_cyber">
                 <h1 class="page-title">CYBER SECURITY &amp;<br>NETWORK TECHNICIAN</h1>
                 <p class="page-subtitle">Become certified in 9 months.<br>No experience necessary.<br>Learn more below.</p>
-                <a rel="noopener" class="arrow arrow-down" data-scroll href="#summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <a rel="noopener" class="arrow arrow-down smoothScroll" href="#summary"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
             </div>
 
             <div id="sections-container">
@@ -456,7 +456,7 @@
                 </section>
 
                 <section id="call-to-action-section" class="webdev cyber">
-                    <a rel="noopener" class="arrow arrow-up" data-scroll href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+                    <a rel="noopener" class="arrow arrow-up smoothScroll" href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
                     <div class="content">
                         <p class="radio-webdev">Learn to code in 9 months.<br>Become a Web Developer.</p>
                         <p class="radio-cyber">Level up your job skills.<br>Become job-ready 9 months.</p>
@@ -513,12 +513,11 @@
         </div>
     </footer>
 
-    <script
-            src="https://use.fontawesome.com/6e24312094.js"
-            defer></script>
-    <script
-            src="js/bundle.js"
-            defer></script>
+
+    <script>window.noZensmooth = true</script>
+    <script src="js/zenscroll-min.js"></script>
+    <script src="https://use.fontawesome.com/6e24312094.js" defer></script>
+    <script src="js/bundle.js" defer></script>
 
 </body>
 
