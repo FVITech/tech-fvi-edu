@@ -109,14 +109,12 @@
         },
         printStyles: function() {
             function showContent() {
-                console.log('before print');
                 $('.plus-button:not(.opened)').forEach(btn => {
                     btn.click()
                 })
             }
 
             function hideContent() {
-                console.log('after print');
                 $('.plus-button.opened').forEach(btn => {
                     btn.click()
                 })
@@ -129,6 +127,7 @@
             mediaQueryList.addListener(function(mql) {
                 if (mql.matches) {
                     showContent()
+                    setTimeout(hideContent, 500)
                 };
             });
         }
