@@ -23,6 +23,8 @@
             preventPopstateScroll.prevent()
             // smoothScroll initialization
             setup.smoothScroll()
+            // Click on plus-buttons before user prints, to show content
+            setup.printStyles()
             // Contact form functionality
             g.$applyButtons.forEach(btn => {
                 btn.addEventListener('click', e => {
@@ -104,6 +106,31 @@
                     })
                 })
             })
+        },
+        printStyles: function() {
+            function showContent() {
+                console.log('before print');
+                $('.plus-button:not(.opened)').forEach(btn => {
+                    btn.click()
+                })
+            }
+
+            function hideContent() {
+                console.log('after print');
+                $('.plus-button.opened').forEach(btn => {
+                    btn.click()
+                })
+            }
+
+            window.onbeforeprint = showContent
+            window.onafterprint = hideContent
+
+            var mediaQueryList = window.matchMedia('print');
+            mediaQueryList.addListener(function(mql) {
+                if (mql.matches) {
+                    showContent()
+                };
+            });
         }
     }
 
