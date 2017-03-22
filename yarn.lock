@@ -1287,6 +1287,10 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
+dom-fader@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/dom-fader/-/dom-fader-1.1.4.tgz#2bc5ac339446a2689feab0e83f0a4a942e6bda80"
+
 dom-slider@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/dom-slider/-/dom-slider-1.1.0.tgz#b26a36744cb9a62350a116e2da7a4c3859a87242"

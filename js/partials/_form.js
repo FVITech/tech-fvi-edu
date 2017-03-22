@@ -3,13 +3,13 @@
     let $message = $('#sent-message')
 
     function show() {
-        g.$overlay.removeClass('hidden')
-        g.$applyPopUp.removeClass('hidden')
+        g.$overlay.fadeIn()
+        g.$applyPopUp.fadeIn()
     }
 
     function hide() {
-        g.$overlay.addClass('hidden')
-        g.$applyPopUp.addClass('hidden')
+        g.$overlay.fadeOut()
+        g.$applyPopUp.fadeOut()
     }
 
     // Not my code. Got it from:
@@ -46,9 +46,9 @@
 
     function send() {
         sendForm().done(function() {
-            g.$applyForm.removeClass('hidden')
+            g.$applyForm.fadeIn()
             setTimeout(function() {
-                $message.addClass('hidden')
+                $message.fadeOut()
                 g.$applyForm.reset()
             }, 300)
         })

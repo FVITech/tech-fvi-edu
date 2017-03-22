@@ -3,6 +3,7 @@
 
     require('./dom-query.js')
     require('dom-slider')
+    require('dom-fader')
     const g = require('./partials/_globals')
     const router = require('./partials/_router')
     const pb = require('./partials/_plus-buttons')

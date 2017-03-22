@@ -25,10 +25,10 @@
     function _scrollHandlerDesktop($arrows, items, sectionBanners, landingPage) {
         pb.fixed()
         if(window.scrollY > '20') {
-          $arrows.forEach(a => a.addClass('hidden'))
+          $arrows.forEach(a => a.fadeOut(200))
         }
         else {
-          $arrows.forEach(a => a.slideDown(400))
+          $arrows.forEach(a => a.fadeIn(200))
         }
         menu.navItemsStyle(items, sectionBanners, landingPage)
     }
@@ -36,10 +36,10 @@
     function _scrollHandlerMobile($arrows) {
         pb.fixed()
         if(window.scrollY > '20') {
-          $arrows.forEach(a => a.addClass('hidden'))
+          $arrows.forEach(a => a.fadeOut(200))
         }
         else {
-          $arrows.forEach(a => a.slideDown(400))
+          $arrows.forEach(a => a.fadeIn(200))
         }
     }
 
@@ -47,8 +47,8 @@
         // reset to defaults
         $('html').style.opacity = '0'
         g.$navItems.removeClass('section-in-view')
-        g.$overlay.addClass('hidden')
-        g.$applyPopUp.addClass('hidden')
+        g.$overlay.fadeOut()
+        g.$applyPopUp.fadeOut()
         if(window.innerWidth <= g.mobileMenuWidth) {
             g.$menuItems.slideUp(10)
         }
@@ -66,11 +66,11 @@
         $('#radio-' + pageClass).checked = true
         if(pageClass === "home") {
           $('#menu').style.display = 'none'
-          $('#sections-container').addClass('hidden')
+          $('#sections-container').slideUp(10)
         }
         else {
             $('#menu').style.display = 'block'
-            $('#sections-container').removeClass('hidden')
+            $('#sections-container').slideDown(10)
         }
 
         var navItems = $('a.nav-item.' + pageClass)

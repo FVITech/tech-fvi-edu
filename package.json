@@ -59,6 +59,7 @@
   },
   "dependencies": {
     "babelify": "^7.3.0",
+    "dom-fader": "^1.1.4",
     "dom-slider": "^1.1.0",
     "envify": "^4.0.0",
     "nodemon": "^1.11.0",
