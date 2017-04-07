@@ -1,6 +1,6 @@
 # Content Brainstorm notes
 
-##Site Sections
+## Site Sections
 
 * 1 Tech Careers: Web dev, web design, cyber, it help desk
 
