@@ -20,13 +20,15 @@
 
 * (footer element) Social
 
+# Detail on Site Sections
+
 ## About Us
 
-* Why TL - pull from jobcorps doc and techlaunch.io PRIORITY 1
+* Why TechLaunch - pull from jobcorps document and techlaunch.io PRIORITY 1
 
 * Locations/ Contact - fvi.edu PRIORITY 1
 
-* Press - blog instance PRIORITY 2
+* Press - wordpress child site we can push media links to PRIORITY 2
 
 * CareerSource PRIORITY 2
 
@@ -40,46 +42,48 @@
 
 ## Tech Career Courses
 
-* Web dev PRIORITY 1
+* Web dev - pull from fvi.edu and techlaunch.io PRIORITY 1
 
-* Web Design PRIORITY 1
+* Web Design - pull from fvi.edu and spiderboost copy (primary) PRIORITY 1
 
-* Cybersecurity PRIORITY 1
+* Cybersecurity - pull from fvi.edu and techlaunch.io PRIORITY 1
 
-* IT help desk PRIORITY 2
+* IT help desk - needs to be written from scratch PRIORITY 2
 
 ## Tech Skill Courses - cool name TBD
 
-* Wordpress PRIORITY 1
+* Wordpress - pull from techlaunch.io/wordpress PRIORITY 1
 
-* AWS PRIORITY 1
+* AWS - pull from techlaunch.io/aws PRIORITY 1
 
-* General intro PRIORITY 1. This section is about discussing the purpose, vision, and target audience of our short courses.
+* General intro PRIORITY 1. This section is about discussing the purpose, vision, and target audience of our short courses. Needs to be written from scratch.
 
 
 ## Career Launch
 
-* Intro ( possibly mentioning hiring partners, benefits of TL to student) PRIORITY 1
+* Intro ( possibly mentioning hiring partners, benefits of TL to student) - needs to be written from scratch PRIORITY 1
 
-* How we help (career services team) PRIORITY 1
+* How we help (career services team) PRIORITY 1 - needs to be written from scratch
 
-* Hiring partner info, including internship opportunities PRIORITY 1
-
-* Internship PRIORITY 1
+* Hiring partner info, including internship opportunities PRIORITY 1 - needs to be written from scratch
 
 * Success stories PRIORITY 1
-  - specific students
-  - Student Projects
+  - specific students Need testimonial scripts, student pictures, and recordings
+  - Student Projects - all set
 
 ## Hiring partner (missing all content)
 
-* Intro PRIORITY 1
+* Intro PRIORITY 1 - needs to be written from scratch
     * Benefits of TL
+        * Industry relevant knowledge, not just general stuff
+        * Our teachers are pros and teach students to work like pros
+        * Broad base of "general literacy" of the world of web development
 
 * Apprenticeship / Internship PRIORITY 2
 
-* HP testimonial PRIORITY 1
+* Hiring Partner testimonial PRIORITY 1  - needs to be written from scratch
     * Why we hire TL
+    * How the experience with TL grads was
 
 * HP input and collaboration PRIORITY 2
     * Skills Survey
@@ -90,17 +94,17 @@
 
 ## Veterans
 
-* Success story PRIORITY 1
+* Success story PRIORITY 1 -  - needs to be written from scratch
 
-* Veterans services PRIORITY 1
+* Veterans services PRIORITY 1 - use fvi.edu
 
-* Scholarships PRIORITY 1
+* Scholarships PRIORITY 1 - use fvi.edu?
 
 ## Affordability
 
 * Real Cost Calculator (for future, it's own page) - need content PRIORITY 2
 
-* Financial Aid - need content PRIORITY 1
+* Financial Aid - need content PRIORITY 1 - use fvi.edu as a start, needs more copy
 
 * Value for education - need content PRIORITY 2
 
@@ -110,13 +114,15 @@
 
 ## Footer
 
+All priority 1:
+
 * Privacy - from fvi.edu
 
-* Terms of use  - need content 1
+* Terms of use  - need content
 
-* Catalog - fvi.edu
+* Catalog - from fvi.edu
 
-* NPC - available
+* NPC - available already
 
 ## Questions remaining
 
@@ -140,7 +146,7 @@
 
 * General Intro
 
-* Hiring PArtners - benefits of TL to hiring partners
+* Hiring Partners - benefits of TL to hiring partners
 
 Arnie
 
