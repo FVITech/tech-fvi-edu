@@ -63,6 +63,7 @@
     "dom-slider": "^1.1.0",
     "envify": "^4.0.0",
     "nodemon": "^1.11.0",
-    "prevent-popstate-scroll": "^2.0.0"
+    "prevent-popstate-scroll": "^2.0.0",
+    "whatwg-fetch": "^2.0.3"
   }
 }

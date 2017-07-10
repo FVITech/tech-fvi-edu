@@ -39,7 +39,7 @@
         }
     }
 
-    form {
+    .form {
         box-sizing: border-box;
         overflow: visible;
 
@@ -70,7 +70,7 @@
             font-family: $open-sans;
         }
 
-        button {
+        .submit {
             display: block;
             font-size: 1.2rem;
             padding: 5px 15px;
@@ -86,6 +86,7 @@
             cursor: pointer;
             margin-top: 10px;
             box-shadow: 0 2px 0 0 #666;
+            text-align: center;
 
             &:focus {
                 outline: #fff;

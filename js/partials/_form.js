@@ -1,5 +1,7 @@
+import 'whatwg-fetch';
 (function _form() {
-    const g = require('./_globals')
+    const g = require('./_globals');
+
     let $message = $('#sent-message')
 
     function show() {
@@ -12,49 +14,64 @@
         g.$applyPopUp.fadeOut()
     }
 
-    // Not my code. Got it from:
-    // https://plainjs.com/javascript/ajax/serialize-form-data-into-an-array-46/
-    function serializeArray(form) {
-        var field, l, s = [];
-        if (typeof form == 'object' && form.nodeName == "FORM") {
-            var len = form.elements.length;
-            for (i=0; i<len; i++) {
-                field = form.elements[i];
-                if (field.name && !field.disabled && field.type != 'file' && field.type != 'reset' && field.type != 'submit' && field.type != 'button') {
-                    if (field.type == 'select-multiple') {
-                        l = form.elements[i].options.length;
-                        for (j=0; j<l; j++) {
-                            if(field.options[j].selected)
-                                s[s.length] = { name: field.name, value: field.options[j].value };
-                        }
-                    } else if ((field.type != 'checkbox' && field.type != 'radio') || field.checked) {
-                        s[s.length] = { name: field.name, value: field.value };
-                    }
-                }
-            }
-        }
-        return s;
+    function buildFormData(){
+      return {
+        fname: $("#form-full_name").value.split(" ")[0],
+        lname: $("#form-full_name").value.split(" ").slice(1).join(" "),
+        email: $("#form-email").value,
+        phone: $("#form-day_phone").value
+      }
+    }
+    function resetForm(){
+      $("#form-full_name").value="";
+      $("#form-email").value="";
+      $("#form-day_phone").value=""
     }
 
     function sendForm() {
-        return fetch({
-            url: 'http://fvi-grad.com:4004/fakeform',
-            type: 'post',
-            data: serializeArray(g.$applyForm)
-        })
+      var data = buildFormData();
+      if (!data || !data.fname || !data.lname) {
+        alert ("Please input your full name");
+        return;
+      }
+      if (! data.email){
+        alert ("Please input your email");
+        return;
+      }
+      if (! data.phone){
+        alert ("Please input your phone number");
+        return;
+      }
+      fetch('http://fvi-grad.com:4004/submittechfviform', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify(data),
+      })
+      .then(res=>{
+        console.log(res);
+        if (res.status != 200){
+          console.log("Caught bad response");
+          throw {message: 'Bad response from server: '+res.status, serverRes: res};
+        }
+        $(".form").fadeOut();
+        $message.fadeIn()
+        console.log("made it here");
+        setTimeout(function() {
+            resetForm()
+        }, 300);
+      })
+      .catch(err=>{
+        console.log("Entering catch clause");
+        if (typeof err === 'object')
+          alert(JSON.stringify(err));
+        console.log(err);
+      })
+
     }
 
-    function send() {
-        sendForm().done(function() {
-            g.$applyForm.fadeIn()
-            setTimeout(function() {
-                $message.fadeOut()
-                g.$applyForm.reset()
-            }, 300)
-        })
-    }
-
-    module.exports.show = show
-    module.exports.hide = hide
-    module.exports.send = send
+    module.exports.show = show;
+    module.exports.hide = hide;
+    module.exports.send = sendForm;
 })()

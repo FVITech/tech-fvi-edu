@@ -2,7 +2,7 @@
     const $overlay = $('#overlay')
     const $cards = $('label.card')
     const $applyPopUp = $('#apply-pop-up')
-    // const $applyForm = $applyPopUp.querySelectorAll('form')
+    const $applyForm = $applyPopUp.querySelectorAll('.form')
     const $applyButtons = $('#nav-apply-btn, #cta-apply-btn, #contact-home, .request-info')
     const $pagesContainer = $('#pages-container')
     const $homeButton = $('#home-button')
@@ -17,7 +17,7 @@
     module.exports.$overlay = $overlay
     module.exports.$cards = $cards
     module.exports.$applyPopUp = $applyPopUp
-    // module.exports.$applyForm = $applyForm
+    module.exports.$applyForm = $applyForm
     module.exports.$applyButtons = $applyButtons
     module.exports.$pagesContainer = $pagesContainer
     module.exports.$homeButton = $homeButton

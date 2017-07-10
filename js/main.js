@@ -42,10 +42,7 @@
                     }
                 }
             })
-            // $('#submit-apply').addEventListener('click', e => {
-            //     e.preventDefault()
-            //     form.send()
-            // })
+            $('#submit-apply').addEventListener('click', form.send);
             // Setup plus buttons functionality
             g.$plusButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
